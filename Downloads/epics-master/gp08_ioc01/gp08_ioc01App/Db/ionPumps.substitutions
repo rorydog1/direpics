@@ -1,0 +1,30 @@
+################################################################################
+# Ion Pump Controllers
+# 
+file agilent4uhvCtlr.template
+{
+pattern { device              , port     }
+        { GEN-CS-GP08:VPCON03 , BB_PORT1 }
+        { GEN-CS-GP08:VPCON04 , BB_PORT2 }
+        { GEN-CS-GP08:VPCON05 , BB_PORT3 }
+}
+################################################################################
+# Ion Pumps
+# 
+file agilent4uhv.template
+{
+pattern { device         , port     , chan }
+        { LEL-VAC-IONP09 , BB_PORT1 , 1    }
+        { LEL-VAC-IONP10 , BB_PORT1 , 2    }
+        { LEL-VAC-IONP11 , BB_PORT1 , 3    }
+        { LEL-VAC-IONP12 , BB_PORT1 , 4    }
+        { LEL-VAC-IONP13 , BB_PORT2 , 1    }
+        { LEL-VAC-IONP14 , BB_PORT2 , 2    }
+        { LEL-VAC-IONP15 , BB_PORT2 , 3    }
+        { LEL-VAC-IONP16 , BB_PORT2 , 4    }
+        { LEL-VAC-IONP17 , BB_PORT3 , 1    }
+        { LEL-VAC-IONP18 , BB_PORT3 , 2    }
+        { LEL-VAC-IONP19 , BB_PORT3 , 3    }
+        { LEL-VAC-IONP20 , BB_PORT3 , 4    }
+} 
+################################################################################

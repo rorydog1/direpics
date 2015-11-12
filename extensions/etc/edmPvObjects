@@ -1,0 +1,5 @@
+4
+EPICS $(EDMLIBS)/libEpics.so EPICS PV
+CALC $(EDMLIBS)/libCalc.so Calculation PV
+LOG $(EDMLIBS)/libLog.so LOG PV
+LOC $(EDMLIBS)/libLoc.so Local PV

@@ -1,0 +1,531 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+	<title>re2c Download (DEB, RPM, TGZ, TXZ, XZ)</title>
+	<meta name="description" content="Download re2c for ALT Linux, Arch Linux, CentOS / RHEL, Debian, Fedora, Mageia, OpenMandriva, ROSA, Slackware, Ubuntu, openSUSE distributions." />
+	<meta name="keywords" content="re2c, download, deb, rpm, tgz, txz, xz" />
+	<meta charset="utf-8" />
+	<link rel="stylesheet" title="classic" type="text/css" href="/static/base.css?ver=25" />
+	<link rel="shortcut icon" href="/static/images/favicon.ico?ver=1" type="image/x-icon" />
+	<link rel="search" type="application/opensearchdescription+xml" href="/opensearch.xml" title="Linux Packages Search" />
+</head>
+
+<body>
+	
+<header id="header-wrapper">
+	<div id="header">
+		<a id="logo" href="/">pkgs.org</a>
+
+		<div id="searchform-wrapper">
+			<form method="get" action="/search/" id="searchform">
+				<input id="searchform-query" name="query" type="text" size="32" autocomplete="off" />
+				<a id="searchform-button" href="#"></a>
+
+				<div id="searchform-params">
+					<span>Distribution:</span>
+					<select id="searchform-distro"></select><br />
+
+					<span>Search Type:</span>
+					<select id="searchform-type" name="type">
+						<option value="smart">Smart Search (default)</option>
+						<option value="name">Name</option>
+						<option value="filename">Filename (binary package)</option>
+						<option value="srcfilename">Filename (source package)</option>
+						<option value="provides">Provides</option>
+						<option value="requires">Requires</option>
+						<option value="summary">Summary</option>
+						<option value="description">Description</option>
+						<option value="dirs">Directories</option>
+						<option value="files">Files</option>
+					</select>
+				</div>
+			</form>
+		</div>
+
+		<div class="addthis_native_toolbox" data-url="http://pkgs.org/" data-title="Linux Packages Search"></div>
+	</div>
+</header>
+
+
+<div class="content-background">
+
+<section class="panel-center content">
+
+
+<header>
+	<h1>re2c Download (DEB, RPM, TGZ, TXZ, XZ)</h1>
+</header>
+
+
+
+
+<p id="package_desc"><strong>Download re2c for ALT Linux, Arch Linux, CentOS / RHEL, Debian, Fedora, Mageia, OpenMandriva, ROSA, Slackware, Ubuntu, openSUSE distributions.</strong></p>
+
+<div id="pkgs_show" class="ui-accordion">
+<div data-id="140" data-name="altlinux-sisyphus" class="ui-accordion-header distro distro_10">ALT Linux Sisyphus</div>
+<div class="ui-accordion-content">
+
+<div class="repo">Classic:</div>
+<ul class="level2">
+<li><a href="/altlinux-sisyphus/classic-i586/re2c-0.14.3-alt1.i586.rpm.html">re2c-0.14.3-alt1.i586.rpm</a><span>re2c - A tool for generating C-based recognizers from regular expressions</span></li>
+<li><a href="/altlinux-sisyphus/classic-x86_64/re2c-0.14.3-alt1.x86_64.rpm.html">re2c-0.14.3-alt1.x86_64.rpm</a><span>re2c - A tool for generating C-based recognizers from regular expressions</span></li>
+</ul>
+
+</div>
+
+
+<div data-id="101" data-name="archlinux" class="ui-accordion-header distro distro_1">Arch Linux</div>
+<div class="ui-accordion-content">
+
+<div class="repo">Arch Linux Extra:</div>
+<ul class="level2">
+<li><a href="/archlinux/archlinux-extra-i686/re2c-0.14.3-1-i686.pkg.tar.xz.html">re2c-0.14.3-1-i686.pkg.tar.xz</a><span>A tool for generating C-based recognizers from regular expressions</span></li>
+<li><a href="/archlinux/archlinux-extra-x86_64/re2c-0.14.3-1-x86_64.pkg.tar.xz.html">re2c-0.14.3-1-x86_64.pkg.tar.xz</a><span>A tool for generating C-based recognizers from regular expressions</span></li>
+</ul>
+
+</div>
+
+
+<div data-id="159" data-name="centos-7" class="ui-accordion-header distro distro_2">CentOS 7</div>
+<div class="ui-accordion-content">
+
+<div class="repo">Russian Fedora Free:</div>
+<ul class="level2">
+<li><a href="/centos-7/russian-fedora-free-x86_64/re2c-0.13.5-7.el7.R.x86_64.rpm.html">re2c-0.13.5-7.el7.R.x86_64.rpm</a><span>Tool for generating C-based recognizers from regular expressions</span></li>
+</ul>
+
+</div>
+
+
+<div data-id="82" data-name="centos-6" class="ui-accordion-header distro distro_2">CentOS 6</div>
+<div class="ui-accordion-content">
+
+<div class="repo">EPEL:</div>
+<ul class="level2">
+<li><a href="/centos-6/epel-i386/re2c-0.13.5-1.el6.i686.rpm.html">re2c-0.13.5-1.el6.i686.rpm</a><span>Tool for generating C-based recognizers from regular expressions</span></li>
+<li><a href="/centos-6/epel-x86_64/re2c-0.13.5-1.el6.x86_64.rpm.html">re2c-0.13.5-1.el6.x86_64.rpm</a><span>Tool for generating C-based recognizers from regular expressions</span></li>
+</ul>
+
+<div class="repo">PUIAS Unsupported:</div>
+<ul class="level2">
+<li><a href="/centos-6/puias-unsupported-i386/re2c-0.13.5-1.puias6.i686.rpm.html">re2c-0.13.5-1.puias6.i686.rpm</a><span>Tool for generating C-based recognizers from regular expressions</span></li>
+<li><a href="/centos-6/puias-unsupported-x86_64/re2c-0.13.5-1.puias6.x86_64.rpm.html">re2c-0.13.5-1.puias6.x86_64.rpm</a><span>Tool for generating C-based recognizers from regular expressions</span></li>
+</ul>
+
+<div class="repo">Repoforge (RPMforge):</div>
+<ul class="level2">
+<li><a href="/centos-6/repoforge-i386/re2c-0.13.5-1.el6.rf.i686.rpm.html">re2c-0.13.5-1.el6.rf.i686.rpm</a><span>Tool for generating C-based recognizers from regular expressions</span></li>
+<li><a href="/centos-6/repoforge-x86_64/re2c-0.13.5-1.el6.rf.x86_64.rpm.html">re2c-0.13.5-1.el6.rf.x86_64.rpm</a><span>Tool for generating C-based recognizers from regular expressions</span></li>
+</ul>
+
+</div>
+
+
+<div data-id="2" data-name="centos-5" class="ui-accordion-header distro distro_2">CentOS 5</div>
+<div class="ui-accordion-content">
+
+<div class="repo">EPEL:</div>
+<ul class="level2">
+<li><a href="/centos-5/epel-i386/re2c-0.12.1-2.el5.i386.rpm.html">re2c-0.12.1-2.el5.i386.rpm</a><span>Tool for generating C-based recognizers from regular expressions</span></li>
+<li><a href="/centos-5/epel-x86_64/re2c-0.12.1-2.el5.x86_64.rpm.html">re2c-0.12.1-2.el5.x86_64.rpm</a><span>Tool for generating C-based recognizers from regular expressions</span></li>
+</ul>
+
+<div class="repo">FlexBox:</div>
+<ul class="level2">
+<li><a href="/centos-5/flexbox-i386/re2c-0.13.5-1.i386.rpm.html">re2c-0.13.5-1.i386.rpm</a><span>A tool for generating C-based recognizers from regular expressions</span></li>
+<li><a href="/centos-5/flexbox-x86_64/re2c-0.13.5-1.x86_64.rpm.html">re2c-0.13.5-1.x86_64.rpm</a><span>A tool for generating C-based recognizers from regular expressions</span></li>
+</ul>
+
+<div class="repo">Repoforge (RPMforge):</div>
+<ul class="level2">
+<li><a href="/centos-5/repoforge-i386/re2c-0.12.0-1.el5.rf.i386.rpm.html">re2c-0.12.0-1.el5.rf.i386.rpm</a><span>Tool for generating C-based recognizers from regular expressions</span></li>
+<li><a href="/centos-5/repoforge-x86_64/re2c-0.12.0-1.el5.rf.x86_64.rpm.html">re2c-0.12.0-1.el5.rf.x86_64.rpm</a><span>Tool for generating C-based recognizers from regular expressions</span></li>
+<li><a href="/centos-5/repoforge-i386/re2c-0.12.1-1.el5.rf.i386.rpm.html">re2c-0.12.1-1.el5.rf.i386.rpm</a><span>Tool for generating C-based recognizers from regular expressions</span></li>
+<li><a href="/centos-5/repoforge-x86_64/re2c-0.12.1-1.el5.rf.x86_64.rpm.html">re2c-0.12.1-1.el5.rf.x86_64.rpm</a><span>Tool for generating C-based recognizers from regular expressions</span></li>
+<li><a href="/centos-5/repoforge-i386/re2c-0.12.3-1.el5.rf.i386.rpm.html">re2c-0.12.3-1.el5.rf.i386.rpm</a><span>Tool for generating C-based recognizers from regular expressions</span></li>
+<li><a href="/centos-5/repoforge-x86_64/re2c-0.12.3-1.el5.rf.x86_64.rpm.html">re2c-0.12.3-1.el5.rf.x86_64.rpm</a><span>Tool for generating C-based recognizers from regular expressions</span></li>
+<li><a href="/centos-5/repoforge-i386/re2c-0.13.0-1.el5.rf.i386.rpm.html">re2c-0.13.0-1.el5.rf.i386.rpm</a><span>Tool for generating C-based recognizers from regular expressions</span></li>
+<li><a href="/centos-5/repoforge-x86_64/re2c-0.13.0-1.el5.rf.x86_64.rpm.html">re2c-0.13.0-1.el5.rf.x86_64.rpm</a><span>Tool for generating C-based recognizers from regular expressions</span></li>
+<li><a href="/centos-5/repoforge-i386/re2c-0.13.1-1.el5.rf.i386.rpm.html">re2c-0.13.1-1.el5.rf.i386.rpm</a><span>Tool for generating C-based recognizers from regular expressions</span></li>
+<li><a href="/centos-5/repoforge-x86_64/re2c-0.13.1-1.el5.rf.x86_64.rpm.html">re2c-0.13.1-1.el5.rf.x86_64.rpm</a><span>Tool for generating C-based recognizers from regular expressions</span></li>
+<li><a href="/centos-5/repoforge-i386/re2c-0.13.2-1.el5.rf.i386.rpm.html">re2c-0.13.2-1.el5.rf.i386.rpm</a><span>Tool for generating C-based recognizers from regular expressions</span></li>
+<li><a href="/centos-5/repoforge-x86_64/re2c-0.13.2-1.el5.rf.x86_64.rpm.html">re2c-0.13.2-1.el5.rf.x86_64.rpm</a><span>Tool for generating C-based recognizers from regular expressions</span></li>
+<li><a href="/centos-5/repoforge-i386/re2c-0.13.4-1.el5.rf.i386.rpm.html">re2c-0.13.4-1.el5.rf.i386.rpm</a><span>Tool for generating C-based recognizers from regular expressions</span></li>
+<li><a href="/centos-5/repoforge-x86_64/re2c-0.13.4-1.el5.rf.x86_64.rpm.html">re2c-0.13.4-1.el5.rf.x86_64.rpm</a><span>Tool for generating C-based recognizers from regular expressions</span></li>
+<li><a href="/centos-5/repoforge-i386/re2c-0.13.5-1.el5.rf.i386.rpm.html">re2c-0.13.5-1.el5.rf.i386.rpm</a><span>Tool for generating C-based recognizers from regular expressions</span></li>
+<li><a href="/centos-5/repoforge-x86_64/re2c-0.13.5-1.el5.rf.x86_64.rpm.html">re2c-0.13.5-1.el5.rf.x86_64.rpm</a><span>Tool for generating C-based recognizers from regular expressions</span></li>
+</ul>
+
+</div>
+
+
+<div data-id="88" data-name="debian-sid" class="ui-accordion-header distro distro_3">Debian Sid</div>
+<div class="ui-accordion-content">
+
+<div class="repo">Debian Main:</div>
+<ul class="level2">
+<li><a href="/debian-sid/debian-main-amd64/re2c_0.13.5-1+b1_amd64.deb.html">re2c_0.13.5-1+b1_amd64.deb</a><span>tool for generating fast C-based recognizers</span></li>
+<li><a href="/debian-sid/debian-main-i386/re2c_0.13.5-1+b1_i386.deb.html">re2c_0.13.5-1+b1_i386.deb</a><span>tool for generating fast C-based recognizers</span></li>
+</ul>
+
+</div>
+
+
+<div data-id="141" data-name="debian-jessie" class="ui-accordion-header distro distro_3">Debian Jessie</div>
+<div class="ui-accordion-content">
+
+<div class="repo">Debian Main:</div>
+<ul class="level2">
+<li><a href="/debian-jessie/debian-main-amd64/re2c_0.13.5-1_amd64.deb.html">re2c_0.13.5-1_amd64.deb</a><span>tool for generating fast C-based recognizers</span></li>
+<li><a href="/debian-jessie/debian-main-i386/re2c_0.13.5-1_i386.deb.html">re2c_0.13.5-1_i386.deb</a><span>tool for generating fast C-based recognizers</span></li>
+</ul>
+
+</div>
+
+
+<div data-id="48" data-name="debian-wheezy" class="ui-accordion-header distro distro_3">Debian Wheezy</div>
+<div class="ui-accordion-content">
+
+<div class="repo">Debian Main:</div>
+<ul class="level2">
+<li><a href="/debian-wheezy/debian-main-amd64/re2c_0.13.5-1_amd64.deb.html">re2c_0.13.5-1_amd64.deb</a><span>tool for generating fast C-based recognizers</span></li>
+<li><a href="/debian-wheezy/debian-main-i386/re2c_0.13.5-1_i386.deb.html">re2c_0.13.5-1_i386.deb</a><span>tool for generating fast C-based recognizers</span></li>
+</ul>
+
+</div>
+
+
+<div data-id="80" data-name="fedora-rawhide" class="ui-accordion-header distro distro_4">Fedora Rawhide</div>
+<div class="ui-accordion-content">
+
+<div class="repo">Fedora:</div>
+<ul class="level2">
+<li><a href="/fedora-rawhide/fedora-i386/re2c-0.14.3-1.fc24.i686.rpm.html">re2c-0.14.3-1.fc24.i686.rpm</a><span>Tool for generating C-based recognizers from regular expressions</span></li>
+<li><a href="/fedora-rawhide/fedora-x86_64/re2c-0.14.3-1.fc24.x86_64.rpm.html">re2c-0.14.3-1.fc24.x86_64.rpm</a><span>Tool for generating C-based recognizers from regular expressions</span></li>
+</ul>
+
+</div>
+
+
+<div data-id="175" data-name="fedora-23" class="ui-accordion-header distro distro_4">Fedora 23</div>
+<div class="ui-accordion-content">
+
+<div class="repo">Fedora:</div>
+<ul class="level2">
+<li><a href="/fedora-23/fedora-i386/re2c-0.13.5-11.fc23.i686.rpm.html">re2c-0.13.5-11.fc23.i686.rpm</a><span>Tool for generating C-based recognizers from regular expressions</span></li>
+<li><a href="/fedora-23/fedora-x86_64/re2c-0.13.5-11.fc23.x86_64.rpm.html">re2c-0.13.5-11.fc23.x86_64.rpm</a><span>Tool for generating C-based recognizers from regular expressions</span></li>
+</ul>
+
+</div>
+
+
+<div data-id="169" data-name="fedora-22" class="ui-accordion-header distro distro_4">Fedora 22</div>
+<div class="ui-accordion-content">
+
+<div class="repo">Fedora:</div>
+<ul class="level2">
+<li><a href="/fedora-22/fedora-i386/re2c-0.13.5-9.fc22.i686.rpm.html">re2c-0.13.5-9.fc22.i686.rpm</a><span>Tool for generating C-based recognizers from regular expressions</span></li>
+<li><a href="/fedora-22/fedora-x86_64/re2c-0.13.5-9.fc22.x86_64.rpm.html">re2c-0.13.5-9.fc22.x86_64.rpm</a><span>Tool for generating C-based recognizers from regular expressions</span></li>
+</ul>
+
+</div>
+
+
+<div data-id="161" data-name="fedora-21" class="ui-accordion-header distro distro_4">Fedora 21</div>
+<div class="ui-accordion-content">
+
+<div class="repo">Fedora:</div>
+<ul class="level2">
+<li><a href="/fedora-21/fedora-i386/re2c-0.13.5-9.fc21.i686.rpm.html">re2c-0.13.5-9.fc21.i686.rpm</a><span>Tool for generating C-based recognizers from regular expressions</span></li>
+<li><a href="/fedora-21/fedora-x86_64/re2c-0.13.5-9.fc21.x86_64.rpm.html">re2c-0.13.5-9.fc21.x86_64.rpm</a><span>Tool for generating C-based recognizers from regular expressions</span></li>
+</ul>
+
+</div>
+
+
+<div data-id="108" data-name="mageia-cauldron" class="ui-accordion-header distro distro_5">Mageia Cauldron</div>
+<div class="ui-accordion-content">
+
+<div class="repo">Mageia Core:</div>
+<ul class="level2">
+<li><a href="/mageia-cauldron/mageia-core-release-i586/re2c-0.13.6-3.mga5.i586.rpm.html">re2c-0.13.6-3.mga5.i586.rpm</a><span>A tool for generating C-based recognizers from regular expressions</span></li>
+<li><a href="/mageia-cauldron/mageia-core-release-x86_64/re2c-0.13.6-3.mga5.x86_64.rpm.html">re2c-0.13.6-3.mga5.x86_64.rpm</a><span>A tool for generating C-based recognizers from regular expressions</span></li>
+</ul>
+
+</div>
+
+
+<div data-id="172" data-name="mageia-5" class="ui-accordion-header distro distro_5">Mageia 5</div>
+<div class="ui-accordion-content">
+
+<div class="repo">Mageia Core:</div>
+<ul class="level2">
+<li><a href="/mageia-5/mageia-core-release-i586/re2c-0.13.6-3.mga5.i586.rpm.html">re2c-0.13.6-3.mga5.i586.rpm</a><span>A tool for generating C-based recognizers from regular expressions</span></li>
+<li><a href="/mageia-5/mageia-core-release-x86_64/re2c-0.13.6-3.mga5.x86_64.rpm.html">re2c-0.13.6-3.mga5.x86_64.rpm</a><span>A tool for generating C-based recognizers from regular expressions</span></li>
+</ul>
+
+</div>
+
+
+<div data-id="152" data-name="mageia-4" class="ui-accordion-header distro distro_5">Mageia 4.1</div>
+<div class="ui-accordion-content">
+
+<div class="repo">Mageia Core:</div>
+<ul class="level2">
+<li><a href="/mageia-4/mageia-core-release-i586/re2c-0.13.5-8.mga4.i586.rpm.html">re2c-0.13.5-8.mga4.i586.rpm</a><span>A tool for generating C-based recognizers from regular expressions</span></li>
+<li><a href="/mageia-4/mageia-core-release-x86_64/re2c-0.13.5-8.mga4.x86_64.rpm.html">re2c-0.13.5-8.mga4.x86_64.rpm</a><span>A tool for generating C-based recognizers from regular expressions</span></li>
+</ul>
+
+</div>
+
+
+<div data-id="151" data-name="openmandriva-cooker" class="ui-accordion-header distro distro_12">OpenMandriva Cooker</div>
+<div class="ui-accordion-content">
+
+<div class="repo">OpenMandriva Main:</div>
+<ul class="level2">
+<li><a href="/openmandriva-cooker/openmandriva-main-release-i586/re2c-0.13.7.5-4-omv2015.0.i586.rpm.html">re2c-0.13.7.5-4-omv2015.0.i586.rpm</a><span>A tool for generating C-based recognizers from regular expressions</span></li>
+<li><a href="/openmandriva-cooker/openmandriva-main-release-x86_64/re2c-0.13.7.5-4-omv2015.0.x86_64.rpm.html">re2c-0.13.7.5-4-omv2015.0.x86_64.rpm</a><span>A tool for generating C-based recognizers from regular expressions</span></li>
+</ul>
+
+</div>
+
+
+<div data-id="157" data-name="openmandriva-2014.0" class="ui-accordion-header distro distro_12">OpenMandriva Lx 2014.1</div>
+<div class="ui-accordion-content">
+
+<div class="repo">OpenMandriva Main:</div>
+<ul class="level2">
+<li><a href="/openmandriva-2014.0/openmandriva-main-release-i586/re2c-0.13.5-9-omv2014.0.i586.rpm.html">re2c-0.13.5-9-omv2014.0.i586.rpm</a><span>A tool for generating C-based recognizers from regular expressions</span></li>
+<li><a href="/openmandriva-2014.0/openmandriva-main-release-x86_64/re2c-0.13.5-9-omv2014.0.x86_64.rpm.html">re2c-0.13.5-9-omv2014.0.x86_64.rpm</a><span>A tool for generating C-based recognizers from regular expressions</span></li>
+</ul>
+
+</div>
+
+
+<div data-id="150" data-name="openmandriva-2013.0" class="ui-accordion-header distro distro_12">OpenMandriva Lx 2013.0</div>
+<div class="ui-accordion-content">
+
+<div class="repo">OpenMandriva Main:</div>
+<ul class="level2">
+<li><a href="/openmandriva-2013.0/openmandriva-main-release-i586/re2c-0.13.5-8-omv2013.0.i586.rpm.html">re2c-0.13.5-8-omv2013.0.i586.rpm</a><span>A tool for generating C-based recognizers from regular expressions</span></li>
+<li><a href="/openmandriva-2013.0/openmandriva-main-release-x86_64/re2c-0.13.5-8-omv2013.0.x86_64.rpm.html">re2c-0.13.5-8-omv2013.0.x86_64.rpm</a><span>A tool for generating C-based recognizers from regular expressions</span></li>
+</ul>
+
+</div>
+
+
+<div data-id="92" data-name="opensuse-factory" class="ui-accordion-header distro distro_7">openSUSE Factory</div>
+<div class="ui-accordion-content">
+
+<div class="repo">openSUSE Network Utilities:</div>
+<ul class="level2">
+<li><a href="/opensuse-factory/opensuse-network-utilities/re2c-0.14.3-91.1.i586.rpm.html">re2c-0.14.3-91.1.i586.rpm</a><span>Tool for generating C-based recognizers from regular expressions</span></li>
+<li><a href="/opensuse-factory/opensuse-network-utilities/re2c-0.14.3-91.1.x86_64.rpm.html">re2c-0.14.3-91.1.x86_64.rpm</a><span>Tool for generating C-based recognizers from regular expressions</span></li>
+</ul>
+
+<div class="repo">openSUSE Oss:</div>
+<ul class="level2">
+<li><a href="/opensuse-factory/opensuse-oss/re2c-0.14.3-1.1.i586.rpm.html">re2c-0.14.3-1.1.i586.rpm</a><span>re2c</span></li>
+<li><a href="/opensuse-factory/opensuse-oss/re2c-0.14.3-1.1.x86_64.rpm.html">re2c-0.14.3-1.1.x86_64.rpm</a><span>Tool for generating C-based recognizers from regular expressions</span></li>
+</ul>
+
+</div>
+
+
+<div data-id="166" data-name="opensuse-13.2" class="ui-accordion-header distro distro_7">openSUSE 13.2</div>
+<div class="ui-accordion-content">
+
+<div class="repo">openSUSE Network Utilities:</div>
+<ul class="level2">
+<li><a href="/opensuse-13.2/opensuse-network-utilities/re2c-0.14.3-90.1.i586.rpm.html">re2c-0.14.3-90.1.i586.rpm</a><span>Tool for generating C-based recognizers from regular expressions</span></li>
+<li><a href="/opensuse-13.2/opensuse-network-utilities/re2c-0.14.3-90.1.x86_64.rpm.html">re2c-0.14.3-90.1.x86_64.rpm</a><span>Tool for generating C-based recognizers from regular expressions</span></li>
+</ul>
+
+<div class="repo">openSUSE Oss:</div>
+<ul class="level2">
+<li><a href="/opensuse-13.2/opensuse-oss/re2c-0.13.6-5.1.2.i586.rpm.html">re2c-0.13.6-5.1.2.i586.rpm</a><span>re2c</span></li>
+<li><a href="/opensuse-13.2/opensuse-oss/re2c-0.13.6-5.1.2.x86_64.rpm.html">re2c-0.13.6-5.1.2.x86_64.rpm</a><span>Tool for generating C-based recognizers from regular expressions</span></li>
+</ul>
+
+</div>
+
+
+<div data-id="143" data-name="opensuse-13.1" class="ui-accordion-header distro distro_7">openSUSE 13.1</div>
+<div class="ui-accordion-content">
+
+<div class="repo">openSUSE Network Utilities:</div>
+<ul class="level2">
+<li><a href="/opensuse-13.1/opensuse-network-utilities/re2c-0.14.3-90.1.i586.rpm.html">re2c-0.14.3-90.1.i586.rpm</a><span>Tool for generating C-based recognizers from regular expressions</span></li>
+<li><a href="/opensuse-13.1/opensuse-network-utilities/re2c-0.14.3-90.1.x86_64.rpm.html">re2c-0.14.3-90.1.x86_64.rpm</a><span>Tool for generating C-based recognizers from regular expressions</span></li>
+</ul>
+
+<div class="repo">openSUSE Oss:</div>
+<ul class="level2">
+<li><a href="/opensuse-13.1/opensuse-oss/re2c-0.13.6-2.1.2.i586.rpm.html">re2c-0.13.6-2.1.2.i586.rpm</a><span>Tool for generating C-based recognizers from regular expressions</span></li>
+</ul>
+
+</div>
+
+
+<div data-id="123" data-name="rosa-2012.1" class="ui-accordion-header distro distro_6">ROSA Desktop Fresh</div>
+<div class="ui-accordion-content">
+
+<div class="repo">ROSA Main:</div>
+<ul class="level2">
+<li><a href="/rosa-2012.1/rosa-main-release-i586/re2c-0.13.5-8-rosa2012.1.i586.rpm.html">re2c-0.13.5-8-rosa2012.1.i586.rpm</a><span>A tool for generating C-based recognizers from regular expressions</span></li>
+<li><a href="/rosa-2012.1/rosa-main-release-x86_64/re2c-0.13.5-8-rosa2012.1.x86_64.rpm.html">re2c-0.13.5-8-rosa2012.1.x86_64.rpm</a><span>A tool for generating C-based recognizers from regular expressions</span></li>
+</ul>
+
+<div class="repo">ROSA Main Updates:</div>
+<ul class="level2">
+<li><a href="/rosa-2012.1/rosa-main-updates-i586/re2c-0.13.6-1-rosa2012.1.i586.rpm.html">re2c-0.13.6-1-rosa2012.1.i586.rpm</a><span>A tool for generating C-based recognizers from regular expressions</span></li>
+<li><a href="/rosa-2012.1/rosa-main-updates-x86_64/re2c-0.13.6-1-rosa2012.1.x86_64.rpm.html">re2c-0.13.6-1-rosa2012.1.x86_64.rpm</a><span>A tool for generating C-based recognizers from regular expressions</span></li>
+</ul>
+
+</div>
+
+
+<div data-id="168" data-name="rosa-2014.1" class="ui-accordion-header distro distro_6">ROSA</div>
+<div class="ui-accordion-content">
+
+<div class="repo">ROSA Main:</div>
+<ul class="level2">
+<li><a href="/rosa-2014.1/rosa-main-release-i586/re2c-0.13.7.5-1-rosa2014.1.i586.rpm.html">re2c-0.13.7.5-1-rosa2014.1.i586.rpm</a><span>A tool for generating C-based recognizers from regular expressions</span></li>
+<li><a href="/rosa-2014.1/rosa-main-release-x86_64/re2c-0.13.7.5-1-rosa2014.1.x86_64.rpm.html">re2c-0.13.7.5-1-rosa2014.1.x86_64.rpm</a><span>A tool for generating C-based recognizers from regular expressions</span></li>
+</ul>
+
+<div class="repo">ROSA Main Updates:</div>
+<ul class="level2">
+<li><a href="/rosa-2014.1/rosa-main-updates-i586/re2c-0.14.3-1-rosa2014.1.i586.rpm.html">re2c-0.14.3-1-rosa2014.1.i586.rpm</a><span>A tool for generating C-based recognizers from regular expressions</span></li>
+<li><a href="/rosa-2014.1/rosa-main-updates-x86_64/re2c-0.14.3-1-rosa2014.1.x86_64.rpm.html">re2c-0.14.3-1-rosa2014.1.x86_64.rpm</a><span>A tool for generating C-based recognizers from regular expressions</span></li>
+</ul>
+
+</div>
+
+
+<div data-id="124" data-name="rosa-lts-2012" class="ui-accordion-header distro distro_6">ROSA Enterprise Desktop X1</div>
+<div class="ui-accordion-content">
+
+<div class="repo">ROSA Main:</div>
+<ul class="level2">
+<li><a href="/rosa-lts-2012/rosa-main-release-i586/re2c-0.13.5-8-rosa.lts2012.0.i586.rpm.html">re2c-0.13.5-8-rosa.lts2012.0.i586.rpm</a><span>A tool for generating C-based recognizers from regular expressions</span></li>
+<li><a href="/rosa-lts-2012/rosa-main-release-x86_64/re2c-0.13.5-8-rosa.lts2012.0.x86_64.rpm.html">re2c-0.13.5-8-rosa.lts2012.0.x86_64.rpm</a><span>A tool for generating C-based recognizers from regular expressions</span></li>
+</ul>
+
+</div>
+
+
+<div data-id="142" data-name="slackware-14.1" class="ui-accordion-header distro distro_8">Slackware 14.1</div>
+<div class="ui-accordion-content">
+
+<div class="repo">Freestylers:</div>
+<ul class="level2">
+<li><a href="/slackware-14.1/freestylers-x86_64/re2c-0.13.6-x86_64-2_fs.tgz.html">re2c-0.13.6-x86_64-2_fs.tgz</a><span>regular expressions to C/C++ conversion tool</span></li>
+</ul>
+
+<div class="repo">Slackonly:</div>
+<ul class="level2">
+<li><a href="/slackware-14.1/slackonly-x86_64/re2c-0.14.3-x86_64-1_slack.txz.html">re2c-0.14.3-x86_64-1_slack.txz</a><span>regular expressions to C/C++ conversion tool</span></li>
+</ul>
+
+</div>
+
+
+<div data-id="105" data-name="slackware-13.37" class="ui-accordion-header distro distro_8">Slackware 13.37</div>
+<div class="ui-accordion-content">
+
+<div class="repo">Slacky:</div>
+<ul class="level2">
+<li><a href="/slackware-13.37/slacky-x86_64/re2c-0.13.5-x86_64-1sl.txz.html">re2c-0.13.5-x86_64-1sl.txz</a><span>re2c</span></li>
+</ul>
+
+</div>
+
+
+<div data-id="171" data-name="ubuntu-15.10" class="ui-accordion-header distro distro_9">Ubuntu 15.04</div>
+<div class="ui-accordion-content">
+
+<div class="repo">Ubuntu Main:</div>
+<ul class="level2">
+<li><a href="/ubuntu-15.10/ubuntu-main-amd64/re2c_0.13.5-1build2_amd64.deb.html">re2c_0.13.5-1build2_amd64.deb</a><span>tool for generating fast C-based recognizers</span></li>
+<li><a href="/ubuntu-15.10/ubuntu-main-i386/re2c_0.13.5-1build2_i386.deb.html">re2c_0.13.5-1build2_i386.deb</a><span>tool for generating fast C-based recognizers</span></li>
+</ul>
+
+</div>
+
+
+<div data-id="153" data-name="ubuntu-14.04" class="ui-accordion-header distro distro_9">Ubuntu 14.04 LTS</div>
+<div class="ui-accordion-content">
+
+<div class="repo">Ubuntu Main:</div>
+<ul class="level2">
+<li><a href="/ubuntu-14.04/ubuntu-main-amd64/re2c_0.13.5-1build2_amd64.deb.html">re2c_0.13.5-1build2_amd64.deb</a><span>tool for generating fast C-based recognizers</span></li>
+<li><a href="/ubuntu-14.04/ubuntu-main-i386/re2c_0.13.5-1build2_i386.deb.html">re2c_0.13.5-1build2_i386.deb</a><span>tool for generating fast C-based recognizers</span></li>
+</ul>
+
+</div>
+
+
+<div data-id="117" data-name="ubuntu-12.04" class="ui-accordion-header distro distro_9">Ubuntu 12.04 LTS</div>
+<div class="ui-accordion-content">
+
+<div class="repo">Ubuntu Main:</div>
+<ul class="level2">
+<li><a href="/ubuntu-12.04/ubuntu-main-amd64/re2c_0.13.5-1build1_amd64.deb.html">re2c_0.13.5-1build1_amd64.deb</a><span>tool for generating fast C-based recognizers</span></li>
+<li><a href="/ubuntu-12.04/ubuntu-main-i386/re2c_0.13.5-1build1_i386.deb.html">re2c_0.13.5-1build1_i386.deb</a><span>tool for generating fast C-based recognizers</span></li>
+</ul>
+
+</div>
+
+
+</div>
+
+<div class="ad_links_bottom2">
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<ins class="adsbygoogle"
+	 style="display:inline-block;width:728px;height:15px"
+	 data-ad-client="ca-pub-0394386064396881"
+	 data-ad-slot="7665113464"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</div>
+
+
+</section>
+</div>
+
+
+<footer>
+	<div id="copy">&copy;2009-2015 - Linux Packages Search</div>
+	<a href="/about/">About</a> 
+	<a href="/contacts/">Contact</a> 
+	<a href="/advertise/">Advertise</a>  
+	<a href="/thanks/">Thanks</a>
+</footer>
+
+
+<script type="text/javascript" src="/static/scripts/common.js?ver=81"></script>
+<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.11.2/jquery-ui.min.js"></script>
+<script type="text/javascript" src="/static/scripts/jquery-cookie.js"></script>
+<script type="text/javascript">page_init();</script>
+<script type="text/javascript">pkgs_show_init();</script>
+<script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-539ea15a71f32d24"></script>
+<script type="text/javascript">google_analytics();</script>
+
+
+</body>
+</html>
+
+réqóæ      VDÖKVDÖM;Ì
+å       :http://pkgs.org/download/re2c necko:classified 1 request-method GET request-Accept-Encoding gzip, deflate response-head HTTP/1.1 200 OK
+Server: nginx
+Date: Thu, 12 Nov 2015 18:11:23 GMT
+Content-Type: text/html; charset=UTF-8
+Vary: Accept-Encoding
+X-Cache: MISS from wwwcache2-dl-cache, MISS from wwwcache2-dl-icap
+Via: 1.1 wwwcache2-dl-cache (squid/3.3.10), 1.1 wwwcache2-dl-icap (squid/3.3.10)
+ charset UTF-8 uncompressed-len 0 predictor::resource-count 23 predictor::http://pkgs.org/static/base.css?ver=25 1,1,1447351883,0 predictor::http://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js 1,1,1447351883,0 predictor::http://pkgs.org/static/scripts/common.js?ver=81 1,1,1447351883,0 predictor::http://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js 1,1,1447351883,0 predictor::http://ajax.googleapis.com/ajax/libs/jqueryui/1.11.2/jquery-ui.min.js 1,1,1447351883,0 predictor::http://pkgs.org/static/scripts/jquery-cookie.js 1,1,1447351883,0 predictor::http://s7.addthis.com/js/300/addthis_widget.js#pubid=ra-539ea15a71f32d24 1,1,1447351883,0 predictor::https://pagead2.googlesyndication.com/pub-config/ca-pub-0394386064396881.js 1,1,1447351883,0 predictor::http://pagead2.googlesyndication.com/pagead/js/r20151110/r20151006/show_ads_impl.js 1,1,1447351883,0 predictor::http://pagead2.googlesyndication.com/pagead/gen_204?id=canonical_url&ourl=http%3A%2F%2Fpkgs.org%2Fdownload%2Fre2c&corr=8247421382144&adk=3830249063&curl=missing 1,1,1447351883,0 predictor::https://pagead2.googlesyndication.com/pagead/js/r20151110/r20151006/expansion_embed.js 1,1,1447351883,0 predictor::https://pagead2.googlesyndication.com/pagead/osd.js 1,1,1447351883,0 predictor::http://www.google-analytics.com/analytics.js 1,1,1447351883,0 predictor::http://s7.addthis.com/static/menu.e3557b028b0f35d79e37.js 1,1,1447351883,0 predictor::http://s7.addthis.com/static/hi-res-css.b682784ccc4edc880e48.js 1,1,1447351883,0 predictor::http://www.google-analytics.com/r/collect?v=1&_v=j40&a=674340431&t=pageview&_s=1&dl=http%3A%2F%2Fpkgs.org%2Fdownload%2Fre2c&dr=https%3A%2F%2Fwww.google.co.uk&ul=en-gb&de=UTF-8&dt=re2c%20Download%20(DEB%2C%20RPM%2C%20TGZ%2C%20TXZ%2C%20XZ)&sd=24-bit&sr=1280x1024&vp=1191x680&je=0&_u=AAgAAAABI~&jid=1628017394&cid=977520672.1447351884&tid=UA-15981194-22&_r=1&z=1034508403 1,1,1447351883,0 predictor::http://s7.addthis.com/static/layers.96314b8cfc4d7ee86850.js 1,1,1447351883,0 predictor::http://apis.google.com/js/plusone.js 1,1,1447351883,0 predictor::https://connect.facebook.net/en_US/sdk.js&version=v2.0 1,1,1447351883,0 predictor::http://s7.addthis.com/static/counter.5482ab1712a3405c87fd.js 1,1,1447351883,0 predictor::http://api-public.addthis.com/url/shares.json?url=http%3A%2F%2Fpkgs.org%2F&callback=_ate.cbs.sc_httppkgsorg0 1,1,1447351883,0 predictor::https://apis.google.com/_/scs/apps-static/_/js/k=oz.gapi.en_GB.3gCEM3WeblA.O/m=plusone/rt=j/sv=1/d=1/ed=1/am=AQ/rs=AGLTcCP8ZfPHMDlbYpI5-U-qr0fejtum1w/t=zcms/cb=gapi.loaded_0 1,1,1447351883,0 predictor::https://apis.google.com/_/scs/apps-static/_/js/k=oz.gapi.en_GB.3gCEM3WeblA.O/m=auth/exm=plusone/rt=j/sv=1/d=1/ed=1/am=AQ/rs=AGLTcCP8ZfPHMDlbYpI5-U-qr0fejtum1w/t=zcms/cb=gapi.loaded_1 1,1,1447351883,0   k 

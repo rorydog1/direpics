@@ -1,0 +1,10 @@
+file elinp-iocmon.db
+{
+pattern { P                 }
+        { GEN-CS-GP08:IOC01 }
+} 
+file elinp-sysmon.db
+{
+pattern { P                 , NETIF }
+        { GEN-CS-GP08:IOC01 , eth0  }
+} 

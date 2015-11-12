@@ -1,0 +1,333 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd"><html><head>
+  <meta http-equiv='Content-type' content='text/html;charset=iso-8859-1'>
+  <meta name='description' content='EPICS Tech-talk Search'>
+  <meta name='keywords' content='EPICS,software,process control,scientific software'>
+  <title>EPICS Tech-talk Search</title>
+  <link rel='stylesheet' href='/epics/epics.css' type='text/css'>
+  <link rel='shortcut icon' type='image/x-icon' href='/epics/favicon.ico'>
+  <link rel='icon' type='image/png' href='/epics/icon.png'>
+  <link rel='publisher' href='https://plus.google.com/106275891267278800612/'>
+</head>
+<body bgcolor='#FFFFFF'>
+<table class='page' width='100%' cellspacing='0' border='0'>
+<tr>
+
+<td class='sidebar' width='10%'>
+<a href='/epics/index.php'>
+<img src='/epics/icons/logo101.gif' alt='EPICS Home' align='left' width='101' height='101' border='0'></a>
+</td>
+<td class='main'>
+<div style='display: inline-block; *display: inline; float: left;'><div style='margin: 15px 0 5px 0; text-align: center;'><a href='https://plus.google.com/106275891267278800612/?prsrc=3' style='text-decoration: none; color: #333;'><img src='/epics/icons/g-plus.png' width='32' height='32' alt='g+' style='border: 0;'></a></div><div style='font: bold 13px/16px arial,sans-serif; margin: 0 5px; text-align: center;'><a href='https://plus.google.com/106275891267278800612/?prsrc=3' style='text-decoration: none; color: #333;'> EPICS Page </a></div><div style='font: 13px/16px arial,sans-serif; text-align: center; margin: 0 5px;'><a href='https://plus.google.com/106275891267278800612/?prsrc=3' style='text-decoration: none; color: #333;'> on Google+ </a></div></div><div style='display: inline-block; *display: inline; float: left;'><div style='margin: 15px 0 5px 0; text-align: center;'><a href='https://plus.google.com/u/0/communities/113160068949106802880' style='text-decoration: none; color: #333;'><img src='/epics/icons/g-communities.png' width='32' height='32' alt='g+ Communities' style='border: 0;'></a></div><div style='font: bold 13px/16px arial,sans-serif; margin: 0 5px; text-align: center;'><a href='https://plus.google.com/u/0/communities/113160068949106802880' style='text-decoration: none; color: #333;'> EPICS Users </a></div><div style='font: 13px/16px arial,sans-serif; text-align: center;'><a href='https://plus.google.com/u/0/communities/113160068949106802880' style='text-decoration: none; color: #333;'> on Google+ </a></div></div><a href='http://www.anl.gov/'><img src='/epics/icons/ANL_H_White.png' align='right' border='0' alt='Argonne National Laboratory' width='250' height='115'></a>
+<h1 align='center'>
+Experimental Physics and <br>Industrial Control System</h1>
+</td></tr>
+
+<tr>
+<td class='sidebar' valign='top'>
+<ul id='navlist'>
+<li class='spacer'></li>
+<li><a href='/epics/index.php' title="EPICS Home at APS">Home</a></li>
+<li><a href='/epics/news.php' title="Recent news">News</a></li>
+<li><a href='/epics/about.php' title="What is EPICS anyway?">About</a></li>
+<li><a href='/epics/base/index.php' title="The core EPICS software for both IOCs and Host tools">Base</a></li>
+<li><a href='/epics/modules/index.php' title="Optional support code for IOCs - drivers etc.">Modules</a></li>
+<li><a href='/epics/extensions/index.php' title="Tools to monitor and control IOCs">Extensions</a></li>
+<li><a href='/epics/distributions/index.php' title="Code collections from base, modules, extensions &amp; elsewhere">Distributions</a></li>
+<li><a href='/epics/download/index.php' title="Software downloads">Download</a></li>
+<li><a href='http://epics-pvdata.sourceforge.net/index.html' title="EPICS Version 4 Project">EPICSv4</a></li>
+<li><a href='/epics/irmis/index.php' title="Using RDBs to model installed EPICS IOCs">IRMIS</a></li>
+<li><a href='/epics/mail.php' title="Information about our mailing lists">Talk</a>
+<ul>
+<li><a href='/epics/tech-talk/index.php' title="The main mailing list, our online support channel">Tech-Talk</a>
+<ul>
+<li><a href='https://mailman.aps.anl.gov/mailman/listinfo/tech-talk' title="Subscribing to the list">Mailman</a></li>
+<li><b>Search</b></li>
+<li><a href='/epics/tech-talk/2015/index.php' title="Browse tech-talk messages from 2015">2015</a></li>
+<li><a href='/epics/tech-talk/2014/index.php' title="Browse Tech-talk messages from 2014">2014</a></li>
+<li><a href='/epics/tech-talk/2013/index.php' title="Browse Tech-talk messages from 2013">2013</a></li>
+<li><a href='/epics/tech-talk/2012/index.php' title="Browse Tech-talk messages from 2012">2012</a></li>
+<li><a href='/epics/tech-talk/2011/index.php' title="Browse Tech-talk messages from 2011">2011</a></li>
+<li><a href='/epics/tech-talk/2010/index.php' title="Browse Tech-talk messages from 2010">2010</a></li>
+<li><a href='/epics/tech-talk/2009/index.php' title="Browse Tech-talk messages from 2009">2009</a></li>
+<li><a href='/epics/tech-talk/2008/index.php' title="Browse Tech-talk messages from 2008">2008</a></li>
+<li><a href='/epics/tech-talk/2007/index.php' title="Browse Tech-talk messages from 2007">2007</a></li>
+<li><a href='/epics/tech-talk/2006/index.php' title="Browse Tech-talk messages from 2006">2006</a></li>
+<li><a href='/epics/tech-talk/2005/index.php' title="Browse Tech-talk messages from 2005">2005</a></li>
+<li><a href='/epics/tech-talk/2004/index.php' title="Browse Tech-talk messages from 2004">2004</a></li>
+<li><a href='/epics/tech-talk/2003/index.php' title="Browse Tech-talk messages from 2003">2003</a></li>
+<li><a href='/epics/tech-talk/2002/index.php' title="Browse Tech-talk messages from 2002">2002</a></li>
+<li><a href='/epics/tech-talk/2001/index.php' title="Browse Tech-talk messages from 2001">2001</a></li>
+<li><a href='/epics/tech-talk/2000/index.php' title="Browse Tech-talk messages from 2000">2000</a></li>
+<li><a href='/epics/tech-talk/1999/index.php' title="Browse Tech-talk messages from 1999">1999</a></li>
+<li><a href='/epics/tech-talk/1998/index.php' title="Browse Tech-talk messages from 1998">1998</a></li>
+<li><a href='/epics/tech-talk/1997/index.php' title="Browse Tech-talk messages from 1997">1997</a></li>
+<li><a href='/epics/tech-talk/1996/index.php' title="Browse Tech-talk messages from 1996">1996</a></li>
+<li><a href='/epics/tech-talk/1995/index.php' title="Browse Tech-talk messages from 1995">1995</a></li>
+<li><a href='/epics/tech-talk/1994/index.php' title="Browse Tech-talk messages from 1994">1994</a></li>
+</ul>
+</li>
+<li><a href='/epics/core-talk/index.php' title="Discussions between Base developers">Core-talk</a>
+<ul>
+<li><a href='https://mailman.aps.anl.gov/mailman/listinfo/core-talk' title="Subscribing to the list">Mailman</a></li>
+<li><a href='/epics/core-talk/search.php' title="Search the core-talk archives">Search</a></li>
+<li><a href='/epics/core-talk/2015/index.php' title="Browse core-talk messages from 2015">2015</a></li>
+</ul>
+</li>
+<li><a href='/epics/qti-talk/index.php' title="Discussions about the QT Initiative">QTi-talk</a>
+<ul>
+<li><a href='https://mailman.aps.anl.gov/mailman/listinfo/qti-talk' title="Subscribing to the list">Mailman</a></li>
+<li><a href='/epics/qti-talk/search.php' title="Search the qti-talk archives">Search</a></li>
+<li><a href='/epics/qti-talk/2015/index.php' title="Browse QTi-talk messages from 2015">2015</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href='https://bugs.launchpad.net/epics-base' title="The Launchpad bug tracker for epics-base">Bugs</a></li>
+<li><a href='/epics/docs/index.php' title="Text not related to a specific release or package">Documents</a></li>
+<li><a href='/epics/links.php' title="Related web-sites">Links</a></li>
+<li><a href='/epics/license/index.php' title="EPICS Software Licensing">Licensing</a></li>
+<li class='spacer'></li>
+</ul>
+<p align='center'>
+<a href='/epics/tech-talk/search.php?format=printer'>
+Format page<br>
+for printing</a></p>
+
+<form method="get" action="http://www.google.com/custom"><table align="center"
+bgcolor="#FFFFFF" cellspacing="0" border="0"><tr><td align="center"><a
+href="http://www.google.com/"><label for="q"><img border="0" alt="Google"
+src="/epics/icons/Google25.gif"  align="middle"></label></a><br><input
+type="text" name="q" id="q" size="10" maxlength="255" value=""></td></tr>
+</table><input type="hidden" name="cof"
+value="S:http://www.aps.anl.gov/epics;GL:0;VLC:#9f0000;AH:center;BGC:white;LH:115;LC:#00009f;L:http://www.aps.anl.gov/epics/icons/header.png;ALC:#009f00;LW:750;T:black;AWFID:e3f314152c5d8667;">
+<input type="hidden" name="domains" value="aps.anl.gov"><input type="hidden"
+name="sitesearch" value="aps.anl.gov"> </form>
+<br>
+<form method="post" action="/epics/tech-talk/search.php">
+<table align="center" bgcolor="#FFFFFF" cellspacing="0" border="0">
+<tr><th align="center"><small>Search&nbsp;Tech-talk</small></th></tr>
+<tr><td><input type="text" name="query" size="10" value=""></td></tr>
+</table>
+</form>
+<td class='main'>
+<h2>Tech-talk Search Results</h2>
+<p>Found 141 pages for  "edm X11" (most recent first)</p>
+<ul>
+<li><a href="http://www.aps.anl.gov/epics/tech-talk/2015/msg01093.php"><b>Re: EPICS Motif applications  on the latest  RHEL (7.0)</b></a> <i>Jeong Han Lee</i></li>
+<li><a href="http://www.aps.anl.gov/epics/tech-talk/2015/msg00692.php"><b>RE: STAT=SCAN recover</b></a> <i>Mark Rivers</i></li>
+<li><a href="http://www.aps.anl.gov/epics/tech-talk/2015/msg00260.php"><b>Re: Error in EDM&#45;1&#45;12&#45;98 installation</b></a> <i>Rahul Jain</i></li>
+<li><a href="http://www.aps.anl.gov/epics/tech-talk/2015/msg00097.php"><b>Re: building edm on 64&#45;bin debian</b></a> <i>Ralph Lange</i></li>
+<li><a href="http://www.aps.anl.gov/epics/tech-talk/2015/msg00091.php"><b>Re: building edm on 64&#45;bin debian</b></a> <i>Ana Malagon</i></li>
+<li><a href="http://www.aps.anl.gov/epics/tech-talk/2015/msg00090.php"><b>RE: building edm on 64&#45;bin debian</b></a> <i>Mark Rivers</i></li>
+<li><a href="http://www.aps.anl.gov/epics/tech-talk/2015/msg00088.php"><b>building edm on 64&#45;bin debian</b></a> <i>Ana Malagon</i></li>
+<li><a href="http://www.aps.anl.gov/epics/tech-talk/2014/msg01969.php"><b>RE: edm questions</b></a> <i>Mark Rivers</i></li>
+<li><a href="http://www.aps.anl.gov/epics/tech-talk/2014/msg01950.php"><b>Re: edm questions</b></a> <i>Sinclair, John William</i></li>
+<li><a href="http://www.aps.anl.gov/epics/tech-talk/2014/msg01946.php"><b>RE: edm questions</b></a> <i>Mark Rivers</i></li>
+<li><a href="http://www.aps.anl.gov/epics/tech-talk/2014/msg01942.php"><b>RE: edm questions</b></a> <i>Linda.Pratt</i></li>
+<li><a href="http://www.aps.anl.gov/epics/tech-talk/2014/msg01934.php"><b>RE: edm questions</b></a> <i>Ibrahim Saleh</i></li>
+<li><a href="http://www.aps.anl.gov/epics/tech-talk/2014/msg01933.php"><b>Re: edm questions</b></a> <i>Bruce Hill</i></li>
+<li><a href="http://www.aps.anl.gov/epics/tech-talk/2014/msg00611.php"><b>RE: Streamdevice 2.6 autoconnection failure using drvAsynSerialPort</b></a> <i>Mazanec Tom&#xE1;&#x161;</i></li>
+<li><a href="http://www.aps.anl.gov/epics/tech-talk/2014/msg00605.php"><b>RE: Streamdevice 2.6 autoconnection failure using drvAsynSerialPort</b></a> <i>Mark Rivers</i></li>
+<li><a href="http://www.aps.anl.gov/epics/tech-talk/2014/msg00604.php"><b>RE: Streamdevice 2.6 autoconnection failure using drvAsynSerialPort</b></a> <i>Mazanec Tom&#xE1;&#x161;</i></li>
+<li><a href="http://www.aps.anl.gov/epics/tech-talk/2014/msg00603.php"><b>RE: Streamdevice 2.6 autoconnection failure using drvAsynSerialPort</b></a> <i>Mazanec Tom&#xE1;&#x161;</i></li>
+<li><a href="http://www.aps.anl.gov/epics/tech-talk/2014/msg00602.php"><b>RE: Streamdevice 2.6 autoconnection failure using drvAsynSerialPort</b></a> <i>Mark Rivers</i></li>
+<li><a href="http://www.aps.anl.gov/epics/tech-talk/2014/msg00601.php"><b>RE: Streamdevice 2.6 autoconnection failure using drvAsynSerialPort</b></a> <i>Mazanec Tom&#xE1;&#x161;</i></li>
+<li><a href="http://www.aps.anl.gov/epics/tech-talk/2014/msg00600.php"><b>Re: Streamdevice 2.6 autoconnection failure using drvAsynSerialPort</b></a> <i>Dirk Zimoch</i></li>
+<li><a href="http://www.aps.anl.gov/epics/tech-talk/2014/msg00597.php"><b>RE: Streamdevice 2.6 autoconnection failure using drvAsynSerialPort</b></a> <i>Mark Rivers</i></li>
+<li><a href="http://www.aps.anl.gov/epics/tech-talk/2014/msg00596.php"><b>RE: Streamdevice 2.6 autoconnection failure using drvAsynSerialPort</b></a> <i>Mazanec Tom&#xE1;&#x161;</i></li>
+<li><a href="http://www.aps.anl.gov/epics/tech-talk/2014/msg00588.php"><b>RE: Streamdevice 2.6 autoconnection failure using drvAsynSerialPort</b></a> <i>Mark Rivers</i></li>
+<li><a href="http://www.aps.anl.gov/epics/tech-talk/2014/msg00587.php"><b>RE: Streamdevice 2.6 autoconnection failure using drvAsynSerialPort</b></a> <i>Mazanec Tom&#xE1;&#x161;</i></li>
+<li><a href="http://www.aps.anl.gov/epics/tech-talk/2014/msg00360.php"><b>Re: newline in IOCSH_PS1 value</b></a> <i>Mark Davis</i></li>
+<li><a href="http://www.aps.anl.gov/epics/tech-talk/2014/msg00358.php"><b>RE: newline in IOCSH_PS1 value</b></a> <i>Mark Rivers</i></li>
+<li><a href="http://www.aps.anl.gov/epics/tech-talk/2013/msg00466.php"><b>RE: Area Detector</b></a> <i>Mark Rivers</i></li>
+<li><a href="http://www.aps.anl.gov/epics/tech-talk/2013/msg00465.php"><b>Re: Area Detector</b></a> <i>Zenon Szalata</i></li>
+<li><a href="http://www.aps.anl.gov/epics/tech-talk/2013/msg00463.php"><b>RE: Area Detector</b></a> <i>Mark Rivers</i></li>
+<li><a href="http://www.aps.anl.gov/epics/tech-talk/2013/msg00461.php"><b>Re: Area Detector</b></a> <i>Zenon Szalata</i></li>
+<li><a href="http://www.aps.anl.gov/epics/tech-talk/2013/msg00459.php"><b>RE: Area Detector</b></a> <i>Mark Rivers</i></li>
+<li><a href="http://www.aps.anl.gov/epics/tech-talk/2013/msg00457.php"><b>Re: Area Detector</b></a> <i>Zenon Szalata</i></li>
+<li><a href="http://www.aps.anl.gov/epics/tech-talk/2013/msg00456.php"><b>Re: Area Detector</b></a> <i>Zenon Szalata</i></li>
+<li><a href="http://www.aps.anl.gov/epics/tech-talk/2013/msg00455.php"><b>RE: Area Detector</b></a> <i>Mark Rivers</i></li>
+<li><a href="http://www.aps.anl.gov/epics/tech-talk/2013/msg00453.php"><b>Re: Area Detector</b></a> <i>Zenon Szalata</i></li>
+<li><a href="http://www.aps.anl.gov/epics/tech-talk/2013/msg00452.php"><b>RE: Area Detector</b></a> <i>Mark Rivers</i></li>
+<li><a href="http://www.aps.anl.gov/epics/tech-talk/2012/msg01780.php"><b>Re: edm and other extensions on 64&#45;bit SL machines</b></a> <i>Dirk Zimoch</i></li>
+<li><a href="http://www.aps.anl.gov/epics/tech-talk/2012/msg01727.php"><b>Re: EDM X Error on Linux</b></a> <i>Lucas Russo</i></li>
+<li><a href="http://www.aps.anl.gov/epics/tech-talk/2012/msg01723.php"><b>Re: EDM X Error on Linux</b></a> <i>John William Sinclair</i></li>
+<li><a href="http://www.aps.anl.gov/epics/tech-talk/2012/msg01696.php"><b>Re: EDM widget PV name copy on OS X</b></a> <i>Pelaia II, Tom</i></li>
+<li><a href="http://www.aps.anl.gov/epics/tech-talk/2012/msg01695.php"><b>Re: EDM widget PV name copy on OS X</b></a> <i>Eric Norum</i></li>
+<li><a href="http://www.aps.anl.gov/epics/tech-talk/2012/msg00404.php"><b>RE: QT&#45;based tools: Expressions of interest requested</b></a> <i>Elder Matias</i></li>
+<li><a href="http://www.aps.anl.gov/epics/tech-talk/2012/msg00402.php"><b>RE: QT&#45;based tools: Expressions of interest requested</b></a> <i>james.rowland</i></li>
+<li><a href="http://www.aps.anl.gov/epics/tech-talk/2012/msg00400.php"><b>RE: QT&#45;based tools: Expressions of interest requested</b></a> <i>Elder Matias</i></li>
+<li><a href="http://www.aps.anl.gov/epics/tech-talk/2012/msg00399.php"><b>Re: Using EDM on Fedora linux, font problem</b></a> <i>Miroslav Mihaylov</i></li>
+<li><a href="http://www.aps.anl.gov/epics/tech-talk/2012/msg00388.php"><b>RE: QT&#45;based tools: Expressions of interest requested</b></a> <i>Chen, Xihui</i></li>
+<li><a href="http://www.aps.anl.gov/epics/tech-talk/2012/msg00384.php"><b>Re: QT&#45;based tools: Expressions of interest requested</b></a> <i>Claude Saunders</i></li>
+<li><a href="http://www.aps.anl.gov/epics/tech-talk/2012/msg00382.php"><b>RE: QT&#45;based tools: Expressions of interest requested</b></a> <i>Hu, Yong</i></li>
+<li><a href="http://www.aps.anl.gov/epics/tech-talk/2012/msg00357.php"><b>RE: QT&#45;based tools: Expressions of interest requested</b></a> <i>james.rowland</i></li>
+<li><a href="http://www.aps.anl.gov/epics/tech-talk/2012/msg00351.php"><b>Re: QT&#45;based tools: Expressions of interest requested</b></a> <i>Faucett, John A</i></li>
+<li><a href="http://www.aps.anl.gov/epics/tech-talk/2012/msg00345.php"><b>Re: QT&#45;based tools: Expressions of interest requested</b></a> <i>Emmanuel Mayssat</i></li>
+<li><a href="http://www.aps.anl.gov/epics/tech-talk/2012/msg00333.php"><b>Re: QT&#45;based tools: Expressions of interest requested</b></a> <i>Dirk Zimoch</i></li>
+<li><a href="http://www.aps.anl.gov/epics/tech-talk/2012/msg00332.php"><b>Re: EDM Installation Error</b></a> <i>Ed Villasenor</i></li>
+<li><a href="http://www.aps.anl.gov/epics/tech-talk/2012/msg00323.php"><b>Re: QT&#45;based tools: Expressions of interest requested</b></a> <i>Jane Richards</i></li>
+<li><a href="http://www.aps.anl.gov/epics/tech-talk/2012/msg00314.php"><b>RE: QT&#45;based tools: Expressions of interest requested</b></a> <i>ian.gillingham</i></li>
+<li><a href="http://www.aps.anl.gov/epics/tech-talk/2012/msg00313.php"><b>Re: QT&#45;based tools: Expressions of interest requested</b></a> <i>Mark Davis</i></li>
+<li><a href="http://www.aps.anl.gov/epics/tech-talk/2012/msg00308.php"><b>Re: QT&#45;based tools: Expressions of interest requested</b></a> <i>Doug Murray</i></li>
+<li><a href="http://www.aps.anl.gov/epics/tech-talk/2012/msg00306.php"><b>RE: QT&#45;based tools: Expressions of interest requested</b></a> <i>Wang Xiaoqiang</i></li>
+<li><a href="http://www.aps.anl.gov/epics/tech-talk/2012/msg00305.php"><b>RE: QT&#45;based tools: Expressions of interest requested</b></a> <i>Andrew Rhyder</i></li>
+<li><a href="http://www.aps.anl.gov/epics/tech-talk/2012/msg00300.php"><b>RE: QT&#45;based tools: Expressions of interest requested</b></a> <i>Szalata, Zenon M.</i></li>
+<li><a href="http://www.aps.anl.gov/epics/tech-talk/2012/msg00297.php"><b>QT&#45;based tools: Expressions of interest requested</b></a> <i>Andrew Johnson</i></li>
+<li><a href="http://www.aps.anl.gov/epics/tech-talk/2012/msg00140.php"><b>RE: edm1&#45;12&#45;69</b></a> <i>Szalata, Zenon M.</i></li>
+<li><a href="http://www.aps.anl.gov/epics/tech-talk/2012/msg00077.php"><b>RE: problem with 64 bit build of EDM v1&#45;12&#45;68</b></a> <i>John Dobbins</i></li>
+<li><a href="http://www.aps.anl.gov/epics/tech-talk/2012/msg00076.php"><b>RE: problem with 64 bit build of EDM v1&#45;12&#45;68</b></a> <i>Mark Rivers</i></li>
+<li><a href="http://www.aps.anl.gov/epics/tech-talk/2012/msg00075.php"><b>RE: problem with 64 bit build of EDM v1&#45;12&#45;68</b></a> <i>John Dobbins</i></li>
+<li><a href="http://www.aps.anl.gov/epics/tech-talk/2012/msg00074.php"><b>problem with 64 bit build of EDM v1&#45;12&#45;68</b></a> <i>John Dobbins</i></li>
+<li><a href="http://www.aps.anl.gov/epics/tech-talk/2011/msg00863.php"><b>Channel Access not connecting</b></a> <i>Bruce Hill</i></li>
+<li><a href="http://www.aps.anl.gov/epics/tech-talk/2011/msg00575.php"><b>Re: EDM start window position</b></a> <i>emmanuel_mayssat</i></li>
+<li><a href="http://www.aps.anl.gov/epics/tech-talk/2010/msg02172.php"><b>Re: openmotif installtion problems.</b></a> <i>Noboru Yamamoto</i></li>
+<li><a href="http://www.aps.anl.gov/epics/tech-talk/2010/msg02170.php"><b>openmotif installtion problems.</b></a> <i>Saed Abu Ghannam</i></li>
+<li><a href="http://www.aps.anl.gov/epics/tech-talk/2010/msg02118.php"><b>Re: EDM installing problems on linux&#45;x86</b></a> <i>Jack</i></li>
+<li><a href="http://www.aps.anl.gov/epics/tech-talk/2010/msg02117.php"><b>Re: EDM installing problems on linux&#45;x86</b></a> <i>Hinko Kocevar</i></li>
+<li><a href="http://www.aps.anl.gov/epics/tech-talk/2010/msg02116.php"><b>EDM installing problems on linux&#45;x86</b></a> <i>Saed Abu Ghannam</i></li>
+<li><a href="http://www.aps.anl.gov/epics/tech-talk/2010/msg00993.php"><b>Re: A patch for libXpm.a (was Re: edm : TwoDProfileMonitorClass :	cropping/resizing image)</b></a> <i>Kate Feng</i></li>
+<li><a href="http://www.aps.anl.gov/epics/tech-talk/2010/msg00992.php"><b>Re: A patch for libXpm.a (was Re: edm : TwoDProfileMonitorClass :	cropping/resizing image)</b></a> <i>John William Sinclair</i></li>
+<li><a href="http://www.aps.anl.gov/epics/tech-talk/2010/msg00965.php"><b>A patch for libXpm.a (was Re: edm : TwoDProfileMonitorClass :	cropping/resizing image)</b></a> <i>Kate Feng</i></li>
+<li><a href="http://www.aps.anl.gov/epics/tech-talk/2010/msg00799.php"><b>Re: MEDM installation instructions</b></a> <i>Andrew Wagner</i></li>
+<li><a href="http://www.aps.anl.gov/epics/tech-talk/2010/msg00798.php"><b>Re: MEDM installation instructions</b></a> <i>Pelaia II, Tom</i></li>
+<li><a href="http://www.aps.anl.gov/epics/tech-talk/2010/msg00796.php"><b>Re: MEDM installation instructions</b></a> <i>Noboru Yamamoto</i></li>
+<li><a href="http://www.aps.anl.gov/epics/tech-talk/2010/msg00795.php"><b>Re: MEDM installation instructions</b></a> <i>Andrew Wagner</i></li>
+<li><a href="http://www.aps.anl.gov/epics/tech-talk/2010/msg00793.php"><b>Re: MEDM installation instructions</b></a> <i>Ralph Lange</i></li>
+<li><a href="http://www.aps.anl.gov/epics/tech-talk/2010/msg00792.php"><b>Re: MEDM installation instructions</b></a> <i>Andrew Wagner</i></li>
+<li><a href="http://www.aps.anl.gov/epics/tech-talk/2010/msg00787.php"><b>Re: MEDM installation instructions</b></a> <i>Eric Norum</i></li>
+<li><a href="http://www.aps.anl.gov/epics/tech-talk/2010/msg00211.php"><b>edm1&#45;12&#45;27 installation problem</b></a> <i>Hiren Patel</i></li>
+<li><a href="http://www.aps.anl.gov/epics/tech-talk/2010/msg00157.php"><b>Problem Installing EDM</b></a> <i>Hiren Patel</i></li>
+<li><a href="http://www.aps.anl.gov/epics/tech-talk/2010/msg00032.php"><b>Re: Odd MEDM behavior on OS&#45;X : RESOLVED</b></a> <i>Josh Stein</i></li>
+<li><a href="http://www.aps.anl.gov/epics/tech-talk/2010/msg00030.php"><b>Re: Odd MEDM behavior on OS&#45;X</b></a> <i>Noboru Yamamoto</i></li>
+<li><a href="http://www.aps.anl.gov/epics/tech-talk/2010/msg00029.php"><b>Re: Odd MEDM behavior on OS&#45;X</b></a> <i>David Dudley</i></li>
+<li><a href="http://www.aps.anl.gov/epics/tech-talk/2010/msg00026.php"><b>RE: Odd MEDM behavior on OS&#45;X</b></a> <i>Mark Rivers</i></li>
+<li><a href="http://www.aps.anl.gov/epics/tech-talk/2010/msg00025.php"><b>Re: Odd MEDM behavior on OS&#45;X</b></a> <i>Eric Norum</i></li>
+<li><a href="http://www.aps.anl.gov/epics/tech-talk/2009/msg01867.php"><b>Re: Epics in Pen drive</b></a> <i>Umashankar Panda</i></li>
+<li><a href="http://www.aps.anl.gov/epics/tech-talk/2009/msg01843.php"><b>Re: Compiling alh, MEDM on Snow Leopard (10.6.2)</b></a> <i>Pelaia II, Tom</i></li>
+<li><a href="http://www.aps.anl.gov/epics/tech-talk/2009/msg01681.php"><b>Re: edm installation problems</b></a> <i>Julio Calvo Pinto</i></li>
+<li><a href="http://www.aps.anl.gov/epics/tech-talk/2009/msg01383.php"><b>Re: alarm handler on base 3&#45;14&#45;11</b></a> <i>Patrick Thomas</i></li>
+<li><a href="http://www.aps.anl.gov/epics/tech-talk/2009/msg01382.php"><b>Re: alarm handler on base 3&#45;14&#45;11</b></a> <i>Patrick Thomas</i></li>
+<li><a href="http://www.aps.anl.gov/epics/tech-talk/2009/msg01381.php"><b>RE: alarm handler on base 3&#45;14&#45;11</b></a> <i>Mark Rivers</i></li>
+<li><a href="http://www.aps.anl.gov/epics/tech-talk/2009/msg01380.php"><b>Re: alarm handler on base 3&#45;14&#45;11</b></a> <i>Patrick Thomas</i></li>
+<li><a href="http://www.aps.anl.gov/epics/tech-talk/2009/msg01379.php"><b>RE: alarm handler on base 3&#45;14&#45;11</b></a> <i>Mark Rivers</i></li>
+<li><a href="http://www.aps.anl.gov/epics/tech-talk/2009/msg01378.php"><b>Re: alarm handler on base 3&#45;14&#45;11</b></a> <i>Patrick Thomas</i></li>
+<li><a href="http://www.aps.anl.gov/epics/tech-talk/2009/msg01377.php"><b>RE: alarm handler on base 3&#45;14&#45;11</b></a> <i>Mark Rivers</i></li>
+<li><a href="http://www.aps.anl.gov/epics/tech-talk/2009/msg01376.php"><b>Re: alarm handler on base 3&#45;14&#45;11</b></a> <i>Patrick Thomas</i></li>
+<li><a href="http://www.aps.anl.gov/epics/tech-talk/2009/msg01375.php"><b>Re: alarm handler on base 3&#45;14&#45;11</b></a> <i>Matthieu Bec</i></li>
+<li><a href="http://www.aps.anl.gov/epics/tech-talk/2009/msg01374.php"><b>Re: alarm handler on base 3&#45;14&#45;11</b></a> <i>Patrick Thomas</i></li>
+<li><a href="http://www.aps.anl.gov/epics/tech-talk/2009/msg01373.php"><b>Re: alarm handler on base 3&#45;14&#45;11</b></a> <i>Patrick Thomas</i></li>
+<li><a href="http://www.aps.anl.gov/epics/tech-talk/2009/msg01372.php"><b>Re: alarm handler on base 3&#45;14&#45;11</b></a> <i>Zhichu Chen</i></li>
+<li><a href="http://www.aps.anl.gov/epics/tech-talk/2009/msg00626.php"><b>Re: EDM fonts and greek caracters on Linux</b></a> <i>J. Lewis Muir</i></li>
+<li><a href="http://www.aps.anl.gov/epics/tech-talk/2009/msg00554.php"><b>Re: Fonts for Probe under Scientific Linux</b></a> <i>Bernd Schoeneburg</i></li>
+<li><a href="http://www.aps.anl.gov/epics/tech-talk/2009/msg00552.php"><b>RE: Fonts for Probe under Scientific Linux</b></a> <i>Kevin Anderson</i></li>
+<li><a href="http://www.aps.anl.gov/epics/tech-talk/2009/msg00432.php"><b>Difficulty with edm installation</b></a> <i>Mehta, Pratik</i></li>
+<li><a href="http://www.aps.anl.gov/epics/tech-talk/2009/msg00407.php"><b>Re: FW: edm version 1&#45;11&#45;1zl and fedora 10</b></a> <i>Brian Bevins</i></li>
+<li><a href="http://www.aps.anl.gov/epics/tech-talk/2009/msg00393.php"><b>Re: FW: edm version 1&#45;11&#45;1zl and fedora 10</b></a> <i>John Sinclair</i></li>
+<li><a href="http://www.aps.anl.gov/epics/tech-talk/2008/msg00374.php"><b>Re: edm font init failed solution</b></a> <i>Matthieu Bec</i></li>
+<li><a href="http://www.aps.anl.gov/epics/tech-talk/2008/msg00357.php"><b>Re: edm font init failed solution</b></a> <i>Emmanuel Mayssat</i></li>
+<li><a href="http://www.aps.anl.gov/epics/tech-talk/2008/msg00356.php"><b>edm font init failed solution</b></a> <i>jskinner</i></li>
+<li><a href="http://www.aps.anl.gov/epics/tech-talk/2008/msg00346.php"><b>Re: edm font file</b></a> <i>Emmanuel Mayssat</i></li>
+<li><a href="http://www.aps.anl.gov/epics/tech-talk/2008/msg00345.php"><b>Re: edm font file</b></a> <i>J. Lewis Muir</i></li>
+<li><a href="http://www.aps.anl.gov/epics/tech-talk/2008/msg00176.php"><b>EDM</b></a> <i>Szalata, Zenon M.</i></li>
+<li><a href="http://www.aps.anl.gov/epics/tech-talk/2008/msg00010.php"><b>Re: edm troubles</b></a> <i>John Sinclair</i></li>
+<li><a href="http://www.aps.anl.gov/epics/tech-talk/2007/msg01574.php"><b>Problems building edm&#45;1&#45;11&#45;0zg</b></a> <i>Cuzon Stephane</i></li>
+<li><a href="http://www.aps.anl.gov/epics/tech-talk/2007/msg01512.php"><b>Problems building edm&#45;1&#45;11&#45;0zg</b></a> <i>David Dudley</i></li>
+<li><a href="http://www.aps.anl.gov/epics/tech-talk/2007/msg01429.php"><b>Re: EDM screens not updating on Linux</b></a> <i>John Sinclair</i></li>
+<li><a href="http://www.aps.anl.gov/epics/tech-talk/2007/msg01427.php"><b>Re: EDM screens not updating on Linux</b></a> <i>Brian Bevins</i></li>
+<li><a href="http://www.aps.anl.gov/epics/tech-talk/2007/msg01271.php"><b>Re: fedora core 7 medm (was >> Re: MEDM compile &#45; update :)</b></a> <i>Noboru Yamamoto</i></li>
+<li><a href="http://www.aps.anl.gov/epics/tech-talk/2007/msg01118.php"><b>Re: adl2edl conversion and ascii input ioc</b></a> <i>Janet Anderson</i></li>
+<li><a href="http://www.aps.anl.gov/epics/tech-talk/2007/msg00859.php"><b>RE: dm2k not compiling :(</b></a> <i>Heinrich du Toit</i></li>
+<li><a href="http://www.aps.anl.gov/epics/tech-talk/2007/msg00647.php"><b>Re: medm, edm, other on fc6</b></a> <i>John Sinclair</i></li>
+<li><a href="http://www.aps.anl.gov/epics/tech-talk/2007/msg00646.php"><b>RE: medm, edm, other on fc6</b></a> <i>Adams, Billy R. (LARC-D401B)[RAYTHEON TECHNICAL SERVICES CO]</i></li>
+<li><a href="http://www.aps.anl.gov/epics/tech-talk/2007/msg00643.php"><b>Re: medm, edm, other on fc6</b></a> <i>Guy Jennings</i></li>
+<li><a href="http://www.aps.anl.gov/epics/tech-talk/2006/msg01347.php"><b>Re: Fedora Core 6 &#38; EPICS R3.14.8.2</b></a> <i>Noboru Yamamoto</i></li>
+<li><a href="http://www.aps.anl.gov/epics/tech-talk/2006/msg01325.php"><b>Re: Segment fault for edm 1&#45;11&#45;0s</b></a> <i>Ernest L. Williams Jr.</i></li>
+<li><a href="http://www.aps.anl.gov/epics/tech-talk/2006/msg01322.php"><b>Re: Segment fault for edm 1&#45;11&#45;0s</b></a> <i>Dirk Kraemer</i></li>
+<li><a href="http://www.aps.anl.gov/epics/tech-talk/2006/msg01321.php"><b>Re: Segment fault for edm 1&#45;11&#45;0s</b></a> <i>Eric Norum</i></li>
+<li><a href="http://www.aps.anl.gov/epics/tech-talk/2006/msg01038.php"><b>Re: Fedora Core 6 to drop OpenMotif</b></a> <i>Benjamin Franksen</i></li>
+<li><a href="http://www.aps.anl.gov/epics/tech-talk/2006/msg01030.php"><b>Re: Fedora Core 6 to drop OpenMotif</b></a> <i>Ernest L. Williams Jr.</i></li>
+<li><a href="http://www.aps.anl.gov/epics/tech-talk/2006/msg01027.php"><b>Re: Fedora Core 6 to drop OpenMotif</b></a> <i>Eric Norum</i></li>
+<li><a href="http://www.aps.anl.gov/epics/tech-talk/2006/msg01026.php"><b>Re: Fedora Core 6 to drop OpenMotif</b></a> <i>Pete R. Jemian</i></li>
+<li><a href="http://www.aps.anl.gov/epics/tech-talk/2006/msg01017.php"><b>Re: Fedora Core 6 to drop OpenMotif</b></a> <i>Kay-Uwe Kasemir</i></li>
+<li><a href="http://www.aps.anl.gov/epics/tech-talk/2005/msg00922.php"><b>Re: EDM on Windows + Hummingbird?</b></a> <i>Kay-Uwe Kasemir</i></li>
+<li><a href="http://www.aps.anl.gov/epics/tech-talk/2004/msg00653.php"><b>How to install edm&#45;1&#45;10&#45;1m with base&#45;3.14.6 on linux&#45;x86?</b></a> <i>Dorothea Wehler</i></li>
+<li><a href="http://www.aps.anl.gov/epics/tech-talk/2003/msg00905.php"><b>Re: about edm1&#45;9&#45;6</b></a> <i>Andy Foster</i></li>
+<li><a href="http://www.aps.anl.gov/epics/tech-talk/2003/msg00900.php"><b>about edm1&#45;9&#45;6</b></a> <i>zhaozhuo</i></li>
+</ul>
+<p>Search took 1.73 secs.</p>
+<hr>
+<blockquote>
+<form method="post">
+<table border="0"><tr>
+<td>Search tech-talk for:</td>
+<td><input type="text" name="query" value="edm X11"></td>
+</tr><tr>
+<td>Match any word:</td>
+<td><input type="checkbox" name="any" value="any"
+></td>
+</tr><tr>
+<td align="right"><input type="reset" value="Reset"></td>
+<td><input type="submit" value="Search"></td>
+</tr></table>
+</form>
+</blockquote>
+<hr><div align="center">
+Search routines based on <b>PHPSiteSearch</b>
+Version 1.7.7d<br>A script by <a href="mailto:php@warpedweb.net">David Broker</a>
+<a href="http://david.warpedweb.net/"><i>http://david.warpedweb.net/</i></a>
+</div>
+</td></tr>
+
+<tr>
+<td class='signature'>
+<a href="mailto:Andrew%20Johnson%20&lt;anj_at_aps.anl.gov&gt;">
+ANJ</a>, 14 Jan 2013</td>
+<td class='bottom'>
+<a href='http://validator.w3.org/check?uri=referer'><img src='/epics/icons/vh401.gif' alt='Valid HTML 4.01!' border='0' align='right' height='31' width='88'></a>
+&middot;
+<a href='/epics/index.php' title="EPICS Home at APS">Home</a>
+&middot;
+<a href='/epics/news.php' title="Recent news">News</a>
+&middot;
+<a href='/epics/about.php' title="What is EPICS anyway?">About</a>
+&middot;
+<a href='/epics/base/index.php' title="The core EPICS software for both IOCs and Host tools">Base</a>
+&middot;
+<a href='/epics/modules/index.php' title="Optional support code for IOCs - drivers etc.">Modules</a>
+&middot;
+<a href='/epics/extensions/index.php' title="Tools to monitor and control IOCs">Extensions</a>
+&middot;
+<a href='/epics/distributions/index.php' title="Code collections from base, modules, extensions &amp; elsewhere">Distributions</a>
+&middot;
+<a href='/epics/download/index.php' title="Software downloads">Download</a>
+&middot;
+<br>
+&middot;
+<a href='http://epics-pvdata.sourceforge.net/index.html' title="EPICS Version 4 Project">EPICSv4</a>
+&middot;
+<a href='/epics/irmis/index.php' title="Using RDBs to model installed EPICS IOCs">IRMIS</a>
+&middot;
+<a href='/epics/mail.php' title="Information about our mailing lists">Talk</a>
+&middot;
+<a href='https://bugs.launchpad.net/epics-base' title="The Launchpad bug tracker for epics-base">Bugs</a>
+&middot;
+<a href='/epics/docs/index.php' title="Text not related to a specific release or package">Documents</a>
+&middot;
+<a href='/epics/links.php' title="Related web-sites">Links</a>
+&middot;
+<a href='/epics/license/index.php' title="EPICS Software Licensing">Licensing</a>
+&middot;
+</td></tr></table>
+</body>
+</html>
+›$Ch#      VDçÐVDçÒ;Ì
+V{Åü   >~1447348128,:http://www.aps.anl.gov/epics/tech-talk/search.php necko:classified 1 request-method POST response-head HTTP/1.1 200 OK
+Date: Thu, 12 Nov 2015 19:26:08 GMT
+Server: Apache
+X-Frame-Options: SAMEORIGIN
+Last-Modified: Mon, 22 Sep 2014 15:02:26 GMT
+Content-Type: text/html; charset=iso-8859-1
+X-Cache: MISS from wwwcache2-dl-cache, MISS from wwwcache2-dl-icap
+Via: 1.1 wwwcache2-dl-cache (squid/3.3.10), 1.1 wwwcache2-dl-icap (squid/3.3.10)
+ charset windows-1252 uncompressed-len 0   v

@@ -1,0 +1,1 @@
+scrolledWAcceleratorSupport.o: ../scrolledWAcceleratorSupport.c

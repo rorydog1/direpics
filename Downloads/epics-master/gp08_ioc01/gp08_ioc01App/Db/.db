@@ -1,0 +1,96 @@
+# tpg256a.template
+# Template database for Pfeiffer TPG 256 A MaxiGuage
+# Pete Owens - 25/9/2008
+#
+# substitutions:
+# device  - device name
+# port    - serial port on IOC (steam device code ie /ty/0/1 => ty_0_1)
+# channel - channel number (1-6)
+# high    - high pressure limit
+# hihi    - hihi pressure limit
+################################################################################
+# Status
+#
+record(mbbi, "INJ-VAC-PENG-03:STA")
+{
+    field(DTYP, "stream")
+    field(INP,  "@tpg256a.proto status(1,INJ-VAC-PENG-03) ty_30_7 0")
+    field(DESC, "Status")
+    field(SCAN, "1 second")
+    field(FLNK, "INJ-VAC-PENG-03:P")
+    field(ZRST, "OK")
+    field(ONST, "Underrange")
+    field(TWST, "Overrange")
+    field(THST, "Sensor Error")
+    field(FRST, "Sensor Off")
+    field(FVST, "No Sensor")
+    field(SXST, "ID Error")
+    field(UNSV, "MAJOR")
+    field(ZRSV, "NO_ALARM")
+    field(ONSV, "MINOR")
+    field(TWSV, "MINOR")
+    field(THSV, "MAJOR")
+    field(FRSV, "MAJOR")
+    field(FVSV, "MAJOR")
+    field(SXSV, "MAJOR")
+    field(SVSV, "MAJOR")
+    field(EISV, "MAJOR")
+    field(NISV, "MAJOR")
+    field(TESV, "MAJOR")
+    field(ELSV, "MAJOR")
+    field(TVSV, "MAJOR")
+    field(TTSV, "MAJOR")
+    field(FTSV, "MAJOR")
+    field(FFSV, "MAJOR")
+}
+################################################################################
+# Pressure
+#
+record(ai, "INJ-VAC-PENG-03:P")
+{
+    field(DESC, "pressure")
+    field(EGU,  "mbar")
+#
+# for Stream Device 1 (EPICS 3.13)
+#
+#    field(DTYP, "stream")
+#    field(INP,  "@tpg256a.proto pressure(1) ty_30_7 0")
+#
+    field(FLNK, "INJ-VAC-PENG-03:PLOG")
+    field(EGU,  "mbar")
+    field(PREC, "11")
+    field(HOPR, "0.01")
+    field(LOPR, "1.0E-11")
+    field(HIHI, "5e-5")
+    field(HIGH, "5e-5")
+    field(HHSV, "MAJOR")
+    field(HSV,  "MINOR")
+    field(LSV,  "NO_ALARM")
+    field(LLSV, "NO_ALARM")
+}
+record(calc, "INJ-VAC-PENG-03:PLOG")
+{
+    field(DESC, "log Pressure")
+    field(FLNK, "INJ-VAC-PENG-03:ALARM")
+    field(EGU,  "log")
+    field(CALC, "LOG(A)")
+    field(INPA, "INJ-VAC-PENG-03:P MS")
+    field(HOPR, "3")
+    field(LOPR, "-12")
+}
+record(calc, "INJ-VAC-PENG-03:ALARM")
+{
+    field(DESC, "alarm status")
+    field(CALC, "A+B")
+    field(INPA, "INJ-VAC-PENG-03:STA MS")
+    field(INPB, "INJ-VAC-PENG-03:P MS")
+}
+record(calcout, "INJ-VAC-PENG-03:ADEL") {
+  field(DESC, "deadband")
+  field(CALC, "A/B")
+  field(OUT, "INJ-VAC-PENG-03:P.ADEL")
+  field(INPA, "INJ-VAC-PENG-03:P")
+  field(INPB, "20")
+  field(SCAN, "10 second")
+}
+################################################################################

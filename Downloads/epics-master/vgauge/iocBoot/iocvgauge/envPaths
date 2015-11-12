@@ -1,0 +1,6 @@
+epicsEnvSet("ARCH","linux-x86_64")
+epicsEnvSet("IOC","iocvgauge")
+epicsEnvSet("TOP","/home/rory/Desktop/epics/vgauge")
+epicsEnvSet("ASYN","/home/rory/Desktop/epics/extensions/src/asyn4-27")
+epicsEnvSet("STREAM","/home/rory/Desktop/epics/StreamDevice")
+epicsEnvSet("EPICS_BASE","/home/rory/Desktop/epics")

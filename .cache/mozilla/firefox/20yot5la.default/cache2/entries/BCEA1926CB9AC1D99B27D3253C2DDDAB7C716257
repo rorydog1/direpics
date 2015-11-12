@@ -1,0 +1,978 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd"><html><head>
+  <meta http-equiv='Content-type' content='text/html;charset=iso-8859-1'>
+  <meta name='description' content='EPICS Extensions Downloads'>
+  <meta name='keywords' content='EPICS,software,process control,scientific software'>
+  <title>EPICS Extensions Downloads</title>
+  <link rel='stylesheet' href='/epics/epics.css' type='text/css'>
+  <link rel='shortcut icon' type='image/x-icon' href='/epics/favicon.ico'>
+  <link rel='icon' type='image/png' href='/epics/icon.png'>
+  <link rel='publisher' href='https://plus.google.com/106275891267278800612/'>
+</head>
+<body bgcolor='#FFFFFF'>
+<table class='page' width='100%' cellspacing='0' border='0'>
+<tr>
+
+<td class='sidebar' width='10%'>
+<a href='/epics/index.php'>
+<img src='/epics/icons/logo101.gif' alt='EPICS Home' align='left' width='101' height='101' border='0'></a>
+</td>
+<td class='main'>
+<div style='display: inline-block; *display: inline; float: left;'><div style='margin: 15px 0 5px 0; text-align: center;'><a href='https://plus.google.com/106275891267278800612/?prsrc=3' style='text-decoration: none; color: #333;'><img src='/epics/icons/g-plus.png' width='32' height='32' alt='g+' style='border: 0;'></a></div><div style='font: bold 13px/16px arial,sans-serif; margin: 0 5px; text-align: center;'><a href='https://plus.google.com/106275891267278800612/?prsrc=3' style='text-decoration: none; color: #333;'> EPICS Page </a></div><div style='font: 13px/16px arial,sans-serif; text-align: center; margin: 0 5px;'><a href='https://plus.google.com/106275891267278800612/?prsrc=3' style='text-decoration: none; color: #333;'> on Google+ </a></div></div><div style='display: inline-block; *display: inline; float: left;'><div style='margin: 15px 0 5px 0; text-align: center;'><a href='https://plus.google.com/u/0/communities/113160068949106802880' style='text-decoration: none; color: #333;'><img src='/epics/icons/g-communities.png' width='32' height='32' alt='g+ Communities' style='border: 0;'></a></div><div style='font: bold 13px/16px arial,sans-serif; margin: 0 5px; text-align: center;'><a href='https://plus.google.com/u/0/communities/113160068949106802880' style='text-decoration: none; color: #333;'> EPICS Users </a></div><div style='font: 13px/16px arial,sans-serif; text-align: center;'><a href='https://plus.google.com/u/0/communities/113160068949106802880' style='text-decoration: none; color: #333;'> on Google+ </a></div></div><a href='http://www.anl.gov/'><img src='/epics/icons/ANL_H_White.png' align='right' border='0' alt='Argonne National Laboratory' width='250' height='115'></a>
+<h1 align='center'>
+Experimental Physics and <br>Industrial Control System</h1>
+</td></tr>
+
+<tr>
+<td class='sidebar' valign='top'>
+<ul id='navlist'>
+<li class='spacer'></li>
+<li><a href='/epics/index.php' title="EPICS Home at APS">Home</a></li>
+<li><a href='/epics/news.php' title="Recent news">News</a></li>
+<li><a href='/epics/about.php' title="What is EPICS anyway?">About</a></li>
+<li><a href='/epics/base/index.php' title="The core EPICS software for both IOCs and Host tools">Base</a></li>
+<li><a href='/epics/modules/index.php' title="Optional support code for IOCs - drivers etc.">Modules</a></li>
+<li><a href='/epics/extensions/index.php' title="Tools to monitor and control IOCs">Extensions</a></li>
+<li><a href='/epics/distributions/index.php' title="Code collections from base, modules, extensions &amp; elsewhere">Distributions</a></li>
+<li><a href='/epics/download/index.php' title="Software downloads">Download</a>
+<ul>
+<li><a href='/epics/download/base/index.php' title="EPICS Base">Base</a></li>
+<li><a href='/epics/download/modules/index.php' title="IOC Support Modules">Modules</a></li>
+<li><b>Extensions</b></li>
+<li><a href='/epics/download/distributions/index.php' title="Software collections">Distributions</a></li>
+<li><a href='/epics/download/examples/index.php' title="Sample &amp; demo IOC Applications">Examples</a></li>
+<li><a href='/cgi-bin/epics/cvsweb/' title="CVSWeb access to the EPICS repository">Browse CVS</a></li>
+</ul>
+</li>
+<li><a href='http://epics-pvdata.sourceforge.net/index.html' title="EPICS Version 4 Project">EPICSv4</a></li>
+<li><a href='/epics/irmis/index.php' title="Using RDBs to model installed EPICS IOCs">IRMIS</a></li>
+<li><a href='/epics/mail.php' title="Information about our mailing lists">Talk</a></li>
+<li><a href='https://bugs.launchpad.net/epics-base' title="The Launchpad bug tracker for epics-base">Bugs</a></li>
+<li><a href='/epics/docs/index.php' title="Text not related to a specific release or package">Documents</a></li>
+<li><a href='/epics/links.php' title="Related web-sites">Links</a></li>
+<li><a href='/epics/license/index.php' title="EPICS Software Licensing">Licensing</a></li>
+<li class='spacer'></li>
+</ul>
+<p align='center'>
+<a href='/epics/download/extensions/index.php?format=printer'>
+Format page<br>
+for printing</a></p>
+
+<form method="get" action="http://www.google.com/custom"><table align="center"
+bgcolor="#FFFFFF" cellspacing="0" border="0"><tr><td align="center"><a
+href="http://www.google.com/"><label for="q"><img border="0" alt="Google"
+src="/epics/icons/Google25.gif"  align="middle"></label></a><br><input
+type="text" name="q" id="q" size="10" maxlength="255" value=""></td></tr>
+</table><input type="hidden" name="cof"
+value="S:http://www.aps.anl.gov/epics;GL:0;VLC:#9f0000;AH:center;BGC:white;LH:115;LC:#00009f;L:http://www.aps.anl.gov/epics/icons/header.png;ALC:#009f00;LW:750;T:black;AWFID:e3f314152c5d8667;">
+<input type="hidden" name="domains" value="aps.anl.gov"><input type="hidden"
+name="sitesearch" value="aps.anl.gov"> </form>
+<br>
+<form method="post" action="/epics/tech-talk/search.php">
+<table align="center" bgcolor="#FFFFFF" cellspacing="0" border="0">
+<tr><th align="center"><small>Search&nbsp;Tech-talk</small></th></tr>
+<tr><td><input type="text" name="query" size="10" value=""></td></tr>
+</table>
+</form>
+<td class='main'>
+
+<h2>
+EPICS Extensions Downloads</h2>
+
+<p>
+This page contains pointers to the various EPICS Extensions which are
+distributed by APS under the terms of the
+<a href="/epics/license/open.php">EPICS Open license</a>.</p>
+
+<ul>
+
+<li>
+<a href="#releases">
+Point Releases</a></li>
+
+<li>
+<a href="#cvs">
+CVS Snapshots</a></li>
+
+</ul>
+
+
+<hr>
+
+<h3>
+<a name="releases">
+Point Releases</a></h3>
+
+<p>
+The following releases of individual EPICS Extensions are available for
+download. These are tar files containing purely source code, and have been
+compressed with gnuzip.  For documentation, see the relevent page in the
+<a href="/epics/extensions/index.php">Extensions</a> section of this
+website.  That page also gives links to extensions provided by other EPICS
+sites which are not available from APS.</p>
+
+<p>
+
+<b>Note:</b> This list might not contain all the extensions files that the APS
+makes available, and normally only lists one or two versions of each particular
+extension. Check the web page for the specific extension you're interested in as
+the author may have uploaded a new version and changed that page without asking
+for this list to be updated.</p>
+
+<blockquote>
+<table border="1">
+<tr>
+<th>Extension<br>Name</th>
+<th>Version<br>or Date</th>
+<th>File<br>Size</th>
+<th>Click to<br>Download</th>
+</tr>
+<tr>
+<td>Extensions Config files (R3.13)</td>
+<td>2004/04/06</td>
+<td align='right'>7 KB</td>
+<td><a href='extensionsConfig_20040406.tar.gz'>extensionsConfig_20040406.tar.gz</a></td>
+</tr>
+
+<tr>
+<td>Extensions Configure files (R3.14)</td>
+<td>2007/07/03</td>
+<td align='right'>6 KB</td>
+<td><a href='extensionsConfigure_20070703.tar.gz'>extensionsConfigure_20070703.tar.gz</a></td>
+</tr>
+
+<tr>
+<td>Extensions Top (R3.14)</td>
+<td>2007/07/03</td>
+<td align='right'>10 KB</td>
+<td><a href='extensionsTop_20070703.tar.gz'>extensionsTop_20070703.tar.gz</a></td>
+</tr>
+
+<tr>
+<td>Extensions Top (R3.14)</td>
+<td>2012/09/04</td>
+<td align='right'>12 KB</td>
+<td><a href='extensionsTop_20120904.tar.gz'>extensionsTop_20120904.tar.gz</a></td>
+</tr>
+
+<tr>
+<td>Array Display Tool</td>
+<td>1.5.6.0</td>
+<td align='right'>168 KB</td>
+<td><a href='adt1_5_6_0.tar.gz'>adt1_5_6_0.tar.gz</a></td>
+</tr>
+
+<tr>
+<td>Alarm Handler</td>
+<td>1.2.35</td>
+<td align='right'>487 KB</td>
+<td><a href='alh1_2_35.tar.gz'>alh1_2_35.tar.gz</a></td>
+</tr>
+
+<tr>
+<td>Archiver</td>
+<td>2007/07/03</td>
+<td align='right'>549 KB</td>
+<td><a href='ar_20070703.tar.gz'>ar_20070703.tar.gz</a></td>
+</tr>
+
+<tr>
+<td>Beam Util</td>
+<td>2007/06/22</td>
+<td align='right'>4 KB</td>
+<td><a href='beamUtil_20070622.tar.gz'>beamUtil_20070622.tar.gz</a></td>
+</tr>
+
+<tr>
+<td>Backup and Restore Tool</td>
+<td>2015/05/11</td>
+<td align='right'>753 KB</td>
+<td><a href='burt_20150511.tar.gz'>burt_20150511.tar.gz</a></td>
+</tr>
+
+<tr>
+<td>CA Examples</td>
+<td>1.2</td>
+<td align='right'>3 KB</td>
+<td><a href='caex1_2.tar.gz'>caex1_2.tar.gz</a></td>
+</tr>
+
+<tr>
+<td>CA monitor</td>
+<td>2015/05/12</td>
+<td align='right'>9 KB</td>
+<td><a href='camonitor_20150512.tar.gz'>camonitor_20150512.tar.gz</a></td>
+</tr>
+
+<tr>
+<td>CA Object1</td>
+<td>1.0.2.0</td>
+<td align='right'>6 KB</td>
+<td><a href='caObject1_0_2_0.tar.gz'>caObject1_0_2_0.tar.gz</a></td>
+</tr>
+
+<tr>
+<td>CA Object2</td>
+<td>1.1.3.0</td>
+<td align='right'>12 KB</td>
+<td><a href='caObject2_1_1_3_0.tar.gz'>caObject2_1_1_3_0.tar.gz</a></td>
+</tr>
+
+<tr>
+<td>CA Snooper</td>
+<td>2.1.2.3</td>
+<td align='right'>24 KB</td>
+<td><a href='caSnooper2_1_2_3.tar.gz'>caSnooper2_1_2_3.tar.gz</a></td>
+</tr>
+
+<tr>
+<td>CA Save/Restore</td>
+<td>2015/05/12</td>
+<td align='right'>43 KB</td>
+<td><a href='casr_20150512.tar.gz'>casr_20150512.tar.gz</a></td>
+</tr>
+
+<tr>
+<td>CA Tcl/Tk Interface</td>
+<td>2007/06/25</td>
+<td align='right'>50 KB</td>
+<td><a href='caTCL_20070625.tar.gz'>caTCL_20070625.tar.gz</a></td>
+</tr>
+
+<tr>
+<td>CA Utility</td>
+<td>2013/01/10</td>
+<td align='right'>37 KB</td>
+<td><a href='cau_20130110.tar.gz'>cau_20130110.tar.gz</a></td>
+</tr>
+
+<tr>
+<td>Condition</td>
+<td>2007/06/22</td>
+<td align='right'>7 KB</td>
+<td><a href='condition_20070622.tar.gz'>condition_20070622.tar.gz</a></td>
+</tr>
+
+<tr>
+<td>DA Library</td>
+<td>2013/01/15</td>
+<td align='right'>29 KB</td>
+<td><a href='dalib_20130115.tar.gz'>dalib_20130115.tar.gz</a></td>
+</tr>
+
+<tr>
+<td>Java dbStaticLib Interface</td>
+<td>2009/10/27</td>
+<td align='right'>8 KB</td>
+<td><a href='dbStaticJava_20091027.tar.gz'>dbStaticJava_20091027.tar.gz</a></td>
+</tr>
+
+<tr>
+<td>DB Verbose</td>
+<td>2013/01/24</td>
+<td align='right'>14 KB</td>
+<td><a href='dbVerbose_20130124.tar.gz'>dbVerbose_20130124.tar.gz</a></td>
+</tr>
+
+<tr>
+<td>Database Configuration Tool</td>
+<td>2002/08/02</td>
+<td align='right'>64 KB</td>
+<td><a href='dct_20020802.tar.gz'>dct_20020802.tar.gz</a></td>
+</tr>
+
+<tr>
+<td>Java Link List class</td>
+<td>2007/06/22</td>
+<td align='right'>3 KB</td>
+<td><a href='doubleLinkList_20070622.tar.gz'>doubleLinkList_20070622.tar.gz</a></td>
+</tr>
+
+<tr>
+<td>Parameter Display Page</td>
+<td>1.1.6</td>
+<td align='right'>40 KB</td>
+<td><a href='dp1_1_6.tar.gz'>dp1_1_6.tar.gz</a></td>
+</tr>
+
+<tr>
+<td>Easy CA</td>
+<td>2015/05/12</td>
+<td align='right'>37 KB</td>
+<td><a href='ezca_20150512.tar.gz'>ezca_20150512.tar.gz</a></td>
+</tr>
+
+<tr>
+<td>EzcaScan</td>
+<td>2015/05/11</td>
+<td align='right'>19 KB</td>
+<td><a href='EzcaScan_20150511.tar.gz'>EzcaScan_20150511.tar.gz</a></td>
+</tr>
+
+<tr>
+<td>EZCA from IDL</td>
+<td>2015/05/12</td>
+<td align='right'>50 KB</td>
+<td><a href='ezcaIDL_20150512.tar.gz'>ezcaIDL_20150512.tar.gz</a></td>
+</tr>
+
+<tr>
+<td>GDCT</td>
+<td>1.3.1</td>
+<td align='right'>82 KB</td>
+<td><a href='gdct313-1-3-1.tar.gz'>gdct313-1-3-1.tar.gz</a></td>
+</tr>
+
+<tr>
+<td>GNU Regex library</td>
+<td>0.13</td>
+<td align='right'>94 KB</td>
+<td><a href='gnuregex0_13.tar.gz'>gnuregex0_13.tar.gz</a></td>
+</tr>
+
+<tr>
+<td>Histogram Tool</td>
+<td>1.0.7.0</td>
+<td align='right'>66 KB</td>
+<td><a href='histTool1_0_7_0.tar.gz'>histTool1_0_7_0.tar.gz</a></td>
+</tr>
+
+<tr>
+<td>Image Catcher</td>
+<td>1.3</td>
+<td align='right'>29 KB</td>
+<td><a href='imageCatcher1_3.tar.gz'>imageCatcher1_3.tar.gz</a></td>
+</tr>
+
+<tr>
+<td>Infrastructure Monitoring (Nagios)</td>
+<td>2010/09/27</td>
+<td align='right'>930 KB</td>
+<td><a href='IMS_EPICS_Distribution.zip'>IMS_EPICS_Distribution.zip</a></td>
+</tr>
+
+<tr>
+<td>Install Versions</td>
+<td>2015/05/12</td>
+<td align='right'>6 KB</td>
+<td><a href='installVersions_20150512.tar.gz'>installVersions_20150512.tar.gz</a></td>
+</tr>
+
+<tr>
+<td>Java Channel Access (R3.14 Makefiles)</td>
+<td>1.0beta2</td>
+<td align='right'>29 KB</td>
+<td><a href='jca_20070622.tar.gz'>jca_20070622.tar.gz</a></td>
+</tr>
+
+<tr>
+<td>Java Channel Access (Windows-x64 DLL binary)</td>
+<td>2.6.3</td>
+<td align='right'>247 KB</td>
+<td><a href='jca.zip'>jca.zip</a></td>
+</tr>
+
+<tr>
+<td>Java DCT</td>
+<td>2009/10/27</td>
+<td align='right'>44 KB</td>
+<td><a href='Jdct_20091027.tar.gz'>Jdct_20091027.tar.gz</a></td>
+</tr>
+
+<tr>
+<td>Java Probe</td>
+<td>1.3</td>
+<td align='right'>13 KB</td>
+<td><a href='jprobe1_3.tar.gz'>jprobe1_3.tar.gz</a></td>
+</tr>
+
+<tr>
+<td>Jefferson Lab Plotting Toolkit</td>
+<td>2.0.0.1</td>
+<td align='right'>111 KB</td>
+<td><a href='jpt2_0_0_1.tar.gz'>jpt2_0_0_1.tar.gz</a></td>
+</tr>
+
+<tr>
+<td>Knob Manager</td>
+<td>1.0.10</td>
+<td align='right'>62 KB</td>
+<td><a href='km1_0_10.tar.gz'>km1_0_10.tar.gz</a></td>
+</tr>
+
+<tr>
+<td>Knob Config</td>
+<td>2007/06/25</td>
+<td align='right'>6 KB</td>
+<td><a href='knobconfig_20070625.tar.gz'>knobconfig_20070625.tar.gz</a></td>
+</tr>
+
+<tr>
+<td>MEDM</td>
+<td>3.1.9</td>
+<td align='right'>1441 KB</td>
+<td><a href='medm3_1_9.tar.gz'>medm3_1_9.tar.gz</a></td>
+</tr>
+
+<tr>
+<td>Motif Button</td>
+<td>2015/05/12</td>
+<td align='right'>4 KB</td>
+<td><a href='motifButton_20150512.tar.gz'>motifButton_20150512.tar.gz</a></td>
+</tr>
+
+<tr>
+<td>Macro Substitution Tool</td>
+<td>1.7</td>
+<td align='right'>11 KB</td>
+<td><a href='msi1-7.tar.gz'>msi1-7.tar.gz</a></td>
+</tr>
+
+<tr>
+<td>Namecapture</td>
+<td>1.7.4.0</td>
+<td align='right'>10 KB</td>
+<td><a href='namecapture1_7_4_0.tar.gz'>namecapture1_7_4_0.tar.gz</a></td>
+</tr>
+
+<tr>
+<td>Nameserver</td>
+<td>2.0.0.14</td>
+<td align='right'>41 KB</td>
+<td><a href='nameserver2_0_0_14.tar.gz'>nameserver2_0_0_14.tar.gz</a></td>
+</tr>
+
+<tr>
+<td>OAG CA</td>
+<td>1.2</td>
+<td align='right'>15 KB</td>
+<td><a href='oagca1_2.tar.gz'>oagca1_2.tar.gz</a></td>
+</tr>
+
+<tr>
+<td>ParseCASW</td>
+<td>1.0.3.0</td>
+<td align='right'>15 KB</td>
+<td><a href='parsecasw-1-0-3-0.tar.gz'>parsecasw-1-0-3-0.tar.gz</a></td>
+</tr>
+
+<tr>
+<td>Popup</td>
+<td>2013/01/10</td>
+<td align='right'>3 KB</td>
+<td><a href='popup_20130110.tar.gz'>popup_20130110.tar.gz</a></td>
+</tr>
+
+<tr>
+<td>Probe</td>
+<td>1.1.8.0</td>
+<td align='right'>25 KB</td>
+<td><a href='probe1_1_8_0.tar.gz'>probe1_1_8_0.tar.gz</a></td>
+</tr>
+
+<tr>
+<td>Rampload</td>
+<td>1.5.4</td>
+<td align='right'>10 KB</td>
+<td><a href='rampload_1_5_4.tar.gz'>rampload_1_5_4.tar.gz</a></td>
+</tr>
+
+<tr>
+<td>ScanSee in IDL</td>
+<td>2015/05/12</td>
+<td align='right'>11036 KB</td>
+<td><a href='idl_20150512.tar.gz'>idl_20150512.tar.gz</a></td>
+</tr>
+
+<tr>
+<td>Scope Util</td>
+<td>2013/01/25</td>
+<td align='right'>10 KB</td>
+<td><a href='scopeutil_20130125.tar.gz'>scopeutil_20130125.tar.gz</a></td>
+</tr>
+
+<tr>
+<td>SDDS Interface to IDL</td>
+<td>2014/07/11</td>
+<td align='right'>281 KB</td>
+<td><a href='sddsIDL_20140711.tar.gz'>sddsIDL_20140711.tar.gz</a></td>
+</tr>
+
+<tr>
+<td>Simple GIF Animator</td>
+<td>1.3.5.1</td>
+<td align='right'>111 KB</td>
+<td><a href='sga1_3_5_1.tar.gz'>sga1_3_5_1.tar.gz</a></td>
+</tr>
+
+<tr>
+<td>StripTool</td>
+<td>2.5.16.0</td>
+<td align='right'>263 KB</td>
+<td><a href='StripTool2_5_16_0.tar.gz'>StripTool2_5_16_0.tar.gz</a></td>
+</tr>
+
+<tr>
+<td>R3.13 Timestamp Library</td>
+<td>2007/07/03</td>
+<td align='right'>15 KB</td>
+<td><a href='ts_20070703.tar.gz'>ts_20070703.tar.gz</a></td>
+</tr>
+
+<tr>
+<td>View Image</td>
+<td>1.3.10</td>
+<td align='right'>28 KB</td>
+<td><a href='viewImage1_3_10.tar.gz'>viewImage1_3_10.tar.gz</a></td>
+</tr>
+
+</table>
+</blockquote>
+
+
+<hr>
+
+<h3>
+<a name="cvs">
+CVS Snapshots</a></h3>
+
+<p>
+The above extensions packages are maintained in the EPICS CVS repository at
+APS. In addition to the point releases above, you can also download the latest
+version of the source that has been committed to CVS. The following gzipped tar
+files are created shortly after midnight Chicago (Central US) time whenever any
+change has been committed to the CVS repository, thus they should never be more
+than 24 hours behind the latest development version of the extension concerned.
+If a creation date is several days or even weeks old, that means that nothing
+has been checked into that CVS branch between that date and midnight in Chicago
+last night.</p>
+
+<p>
+<b>There is no guarantee that any particular CVS snapshot will even compile,
+let alone run properly.  Do not rely on these extension versions</b>, although
+in many cases they should work properly and may contain the latest bug fixes
+that will be found in the next official release.</p>
+
+<blockquote>
+<table border="1">
+<tr>
+<th>Extension<br>Name</th>
+<th>Creation<br>Date</th>
+<th>File<br>Size</th>
+<th>Click to<br>Download</th>
+</tr>
+<tr>
+<td>Extensions Config files (R3.13)</td>
+<td>Thu, 26th Feb 2015</td>
+<td align='right'>8 KB</td>
+<td><a href='extensionsConfig_cvs.tar.gz'>extensionsConfig_cvs.tar.gz</a></td>
+</tr>
+
+<tr>
+<td>Extensions Configure files (R3.14)</td>
+<td>Wed, 11th Mar 2015</td>
+<td align='right'>9 KB</td>
+<td><a href='extensionsConfigure_cvs.tar.gz'>extensionsConfigure_cvs.tar.gz</a></td>
+</tr>
+
+<tr>
+<td>Array Display Tool</td>
+<td>Thu, 26th Feb 2015</td>
+<td align='right'>174 KB</td>
+<td><a href='adt_cvs.tar.gz'>adt_cvs.tar.gz</a></td>
+</tr>
+
+<tr>
+<td>Alarm Handler</td>
+<td>Thu, 26th Feb 2015</td>
+<td align='right'>494 KB</td>
+<td><a href='alh_cvs.tar.gz'>alh_cvs.tar.gz</a></td>
+</tr>
+
+<tr>
+<td>Archiver</td>
+<td>Thu, 26th Feb 2015</td>
+<td align='right'>733 KB</td>
+<td><a href='ar_cvs.tar.gz'>ar_cvs.tar.gz</a></td>
+</tr>
+
+<tr>
+<td>Beam Util</td>
+<td>Thu, 26th Feb 2015</td>
+<td align='right'>4 KB</td>
+<td><a href='beamUtil_cvs.tar.gz'>beamUtil_cvs.tar.gz</a></td>
+</tr>
+
+<tr>
+<td>Backup and Restore Tool</td>
+<td>Tue, 12th May 2015</td>
+<td align='right'>761 KB</td>
+<td><a href='burt_cvs.tar.gz'>burt_cvs.tar.gz</a></td>
+</tr>
+
+<tr>
+<td>CA Tcl/Tk Interface</td>
+<td>Thu, 26th Feb 2015</td>
+<td align='right'>49 KB</td>
+<td><a href='caTCL_cvs.tar.gz'>caTCL_cvs.tar.gz</a></td>
+</tr>
+
+<tr>
+<td>CA Examples</td>
+<td>Thu, 26th Feb 2015</td>
+<td align='right'>3 KB</td>
+<td><a href='caex_cvs.tar.gz'>caex_cvs.tar.gz</a></td>
+</tr>
+
+<tr>
+<td>CA Monitor</td>
+<td>Wed, 13th May 2015</td>
+<td align='right'>9 KB</td>
+<td><a href='camonitor_cvs.tar.gz'>camonitor_cvs.tar.gz</a></td>
+</tr>
+
+<tr>
+<td>CA Save/Restore</td>
+<td>Wed, 13th May 2015</td>
+<td align='right'>43 KB</td>
+<td><a href='casr_cvs.tar.gz'>casr_cvs.tar.gz</a></td>
+</tr>
+
+<tr>
+<td>CA Snooper</td>
+<td>Thu, 26th Feb 2015</td>
+<td align='right'>26 KB</td>
+<td><a href='caSnooper_cvs.tar.gz'>caSnooper_cvs.tar.gz</a></td>
+</tr>
+
+<tr>
+<td>CA Utility</td>
+<td>Thu, 26th Feb 2015</td>
+<td align='right'>37 KB</td>
+<td><a href='cau_cvs.tar.gz'>cau_cvs.tar.gz</a></td>
+</tr>
+
+<tr>
+<td>Condition</td>
+<td>Thu, 26th Feb 2015</td>
+<td align='right'>8 KB</td>
+<td><a href='condition_cvs.tar.gz'>condition_cvs.tar.gz</a></td>
+</tr>
+
+<tr>
+<td>DA Library</td>
+<td>Thu, 26th Feb 2015</td>
+<td align='right'>31 KB</td>
+<td><a href='dalib_cvs.tar.gz'>dalib_cvs.tar.gz</a></td>
+</tr>
+
+<tr>
+<td>Java dbStaticLib Interface</td>
+<td>Thu, 26th Feb 2015</td>
+<td align='right'>8 KB</td>
+<td><a href='dbStaticJava_cvs.tar.gz'>dbStaticJava_cvs.tar.gz</a></td>
+</tr>
+
+<tr>
+<td>DB Verbose</td>
+<td>Thu, 26th Feb 2015</td>
+<td align='right'>14 KB</td>
+<td><a href='dbVerbose_cvs.tar.gz'>dbVerbose_cvs.tar.gz</a></td>
+</tr>
+
+<tr>
+<td>Database Configuration Tool</td>
+<td>Thu, 26th Feb 2015</td>
+<td align='right'>65 KB</td>
+<td><a href='dct_cvs.tar.gz'>dct_cvs.tar.gz</a></td>
+</tr>
+
+<tr>
+<td>Java Link List class</td>
+<td>Thu, 26th Feb 2015</td>
+<td align='right'>3 KB</td>
+<td><a href='doubleLinkList_cvs.tar.gz'>doubleLinkList_cvs.tar.gz</a></td>
+</tr>
+
+<tr>
+<td>Parameter Display Page</td>
+<td>Tue, 12th May 2015</td>
+<td align='right'>40 KB</td>
+<td><a href='dp_cvs.tar.gz'>dp_cvs.tar.gz</a></td>
+</tr>
+
+<tr>
+<td>Easy CA</td>
+<td>Thu, 26th Feb 2015</td>
+<td align='right'>36 KB</td>
+<td><a href='ezca_cvs.tar.gz'>ezca_cvs.tar.gz</a></td>
+</tr>
+
+<tr>
+<td>Easy CA IDL</td>
+<td>Thu, 26th Feb 2015</td>
+<td align='right'>51 KB</td>
+<td><a href='ezcaIDL_cvs.tar.gz'>ezcaIDL_cvs.tar.gz</a></td>
+</tr>
+
+<tr>
+<td>Easy CA Scan</td>
+<td>Tue, 12th May 2015</td>
+<td align='right'>21 KB</td>
+<td><a href='EzcaScan_cvs.tar.gz'>EzcaScan_cvs.tar.gz</a></td>
+</tr>
+
+<tr>
+<td>GDCT</td>
+<td>Thu, 26th Feb 2015</td>
+<td align='right'>82 KB</td>
+<td><a href='gdct313_cvs.tar.gz'>gdct313_cvs.tar.gz</a></td>
+</tr>
+
+<tr>
+<td>Histogram Tool</td>
+<td>Thu, 26th Feb 2015</td>
+<td align='right'>66 KB</td>
+<td><a href='histTool_cvs.tar.gz'>histTool_cvs.tar.gz</a></td>
+</tr>
+
+<tr>
+<td>Image Catcher</td>
+<td>Thu, 26th Feb 2015</td>
+<td align='right'>29 KB</td>
+<td><a href='imageCatcher_cvs.tar.gz'>imageCatcher_cvs.tar.gz</a></td>
+</tr>
+
+<tr>
+<td>Install Versions</td>
+<td>Thu, 26th Feb 2015</td>
+<td align='right'>6 KB</td>
+<td><a href='installVersions_cvs.tar.gz'>installVersions_cvs.tar.gz</a></td>
+</tr>
+
+<tr>
+<td>Java Channel Access</td>
+<td>Thu, 26th Feb 2015</td>
+<td align='right'>30 KB</td>
+<td><a href='jca_cvs.tar.gz'>jca_cvs.tar.gz</a></td>
+</tr>
+
+<tr>
+<td>Java Channel Access 2</td>
+<td>Thu, 26th Feb 2015</td>
+<td align='right'>60 KB</td>
+<td><a href='jca2_cvs.tar.gz'>jca2_cvs.tar.gz</a></td>
+</tr>
+
+<tr>
+<td>Java DCT</td>
+<td>Thu, 26th Feb 2015</td>
+<td align='right'>44 KB</td>
+<td><a href='Jdct_cvs.tar.gz'>Jdct_cvs.tar.gz</a></td>
+</tr>
+
+<tr>
+<td>Java Probe</td>
+<td>Thu, 26th Feb 2015</td>
+<td align='right'>13 KB</td>
+<td><a href='jprobe_cvs.tar.gz'>jprobe_cvs.tar.gz</a></td>
+</tr>
+
+<tr>
+<td>Jefferson Lab Plotting Toolkit</td>
+<td>Thu, 26th Feb 2015</td>
+<td align='right'>111 KB</td>
+<td><a href='jpt_cvs.tar.gz'>jpt_cvs.tar.gz</a></td>
+</tr>
+
+<tr>
+<td>Knob Manager</td>
+<td>Thu, 26th Feb 2015</td>
+<td align='right'>62 KB</td>
+<td><a href='km_cvs.tar.gz'>km_cvs.tar.gz</a></td>
+</tr>
+
+<tr>
+<td>Knob Config</td>
+<td>Thu, 26th Feb 2015</td>
+<td align='right'>6 KB</td>
+<td><a href='knobconfig_cvs.tar.gz'>knobconfig_cvs.tar.gz</a></td>
+</tr>
+
+<tr>
+<td>MEDM</td>
+<td>Thu, 26th Feb 2015</td>
+<td align='right'>1507 KB</td>
+<td><a href='medm_cvs.tar.gz'>medm_cvs.tar.gz</a></td>
+</tr>
+
+<tr>
+<td>Motif Button</td>
+<td>Tue, 12th May 2015</td>
+<td align='right'>4 KB</td>
+<td><a href='motifButton_cvs.tar.gz'>motifButton_cvs.tar.gz</a></td>
+</tr>
+
+<tr>
+<td>Macro Substitution Tool</td>
+<td>Thu, 26th Feb 2015</td>
+<td align='right'>11 KB</td>
+<td><a href='msi_cvs.tar.gz'>msi_cvs.tar.gz</a></td>
+</tr>
+
+<tr>
+<td>Namecapture</td>
+<td>Thu, 26th Feb 2015</td>
+<td align='right'>10 KB</td>
+<td><a href='namecapture_cvs.tar.gz'>namecapture_cvs.tar.gz</a></td>
+</tr>
+
+<tr>
+<td>OAG CA</td>
+<td>Thu, 26th Feb 2015</td>
+<td align='right'>20 KB</td>
+<td><a href='oagca_cvs.tar.gz'>oagca_cvs.tar.gz</a></td>
+</tr>
+
+<tr>
+<td>Octave</td>
+<td>Sat, 16th Aug 2008</td>
+<td align='right'>0 KB</td>
+<td><a href='Octave_cvs.tar.gz'>Octave_cvs.tar.gz</a></td>
+</tr>
+
+<tr>
+<td>ParseCASW</td>
+<td>Thu, 26th Feb 2015</td>
+<td align='right'>15 KB</td>
+<td><a href='parsecasw_cvs.tar.gz'>parsecasw_cvs.tar.gz</a></td>
+</tr>
+
+<tr>
+<td>Popup</td>
+<td>Thu, 26th Feb 2015</td>
+<td align='right'>3 KB</td>
+<td><a href='popup_cvs.tar.gz'>popup_cvs.tar.gz</a></td>
+</tr>
+
+<tr>
+<td>Probe</td>
+<td>Thu, 26th Feb 2015</td>
+<td align='right'>28 KB</td>
+<td><a href='probe_cvs.tar.gz'>probe_cvs.tar.gz</a></td>
+</tr>
+
+<tr>
+<td>Rampload</td>
+<td>Thu, 26th Feb 2015</td>
+<td align='right'>10 KB</td>
+<td><a href='rampload_cvs.tar.gz'>rampload_cvs.tar.gz</a></td>
+</tr>
+
+<tr>
+<td>ScanSee in IDL</td>
+<td>Thu, 26th Feb 2015</td>
+<td align='right'>11045 KB</td>
+<td><a href='idl_cvs.tar.gz'>idl_cvs.tar.gz</a></td>
+</tr>
+
+<tr>
+<td>Scope Util</td>
+<td>Thu, 26th Feb 2015</td>
+<td align='right'>10 KB</td>
+<td><a href='scopeutil_cvs.tar.gz'>scopeutil_cvs.tar.gz</a></td>
+</tr>
+
+<tr>
+<td>SDDS Interface to IDL</td>
+<td>Thu, 26th Feb 2015</td>
+<td align='right'>283 KB</td>
+<td><a href='sddsIDL_cvs.tar.gz'>sddsIDL_cvs.tar.gz</a></td>
+</tr>
+
+<tr>
+<td>Simple GIF Animator</td>
+<td>Thu, 26th Feb 2015</td>
+<td align='right'>107 KB</td>
+<td><a href='sga_cvs.tar.gz'>sga_cvs.tar.gz</a></td>
+</tr>
+
+<tr>
+<td>StripTool</td>
+<td>Thu, 21st May 2015</td>
+<td align='right'>274 KB</td>
+<td><a href='StripTool_cvs.tar.gz'>StripTool_cvs.tar.gz</a></td>
+</tr>
+
+<tr>
+<td>Timestamp Library</td>
+<td>Thu, 26th Feb 2015</td>
+<td align='right'>15 KB</td>
+<td><a href='ts_cvs.tar.gz'>ts_cvs.tar.gz</a></td>
+</tr>
+
+<tr>
+<td>View Image</td>
+<td>Thu, 26th Feb 2015</td>
+<td align='right'>28 KB</td>
+<td><a href='viewImage_cvs.tar.gz'>viewImage_cvs.tar.gz</a></td>
+</tr>
+
+</table>
+</blockquote>
+
+<hr>
+
+</td></tr>
+
+<tr>
+<td class='signature'>
+<a href="mailto:Andrew%20Johnson%20&lt;anj_at_aps.anl.gov&gt;">
+ANJ</a>, 12 May 2015</td>
+<td class='bottom'>
+<a href='http://validator.w3.org/check?uri=referer'><img src='/epics/icons/vh401.gif' alt='Valid HTML 4.01!' border='0' align='right' height='31' width='88'></a>
+&middot;
+<a href='/epics/index.php' title="EPICS Home at APS">Home</a>
+&middot;
+<a href='/epics/news.php' title="Recent news">News</a>
+&middot;
+<a href='/epics/about.php' title="What is EPICS anyway?">About</a>
+&middot;
+<a href='/epics/base/index.php' title="The core EPICS software for both IOCs and Host tools">Base</a>
+&middot;
+<a href='/epics/modules/index.php' title="Optional support code for IOCs - drivers etc.">Modules</a>
+&middot;
+<a href='/epics/extensions/index.php' title="Tools to monitor and control IOCs">Extensions</a>
+&middot;
+<a href='/epics/distributions/index.php' title="Code collections from base, modules, extensions &amp; elsewhere">Distributions</a>
+&middot;
+<a href='/epics/download/index.php' title="Software downloads">Download</a>
+&middot;
+<br>
+&middot;
+<a href='http://epics-pvdata.sourceforge.net/index.html' title="EPICS Version 4 Project">EPICSv4</a>
+&middot;
+<a href='/epics/irmis/index.php' title="Using RDBs to model installed EPICS IOCs">IRMIS</a>
+&middot;
+<a href='/epics/mail.php' title="Information about our mailing lists">Talk</a>
+&middot;
+<a href='https://bugs.launchpad.net/epics-base' title="The Launchpad bug tracker for epics-base">Bugs</a>
+&middot;
+<a href='/epics/docs/index.php' title="Text not related to a specific release or package">Documents</a>
+&middot;
+<a href='/epics/links.php' title="Related web-sites">Links</a>
+&middot;
+<a href='/epics/license/index.php' title="EPICS Software Licensing">Licensing</a>
+&middot;
+</td></tr></table>
+</body>
+</html>
+ÇD¹²Ü      VDå	VDå
+;ÌV]#}   ;:http://www.aps.anl.gov/epics/download/extensions/index.php necko:classified 1 request-method GET response-head HTTP/1.1 200 OK
+Date: Thu, 12 Nov 2015 19:14:17 GMT
+Server: Apache
+X-Frame-Options: SAMEORIGIN
+Last-Modified: Tue, 12 May 2015 21:45:24 GMT
+Content-Type: text/html; charset=iso-8859-1
+X-Cache: MISS from wwwcache2-dl-cache, MISS from wwwcache2-dl-icap
+Via: 1.1 wwwcache2-dl-cache (squid/3.3.10), 1.1 wwwcache2-dl-icap (squid/3.3.10)
+ charset windows-1252 uncompressed-len 0 predictor::resource-count 1 predictor::http://www.aps.anl.gov/epics/epics.css 1,1,1447355657,0   hê

@@ -1,0 +1,51 @@
+TOP=../..
+
+include $(TOP)/configure/CONFIG
+#----------------------------------------
+#  ADD MACRO DEFINITIONS AFTER THIS LINE
+#=============================
+
+#=============================
+# build an ioc application
+
+PROD_IOC = CS1A
+# CS1A.dbd will be created and installed
+DBD += CS1A.dbd
+
+# CS1A.dbd will be made up from these files:
+CS1A_DBD += base.dbd
+CS1A_DBD += elinp-iocmon.dbd
+CS1A_DBD += elinp-sysmon.dbd
+CS1A_DBD += asyn.dbd
+CS1A_DBD += stream.dbd
+CS1A_DBD += modbus.dbd
+CS1A_DBD += modbusSupport.dbd
+CS1A_DBD += drvAsynIPPort.dbd
+CS1A_DBD += drvAsynSerialPort.dbd
+CS1A_DBD += finsUDP.dbd
+CS1A_DBD += genSubRecord.dbd
+
+# <name>_registerRecordDeviceDriver.cpp will be created from <name>.dbd
+CS1A_SRCS += CS1A_registerRecordDeviceDriver.cpp
+CS1A_SRCS_DEFAULT += CS1AMain.cpp
+CS1A_SRCS_vxWorks += -nil-
+
+# The following adds support from base/src/vxWorks
+CS1A_OBJS_vxWorks += $(EPICS_BASE_BIN)/vxComLibrary
+
+# Add a definition for each support application used by this application
+CS1A_LIBS += elinp-iocmon
+CS1A_LIBS += elinp-sysmon
+CS1A_LIBS += asyn
+CS1A_LIBS += stream
+CS1A_LIBS += modbus
+CS1A_LIBS += FINS
+CS1A_LIBS += genSub
+CS1A_LIBS += status
+
+# We need to link this IOC application against the EPICS base libraries
+CS1A_LIBS += $(EPICS_BASE_IOC_LIBS)
+
+include $(TOP)/configure/RULES
+#----------------------------------------
+#  ADD RULES AFTER THIS LINE:

@@ -1,0 +1,165 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+  
+  
+
+
+  <head>
+    <title>
+      IndustryPack Driver
+    </title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <!--[if IE]><script type="text/javascript">
+      if (/^#__msie303:/.test(window.location.hash))
+        window.location.replace(window.location.hash.replace(/^#__msie303:/, '#'));
+    </script><![endif]-->
+        <link rel="search" href="/trac/epics/ipac/search" />
+        <link rel="help" href="/trac/epics/ipac/wiki/TracGuide" />
+        <link rel="alternate" href="/trac/epics/ipac/wiki/WikiStart?format=txt" type="text/x-trac-wiki" title="Plain text" />
+        <link rel="start" href="/trac/epics/ipac/wiki" />
+        <link rel="stylesheet" href="/trac/epics/ipac/chrome/common/css/trac.css" type="text/css" /><link rel="stylesheet" href="/trac/epics/ipac/chrome/common/css/wiki.css" type="text/css" />
+        <link rel="shortcut icon" href="http://www.aps.anl.gov/epics/favicon.ico" type="image/x-icon" />
+        <link rel="icon" href="http://www.aps.anl.gov/epics/favicon.ico" type="image/x-icon" />
+      <link type="application/opensearchdescription+xml" rel="search" href="/trac/epics/ipac/search/opensearch" title="Search IndustryPack Driver" />
+    <script type="text/javascript" src="/trac/epics/ipac/chrome/common/js/jquery.js"></script><script type="text/javascript" src="/trac/epics/ipac/chrome/common/js/babel.js"></script><script type="text/javascript" src="/trac/epics/ipac/chrome/common/js/messages/en_GB.js"></script><script type="text/javascript" src="/trac/epics/ipac/chrome/common/js/trac.js"></script><script type="text/javascript" src="/trac/epics/ipac/chrome/common/js/search.js"></script><script type="text/javascript" src="/trac/epics/ipac/chrome/common/js/folding.js"></script>
+    <!--[if lt IE 7]>
+    <script type="text/javascript" src="/trac/epics/ipac/chrome/common/js/ie_pre7_hacks.js"></script>
+    <![endif]-->
+    <script type="text/javascript">
+      jQuery(document).ready(function($) {
+        $("#content").find("h1,h2,h3,h4,h5,h6").addAnchor(_("Link to this section"));
+        $("#content").find(".wikianchor").each(function() {
+          $(this).addAnchor(babel.format(_("Link to #%(id)s"), {id: $(this).attr('id')}));
+        });
+        $(".foldable").enableFolding(true, true);
+      });
+    </script>
+  </head>
+  <body>
+    <div id="banner">
+      <div id="header">
+        <a id="logo" href="http://www.aps.anl.gov/epics/"><img src="http://www.aps.anl.gov/epics/icons/logo101.gif" alt="EPICS" height="101" width="101" /></a>
+      </div>
+      <form id="search" action="/trac/epics/ipac/search" method="get">
+        <div>
+          <label for="proj-search">Search:</label>
+          <input type="text" id="proj-search" name="q" size="18" value="" />
+          <input type="submit" value="Search" />
+        </div>
+      </form>
+      <div id="metanav" class="nav">
+    <ul>
+      <li class="first"><a href="/trac/epics/ipac/login">Login</a></li><li><a href="/trac/epics/ipac/wiki/TracGuide">Help/Guide</a></li><li><a href="/trac/epics/ipac/about">About Trac</a></li><li class="last"><a href="/trac/epics/ipac/prefs">Preferences</a></li>
+    </ul>
+  </div>
+    </div>
+    <div id="mainnav" class="nav">
+    <ul>
+      <li class="first active"><a href="/trac/epics/ipac/wiki">Wiki</a></li><li><a href="/trac/epics/ipac/timeline">Timeline</a></li><li><a href="/trac/epics/ipac/browser">Browse source</a></li><li><a href="/trac/epics/ipac/report">View tickets</a></li><li class="last"><a href="/trac/epics/ipac/search">Search</a></li>
+    </ul>
+  </div>
+    <div id="main">
+      <div id="pagepath" class="noprint">
+  <a class="pathentry first" title="View WikiStart" href="/trac/epics/ipac/wiki">wiki:</a><a class="pathentry" href="/trac/epics/ipac/wiki/WikiStart" title="View WikiStart">WikiStart</a>
+</div>
+      <div id="ctxtnav" class="nav">
+        <h2>Context navigation</h2>
+          <ul>
+              <li class="first"><a href="/trac/epics/ipac/wiki/WikiStart">Start page</a></li><li><a href="/trac/epics/ipac/wiki/TitleIndex">Index</a></li><li class="last"><a href="/trac/epics/ipac/wiki/WikiStart?action=history">History</a></li>
+          </ul>
+        <hr />
+      </div>
+    <div id="content" class="wiki">
+      <div class="wikipage searchable">
+        
+          
+          <div class="trac-modifiedby">
+            <span><a href="/trac/epics/ipac/wiki/WikiStart?action=diff&amp;version=16" title="Version 16 by anj: Add links to V2.14">Last modified</a> <a class="timeline" href="/trac/epics/ipac/timeline?from=2015-11-05T16%3A19%3A54-06%3A00&amp;precision=second" title="2015-11-05T16:19:54-06:00 in Timeline">7 days</a> ago</span>
+            <span class="trac-print">Last modified on 11/05/15 16:19:54</span>
+          </div>
+          <div id="wikipage"><h1 id="IPAC:IndustryPackDriverforEPICS">IPAC: IndustryPack Driver for EPICS</h1>
+<p>
+This is the home of the EPICS ipac module, which provides a standard API for Industry Pack carrier boards, and ensures that drivers for individual IP modules do not need to understand or control the carrier board they are installed in. Also included with this software are a couple of IP module drivers that use the ipac carrier layer.
+</p>
+<p>
+This web-site gives access to the IPAC source code and its associated documentation, and provides an issue tracker for reporting bugs and enhancement requests.
+</p>
+<h2 id="HardwareSupported">Hardware Supported</h2>
+<p>
+Software is included to control the following hardware:
+</p>
+<ul><li><a class="ext-link" href="http://www.gefanucembedded.com/"><span class="icon">​</span>GE Fanuc Embedded Systems</a> (was GreenSpring, then SBS) <a class="ext-link" href="http://www.gefanucembedded.com/products/394"><span class="icon">​</span>VIPC310</a>, <a class="ext-link" href="http://www.gefanucembedded.com/products/131"><span class="icon">​</span>VIPC610</a>, <a class="ext-link" href="http://www.gefanucembedded.com/products/128"><span class="icon">​</span>VIPC616</a>, <a class="ext-link" href="http://www.gefanucembedded.com/products/480"><span class="icon">​</span>VIPC626</a>, (VIPC618, VIPC627, VIPC628 and VIPC664 may also work) and <a class="ext-link" href="http://www.gefanucembedded.com/products/263"><span class="icon">​</span>ATC40</a> dumb carrier boards
+</li><li><a class="ext-link" href="http://www.tews.com/"><span class="icon">​</span>TEWS Technologies</a> <a class="ext-link" href="http://www.tews.com/Products/ArticleGroup/TVME/TVME200.html"><span class="icon">​</span>TVME200</a> 4 slot carrier board (TVME201 and TVME220 should also work)
+</li><li><a class="ext-link" href="http://www.acromag.com/"><span class="icon">​</span>Acromag</a> <a class="ext-link" href="http://www.acromag.com/catalog/414"><span class="icon">​</span>AVME-9660</a>, <a class="ext-link" href="http://www.acromag.com/catalog/415"><span class="icon">​</span>9668</a> and <a class="ext-link" href="http://www.acromag.com/catalog/416"><span class="icon">​</span>9670</a> 4 slot carrier boards, which were also sold by Xycom as the XVME-9660 and 9670
+</li><li><a class="ext-link" href="http://www.hytec-electronics.co.uk/Index.aspx"><span class="icon">​</span>Hytec Electronics</a> <a class="ext-link" href="http://www.hytec-electronics.co.uk/DescriptionPages/DataSheet.aspx?prodID=387"><span class="icon">​</span>VICB8002</a> and <a class="ext-link" href="http://www.hytec-electronics.co.uk/DescriptionPages/DataSheet.aspx?prodID=493"><span class="icon">​</span>VICB8004</a> 4 slot carrier boards
+</li><li>Motorola MVME162 and MVME172 MC680x0 CPU boards with IP slots
+</li><li><a class="ext-link" href="http://www.tews.com"><span class="icon">​</span>TEWS Technologies</a> <a class="ext-link" href="http://www.tews.com/Products/ArticleGroup/TIP/TIP810.html"><span class="icon">​</span>Tip810</a> Basic CANbus interface module
+</li><li><a class="ext-link" href="http://www.gefanucembedded.com/"><span class="icon">​</span>GE Fanuc Embedded Systems</a> (was GreenSpring, then SBS) <a class="ext-link" href="http://www.gefanucembedded.com/products/141"><span class="icon">​</span>IP-OCTAL-232 serial interface module</a> (<em>not</em> the newer IP-OctalPlus-232)
+</li></ul><p>
+Other module and carrier drivers are also available that use drvIpac, see the EPICS <a href="http://www.aps.anl.gov/epics/modules/bus.php">Hardware Support Database</a> for a list.
+</p>
+<h2 id="ReleasedVersions">Released Versions</h2>
+<p>
+A source tarfile and documentation for each release can be obtained from the relevent 'IPAC Version' link below:
+</p>
+<table class="wiki">
+<tr><td><strong>IPAC Version</strong></td><td><strong>EPICS Base Version</strong></td><td style="text-align: left"><strong>Known Problems</strong>
+</td></tr><tr><td><a class="wiki" href="/trac/epics/ipac/wiki/V2.14">Version 2.14</a></td><td>3.14.12 or later
+</td></tr><tr><td><a class="wiki" href="/trac/epics/ipac/wiki/V2.13">Version 2.13</a></td><td>3.14.9 or later
+</td></tr><tr><td><a class="wiki" href="/trac/epics/ipac/wiki/V2.12">Version 2.12</a></td><td>3.14.9 or later</td><td><a class="report" href="/trac/epics/ipac/report/9">Bug Fixes for 2.12</a>
+</td></tr><tr><td><a class="wiki" href="/trac/epics/ipac/wiki/V2.11">Version 2.11</a></td><td>3.14.9 or later
+</td></tr><tr><td><a class="wiki" href="/trac/epics/ipac/wiki/V2.10">Version 2.10</a></td><td>3.14.9 or later
+</td></tr><tr><td><a class="wiki" href="/trac/epics/ipac/wiki/V2.9">Version 2.9</a></td><td>3.14.9 or later
+</td></tr><tr><td><a class="wiki" href="/trac/epics/ipac/wiki/V2.8">Version 2.8</a></td><td>3.14.3 through 3.14.8.2
+</td></tr><tr><td><a class="wiki" href="/trac/epics/ipac/wiki/V2.7">Version 2.7a</a></td><td>3.14.3 through 3.14.8.2
+</td></tr><tr><td><a class="wiki" href="/trac/epics/ipac/wiki/V2.6">Version 2.6</a></td><td>3.14.3 through 3.14.8.2
+</td></tr><tr><td><a class="wiki" href="/trac/epics/ipac/wiki/V2.5">Version 2.5</a></td><td>3.14.2
+</td></tr><tr><td><a class="wiki" href="/trac/epics/ipac/wiki/V2.4">Version 2.4</a></td><td>3.13.x
+</td></tr><tr><td><a class="wiki" href="/trac/epics/ipac/wiki/V2.3">Version 2.3</a></td><td>3.13.x
+</td></tr><tr><td><a class="wiki" href="/trac/epics/ipac/wiki/V2.2">Version 2.2</a></td><td>3.13.x
+</td></tr><tr><td><a class="wiki" href="/trac/epics/ipac/wiki/V2.1">Version 2.1</a></td><td>3.13.x
+</td></tr><tr><td><a class="wiki" href="/trac/epics/ipac/wiki/V2.0">Version 2.0</a></td><td>3.13.x
+</td></tr></table>
+<p>
+To check out the latest development version using Subversion, use this command which puts it into a subdirectory called ipac-trunk:
+</p>
+<pre class="wiki">svn co https://svn.aps.anl.gov/epics/ipac/trunk/ ipac-trunk
+</pre><p>
+You can also browse the Subversion repository's <a class="source" href="/trac/epics/ipac/browser/trunk">main trunk</a>, which provides a link to downloading zip archives of the software.
+</p>
+<h2 id="License">License</h2>
+<p>
+From version 2.2 of this software onwards, most of the files in the IPAC module are licensed under the <a class="ext-link" href="http://www.gnu.org/licenses/old-licenses/lgpl-2.1.html"><span class="icon">​</span>GNU Lesser General Public License v2.1</a>.  If the specific license concerns you, check the individual source files for information on their status — all LGPL source files include a statement to that effect in the file header comments.
+</p>
+</div>
+        
+        
+      </div>
+      
+
+    </div>
+    <div id="altlinks">
+      <h3>Download in other formats:</h3>
+      <ul>
+        <li class="last first">
+          <a rel="nofollow" href="/trac/epics/ipac/wiki/WikiStart?format=txt">Plain text</a>
+        </li>
+      </ul>
+    </div>
+    </div>
+    <div id="footer" lang="en" xml:lang="en"><hr />
+      <a id="tracpowered" href="http://trac.edgewall.org/"><img src="/trac/epics/ipac/chrome/common/trac_logo_mini.png" height="30" width="107" alt="Trac Powered" /></a>
+      <p class="left">Powered by <a href="/trac/epics/ipac/about"><strong>Trac 0.12.5</strong></a><br />
+        By <a href="http://www.edgewall.org/">Edgewall Software</a>.</p>
+      <p class="right">IPAC Driver</p>
+    </div>
+  </body>
+</html>���B      VDބVDބ;��K       (:https://svn.aps.anl.gov/trac/epics/ipac necko:classified 1 security-info FnhllAKWRHGAlo+ESXykKAAAAAAAAAAAwAAAAAAAAEaphjojH6pBabDSgSnsfLHeAAQAAgAAAAAAAAAAAAAAAAAAAAAB4vFIJp5wRkeyPxAQ9RJGKPqbqVvKO0mKuIl8ec8o/uhmCjImkVxP+7sgiYWmMt8F+O2DZM7ZTG6GukivU8OT5gAAAAAAAAUtMIIFKTCCBBGgAwIBAgIQcnHU4Rvl1nUoNdx1bbUf9zANBgkqhkiG9w0BAQUFADCBtTELMAkGA1UEBhMCVVMxFzAVBgNVBAoTDlZlcmlTaWduLCBJbmMuMR8wHQYDVQQLExZWZXJpU2lnbiBUcnVzdCBOZXR3b3JrMTswOQYDVQQLEzJUZXJtcyBvZiB1c2UgYXQgaHR0cHM6Ly93d3cudmVyaXNpZ24uY29tL3JwYSAoYykxMDEvMC0GA1UEAxMmVmVyaVNpZ24gQ2xhc3MgMyBTZWN1cmUgU2VydmVyIENBIC0gRzMwHhcNMTQxMDE1MDAwMDAwWhcNMTYxMDI0MjM1OTU5WjB/MQswCQYDVQQGEwJVUzERMA8GA1UECBMISWxsaW5vaXMxDzANBgNVBAcUBkxlbW9udDEkMCIGA1UEChQbQXJnb25uZSBOYXRpb25hbCBMYWJvcmF0b3J5MQwwCgYDVQQLFANBUFMxGDAWBgNVBAMUD3N2bi5hcHMuYW5sLmdvdjCCASIwDQYJKoZIhvcNAQEBBQADggEPADCCAQoCggEBALmyRq/7izLJwHgTteJjKZ/qi3oQBhMx3fHVyp1c6INQVGEFKp8hDZTVYqGFOF70+h7SFLzmHL1EGwczKmHq0wrKj1BQMDMre8asDjbma3mKJBP+rTqTvFVJUmpB2hPMbryMfj1LK6sNvO1+bi80t9LgZYrdsDVVZyHx1w1p0BabM04/aEZaYzP4JzDDp20ZsWAzkWT9XZtDvjL/QtgMn4O/VaT71bChJf840KgKm8kn0yb+8YMAWS7erTMch0M8blIZqUqXJlZtBvqJbyrMasMENL1/PM+SGHB0jt1RgBh8wW/f6QubhMs5+lfErdjAiFAVZJmK2TfosjoopfQTCWcCAwEAAaOCAWgwggFkMBoGA1UdEQQTMBGCD3N2bi5hcHMuYW5sLmdvdjAJBgNVHRMEAjAAMA4GA1UdDwEB/wQEAwIFoDAdBgNVHSUEFjAUBggrBgEFBQcDAQYIKwYBBQUHAwIwZQYDVR0gBF4wXDBaBgpghkgBhvhFAQc2MEwwIwYIKwYBBQUHAgEWF2h0dHBzOi8vZC5zeW1jYi5jb20vY3BzMCUGCCsGAQUFBwICMBkaF2h0dHBzOi8vZC5zeW1jYi5jb20vcnBhMB8GA1UdIwQYMBaAFA1EXBZTRMGCfh0gqyX0AWPYvnmlMCsGA1UdHwQkMCIwIKAeoByGGmh0dHA6Ly9zZC5zeW1jYi5jb20vc2QuY3JsMFcGCCsGAQUFBwEBBEswSTAfBggrBgEFBQcwAYYTaHR0cDovL3NkLnN5bWNkLmNvbTAmBggrBgEFBQcwAoYaaHR0cDovL3NkLnN5bWNiLmNvbS9zZC5jcnQwDQYJKoZIhvcNAQEFBQADggEBABRiLipAdZH0zxpTqyC1f0xP/a+gi5fXyHWTvQikfrcO/MDM4HoXKns28v1L4vJlk1jKmVNhncmhoc0Sai634S+w9ZgMJZ0K+0ToQ3nw3LTtZxE5rrkQuPydU8IXoPz93DhiBcPEby4Zze+ejoO89QjzLrutjSTRB4hoGjJW7wkefBgTLPbrknAxi0LKP9t5tqmI0LNhsbukvBa1Cxi4155JKVNzvKvaT4sX6jEb5NogkAyynukSQqJxH24AGfzqV6GwKDf4PEmq06Zm9FGSZn/i0zBykAEunMQWmuHAN8ma8dSOvqkDBG0wRYjor9ErJhCcrNH85D/juMzIhjj6BpzALwADAAAAAAEBAAA= request-method GET response-head HTTP/1.1 200 OK
+Date: Thu, 12 Nov 2015 18:44:31 GMT
+Server: Apache
+X-Frame-Options: SAMEORIGIN
+Cache-Control: must-revalidate
+Expires: Fri, 01 Jan 1999 00:00:00 GMT
+Content-Length: 12277
+Content-Type: text/html;charset=utf-8
+ charset UTF-8 uncompressed-len 0 predictor::https://svn.aps.anl.gov/trac/epics/ipac/chrome/common/css/trac.css 1,2,1447353988,0 predictor::https://svn.aps.anl.gov/trac/epics/ipac/chrome/common/css/wiki.css 1,2,1447353988,0 predictor::https://svn.aps.anl.gov/trac/epics/ipac/chrome/common/js/jquery.js 1,2,1447353988,0 predictor::https://svn.aps.anl.gov/trac/epics/ipac/chrome/common/js/babel.js 1,2,1447353988,0 predictor::https://svn.aps.anl.gov/trac/epics/ipac/chrome/common/js/messages/en_GB.js 1,2,1447353988,0 predictor::https://svn.aps.anl.gov/trac/epics/ipac/chrome/common/js/trac.js 1,2,1447353988,0 predictor::https://svn.aps.anl.gov/trac/epics/ipac/chrome/common/js/search.js 1,2,1447353988,0 predictor::https://svn.aps.anl.gov/trac/epics/ipac/chrome/common/js/folding.js 1,2,1447353988,0 predictor::https://svn.aps.anl.gov/trac/epics/ipac/chrome/common/trac_logo_mini.png 1,1,1447353870,0 predictor::https://svn.aps.anl.gov/trac/epics/ipac/chrome/common/css/code.css 1,2,1447353988,0 predictor::https://svn.aps.anl.gov/trac/epics/ipac/chrome/common/topbar_gradient.png 1,1,1447353870,0 predictor::https://svn.aps.anl.gov/trac/epics/ipac/chrome/common/topbar_gradient2.png 1,1,1447353870,0 predictor::https://svn.aps.anl.gov/trac/epics/ipac/chrome/common/dots.gif 1,1,1447353870,0 predictor::https://svn.aps.anl.gov/trac/epics/ipac/chrome/common/extlink.gif 1,1,1447353870,0   /�ink.gif 1,1,1447353870,0   /�

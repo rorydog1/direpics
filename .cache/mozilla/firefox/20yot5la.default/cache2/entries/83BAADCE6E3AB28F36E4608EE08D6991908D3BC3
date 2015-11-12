@@ -1,0 +1,460 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd"><html><head>
+  <meta http-equiv='Content-type' content='text/html;charset=iso-8859-1'>
+  <meta name='description' content='EPICS Re: Problem in seq-2.1.8'>
+  <meta name='keywords' content='EPICS,software,process control,scientific software'>
+  <title>EPICS Re: Problem in seq-2.1.8</title>
+  <link rel='stylesheet' href='/epics/epics.css' type='text/css'>
+  <link rel='shortcut icon' type='image/x-icon' href='/epics/favicon.ico'>
+  <link rel='icon' type='image/png' href='/epics/icon.png'>
+  <link rel='publisher' href='https://plus.google.com/106275891267278800612/'>
+  <link rel='alternate' title='EPICS Tech-talk via RSS' href='../rss.xml' type='application/rss+xml'>
+  <meta name='ROBOTS' content='INDEX, NOFOLLOW'>  <link rel='index' href='../index.php'>
+  <link rel='top' href='index.php'>
+  <link rel='up' href='msg01499.php'>
+  <link rel='first' href='msg01495.php'>
+  <link rel='prev' href='msg01508.php'>
+  <link rel='next' href='msg01510.php'>
+  <link rel='last' href='msg01510.php'>
+  <style type='text/css'>
+    <!--
+  pre {width: 100%; white-space: -moz-pre-wrap; white-space: pre-wrap;}    -->
+  </style>
+  <script type='text/javascript' src='https://apis.google.com/js/plusone.js'>
+    </script>
+</head>
+<body bgcolor='#FFFFFF'>
+<table class='page' width='100%' cellspacing='0' border='0'>
+<tr>
+
+<td class='sidebar' width='10%'>
+<a href='/epics/index.php'>
+<img src='/epics/icons/logo101.gif' alt='EPICS Home' align='left' width='101' height='101' border='0'></a>
+</td>
+<td class='main'>
+<div style='display: inline-block; *display: inline; float: left;'><div style='margin: 15px 0 5px 0; text-align: center;'><a href='https://plus.google.com/106275891267278800612/?prsrc=3' style='text-decoration: none; color: #333;'><img src='/epics/icons/g-plus.png' width='32' height='32' alt='g+' style='border: 0;'></a></div><div style='font: bold 13px/16px arial,sans-serif; margin: 0 5px; text-align: center;'><a href='https://plus.google.com/106275891267278800612/?prsrc=3' style='text-decoration: none; color: #333;'> EPICS Page </a></div><div style='font: 13px/16px arial,sans-serif; text-align: center; margin: 0 5px;'><a href='https://plus.google.com/106275891267278800612/?prsrc=3' style='text-decoration: none; color: #333;'> on Google+ </a></div></div><div style='display: inline-block; *display: inline; float: left;'><div style='margin: 15px 0 5px 0; text-align: center;'><a href='https://plus.google.com/u/0/communities/113160068949106802880' style='text-decoration: none; color: #333;'><img src='/epics/icons/g-communities.png' width='32' height='32' alt='g+ Communities' style='border: 0;'></a></div><div style='font: bold 13px/16px arial,sans-serif; margin: 0 5px; text-align: center;'><a href='https://plus.google.com/u/0/communities/113160068949106802880' style='text-decoration: none; color: #333;'> EPICS Users </a></div><div style='font: 13px/16px arial,sans-serif; text-align: center;'><a href='https://plus.google.com/u/0/communities/113160068949106802880' style='text-decoration: none; color: #333;'> on Google+ </a></div></div><a href='http://www.anl.gov/'><img src='/epics/icons/ANL_H_White.png' align='right' border='0' alt='Argonne National Laboratory' width='250' height='115'></a>
+<h1 align='center'>
+Experimental Physics and <br>Industrial Control System</h1>
+</td></tr>
+
+<tr>
+<td class='sidebar' valign='top'>
+<ul id='navlist'>
+<li class='spacer'></li>
+<li><a href='/epics/index.php' title="EPICS Home at APS">Home</a></li>
+<li><a href='/epics/news.php' title="Recent news">News</a></li>
+<li><a href='/epics/about.php' title="What is EPICS anyway?">About</a></li>
+<li><a href='/epics/base/index.php' title="The core EPICS software for both IOCs and Host tools">Base</a></li>
+<li><a href='/epics/modules/index.php' title="Optional support code for IOCs - drivers etc.">Modules</a></li>
+<li><a href='/epics/extensions/index.php' title="Tools to monitor and control IOCs">Extensions</a></li>
+<li><a href='/epics/distributions/index.php' title="Code collections from base, modules, extensions &amp; elsewhere">Distributions</a></li>
+<li><a href='/epics/download/index.php' title="Software downloads">Download</a></li>
+<li><a href='http://epics-pvdata.sourceforge.net/index.html' title="EPICS Version 4 Project">EPICSv4</a></li>
+<li><a href='/epics/irmis/index.php' title="Using RDBs to model installed EPICS IOCs">IRMIS</a></li>
+<li><a href='/epics/mail.php' title="Information about our mailing lists">Talk</a>
+<ul>
+<li><a href='/epics/tech-talk/index.php' title="The main mailing list, our online support channel">Tech-Talk</a>
+<ul>
+<li><a href='https://mailman.aps.anl.gov/mailman/listinfo/tech-talk' title="Subscribing to the list">Mailman</a></li>
+<li><a href='/epics/tech-talk/search.php' title="Search the tech-talk archives">Search</a></li>
+<li><a href='/epics/tech-talk/2015/index.php' title="Browse tech-talk messages from 2015">2015</a></li>
+<li><a href='/epics/tech-talk/2014/index.php' title="Browse Tech-talk messages from 2014">2014</a></li>
+<li><a href='/epics/tech-talk/2013/index.php' title="Browse Tech-talk messages from 2013">2013</a></li>
+<li><a href='/epics/tech-talk/2012/index.php' title="Browse Tech-talk messages from 2012">2012</a></li>
+<li><a href='/epics/tech-talk/2011/index.php' title="Browse Tech-talk messages from 2011">2011</a></li>
+<li><a href='/epics/tech-talk/2010/index.php' title="Browse Tech-talk messages from 2010">2010</a></li>
+<li><a href='/epics/tech-talk/2009/index.php' title="Browse Tech-talk messages from 2009">2009</a></li>
+<li><a href='/epics/tech-talk/2008/index.php' title="Browse Tech-talk messages from 2008">2008</a></li>
+<li><a href='/epics/tech-talk/2007/index.php' title="Browse Tech-talk messages from 2007">2007</a></li>
+<li><a href='/epics/tech-talk/2006/index.php' title="Browse Tech-talk messages from 2006">2006</a></li>
+<li><a href='/epics/tech-talk/2005/index.php' title="Browse Tech-talk messages from 2005">2005</a></li>
+<li><a href='/epics/tech-talk/2004/index.php' title="Browse Tech-talk messages from 2004">2004</a></li>
+<li><a href='/epics/tech-talk/2003/index.php' title="Browse Tech-talk messages from 2003">2003</a></li>
+<li><a href='/epics/tech-talk/2002/index.php' title="Browse Tech-talk messages from 2002">2002</a></li>
+<li><a href='/epics/tech-talk/2001/index.php' title="Browse Tech-talk messages from 2001">2001</a></li>
+<li><a href='/epics/tech-talk/2000/index.php' title="Browse Tech-talk messages from 2000">2000</a></li>
+<li><a href='/epics/tech-talk/1999/index.php' title="Browse Tech-talk messages from 1999">1999</a></li>
+<li><a href='/epics/tech-talk/1998/index.php' title="Browse Tech-talk messages from 1998">1998</a></li>
+<li><a href='/epics/tech-talk/1997/index.php' title="Browse Tech-talk messages from 1997">1997</a></li>
+<li><a href='/epics/tech-talk/1996/index.php' title="Browse Tech-talk messages from 1996">1996</a></li>
+<li><a href='/epics/tech-talk/1995/index.php' title="Browse Tech-talk messages from 1995">1995</a></li>
+<li><a href='/epics/tech-talk/1994/index.php' title="Browse Tech-talk messages from 1994">1994</a></li>
+</ul>
+</li>
+<li><a href='/epics/core-talk/index.php' title="Discussions between Base developers">Core-talk</a>
+<ul>
+<li><a href='https://mailman.aps.anl.gov/mailman/listinfo/core-talk' title="Subscribing to the list">Mailman</a></li>
+<li><a href='/epics/core-talk/search.php' title="Search the core-talk archives">Search</a></li>
+<li><a href='/epics/core-talk/2015/index.php' title="Browse core-talk messages from 2015">2015</a></li>
+</ul>
+</li>
+<li><a href='/epics/qti-talk/index.php' title="Discussions about the QT Initiative">QTi-talk</a>
+<ul>
+<li><a href='https://mailman.aps.anl.gov/mailman/listinfo/qti-talk' title="Subscribing to the list">Mailman</a></li>
+<li><a href='/epics/qti-talk/search.php' title="Search the qti-talk archives">Search</a></li>
+<li><a href='/epics/qti-talk/2015/index.php' title="Browse QTi-talk messages from 2015">2015</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href='https://bugs.launchpad.net/epics-base' title="The Launchpad bug tracker for epics-base">Bugs</a></li>
+<li><a href='/epics/docs/index.php' title="Text not related to a specific release or package">Documents</a></li>
+<li><a href='/epics/links.php' title="Related web-sites">Links</a></li>
+<li><a href='/epics/license/index.php' title="EPICS Software Licensing">Licensing</a></li>
+<li class='spacer'></li>
+</ul>
+<p align='center'>
+<a href='/epics/tech-talk/2012/msg01509.php?format=printer'>
+Format page<br>
+for printing</a></p>
+
+<form method="get" action="http://www.google.com/custom"><table align="center"
+bgcolor="#FFFFFF" cellspacing="0" border="0"><tr><td align="center"><a
+href="http://www.google.com/"><label for="q"><img border="0" alt="Google"
+src="/epics/icons/Google25.gif"  align="middle"></label></a><br><input
+type="text" name="q" id="q" size="10" maxlength="255" value=""></td></tr>
+</table><input type="hidden" name="cof"
+value="S:http://www.aps.anl.gov/epics;GL:0;VLC:#9f0000;AH:center;BGC:white;LH:115;LC:#00009f;L:http://www.aps.anl.gov/epics/icons/header.png;ALC:#009f00;LW:750;T:black;AWFID:e3f314152c5d8667;">
+<input type="hidden" name="domains" value="aps.anl.gov"><input type="hidden"
+name="sitesearch" value="aps.anl.gov"> </form>
+<br>
+<form method="post" action="/epics/tech-talk/search.php">
+<table align="center" bgcolor="#FFFFFF" cellspacing="0" border="0">
+<tr><th align="center"><small>Search&nbsp;Tech-talk</small></th></tr>
+<tr><td><input type="text" name="query" size="10" value=""></td></tr>
+</table>
+</form>
+<td class='main'>
+<!-- MHonArc v2.6.18 -->
+<!--X-Subject: Re: Problem in seq&#45;2.1.8 -->
+<!--X-From-R13: Prawnzva Tenaxfra <orawnzva.senaxfraNuryzubygm&#45;oreyva.qr> -->
+<!--X-Date: Tue, 10 Jul 2012 13:21:35 +0200 -->
+<!--X-Message-Id: 201207101321.41341.benjamin.franksen@helmholtz&#45;berlin.de -->
+<!--X-Content-Type: multipart/signed -->
+<!--X-Reference: 1341587382.14868.YahooMailNeo@web192506.mail.sg3.yahoo.com -->
+<!--X-Reference: 201207091233.07322.benjamin.franksen@helmholtz&#45;berlin.de -->
+<!--X-Reference: 4FFB2D43.9050205@aps.anl.gov -->
+<!--X-Derived: pgpAzHmhk2dhb.pgp -->
+<!--X-Head-End-->
+<!--X-Body-Begin-->
+<!--X-User-Header-->
+<!--X-User-Header-End-->
+<!--X-TopPNI-->
+<table border=0><tr>
+<td><a href='../1994/index.php'>1994</a>&nbsp;
+<a href='../1995/index.php'>1995</a>&nbsp;
+<a href='../1996/index.php'>1996</a>&nbsp;
+<a href='../1997/index.php'>1997</a>&nbsp;
+<a href='../1998/index.php'>1998</a>&nbsp;
+<a href='../1999/index.php'>1999</a>&nbsp;
+<a href='../2000/index.php'>2000</a>&nbsp;
+<a href='../2001/index.php'>2001</a>&nbsp;
+<a href='../2002/index.php'>2002</a>&nbsp;
+<a href='../2003/index.php'>2003</a>&nbsp;
+<a href='../2004/index.php'>2004</a>&nbsp;
+<a href='../2005/index.php'>2005</a>&nbsp;
+<a href='../2006/index.php'>2006</a>&nbsp;
+<a href='../2007/index.php'>2007</a>&nbsp;
+<a href='../2008/index.php'>2008</a>&nbsp;
+<a href='../2009/index.php'>2009</a>&nbsp;
+<a href='../2010/index.php'>2010</a>&nbsp;
+<a href='../2011/index.php'>2011</a>&nbsp;
+&lt;<a href='../2012/index.php?July'>2012</a>&gt;&nbsp;
+<a href='../2013/index.php'>2013</a>&nbsp;
+<a href='../2014/index.php'>2014</a>&nbsp;
+<a href='../2015/index.php'>2015</a>&nbsp;
+</td>
+<td><b>Index </b></td>
+<td><a href='../1994/threads.php'>1994</a>&nbsp;
+<a href='../1995/threads.php'>1995</a>&nbsp;
+<a href='../1996/threads.php'>1996</a>&nbsp;
+<a href='../1997/threads.php'>1997</a>&nbsp;
+<a href='../1998/threads.php'>1998</a>&nbsp;
+<a href='../1999/threads.php'>1999</a>&nbsp;
+<a href='../2000/threads.php'>2000</a>&nbsp;
+<a href='../2001/threads.php'>2001</a>&nbsp;
+<a href='../2002/threads.php'>2002</a>&nbsp;
+<a href='../2003/threads.php'>2003</a>&nbsp;
+<a href='../2004/threads.php'>2004</a>&nbsp;
+<a href='../2005/threads.php'>2005</a>&nbsp;
+<a href='../2006/threads.php'>2006</a>&nbsp;
+<a href='../2007/threads.php'>2007</a>&nbsp;
+<a href='../2008/threads.php'>2008</a>&nbsp;
+<a href='../2009/threads.php'>2009</a>&nbsp;
+<a href='../2010/threads.php'>2010</a>&nbsp;
+<a href='../2011/threads.php'>2011</a>&nbsp;
+&lt;<a href='../2012/threads.php'>2012</a>&gt;&nbsp;
+<a href='../2013/threads.php'>2013</a>&nbsp;
+<a href='../2014/threads.php'>2014</a>&nbsp;
+<a href='../2015/threads.php'>2015</a>&nbsp;
+</td>
+</tr>
+<tr>
+<th align='center'><a href='msg01508.php'>&lt;==</a> Date <a href='msg01510.php'>==&gt;</a></th>
+<td></td>
+<th align='center'><a href='msg01499.php'>&lt;==</a> Thread <a href='msg01510.php'>==&gt;</a></th>
+</tr></table>
+
+<!--X-TopPNI-End-->
+<!--X-MsgBody-->
+<!--X-Subject-Header-Begin-->
+<hr>
+<div style='float: right'><g:plusone></g:plusone></div>
+<!--X-Subject-Header-End-->
+<!--X-Head-of-Message-->
+<table border=0>
+<tr>
+<td align="right" valign="top">
+<em>Subject</em>:</td>
+<td align="left">
+<b>Re: Problem in seq-2.1.8</b></td>
+</tr>
+
+<tr>
+<td align="right" valign="top">
+<em>From</em>:</td>
+<td align="left">
+Benjamin Franksen &lt;<a href="mailto:benjamin.franksen_at_helmholtz-berlin.de">benjamin.franksen@helmholtz-berlin.de</a>&gt;</td>
+</tr>
+
+<tr>
+<td align="right" valign="top">
+<em>To</em>:</td>
+<td align="left">
+Jeffrey Gebhardt &lt;<a href="mailto:gebhardt_at_aps.anl.gov">gebhardt@aps.anl.gov</a>&gt;,        &quot;<a href="mailto:tech-talk_at_aps.anl.gov">tech-talk@aps.anl.gov</a>&quot;	&lt;<a href="mailto:tech-talk_at_aps.anl.gov">tech-talk@aps.anl.gov</a>&gt;</td>
+</tr>
+
+<tr>
+<td align="right" valign="top">
+<em>Date</em>:</td>
+<td align="left">
+Tue, 10 Jul 2012 13:21:35 +0200</td>
+</tr>
+
+</table>
+<!--X-Head-of-Message-End-->
+<!--X-Head-Body-Sep-Begin-->
+<!--X-Head-Body-Sep-End-->
+<!--X-Body-of-Message-->
+<pre>On Monday, July 09, 2012, Jeffrey Gebhardt wrote:
+&gt; After applying your fix I now get the following error:
+&gt; 
+&gt; ..\\..\\..\\bin\\win32-x86\\lemon.exe o=. ../snl.lem
+&gt; 3 parsing conflicts.
+&gt; # empty recipy needed to work around make bug #35455
+&gt; process_begin: CreateProcess(NULL, # empty recipy needed to work around
+&gt; make bug #35455, ...) failed.
+&gt; make (e=2): The system cannot find the file specified.
+&gt; gmake[4]: *** [snl.h] Error 2
+
+Oh my. Why does it have to be so &amp;@#^$&amp;#^%$* difficult to get this rule to 
+work in a portable way?
+
+I intended the '#' character to be a comment for make, not for the shell. My 
+mistake, the gnu make manual is clear on that: A comment sign in a recipy is 
+passed to the shell. The idea was to document that there must be an empty 
+recipy here, because I thought a simple dependency declaration (without any 
+recipy at all) would suffice, but due to make bug #35455 is doesn't.
+
+&gt; However, changing:
+&gt; 
+&gt; snl.h: snl.c
+&gt;      # empty recipy needed to work around make bug #35455
+&gt; 
+&gt; to:
+&gt; 
+&gt; snl.h: snl.c
+&gt;      echo &quot;empty recipy needed to work around make bug #35455&quot;
+&gt; 
+&gt; in src/snc/Makefile seems to fix the problem.  Now both make and make -j
+&gt; work.
+
+I'd rather not have the echo command here. Can you please check if the 
+following lines work, too? According to the make manual it should.
+
+# empty recipy needed to work around make bug #35455
+snl.h: snl.c ;
+
+Cheers
+Ben
+
+&gt; On 7/9/2012 5:33 AM, Benjamin Franksen wrote:
+&gt; &gt; On Friday, July 06, 2012, you wrote:
+&gt; &gt;&gt; I am trying to build seq-2.1.8 on Windows XP.  When I do a parallel
+&gt; &gt;&gt; make (make -j) it builds with out error.
+&gt; &gt;&gt; But if I build with no makeflags set, I get the following error:
+&gt; &gt;&gt; 
+&gt; &gt;&gt; re2c.exe -s -b -o lexer.c ../snl.re
+&gt; &gt;&gt; cl -c               /nologo /D__STDC__=0 /D_CRT_SECURE_NO_DEPRECATE
+&gt; &gt;&gt; /D_CRT_NONSTDC_NO_DEPRECATE   /Ox /GL   /W3 /w44355       /MT
+&gt; &gt;&gt; -DEPICS_DLL_NO    -I. -I..\\O.Common -I. -I..
+&gt; &gt;&gt; -I..\\..\\..\\include\\os\\WIN32 -I..\\..\\..\\include
+&gt; &gt;&gt; -IC:\\SVN\\base\\in clude\\os\\WIN32 -IC:\\SVN\\base\\include
+&gt; &gt;&gt; lexer.c
+&gt; &gt;&gt; lexer.c
+&gt; &gt;&gt; ../snl.re(16) : fatal error C1083: Cannot open include file: 'snl.h':
+&gt; &gt;&gt; No such file or directory
+&gt; &gt;&gt; gmake[4]: *** [lexer.obj] Error 2
+&gt; &gt;&gt; 
+&gt; &gt;&gt; 
+&gt; &gt;&gt; Only lexer.c and lexer.d are in src/snc/O.win32-x86.   During the
+&gt; &gt;&gt; parallel build snl.h is created.
+&gt; &gt;&gt; I'd appreciate any help you can provide.
+&gt; &gt; 
+&gt; &gt; I made a stupid mistake when adding the dependency
+&gt; &gt; 
+&gt; &gt;    lexer.o: snl.h
+&gt; &gt; 
+&gt; &gt; to src/snc/Makefile. Of course this should be
+&gt; &gt; 
+&gt; &gt;    lexer$(OBJ): snl.h
+&gt; &gt; 
+&gt; &gt; This should solve your build problem. Please tell me if it does not.
+&gt; &gt; Otherwise I will make this change and provide a new release.
+&gt; &gt; 
+&gt; &gt; Cheers
+&gt; &gt; Ben
+</pre><p><strong>Attachment:
+<a href="pgpAzHmhk2dhb.pgp" ><tt>signature.asc</tt></a></strong><br>
+<em>Description:</em> This is a digitally signed message part.</p>
+
+<!--X-Body-of-Message-End-->
+<!--X-MsgBody-End-->
+<!--X-Follow-Ups-->
+<hr>
+<dl>
+<dt>Replies:</dt>
+<dd><b><a name="01510" href="msg01510.php">Re: Problem in seq-2.1.8</a></b> <i>Andrew Johnson</i>
+</dd>
+</dl>
+<!--X-Follow-Ups-End-->
+<!--X-References-->
+<dl>
+<dt>References:</dt>
+<dd><b><a name="01495" href="msg01495.php">Problem in SNL</a></b> <i>santosh aditya</i>
+</dd>
+<dd><b><a name="01499" href="msg01499.php">Re: Problem in seq-2.1.8</a></b> <i>Benjamin Franksen</i>
+</dd>
+</dl>
+<!--X-References-End-->
+<!--X-BotPNI-->
+<hr><dl>
+<dt>Navigate by Date:</dt>
+<dd>Prev:
+<b><a href='msg01508.php'>Re: stream device string/hex parsing</a></b> <i>Gerrit K&#xFC;hn</i>
+</dd>
+<dd>Next:
+<b><a href='msg01510.php'>Re: Problem in seq-2.1.8</a></b> <i>Andrew Johnson</i>
+</dd>
+<dd>Index: <b>
+<a href='../1994/index.php'>1994</a>&nbsp;
+<a href='../1995/index.php'>1995</a>&nbsp;
+<a href='../1996/index.php'>1996</a>&nbsp;
+<a href='../1997/index.php'>1997</a>&nbsp;
+<a href='../1998/index.php'>1998</a>&nbsp;
+<a href='../1999/index.php'>1999</a>&nbsp;
+<a href='../2000/index.php'>2000</a>&nbsp;
+<a href='../2001/index.php'>2001</a>&nbsp;
+<a href='../2002/index.php'>2002</a>&nbsp;
+<a href='../2003/index.php'>2003</a>&nbsp;
+<a href='../2004/index.php'>2004</a>&nbsp;
+<a href='../2005/index.php'>2005</a>&nbsp;
+<a href='../2006/index.php'>2006</a>&nbsp;
+<a href='../2007/index.php'>2007</a>&nbsp;
+<a href='../2008/index.php'>2008</a>&nbsp;
+<a href='../2009/index.php'>2009</a>&nbsp;
+<a href='../2010/index.php'>2010</a>&nbsp;
+<a href='../2011/index.php'>2011</a>&nbsp;
+&lt;<a href='../2012/index.php?July'>2012</a>&gt;&nbsp;
+<a href='../2013/index.php'>2013</a>&nbsp;
+<a href='../2014/index.php'>2014</a>&nbsp;
+<a href='../2015/index.php'>2015</a>&nbsp;
+</b></dd>
+<dt>Navigate by Thread:</dt>
+<dd>Prev:
+<b><a href='msg01499.php'>Re: Problem in seq-2.1.8</a></b> <i>Benjamin Franksen</i>
+</dd>
+<dd>Next:
+<b><a href='msg01510.php'>Re: Problem in seq-2.1.8</a></b> <i>Andrew Johnson</i>
+</dd>
+<dd>Index: <b>
+<a href='../1994/threads.php'>1994</a>&nbsp;
+<a href='../1995/threads.php'>1995</a>&nbsp;
+<a href='../1996/threads.php'>1996</a>&nbsp;
+<a href='../1997/threads.php'>1997</a>&nbsp;
+<a href='../1998/threads.php'>1998</a>&nbsp;
+<a href='../1999/threads.php'>1999</a>&nbsp;
+<a href='../2000/threads.php'>2000</a>&nbsp;
+<a href='../2001/threads.php'>2001</a>&nbsp;
+<a href='../2002/threads.php'>2002</a>&nbsp;
+<a href='../2003/threads.php'>2003</a>&nbsp;
+<a href='../2004/threads.php'>2004</a>&nbsp;
+<a href='../2005/threads.php'>2005</a>&nbsp;
+<a href='../2006/threads.php'>2006</a>&nbsp;
+<a href='../2007/threads.php'>2007</a>&nbsp;
+<a href='../2008/threads.php'>2008</a>&nbsp;
+<a href='../2009/threads.php'>2009</a>&nbsp;
+<a href='../2010/threads.php'>2010</a>&nbsp;
+<a href='../2011/threads.php'>2011</a>&nbsp;
+&lt;<a href='../2012/threads.php'>2012</a>&gt;&nbsp;
+<a href='../2013/threads.php'>2013</a>&nbsp;
+<a href='../2014/threads.php'>2014</a>&nbsp;
+<a href='../2015/threads.php'>2015</a>&nbsp;
+</b></dd>
+</dl>
+
+<!--X-BotPNI-End-->
+<!--X-User-Footer-->
+<!--X-User-Footer-End-->
+</td></tr>
+
+<tr>
+<td class='signature'>
+<a href="mailto:Andrew%20Johnson%20&lt;anj_at_aps.anl.gov&gt;">
+ANJ</a>, 18 Nov 2013</td>
+<td class='bottom'>
+<a href='http://validator.w3.org/check?uri=referer'><img src='/epics/icons/vh401.gif' alt='Valid HTML 4.01!' border='0' align='right' height='31' width='88'></a>
+&middot;
+<a href='/epics/index.php' title="EPICS Home at APS">Home</a>
+&middot;
+<a href='/epics/news.php' title="Recent news">News</a>
+&middot;
+<a href='/epics/about.php' title="What is EPICS anyway?">About</a>
+&middot;
+<a href='/epics/base/index.php' title="The core EPICS software for both IOCs and Host tools">Base</a>
+&middot;
+<a href='/epics/modules/index.php' title="Optional support code for IOCs - drivers etc.">Modules</a>
+&middot;
+<a href='/epics/extensions/index.php' title="Tools to monitor and control IOCs">Extensions</a>
+&middot;
+<a href='/epics/distributions/index.php' title="Code collections from base, modules, extensions &amp; elsewhere">Distributions</a>
+&middot;
+<a href='/epics/download/index.php' title="Software downloads">Download</a>
+&middot;
+<br>
+&middot;
+<a href='http://epics-pvdata.sourceforge.net/index.html' title="EPICS Version 4 Project">EPICSv4</a>
+&middot;
+<a href='/epics/irmis/index.php' title="Using RDBs to model installed EPICS IOCs">IRMIS</a>
+&middot;
+<a href='/epics/mail.php' title="Information about our mailing lists">Talk</a>
+&middot;
+<a href='https://bugs.launchpad.net/epics-base' title="The Launchpad bug tracker for epics-base">Bugs</a>
+&middot;
+<a href='/epics/docs/index.php' title="Text not related to a specific release or package">Documents</a>
+&middot;
+<a href='/epics/links.php' title="Related web-sites">Links</a>
+&middot;
+<a href='/epics/license/index.php' title="EPICS Software Licensing">Licensing</a>
+&middot;
+</td></tr></table>
+</body>
+</html>
+®Î$¥i%      VDÓfVDÓg;ÌãV{¯ˆ   9:http://www.aps.anl.gov/epics/tech-talk/2012/msg01509.php necko:classified 1 request-method GET response-head HTTP/1.1 200 OK
+Date: Thu, 12 Nov 2015 17:59:02 GMT
+Server: Apache
+X-Frame-Options: SAMEORIGIN
+Last-Modified: Mon, 22 Sep 2014 15:02:26 GMT
+Content-Type: text/html; charset=iso-8859-1
+X-Cache: MISS from wwwcache2-dl-cache, MISS from wwwcache2-dl-icap
+Via: 1.1 wwwcache2-dl-cache (squid/3.3.10), 1.1 wwwcache2-dl-icap (squid/3.3.10)
+ charset windows-1252 uncompressed-len 0 predictor::resource-count 4 predictor::http://www.aps.anl.gov/epics/epics.css 1,1,1447351142,0 predictor::https://apis.google.com/js/plusone.js 1,1,1447351142,0 predictor::https://apis.google.com/_/scs/apps-static/_/js/k=oz.gapi.en_GB.3gCEM3WeblA.O/m=plusone/rt=j/sv=1/d=1/ed=1/am=AQ/rs=AGLTcCP8ZfPHMDlbYpI5-U-qr0fejtum1w/t=zcms/cb=gapi.loaded_0 1,1,1447351142,0 predictor::https://apis.google.com/_/scs/apps-static/_/js/k=oz.gapi.en_GB.3gCEM3WeblA.O/m=auth/exm=plusone/rt=j/sv=1/d=1/ed=1/am=AQ/rs=AGLTcCP8ZfPHMDlbYpI5-U-qr0fejtum1w/t=zcms/cb=gapi.loaded_1 1,1,1447351142,0   UG

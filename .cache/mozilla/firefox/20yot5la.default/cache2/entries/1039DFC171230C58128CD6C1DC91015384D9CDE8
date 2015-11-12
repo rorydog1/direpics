@@ -1,0 +1,724 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd"><html><head>
+  <meta http-equiv='Content-type' content='text/html;charset=iso-8859-1'>
+  <meta name='description' content='EPICS - Experimental Physics and Industrial Control System'>
+  <meta name='keywords' content='EPICS,software,process control,scientific software'>
+  <title>EPICS - Experimental Physics and Industrial Control System</title>
+  <link rel='stylesheet' href='/epics/epics.css' type='text/css'>
+  <link rel='shortcut icon' type='image/x-icon' href='/epics/favicon.ico'>
+  <link rel='icon' type='image/png' href='/epics/icon.png'>
+  <link rel='publisher' href='https://plus.google.com/106275891267278800612/'>
+</head>
+<body bgcolor='#FFFFFF'>
+<a href="http://www.anl.gov/privacy-security-notice">Security/Privacy Notice</a>
+  <br><table class='page' width='100%' cellspacing='0' border='0'>
+<tr>
+
+<td class='sidebar' width='10%'>
+<a href='/epics/index.php'>
+<img src='/epics/icons/logo101.gif' alt='EPICS Home' align='left' width='101' height='101' border='0'></a>
+</td>
+<td class='main'>
+<div style='display: inline-block; *display: inline; float: left;'><div style='margin: 15px 0 5px 0; text-align: center;'><a href='https://plus.google.com/106275891267278800612/?prsrc=3' style='text-decoration: none; color: #333;'><img src='/epics/icons/g-plus.png' width='32' height='32' alt='g+' style='border: 0;'></a></div><div style='font: bold 13px/16px arial,sans-serif; margin: 0 5px; text-align: center;'><a href='https://plus.google.com/106275891267278800612/?prsrc=3' style='text-decoration: none; color: #333;'> EPICS Page </a></div><div style='font: 13px/16px arial,sans-serif; text-align: center; margin: 0 5px;'><a href='https://plus.google.com/106275891267278800612/?prsrc=3' style='text-decoration: none; color: #333;'> on Google+ </a></div></div><div style='display: inline-block; *display: inline; float: left;'><div style='margin: 15px 0 5px 0; text-align: center;'><a href='https://plus.google.com/u/0/communities/113160068949106802880' style='text-decoration: none; color: #333;'><img src='/epics/icons/g-communities.png' width='32' height='32' alt='g+ Communities' style='border: 0;'></a></div><div style='font: bold 13px/16px arial,sans-serif; margin: 0 5px; text-align: center;'><a href='https://plus.google.com/u/0/communities/113160068949106802880' style='text-decoration: none; color: #333;'> EPICS Users </a></div><div style='font: 13px/16px arial,sans-serif; text-align: center;'><a href='https://plus.google.com/u/0/communities/113160068949106802880' style='text-decoration: none; color: #333;'> on Google+ </a></div></div><a href='http://www.anl.gov/'><img src='/epics/icons/ANL_H_White.png' align='right' border='0' alt='Argonne National Laboratory' width='250' height='115'></a>
+<h1 align='center'>
+Experimental Physics and <br>Industrial Control System</h1>
+</td></tr>
+
+<tr>
+<td class='sidebar' valign='top'>
+<ul id='navlist'>
+<li class='spacer'></li>
+<li><b>Home</b></li>
+<li><a href='/epics/news.php' title="Recent news">News</a></li>
+<li><a href='/epics/about.php' title="What is EPICS anyway?">About</a></li>
+<li><a href='/epics/base/index.php' title="The core EPICS software for both IOCs and Host tools">Base</a></li>
+<li><a href='/epics/modules/index.php' title="Optional support code for IOCs - drivers etc.">Modules</a></li>
+<li><a href='/epics/extensions/index.php' title="Tools to monitor and control IOCs">Extensions</a></li>
+<li><a href='/epics/distributions/index.php' title="Code collections from base, modules, extensions &amp; elsewhere">Distributions</a></li>
+<li><a href='/epics/download/index.php' title="Software downloads">Download</a></li>
+<li><a href='http://epics-pvdata.sourceforge.net/index.html' title="EPICS Version 4 Project">EPICSv4</a></li>
+<li><a href='/epics/irmis/index.php' title="Using RDBs to model installed EPICS IOCs">IRMIS</a></li>
+<li><a href='/epics/mail.php' title="Information about our mailing lists">Talk</a></li>
+<li><a href='https://bugs.launchpad.net/epics-base' title="The Launchpad bug tracker for epics-base">Bugs</a></li>
+<li><a href='/epics/docs/index.php' title="Text not related to a specific release or package">Documents</a></li>
+<li><a href='/epics/links.php' title="Related web-sites">Links</a></li>
+<li><a href='/epics/license/index.php' title="EPICS Software Licensing">Licensing</a></li>
+<li class='spacer'></li>
+</ul>
+<p align='center'>
+<a href='/epics/index.php?format=printer'>
+Format page<br>
+for printing</a></p>
+
+<form method="get" action="http://www.google.com/custom"><table align="center"
+bgcolor="#FFFFFF" cellspacing="0" border="0"><tr><td align="center"><a
+href="http://www.google.com/"><label for="q"><img border="0" alt="Google"
+src="/epics/icons/Google25.gif"  align="middle"></label></a><br><input
+type="text" name="q" id="q" size="10" maxlength="255" value=""></td></tr>
+</table><input type="hidden" name="cof"
+value="S:http://www.aps.anl.gov/epics;GL:0;VLC:#9f0000;AH:center;BGC:white;LH:115;LC:#00009f;L:http://www.aps.anl.gov/epics/icons/header.png;ALC:#009f00;LW:750;T:black;AWFID:e3f314152c5d8667;">
+<input type="hidden" name="domains" value="aps.anl.gov"><input type="hidden"
+name="sitesearch" value="aps.anl.gov"> </form>
+<br>
+<form method="post" action="/epics/tech-talk/search.php">
+<table align="center" bgcolor="#FFFFFF" cellspacing="0" border="0">
+<tr><th align="center"><small>Search&nbsp;Tech-talk</small></th></tr>
+<tr><td><input type="text" name="query" size="10" value=""></td></tr>
+</table>
+</form>
+<td class='main'>
+
+<h2>
+EPICS Home Page</h2>
+
+<p>
+<b><acronym title="Experimental Physics and Industrial Control System">
+EPICS</acronym></b> is a set of Open Source software tools, libraries and
+applications developed collaboratively and used worldwide to create distributed
+soft real-time control systems for scientific instruments such as a particle
+accelerators, telescopes and other large scientific experiments.</p>
+
+<p>
+<b>Beginners:</b> If you're just starting out with EPICS, take a look at the
+series of training lecture videos recorded at Argonne in
+<a href="docs/APS2014.php">2014</a> and
+<a href="docs/APS2015.php">2015</a>.</p>
+
+<h3>
+Sitemap</h3>
+
+<ul>
+<li>
+<a href='/epics/index.php'>
+Home</a>: EPICS Home at APS
+</li>
+<li>
+<a href='/epics/news.php'>
+News</a>: Recent news
+
+<ul>
+<li>
+<a href='/epics/meetings.php'>
+Meetings</a>: Collaboration meeting details
+</li>
+<li>
+<a href='/epics/meetings/codeathon.php'>
+Codeathons</a>: Codeathon developer meetings
+</li>
+</ul>
+</li>
+<li>
+<a href='/epics/about.php'>
+About</a>: What is EPICS anyway?
+
+<ul>
+<li>
+<a href='/epics/neat.php'>
+10 Things ...</a>: Ten Really Neat Things About EPICS
+</li>
+<li>
+<a href='/epics/contacts.php'>
+Contacts</a>: Who's who, and how to contact them
+</li>
+</ul>
+</li>
+<li>
+<a href='/epics/base/index.php'>
+Base</a>: The core EPICS software for both IOCs and Host tools
+
+<ul>
+<li>
+<a href='https://launchpad.net/epics-base'>
+Launchpad</a>: The epics-base project at Launchpad
+
+<ul>
+<li>
+<a href='https://code.launchpad.net/epics-base'>
+Branches</a>: Source code, old and new
+</li>
+<li>
+<a href='https://bugs.launchpad.net/epics-base'>
+Bugs</a>: Reports and fixes
+</li>
+<li>
+<a href='https://blueprints.launchpad.net/epics-base'>
+Blueprints</a>: Development Plans
+</li>
+</ul>
+</li>
+<li>
+<a href='/epics/base/R3-15/index.php'>
+R3.15</a>: Current releases
+
+<ul>
+<li>
+<a href='/epics/base/R3-15/2.php'>
+R3.15.2</a>: Latest current release (3.15.2 on 2015-05-14)
+</li>
+<li>
+<a href='/epics/base/R3-15/1.php'>
+R3.15.1</a>: First of the new series (3.15.1 on 2014-12-01)
+</li>
+<li>
+<a href='https://jenkins.aps.anl.gov/job/epics-base-3.15/'>
+Jenkins</a>: Build &amp; test status for 3.15 branch
+</li>
+</ul>
+</li>
+<li>
+<a href='/epics/base/R3-14/index.php'>
+R3.14</a>: Stable releases
+
+<ul>
+<li>
+<a href='/epics/base/R3-14/12.php'>
+R3.14.12</a>: Stable releases (3.14.12.5 on 2015-03-24)
+</li>
+<li>
+<a href='https://jenkins.aps.anl.gov/job/epics-base-3.14/'>
+Jenkins</a>: Build &amp; test status for 3.14 branch
+</li>
+<li>
+<a href='/epics/base/R3-14/unbundled.php'>
+Old drvs</a>: Device/drivers from R3.13, converted to R3.14
+</li>
+</ul>
+</li>
+<li>
+<a href='/epics/base/R3-13.php'>
+R3.13</a>: Frozen, still used in a few places
+</li>
+<li>
+<a href='/epics/base/R3-12.php'>
+R3.12</a>: Older versions, fossilized
+</li>
+<li>
+<a href='/epics/base/R3-11.php'>
+R3.11</a>: Pre-historic
+</li>
+<li>
+<a href='/epics/base/vxWorks6.php'>
+vxWorks 6.x</a>: Information about using vxWorks 6.x with EPICS
+
+<ul>
+<li>
+<a href='/epics/base/tornado.php'>
+Tornado</a>: Information about using vxWorks 5.x with EPICS
+</li>
+<li>
+<a href='/epics/base/tornado-linux.php'>
+T2.2 Linux</a>: Using Tornado 2.2 with a Linux host
+</li>
+<li>
+<a href='/epics/base/ppc.php'>
+PowerPC</a>: Some differences between vxWorks on 68K and PowerPC
+</li>
+<li>
+<a href='/epics/base/T20xConfig.html'>
+T20xConfig</a>: Instructions on configuring vxWorks 5.x for use with EPICS
+</li>
+</ul>
+</li>
+<li>
+<a href='/epics/base/RTEMS.php'>
+RTEMS</a>: Information about running EPICS using RTEMS
+
+<ul>
+<li>
+<a href='/epics/base/RTEMS/tutorial/'>
+Tutorial</a>: Getting started with EPICS on RTEMS
+</li>
+</ul>
+</li>
+<li>
+<a href='/epics/base/win32.php'>
+MS Windows</a>: Building EPICS on Microsoft Windows
+</li>
+<li>
+<a href='/epics/download/base/index.php'>
+Download</a>: EPICS Base Downloads
+</li>
+<li>
+<a href='https://www.ohloh.net/p/epics-base'>
+Statistics</a>: Development statistics from Ohloh.net
+</li>
+</ul>
+</li>
+<li>
+<a href='/epics/modules/index.php'>
+Modules</a>: Optional support code for IOCs - drivers etc.
+
+<ul>
+<li>
+<a href='/epics/modules/soft.php'>
+Soft Support</a>: IOC software that isn't real-world I/O
+
+<ul>
+<li>
+<a href='/epics/modules/addsoft.php'>
+Add New</a>: Add your entry to the Soft Support database
+</li>
+</ul>
+</li>
+<li>
+<a href='/epics/modules/bus.php'>
+H/W by Bus,</a>: Supported hardware list, sorted by Bus
+</li>
+<li>
+<a href='/epics/modules/manufacturer.php'>
+Manufacturer</a>: Supported hardware list, sorted by Module Manufacturer
+</li>
+<li>
+<a href='/epics/modules/contact.php'>
+Contact,</a>: Supported hardware list, sorted by Maintainer's name
+</li>
+<li>
+<a href='/epics/modules/link.php'>
+or Link</a>: Supported hardware list, sorted by Support Link name
+
+<ul>
+<li>
+<a href='/epics/modules/addhard.php'>
+Add New</a>: Add your entry to the Hardware Support database
+</li>
+</ul>
+</li>
+<li>
+<a href='/epics/modules/common.php'>
+Common Modules</a>: Frequently used support modules
+</li>
+<li>
+<a href='/epics/modules/aps.php'>
+APS Modules</a>: Support modules from the APS
+</li>
+<li>
+<a href='/epics/download/modules/index.php'>
+Downloads</a>: IOC Support Module Downloads
+</li>
+</ul>
+</li>
+<li>
+<a href='/epics/extensions/index.php'>
+Extensions</a>: Tools to monitor and control IOCs
+
+<ul>
+<li>
+<a href='/epics/extensions/index.php#Config_Files'>
+Config</a>: Extensions build system configuration
+</li>
+<li>
+<a href='/epics/extensions/index.php#CA_Clients'>
+Clients</a>: Standalone CA Client programs
+</li>
+<li>
+<a href='/epics/extensions/index.php#CA_Servers'>
+Servers</a>: CA Server tools
+</li>
+<li>
+<a href='/epics/extensions/index.php#CA_Interfaces'>
+Interfaces</a>: CA Interfaces to other tools and languages
+</li>
+<li>
+<a href='/epics/extensions/index.php#DB_Tools'>
+DCTs</a>: Database Management Tools
+</li>
+<li>
+<a href='/epics/extensions/index.php#Other'>
+Other</a>: Other Tools
+</li>
+<li>
+<a href='/epics/extensions/index.php#Unsupported'>
+Unsupported</a>: Unsupported (orphaned) software
+</li>
+<li>
+<a href='/epics/download/extensions/index.php'>
+Downloads</a>: Extension Downloads
+</li>
+</ul>
+</li>
+<li>
+<a href='/epics/distributions/index.php'>
+Distributions</a>: Code collections from base, modules, extensions &amp; elsewhere
+
+<ul>
+<li>
+<a href='/aod/bcda/synApps/index.php'>
+synApps</a>: Beamline support code packaged by BCDA
+</li>
+<li>
+<a href='http://epics.nsls2.bnl.gov/debian/'>
+Debian</a>: NSLS-II Controls Package Repository (BNL)
+</li>
+<li>
+<a href='http://www.iter.org/org/team/chd/cid/codac/coresystem'>
+ITER</a>: ITER CODAC Core System (ITER)
+</li>
+<li>
+<a href='http://physicsweb.creighton.edu/jiro/VirtualBox/'>
+Creighton</a>: Scientific Linux VMWare image with EPICS (Creighton)
+</li>
+<li>
+<a href='http://web.ornl.gov/~t6p/Main/Utilities.html'>
+MacOSX</a>: CA Client Installer for Mac OS X Leopard (ORNL)
+</li>
+<li>
+<a href='http://epics.sourceforge.net/maven2/'>
+Maven2</a>: Maven2 repository of Java libraries (SourceForge)
+</li>
+<li>
+<a href='/epics/distributions/win32/index.php'>
+Windows</a>: Tools built for Microsoft Windows systems
+</li>
+<li>
+<a href='/epics/TIS-4000/index.php'>
+TIS-4000</a>: Commercial SCADA software based on early version of EPICS
+</li>
+<li>
+<a href='/epics/download/distributions/index.php'>
+Downloads</a>: Distrbution Downloads
+</li>
+</ul>
+</li>
+<li>
+<a href='/epics/download/index.php'>
+Download</a>: Software downloads
+
+<ul>
+<li>
+<a href='/epics/download/base/index.php'>
+Base</a>: EPICS Base
+</li>
+<li>
+<a href='/epics/download/modules/index.php'>
+Modules</a>: IOC Support Modules
+</li>
+<li>
+<a href='/epics/download/extensions/index.php'>
+Extensions</a>: Host applications
+</li>
+<li>
+<a href='/epics/download/distributions/index.php'>
+Distributions</a>: Software collections
+</li>
+<li>
+<a href='/epics/download/examples/index.php'>
+Examples</a>: Sample &amp; demo IOC Applications
+</li>
+<li>
+<a href='/cgi-bin/epics/cvsweb/'>
+Browse CVS</a>: CVSWeb access to the EPICS repository
+</li>
+</ul>
+</li>
+<li>
+<a href='http://epics-pvdata.sourceforge.net/index.html'>
+EPICSv4</a>: EPICS Version 4 Project
+
+<ul>
+<li>
+<a href='http://epics-pvdata.sourceforge.net/development.html'>
+Development</a>: Help for Developing with EPICS v4
+</li>
+<li>
+<a href='http://epics-pvdata.sourceforge.net/faq.html'>
+FAQ</a>: Fittingly Answered Questions about EPICS v4
+</li>
+<li>
+<a href='http://epics-pvdata.sourceforge.net/home.html'>
+Working Group</a>: Status, members, meetings etc.
+
+<ul>
+<li>
+<a href='http://epics-pvdata.sourceforge.net/charter.html'>
+Charter</a>: Terms of reference for the WG
+</li>
+<li>
+<a href='https://sourceforge.net/tracker/?group_id=249167&amp;atid=2482257'>
+Action Items</a>: Tasks assigned by the WG
+</li>
+<li>
+<a href='https://sourceforge.net/tracker/?group_id=249167&amp;atid=2483530'>
+Resolutions</a>: WG Decisions
+</li>
+</ul>
+</li>
+<li>
+<a href='http://sourceforge.net/mailarchive/forum.php?forum_name=epics-pvdata-devel'>
+Mail Archive</a>: Discussion history
+</li>
+<li>
+<a href='http://sourceforge.net/tracker/?group_id=249167&amp;atid=2585448'>
+Bugs</a>: Problems in implemented v4 software
+</li>
+</ul>
+</li>
+<li>
+<a href='/epics/irmis/index.php'>
+IRMIS</a>: Using RDBs to model installed EPICS IOCs
+
+<ul>
+<li>
+<a href='/epics/irmis/Primer.pdf'>
+Primer</a>: IRMIS Primer document (PDF)
+</li>
+<li>
+<a href='/epics/irmis/2005-03/index.html'>
+2005 Mtg</a>: March 2005 Collaboration Meeting
+</li>
+</ul>
+</li>
+<li>
+<a href='/epics/mail.php'>
+Talk</a>: Information about our mailing lists
+
+<ul>
+<li>
+<a href='/epics/tech-talk/index.php'>
+Tech-Talk</a>: The main mailing list, our online support channel
+
+<ul>
+<li>
+<a href='https://mailman.aps.anl.gov/mailman/listinfo/tech-talk'>
+Mailman</a>: Subscribing to the list
+</li>
+<li>
+<a href='/epics/tech-talk/search.php'>
+Search</a>: Search the tech-talk archives
+</li>
+<li>
+<a href='/epics/tech-talk/2015/index.php'>
+2015</a>: Browse tech-talk messages from 2015
+</li>
+</ul>
+</li>
+<li>
+<a href='/epics/core-talk/index.php'>
+Core-talk</a>: Discussions between Base developers
+
+<ul>
+<li>
+<a href='https://mailman.aps.anl.gov/mailman/listinfo/core-talk'>
+Mailman</a>: Subscribing to the list
+</li>
+<li>
+<a href='/epics/core-talk/search.php'>
+Search</a>: Search the core-talk archives
+</li>
+<li>
+<a href='/epics/core-talk/2015/index.php'>
+2015</a>: Browse core-talk messages from 2015
+</li>
+</ul>
+</li>
+<li>
+<a href='/epics/qti-talk/index.php'>
+QTi-talk</a>: Discussions about the QT Initiative
+
+<ul>
+<li>
+<a href='https://mailman.aps.anl.gov/mailman/listinfo/qti-talk'>
+Mailman</a>: Subscribing to the list
+</li>
+<li>
+<a href='/epics/qti-talk/search.php'>
+Search</a>: Search the qti-talk archives
+</li>
+<li>
+<a href='/epics/qti-talk/2015/index.php'>
+2015</a>: Browse QTi-talk messages from 2015
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<a href='https://bugs.launchpad.net/epics-base'>
+Bugs</a>: The Launchpad bug tracker for epics-base
+
+<ul>
+<li>
+<a href='/epics/mantis/index.php'>
+Bug-tracker</a>: Our old bug reporting database
+</li>
+<li>
+<a href='/epics/mantis/login_anon.php'>
+Browse</a>: Anonymous login to Mantis
+</li>
+</ul>
+</li>
+<li>
+<a href='/epics/docs/index.php'>
+Documents</a>: Text not related to a specific release or package
+
+<ul>
+<li>
+<a href='https://wiki-ext.aps.anl.gov/epics/index.php/Main_Page'>
+Wiki</a>: The EPICS Wiki, for community documentation
+
+<ul>
+<li>
+<a href='https://wiki-ext.aps.anl.gov/epics/index.php/RRM_3-14'>
+Record Types</a>: Record Reference Manual for R3.14.x
+</li>
+<li>
+<a href='https://wiki-ext.aps.anl.gov/epics/index.php/HowTo_Documents'>
+How To ...</a>: How To do various common EPICS tasks
+</li>
+<li>
+<a href='https://wiki-ext.aps.anl.gov/epics/index.php/Core_Developer_Pages'>
+Core dev's</a>: Pages for core developers
+</li>
+</ul>
+</li>
+<li>
+<a href='/epics/docs/ca.php'>
+CA</a>: Channel Access
+</li>
+<li>
+<a href='/epics/docs/training.php'>
+Training</a>: Training materials
+
+<ul>
+<li>
+<a href='/epics/docs/APS2015.php'>
+APS 2015</a>: APS EPICS Training series, 2015 talks
+</li>
+<li>
+<a href='/epics/docs/APS2014.php'>
+APS 2014</a>: APS EPICS Training series, 2014 talks
+</li>
+<li>
+<a href='/epics/docs/USPAS2014.php'>
+USPAS 2014</a>: Materials from the 2014 USPAS course in Albuquerque, NM
+</li>
+<li>
+<a href='/epics/docs/USPAS2010.php'>
+USPAS 2010</a>: Materials from the 2010 USPAS course in Boston, MA
+</li>
+</ul>
+</li>
+<li>
+<a href='/epics/docs/general.php'>
+General</a>: General descriptions and overviews
+</li>
+<li>
+<a href='/epics/docs/epics-logo.php'>
+Logo</a>: Graphics and use of the EPICS logo
+</li>
+<li>
+<a href='/epics/docs/hardware.php'>
+Hardware</a>: Hardware support (old documents)
+</li>
+</ul>
+</li>
+<li>
+<a href='/epics/links.php'>
+Links</a>: Related web-sites
+
+<ul>
+<li>
+<a href='/epics/sites.php'>
+EPICS&nbsp;Users</a>: The main EPICS sites and companies
+</li>
+<li>
+<a href='/epics/projects.php'>
+Projects</a>: A (fairly old) list of projects that were built with EPICS
+</li>
+</ul>
+</li>
+<li>
+<a href='/epics/license/index.php'>
+Licensing</a>: EPICS Software Licensing
+
+<ul>
+<li>
+<a href='/epics/license/open.php'>
+Open Source</a>: EPICS Open License text
+
+<ul>
+<li>
+<a href='/epics/license/grant.php'>
+Grant</a>: EPICS Grant of License text
+</li>
+</ul>
+</li>
+<li>
+<a href='/epics/license/old.php'>
+Old Licenses</a>: Original EPICS copyright notice
+
+<ul>
+<li>
+<a href='/epics/license/base.php'>
+Old Base</a>: Old EPICS Base License text
+</li>
+<li>
+<a href='/epics/license/verify.php'>
+Verify</a>: Licensee verification no longer necessary
+</li>
+<li>
+<a href='/epics/license/org.php'>
+Licensees</a>: Public list of Base licensees
+</li>
+<li>
+<a href='/epics/license/country.php'>
+by Country</a>: List sorted by country
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+</td></tr>
+
+<tr>
+<td class='signature'>
+<a href="mailto:Andrew%20Johnson%20&lt;anj_at_aps.anl.gov&gt;">
+ANJ</a>, 20 Feb 2015</td>
+<td class='bottom'>
+<a href='http://validator.w3.org/check?uri=referer'><img src='/epics/icons/vh401.gif' alt='Valid HTML 4.01!' border='0' align='right' height='31' width='88'></a>
+&middot;
+<b>
+Home</b>
+&middot;
+<a href='/epics/news.php' title="Recent news">News</a>
+&middot;
+<a href='/epics/about.php' title="What is EPICS anyway?">About</a>
+&middot;
+<a href='/epics/base/index.php' title="The core EPICS software for both IOCs and Host tools">Base</a>
+&middot;
+<a href='/epics/modules/index.php' title="Optional support code for IOCs - drivers etc.">Modules</a>
+&middot;
+<a href='/epics/extensions/index.php' title="Tools to monitor and control IOCs">Extensions</a>
+&middot;
+<a href='/epics/distributions/index.php' title="Code collections from base, modules, extensions &amp; elsewhere">Distributions</a>
+&middot;
+<a href='/epics/download/index.php' title="Software downloads">Download</a>
+&middot;
+<br>
+&middot;
+<a href='http://epics-pvdata.sourceforge.net/index.html' title="EPICS Version 4 Project">EPICSv4</a>
+&middot;
+<a href='/epics/irmis/index.php' title="Using RDBs to model installed EPICS IOCs">IRMIS</a>
+&middot;
+<a href='/epics/mail.php' title="Information about our mailing lists">Talk</a>
+&middot;
+<a href='https://bugs.launchpad.net/epics-base' title="The Launchpad bug tracker for epics-base">Bugs</a>
+&middot;
+<a href='/epics/docs/index.php' title="Text not related to a specific release or package">Documents</a>
+&middot;
+<a href='/epics/links.php' title="Related web-sites">Links</a>
+&middot;
+<a href='/epics/license/index.php' title="EPICS Software Licensing">Licensing</a>
+&middot;
+</td></tr></table>
+</body>
+</html>
+ZüUÉfò      VDãÔVDãÔ;ÌFVgÖ9   :http://www.aps.anl.gov/epics/ necko:classified 1 request-method GET response-head HTTP/1.1 200 OK
+Date: Thu, 12 Nov 2015 19:09:08 GMT
+Server: Apache
+X-Frame-Options: SAMEORIGIN
+Last-Modified: Fri, 20 Feb 2015 17:16:17 GMT
+Content-Type: text/html; charset=iso-8859-1
+X-Cache: MISS from wwwcache2-dl-cache, MISS from wwwcache2-dl-icap
+Via: 1.1 wwwcache2-dl-cache (squid/3.3.10), 1.1 wwwcache2-dl-icap (squid/3.3.10)
+ charset windows-1252 uncompressed-len 0 predictor::resource-count 7 predictor::http://www.aps.anl.gov/epics/epics.css 1,1,1447355348,0 predictor::http://www.aps.anl.gov/epics/icons/logo101.gif 1,1,1447355348,0 predictor::http://www.aps.anl.gov/epics/icons/g-plus.png 1,1,1447355348,0 predictor::http://www.aps.anl.gov/epics/icons/g-communities.png 1,1,1447355348,0 predictor::http://www.aps.anl.gov/epics/icons/ANL_H_White.png 1,1,1447355348,0 predictor::http://www.aps.anl.gov/epics/icons/Google25.gif 1,1,1447355348,0 predictor::http://www.aps.anl.gov/epics/icons/vh401.gif 1,1,1447355348,0   Q®

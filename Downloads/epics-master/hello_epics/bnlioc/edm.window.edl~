@@ -1,0 +1,104 @@
+4 0 1
+beginScreenProperties
+major 4
+minor 0
+release 1
+x 583
+y 257
+w 500
+h 600
+font "utopia-medium-r-8.0"
+ctlFont "utopia-medium-r-8.0"
+btnFont "utopia-medium-r-8.0"
+fgColor index 0
+bgColor index 70
+textColor index 0
+ctlFgColor1 index 1
+ctlFgColor2 index 7
+ctlBgColor1 index 19
+ctlBgColor2 index 21
+topShadowColor index 2
+botShadowColor index 0
+endScreenProperties
+
+# (Text Control)
+object activeXTextDspClass
+beginObjectProperties
+major 4
+minor 7
+release 0
+x 72
+y 25
+w 146
+h 10
+controlPv "calc:a"
+font "utopia-medium-r-8.0"
+fgColor index 0
+bgColor index 19
+bgAlarm
+editable
+autoHeight
+limitsFromDb
+nullColor index 7
+useKp
+useHexPrefix
+useAlarmBorder
+newPos
+objType "controls"
+id "Sum A"
+endObjectProperties
+
+# (Text Control)
+object activeXTextDspClass
+beginObjectProperties
+major 4
+minor 7
+release 0
+x 71
+y 57
+w 146
+h 10
+controlPv "calc:b"
+font "utopia-medium-r-8.0"
+fgColor index 0
+bgColor index 19
+bgAlarm
+editable
+autoHeight
+limitsFromDb
+nullColor index 7
+useKp
+useHexPrefix
+useAlarmBorder
+newPos
+objType "controls"
+id "Sum B"
+endObjectProperties
+
+# (Text Control)
+object activeXTextDspClass
+beginObjectProperties
+major 4
+minor 7
+release 0
+x 75
+y 88
+w 146
+h 10
+controlPv "calc:sum"
+font "utopia-medium-r-8.0"
+fgColor index 0
+bgColor index 19
+bgAlarm
+editable
+autoHeight
+limitsFromDb
+nullColor index 7
+useKp
+useHexPrefix
+useAlarmBorder
+newPos
+objType "controls"
+id "Sum"
+endObjectProperties
+

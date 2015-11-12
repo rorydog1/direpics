@@ -1,0 +1,1 @@
+/home/controls/ioc/elinp/procServ --allow -q -n "gp08_ioc01" -i ^D^C -l 7002 -c "/home/controls/ioc/elinp/gp08_ioc01/iocBoot/iocgp08_ioc01" 7001 /home/controls/ioc/elinp/gp08_ioc01/iocBoot/iocgp08_ioc01/st.cmd

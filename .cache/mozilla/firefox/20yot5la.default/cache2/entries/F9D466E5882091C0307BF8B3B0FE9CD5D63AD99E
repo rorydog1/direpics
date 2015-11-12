@@ -1,0 +1,342 @@
+// Addthis
+var addthis_config = addthis_config || {};
+addthis_config.data_track_addressbar = false;
+addthis_config.data_track_clickback = false;
+
+
+function google_analytics() {
+	(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+	(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+	m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+	})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+	ga('create', 'UA-15981194-22', 'pkgs.org');
+	ga('send', 'pageview');
+}
+
+
+function page_init() {
+    $(document).ready(function() {
+		
+        // Mobile fixes
+		if (/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) {
+			$("#header-background").css({
+				"position": "absolute"
+			});
+		}
+        
+    });
+    
+    searchform_init();
+}
+
+function distro_accordion_init(accordion_id) {
+	$(document).ready(function() {
+		var distro_index = -1;
+		
+		// get from url:   http://pkgs.org/#ubuntu-12.04
+		var distro_name = window.location.hash.substring(1);
+
+		if (distro_name) {
+			var div_distro = $("div").find("[data-name='" + distro_name + "']");
+			distro_index = $(".distro").index(div_distro);
+		}
+
+		// get from cookie
+		if (distro_index === -1) {
+			var distro_id = $.cookie("searchform-distro");		
+			var div_distro = $("div").find("[data-id='" + distro_id + "']");
+			distro_index = $(".distro").index(div_distro);
+		}
+
+		// no distro on url and cookie
+		if (distro_index === -1) {
+			distro_index = 0;
+		}
+
+		var $accordion = $("#" + accordion_id);
+
+		$accordion.accordion({
+			active: distro_index,
+			header: "div.distro",
+			heightStyle: "content",
+			navigation: true
+		});
+		
+//		$("html").scrollTop($("#debian-squeeze").offset().top);
+	});
+}
+
+
+function home_init() {
+	distro_accordion_init("home_distros");
+};
+
+
+function pkg_info_init() {
+	$(document).ready(function() {
+        var pkg_id = $("#pkg_info").data("pkg_id");
+        
+        $("#requiredby").before("<h2>Required By</h2>");
+        
+        // load_more
+        $("#provides").load_more({ 
+            max_items: 150, 
+            url: 'http://pkgs.org/ajax/?func=get_more_provides&pkg_id=' + pkg_id
+        });
+        
+        $("#requires").load_more({ 
+            max_items: 150, 
+            url: 'http://pkgs.org/ajax/?func=get_more_requires&pkg_id=' + pkg_id
+        });
+        
+        $("#requiredby").load_more({ 
+            max_items: 0, 
+            button_title: "Show Packages",
+            msg_error: "No packages",
+            url: 'http://pkgs.org/ajax/?func=get_more_requiredby&pkg_id=' + pkg_id
+        });
+        
+        $("#files").load_more({ 
+            max_items: 150, 
+            url: 'http://pkgs.org/ajax/?func=get_more_files&pkg_id=' + pkg_id
+        });
+
+		// show_more
+		$("#see_also") .show_more({max_height: 400});
+		$("#requires") .show_more({max_height: 400});
+		$("#provides") .show_more({max_height: 400});
+		$("#files")    .show_more({max_height: 400});
+		$("#changelog").show_more({max_height: 400});
+		
+		
+		// get_required_by
+		$("#requiredby_show").on("click", function(event) {
+			$("#requiredby_data").html('<div class="level2">Please wait...</div>');
+			
+			$.get('http://pkgs.org/ajax/?func=get_required_by&pkg_id=' + pkg_id, function(data) {
+				if (data.length) {
+					pkgs_html = data;
+				} else {
+					pkgs_html = '<div class="level2">No packages</div>';
+				}
+				
+				$("#requiredby_data").html(pkgs_html);
+			});
+			
+			event.preventDefault();
+		});
+	});
+}
+
+function pkg_download_init() {
+	$(document).ready(function() {
+        // change url to pkg_info page
+        $url = document.URL.replace("/download/", ".html");
+        history.pushState('pkg_info', '', $url);
+    });
+}
+
+
+function pkgs_show_init() {
+	distro_accordion_init("pkgs_show");
+}
+
+
+function searchform_init() {
+	$(document).ready(function() {
+        // Restore saved search type
+        var type = $.cookie("searchform-type");
+
+        if (! type) {
+            type = "smart";
+        }
+
+        $("#searchform-type").val(type);
+
+        
+		// Hint
+		search_hint = "Search";
+		$("#searchform-query").val(search_hint);
+		
+		
+		// Search button
+		$("#searchform-button").click(function() {
+			 $("#searchform").submit();
+		});
+		
+		
+		$("#searchform").submit(function(event) {
+			event.preventDefault();
+			
+			// Build url
+			var query = $("#searchform-query").val();
+			var type = $("#searchform-type").val();
+			
+			if (! query || ! type) {
+				return;
+			}
+			
+			var url = "http://pkgs.org/search/" + query;
+			
+			if (type !== "smart") {
+				url += "?type=" + type;
+			}
+			
+			window.location.href = url;
+		});        
+		
+		
+		$("#searchform-query").focus(function() {
+			// Show params div
+			$("#searchform-params").show();
+		
+			
+			// Clean example			
+			if (! is_query_entered()) {
+				$("#searchform-query").val("");
+			}
+			
+			
+			if (! $("#searchform-distro option").length) {
+				
+				// Load searchform-distro options
+				$.getJSON('http://pkgs.org/ajax/?func=get_distros', function(data) {
+					if (! data) return;
+
+					$.each(data, function(index, distro) {
+						$("#searchform-distro").append($('<option value="' + distro.id + '">' + distro.name + '</option>'));
+					});
+					
+					
+					// Restore selected distro
+					var distro_id = $.cookie("searchform-distro");
+
+					if (! distro_id) {
+						distro_id = 161; // Fedora 21
+					}
+					
+					$("#searchform-distro").val(distro_id);
+				});
+			};
+
+		});
+		
+		
+		// Hide searchform-params on mouse click outside of search controls
+		$("body").click(function(event) {
+			if (
+				! $(event.target).is("#searchform-query") && 
+				! $(event.target).parents("#searchform-params").length
+			) {
+				$("#searchform-params").hide();
+				
+				if (! $("#searchform-query").val()) {
+					$("#searchform-query").val(search_hint);
+				}
+			}
+		});
+		
+		
+        // Initialize autocomplete
+        $("#searchform-query").autocomplete({
+            minLength: 2,
+
+            appendTo: $("#searchform-query").parent(),
+
+            source: function(request, response) {
+                var query = $.trim(request.term).replace(/\s.*/g, "");
+				var distro_id = $("#searchform-distro").val();
+
+                if (! query || ! distro_id) {
+					return;
+				}
+
+				$("#searchform-params").hide();
+
+				// Save cookie
+				$.cookie("searchform-distro", distro_id, {path: "/", expires: new Date("2020-01-01")});
+
+                // Search
+                $.getJSON('http://pkgs.org/ajax/?func=autocomplete&query=' + query + '&distro_id=' + distro_id, 
+                    function(data) {
+                        response(data);
+                    }
+                );
+            },
+
+
+            select: function(event, ui) {
+                // Redirect
+                window.location.href = "http://pkgs.org/download/" + ui.item.value;
+            }
+        });
+
+
+        // Change autocomplete renderer
+        $("#searchform-query").data("uiAutocomplete")._renderItem = function(ul, item) {
+			var query = this.term.replace(/\s.*/g, "");
+			
+            var label = item.label;
+            label = label.replace(query, "<span>" + query + "</span>");
+
+            return $("<li></li>")
+            .data("item.autocomplete", item)
+            .append("<a>" + label + "</a>" )
+            .appendTo(ul);
+        };
+		
+		
+		// Hints
+		$("#searchform-type" ).change(function() {
+			
+			// Show hint
+			var type = $("#searchform-type" ).val();
+			var example;
+			
+			switch (type) {
+				case "smart":		example = "Search Order: Name > Provides > Filenames > Directories > Files"; break;
+				case "name":		example = "Example: gnome-terminal"; break;
+				case "filename":	example = "Example: gnome-terminal-2.31.3-8.el6.x86_64.rpm"; break;
+				case "srcfilename":	example = "Example: gnome-terminal-2.31.3-8.el6.src.rpm"; break;
+				case "provides":	example = "Example: libgobject-2.0.so.0"; break;
+				case "requires":	example = "Example: libbz2.so.1()"; break;
+				case "summary":		example = "Example: video encoder"; break;
+				case "description":	example = "Example: audio device"; break;
+				case "dirs":		example = "Example: /usr/include/protocols/ (full path is required!)"; break;
+				case "files":		example = "Example: /usr/include/limits.h (full path is required!)"; break;
+			}
+			
+			if (! is_query_entered()) {
+				$("#searchform-query").val(example);
+			}
+			
+			
+			// Save search type to cookie
+			$.cookie("searchform-type", type, { path: "/", expires: new Date("2020-01-01")});
+		});
+
+
+		function is_query_entered() {
+			var query = $("#searchform-query").val();
+			return query.length && ! query.match(/^Example|Name|Search/g);
+		}
+
+	});
+}
+
+ ,¢'hü      VD÷KVD÷L;Ã
+ÂVlcK   0:http://pkgs.org/static/scripts/common.js?ver=81 necko:classified 1 request-method GET request-Accept-Encoding gzip, deflate response-head HTTP/1.1 200 OK
+Server: nginx
+Date: Thu, 12 Nov 2015 18:11:24 GMT
+Content-Type: application/javascript
+Content-Length: 8657
+Last-Modified: Wed, 24 Dec 2014 08:39:40 GMT
+Vary: Accept-Encoding
+Etag: "549a7bcc-21d1"
+Expires: Sat, 12 Dec 2015 18:11:24 GMT
+Cache-Control: max-age=2592000
+Accept-Ranges: bytes
+X-Cache: MISS from wwwcache2-dl-cache, MISS from wwwcache2-dl-icap
+Via: 1.1 wwwcache2-dl-cache (squid/3.3.10), 1.1 wwwcache2-dl-icap (squid/3.3.10)
+ uncompressed-len 0   !—

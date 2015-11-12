@@ -1,0 +1,720 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd"><html><head>
+  <meta http-equiv='Content-type' content='text/html;charset=iso-8859-1'>
+  <meta name='description' content='EPICS Extensions'>
+  <meta name='keywords' content='EPICS,software,process control,scientific software'>
+  <title>EPICS Extensions</title>
+  <link rel='stylesheet' href='/epics/epics.css' type='text/css'>
+  <link rel='shortcut icon' type='image/x-icon' href='/epics/favicon.ico'>
+  <link rel='icon' type='image/png' href='/epics/icon.png'>
+  <link rel='publisher' href='https://plus.google.com/106275891267278800612/'>
+</head>
+<body bgcolor='#FFFFFF'>
+<table class='page' width='100%' cellspacing='0' border='0'>
+<tr>
+
+<td class='sidebar' width='10%'>
+<a href='/epics/index.php'>
+<img src='/epics/icons/logo101.gif' alt='EPICS Home' align='left' width='101' height='101' border='0'></a>
+</td>
+<td class='main'>
+<div style='display: inline-block; *display: inline; float: left;'><div style='margin: 15px 0 5px 0; text-align: center;'><a href='https://plus.google.com/106275891267278800612/?prsrc=3' style='text-decoration: none; color: #333;'><img src='/epics/icons/g-plus.png' width='32' height='32' alt='g+' style='border: 0;'></a></div><div style='font: bold 13px/16px arial,sans-serif; margin: 0 5px; text-align: center;'><a href='https://plus.google.com/106275891267278800612/?prsrc=3' style='text-decoration: none; color: #333;'> EPICS Page </a></div><div style='font: 13px/16px arial,sans-serif; text-align: center; margin: 0 5px;'><a href='https://plus.google.com/106275891267278800612/?prsrc=3' style='text-decoration: none; color: #333;'> on Google+ </a></div></div><div style='display: inline-block; *display: inline; float: left;'><div style='margin: 15px 0 5px 0; text-align: center;'><a href='https://plus.google.com/u/0/communities/113160068949106802880' style='text-decoration: none; color: #333;'><img src='/epics/icons/g-communities.png' width='32' height='32' alt='g+ Communities' style='border: 0;'></a></div><div style='font: bold 13px/16px arial,sans-serif; margin: 0 5px; text-align: center;'><a href='https://plus.google.com/u/0/communities/113160068949106802880' style='text-decoration: none; color: #333;'> EPICS Users </a></div><div style='font: 13px/16px arial,sans-serif; text-align: center;'><a href='https://plus.google.com/u/0/communities/113160068949106802880' style='text-decoration: none; color: #333;'> on Google+ </a></div></div><a href='http://www.anl.gov/'><img src='/epics/icons/ANL_H_White.png' align='right' border='0' alt='Argonne National Laboratory' width='250' height='115'></a>
+<h1 align='center'>
+Experimental Physics and <br>Industrial Control System</h1>
+</td></tr>
+
+<tr>
+<td class='sidebar' valign='top'>
+<ul id='navlist'>
+<li class='spacer'></li>
+<li><a href='/epics/index.php' title="EPICS Home at APS">Home</a></li>
+<li><a href='/epics/news.php' title="Recent news">News</a></li>
+<li><a href='/epics/about.php' title="What is EPICS anyway?">About</a></li>
+<li><a href='/epics/base/index.php' title="The core EPICS software for both IOCs and Host tools">Base</a></li>
+<li><a href='/epics/modules/index.php' title="Optional support code for IOCs - drivers etc.">Modules</a></li>
+<li><b>Extensions</b>
+<ul>
+<li><a href='/epics/extensions/alh/index.php' title="Alarm Handler">ALH</a></li>
+<li><a href='http://slacmshankar.github.io/epicsarchiver_docs/index.html' title="Archiver Appliance">Archiver</a></li>
+<li><a href='/epics/extensions/burt/index.php' title="Backup and Restore Tool">BURT</a></li>
+<li><a href='https://pypi.python.org/pypi/CaChannel' title="Python Interface to Channel Access (python.org)">CaChannel</a></li>
+<li><a href='/epics/extensions/caex/index.php' title="Channel Access Examples">CAEX</a></li>
+<li><a href='https://pypi.python.org/pypi/caffi' title="Channel Access Foreign Function Interface (python.org)">caffi</a></li>
+<li><a href='http://epics-jca.sourceforge.net/caj/' title="Channel Access for Java (SF)">CAJ</a></li>
+<li><a href='http://www-csr.bessy.de/control/SoftDist/CA_Lab/' title="Channel Access client for Labview (BESSY)">CA_Lab</a></li>
+<li><a href='http://web.ornl.gov/~t6p/Main/CAML.html' title="Channel Access Markup Language (ORNL)">CAML</a></li>
+<li><a href='https://github.com/mdavidsaver/caobserver' title="Monitors CA Broadcast messages (Github)">CAObserver</a></li>
+<li><a href='http://sourceforge.net/projects/capod/' title="Channel Access projects for Apple iOS devices (SF)">CAPod</a></li>
+<li><a href='http://www-csr.bessy.de/control/SoftDist/caPutLog/' title="Facility for logging CA puts to an IOC (BESSY)">CaPutLog</a></li>
+<li><a href='http://epics.web.psi.ch/software/caqtdm/' title="An MEDM replacement based on Qt (PSI)">caQtDM</a></li>
+<li><a href='/epics/extensions/cas/index.php' title="Channel Access Server Library">CAS</a></li>
+<li><a href='https://github.com/mdavidsaver/cashark' title="Wireshark disector plugin for CA in lua (Github)">cashark</a></li>
+<li><a href='/epics/extensions/caSnooper/index.php' title="Channel Access Broadcast Monitoring Tool">CaSnooper</a></li>
+<li><a href='/epics/extensions/casr/index.php' title="CA Save/Restore">CASR</a></li>
+<li><a href='http://www-csr.bessy.de/control/SoftDist/CA_Watcher/' title="Channel Access monitor and alarm handler (BESSY)">CA Watcher</a></li>
+<li><a href='http://www.slac.stanford.edu/~strauman/epics/caxy/' title="caxy: CA tunneling over ssh (SLAC)">caxy</a></li>
+<li><a href='http://channelfinder.sourceforge.net/' title="Channel Finder (SF)">ChanFinder</a></li>
+<li><a href='http://www.slac.stanford.edu/comp/unix/package/epics/extensions/ChannelWatcher/index.html' title="Channel Watcher (SLAC)">ChanWatch</a></li>
+<li><a href='http://www.jlab.org/cdev/cmlog.html' title="Common Message Logging System (JLAB)">CMLOG</a></li>
+<li><a href='http://controls.diamond.ac.uk/downloads/python/cothread/' title="CA interface to Python (Diamond)">Cothread</a></li>
+<li><a href='http://cs-studio.sourceforge.net/' title="Control System Studio (SF)">CSS</a></li>
+<li><a href='/epics/extensions/dbVerbose/index.php' title="Verbose database filter">dbVerbose</a></li>
+<li><a href='http://isacwserv.triumf.ca/epics/edlbuild/TRIUMFedlbuild.html' title="Create EDM screens programmatically (TRIUMF)">EdlBuild</a></li>
+<li><a href='http://ics-web.sns.ornl.gov/edm/' title="Extensible Display Manager (SNS)">EDM</a></li>
+<li><a href='http://sourceforge.net/projects/epicsqt/' title="Channel Access for the QT framework (SF)">EPICS QT</a></li>
+<li><a href='https://sourceforge.net/p/epicssharp/wiki/Home/' title="CA libraries and Gateway in native C# (SF)">EpicsSharp</a></li>
+<li><a href='/epics/extensions/ezca/index.php' title="Simplified Channel Access interface library for C">EZCA</a></li>
+<li><a href='/bcda/dataVis/IDL.html#EZCASCAN' title="Easy Channel Access for arrays of channels">EzcaScan</a></li>
+<li><a href='/epics/extensions/gateway/index.php' title="The Channel Access Proxy gateway">Gateway</a></li>
+<li><a href='/epics/extensions/gnuregex/index.php' title="GNU regex library with EPICS Makefiles">gnuregex</a></li>
+<li><a href='/bcda/dataVis/IDL.html' title="CA client libraries and scripts for IDL">IDL</a></li>
+<li><a href='http://igor2epics.sourceforge.net/' title="CA client library for WaveMetrics IGOR Pro (SF)">IGOR2EPICS</a></li>
+<li><a href='http://epics-jca.sourceforge.net/jca/' title="Channel Access for Java (SF)">JCA</a></li>
+<li><a href='https://github.com/andrewstarritt/kryten' title="Tool to run commands on PV changes (Github)">Kryten</a></li>
+<li><a href='http://www.slac.stanford.edu/~strauman/labca/index.html' title="Matlab &amp; Scilab interface to Channel Access (SLAC)">LabCA</a></li>
+<li><a href='http://www.ni.com/white-paper/7987/en' title="CA Client I/O Server for LabVIEW 8.6 (NI)">LabVIEW IO</a></li>
+<li><a href='http://ics-web.sns.ornl.gov/kasemir/mca' title="Channel Access client library for Matlab (SNS)">MCA</a></li>
+<li><a href='/epics/extensions/medm/index.php' title="Motif Editor and Display Manager">MEDM</a></li>
+<li><a href='/epics/extensions/msi/index.php' title="Macro Substitution and Include tool">MSI</a></li>
+<li><a href='/epics/extensions/nameserver/index.php' title="Channel Access Nameserver">Nameserver</a></li>
+<li><a href='http://xaldev.sourceforge.net/' title="Accelerator Physics application framework (SF)">OpenXAL</a></li>
+<li><a href='/epics/extensions/ParseCASW/index.php' title="CA Beacon anomaly diagnostic tool">ParseCASW</a></li>
+<li><a href='http://www-csr.bessy.de/control/SoftDist/Pezca/' title="Another CA interface to Perl using EZCA (BESSY)">PEZCA</a></li>
+<li><a href='http://epics.web.psi.ch/software/php-epics' title="CA interface for PHP-based web applications (SLS)">PHP_EPICS</a></li>
+<li><a href='/epics/extensions/probe/index.php' title="Motif Channel Monitoring program">Probe</a></li>
+<li><a href='http://sourceforge.net/projects/procserv/' title="Process Server with Telnet Console (SF)">procServ</a></li>
+<li><a href='/bcda/dataVis/pviewer.html' title="Python 1D and 2D data viewer">PViewer</a></li>
+<li><a href='http://code.google.com/p/pcaspy/' title="Python Bindings for CAS (Google)">PCASPy</a></li>
+<li><a href='http://cars9.uchicago.edu/software/python/pyepics3/' title="Pure python interface to CA (UChicago)">PyEpics3</a></li>
+<li><a href='http://pyexpander.sourceforge.net/' title="Python Macro Processing tool (SF)">pyexpander</a></li>
+<li><a href='http://www-csr.bessy.de/control/pymsi/' title="Python replacement for msi (BESSY)">pymsi</a></li>
+<li><a href='https://github.com/mdavidsaver/recsync' title="Server and IOC client for IOC information (Github)">RecSync</a></li>
+<li><a href='http://www-controls.als.lbl.gov/epics_collaboration/sca/' title="Simple Channel Access (LBL)">SCA</a></li>
+<li><a href='/asd/oag/oagPackages.shtml' title="The Self-Describing Data Sets analysis package">SDDS</a></li>
+<li><a href='http://www-csr.bessy.de/control/SoftDist/sequencer/' title="State Notation Compiler and Sequencer (BESSY)">Sequencer</a></li>
+<li><a href='/epics/extensions/StripTool/index.php' title="Strip-chart plotting tool">StripTool</a></li>
+<li><a href='http://epics-sumo.sourceforge.net/' title="SUpport MOdule Manager (SF)">SUMO</a></li>
+<li><a href='http://isacwserv.triumf.ca/epics/tdct/' title="Visual hierarchical Database Configuration Tool (TRIUMF)">tdct</a></li>
+<li><a href='https://wiki-ext.aps.anl.gov/epics/index.php/VDCT_Status_Page' title="Visual Database Configuration Tool">VDCT</a></li>
+<li><a href='http://webca.cosylab.com/' title="Channel Access web browser plug-in (CosyLab)">WebCA</a></li>
+<li><a href='http://www-linac.kek.jp/cont/epics/wireshark/' title="CA plug-in for Wireshark (KEK)">WiresharkCA</a></li>
+</ul>
+</li>
+<li><a href='/epics/distributions/index.php' title="Code collections from base, modules, extensions &amp; elsewhere">Distributions</a></li>
+<li><a href='/epics/download/index.php' title="Software downloads">Download</a></li>
+<li><a href='http://epics-pvdata.sourceforge.net/index.html' title="EPICS Version 4 Project">EPICSv4</a></li>
+<li><a href='/epics/irmis/index.php' title="Using RDBs to model installed EPICS IOCs">IRMIS</a></li>
+<li><a href='/epics/mail.php' title="Information about our mailing lists">Talk</a></li>
+<li><a href='https://bugs.launchpad.net/epics-base' title="The Launchpad bug tracker for epics-base">Bugs</a></li>
+<li><a href='/epics/docs/index.php' title="Text not related to a specific release or package">Documents</a></li>
+<li><a href='/epics/links.php' title="Related web-sites">Links</a></li>
+<li><a href='/epics/license/index.php' title="EPICS Software Licensing">Licensing</a></li>
+<li class='spacer'></li>
+</ul>
+<p align='center'>
+<a href='/epics/extensions/index.php?format=printer'>
+Format page<br>
+for printing</a></p>
+
+<form method="get" action="http://www.google.com/custom"><table align="center"
+bgcolor="#FFFFFF" cellspacing="0" border="0"><tr><td align="center"><a
+href="http://www.google.com/"><label for="q"><img border="0" alt="Google"
+src="/epics/icons/Google25.gif"  align="middle"></label></a><br><input
+type="text" name="q" id="q" size="10" maxlength="255" value=""></td></tr>
+</table><input type="hidden" name="cof"
+value="S:http://www.aps.anl.gov/epics;GL:0;VLC:#9f0000;AH:center;BGC:white;LH:115;LC:#00009f;L:http://www.aps.anl.gov/epics/icons/header.png;ALC:#009f00;LW:750;T:black;AWFID:e3f314152c5d8667;">
+<input type="hidden" name="domains" value="aps.anl.gov"><input type="hidden"
+name="sitesearch" value="aps.anl.gov"> </form>
+<br>
+<form method="post" action="/epics/tech-talk/search.php">
+<table align="center" bgcolor="#FFFFFF" cellspacing="0" border="0">
+<tr><th align="center"><small>Search&nbsp;Tech-talk</small></th></tr>
+<tr><td><input type="text" name="query" size="10" value=""></td></tr>
+</table>
+</form>
+<td class='main'>
+
+<h2>
+Extensions</h2>
+
+<p>
+The following list gives access to individual pages for most of the standard
+EPICS host tools and CA clients.  Note that some of the minor pages linked
+below do not appear in the sidebar on the left.</p>
+
+<p>
+Some of this software can be downloaded from the individual web-pages linked
+below, and the collection of tools from APS are also available bundled
+together. See the <a href="../download/extensions/index.php">Extensions
+Download</a> page for details.</p>
+
+<p>
+If your extension does not appear in this list, or there's something wrong with
+an entry on this page, please
+<a href="mailto:Andrew%20Johnson%20&lt;anj_at_aps.anl.gov&gt;">send me an email</a>,
+giving a URL for your web-site if applicable.</p>
+
+<h3>
+<a name="Config_Files">
+Config Files</a></h3>
+
+<ul>
+
+<li>
+<a href="config/index.php">
+Extensions build config files (R3.13)</a></li>
+
+<li>
+<a href="configure/index.php">
+Extensions build configure files (R3.14)</a></li>
+
+</ul>
+
+
+<h3>
+<a name="CA_Clients">
+Standalone CA Clients</a></h3>
+
+<ul>
+
+<li>
+<a href="alh/index.php">
+ALH: Alarm Handler</a></li>
+
+<li>
+<a href="http://slacmshankar.github.io/epicsarchiver_docs/index.html">
+Archiver Appliance</a></li>
+
+<li>
+<a href="burt/index.php">
+BURT: Backup and Restore Tool</a></li>
+
+<li>
+<a href="caex/index.php">
+CAEX: Channel Access Examples</a></li>
+
+<li>
+<a href="http://sourceforge.net/projects/capod/">
+CAPod: Channel Access projects for Apple iOS devices</a> (SF)</li>
+
+<li>
+<a href="http://epics.web.psi.ch/software/caqtdm/">
+caQtDM: An MEDM replacement based on Qt</a> (PSI)</li>
+
+<li>
+<a href="casr/index.php">
+CASR: Host-based Save/Restore</a></li>
+
+<li>
+<a href="http://www-csr.bessy.de/control/SoftDist/CA_Watcher/">
+CA Watcher: Channel Access monitor and alarm handler</a> (BESSY)</li>
+
+<li>
+<a href="http://www.slac.stanford.edu/comp/unix/package/epics/extensions/ChannelWatcher/index.html">
+Channel Watcher</a> (SLAC)</li>
+
+<li>
+<a href="http://cs-studio.sourceforge.net/">
+CSS: Control System Studio</a> (SF)</li>
+
+<li>
+<a href="http://ics-web.sns.ornl.gov/edm/">
+EDM: Extensible Display Manager</a> (ORNL)</li>
+
+<li>
+<a href="https://github.com/andrewstarritt/kryten">
+Kryten: Tool to run commands on PV changes</a> (Github)</li>
+
+<li>
+<a href="medm/index.php">
+MEDM: Motif Editor and Display Manager</a></li>
+
+<li>
+<a href="probe/index.php">
+Probe: Motif Channel Monitoring program</a></li>
+
+<li>
+<a href="http://www-csr.bessy.de/control/SoftDist/sequencer/">
+Sequencer: State Notation Compiler and Sequencer</a> (BESSY)</li>
+
+<li>
+<a href="StripTool/index.php">
+StripTool: Strip-chart plotting tool</a></li>
+
+</ul>
+
+
+<h3>
+<a name="CA_Servers">
+CA Server Interfaces and Applications</a></h3>
+
+<ul>
+
+<li>
+<a href="https://sourceforge.net/p/epicssharp/wiki/Home/">
+EpicsSharp: CA libraries and Gateway in native C#</a> (SF)</li>
+
+<li>
+<a href="cas/index.php">
+CAS: Channel Access Server Library</a></li>
+
+<li>
+<a href="caSnooper/index.php">
+CaSnooper: Channel Access Broadcast Monitoring Tool</a></li>
+
+<li>
+<a href="http://www.slac.stanford.edu/~strauman/epics/caxy/">
+caxy: CA tunneling over ssh</a> (SLAC)</li>
+
+<li>
+<a href="http://epics-jca.sourceforge.net/">
+JCAS: Pure Java Channel Access Server Library</a> (SF)</li>
+
+<li>
+<a href="gateway/index.php">
+Gateway: Process Variable Gateway</a></li>
+
+<li>
+<a href="nameserver/index.php">
+Nameserver: Channel Access Nameserver</a></li>
+
+<li>
+<a href="http://code.google.com/p/pcaspy/">
+PCASPy :Python Bindings for the Channel Access Server</a> (Google)</li>
+
+</ul>
+
+
+<h3>
+<a name="CA_Interfaces">
+CA Client Interfaces to other tools and languages</a></h3>
+
+<ul>
+
+<li>
+C/C++
+<ul>
+
+  <li>
+  <a href="ezca/index.php">
+  EZCA: Easy Channel Access interface library for C programs</a></li>
+
+  <li>
+  <a href="/bcda/dataVis/IDL.html#EZCASCAN">
+  EzcaScan: Easy Channel Access for arrays of channels</a></li>
+
+  <li>
+  <a href="http://sourceforge.net/projects/epicsqt/">
+  EPICS Qt: Channel Access for the Qt framework</a> (SF)</li>
+
+  <li>
+  <a href="http://www-controls.als.lbl.gov/epics_collaboration/sca/">
+  SCA: Simple Channel Access</a> (LBL/ALS)</li>
+
+</ul></li>
+
+<li>
+Java
+<ul>
+
+  <li>
+  <a href="http://epics-jca.sourceforge.net/caj/">
+  CAJ: Pure Java Channel Access Client</a> (SF)</li>
+
+  <li>
+  <a href="http://epics-jca.sourceforge.net/jca/">
+  JCA: Channel Access client for Java using JNI</a> (SF)
+  (original at <a href="/bcda/jca/">APS/BCDA</a>)</li>
+
+</ul></li>
+
+<li>
+LabView
+<ul>
+
+  <li>
+  <a href="http://www-csr.bessy.de/control/SoftDist/CA_Lab/">
+  CA_Lab: Channel Access client for Labview<a> (BESSY)</li>
+
+  <li>
+  <a href="http://www.ni.com/white-paper/7987/en">
+  LabVIEW IO Server: CA client for LabVIEW</a> (NI)</li>
+
+</ul></li>
+
+<li>
+Matlab/Octave/Scilab
+<ul>
+
+  <li>
+  <a href="http://ics-web.sns.ornl.gov/kasemir/mca">
+  MCA: Channel Access client library for Matlab</a> (SNS)</li>
+
+  <li>
+  <a href="http://www.slac.stanford.edu/~strauman/labca/index.html">
+  LabCA: Matlab & Scilab interface to Channel Access</a> (SLAC)</li>
+
+</ul></li>
+
+<li>
+Perl
+<ul>
+
+  <li>
+  <a href="../modules/soft/cap5/">
+  CAP5: Channel Access for Perl5</a> (part of Base since R3.14.10)</li>
+
+  <li>
+  <a href="http://www-csr.bessy.de/control/SoftDist/Pezca/">
+  PEZCA: A Perl binding to EZCA</a> (BESSY)</li>
+
+</ul></li>
+
+<li>
+Python
+<ul>
+
+  <li>
+  <a href="https://pypi.python.org/pypi/CaChannel">
+  CaChannel: Python interface to Channel Access</a> (python.org)</li>
+
+  <li>
+  <a href="https://pypi.python.org/pypi/caffi">
+  caffi: Channel Access Foreign Function Interface</a> (python.org)</li>
+
+  <li>
+  <a href="http://controls.diamond.ac.uk/downloads/python/cothread/">
+  Cothread: A CA interface to Python</a> (Diamond)</li>
+
+  <li>
+  <a href="http://cars9.uchicago.edu/software/python/pyepics3/">
+  PyEpics3: Pure Python interface to Channel Access</a> (UChicago)</li>
+
+</ul></li>
+
+<li>
+Other
+<ul>
+
+  <li>
+  <a href="https://sourceforge.net/p/epicssharp/wiki/Home/">
+  EpicsSharp: CA libraries and Gateway in native C#</a> (SF)</li>
+
+  <li>
+  <a href="http://web.ornl.gov/~t6p/Main/CAML.html">
+  CAML: Channel Access Markup Language</a> (ORNL)</li>
+
+  <li>
+  <a href="/bcda/dataVis/IDL.html">
+  IDL: CA client libraries and scripts for IDL via EZCA</a></li>
+
+  <li>
+  <a href="http://igor2epics.sourceforge.net/">
+  IGOR2EPICS: CA client library for WaveMetrics IGOR Pro</a> (SF)</li>
+
+  <li>
+  <a href="http://epics.web.psi.ch/software/php-epics">
+  PHP_EPICS: CA interface for PHP-based web applications</a> (SLS)</li>
+
+  <li>
+  <a href="/asd/oag/oagPackages.shtml">
+  SDDS: The Self-Describing Data Sets analysis package</a></li>
+
+  <li>
+  <a href="http://webca.cosylab.com/">
+  WebCA: Channel Access web browser plug-in</a> (CosyLab)</li>
+
+</ul></li>
+
+</ul>
+
+
+<h3>
+<a name="DB_Tools">
+IOC Database and Module Management Tools</a></h3>
+
+<ul>
+
+<li>
+<a href="dbVerbose/index.php">
+dbVerbose: Verbose database filter</a></li>
+
+<li>
+<a href="msi/index.php">
+MSI: Macro Substitution and Include tool</a></li>
+
+<li>
+<a href="http://pyexpander.sourceforge.net/">
+pyexpander: Python Macro Processing tool</a> (SF)</li>
+
+<li>
+<a href="http://www-csr.bessy.de/control/pymsi/">
+pymsi: Python replcement for MSI</a> (BESSY)</li>
+
+<li>
+<a href="http://epics-sumo.sourceforge.net/">
+SUMO: SUpport MOdule Manager</a> (SF)</li>
+
+<li>
+<a href="http://isacwserv.triumf.ca/epics/tdct/">
+tdct: Visual hierarchical Database Configuration Tool, with configurable
+symbols</a> (TRIUMF)</li>
+
+<li>
+<a href="https://wiki-ext.aps.anl.gov/epics/index.php/VDCT_Status_Page">
+VDCT: Visual Database Configuration Tool</a></li>
+
+</ul>
+
+<h3>
+<a name="Other">
+Other Tools and Libraries</a></h3>
+
+<ul>
+
+<li>
+<a href="http://www-csr.bessy.de/control/SoftDist/caPutLog/">
+CaPutLog: Facility for logging CA puts to an IOC</a> (BESSY)</li>
+
+<li>
+<a href="https://github.com/mdavidsaver/cashark">
+cashark: Wireshark disector plugin for CA in lua</a> (Github)</li>
+
+<li>
+<a href="https://github.com/mdavidsaver/caobserver">
+CAObserver: Monitors CA Broadcast messages</a> (Github)</li>
+
+<li>
+<a href="http://channelfinder.sourceforge.net/">
+ChannelFinder: Directory Server and Client Library</a> (SF)</li>
+
+<li>
+<a href="http://www.jlab.org/cdev/cmlog.html">
+CMLOG: Common Message Logging System</a> (JLAB)</li>
+
+<li>
+<a href="http://isacwserv.triumf.ca/epics/edlbuild/TRIUMFedlbuild.html">
+EdlBuild: Create EDM screens in Perl scripts</a> (TRIUMF)</li>
+
+<li>
+<a href="gnuregex/index.php">
+gnuregex: The GNU regex library built with EPICS Makefiles</a></li>
+
+<li>
+<a href="http://xaldev.sourceforge.net/">
+OpenXAL: Accelerator physics application framework</a> (SF)</li>
+
+<li>
+<a href="ParseCASW/index.php">
+ParseCASW: CA Beacon anomaly diagnostic tool</a></li>
+
+<li>
+<a href="http://sourceforge.net/projects/procserv/">
+procServ: Process Server with Telnet Console</a> (SF)</li>
+
+<li>
+<a href="/bcda/dataVis/pviewer.html">
+PViewer: Python 1D and 2D data viewer</a></li>
+
+<li>
+<a href="https://github.com/mdavidsaver/recsync">
+RecSync: Server and IOC client for IOC information</a> (Github)</li>
+
+<li>
+<a href="http://www-linac.kek.jp/cont/epics/wireshark/">
+WiresharkCA: CA plug-in for Wireshark</a> (KEK)</li>
+
+</ul>
+
+<hr />
+
+<h3>
+<img align='left' src='../icons/dead.gif' alt='Caution, dead tree' />
+<a name="Unsupported">
+Unsupported</a></h3>
+
+<p>
+These tools are now orphaned; the original author is no longer available or is
+unwilling to maintain them, they may no longer build with current versions of
+their dependent software packages, or they were designed for hardware that is no
+longer available on the open market.</p>
+
+<br clear='left'>
+
+<ul>
+
+<li>
+<a href="http://ics-web.sns.ornl.gov/kasemir/axca/index.html">
+ActiveX: CA client and server for Active-X programs</a> (SNS)</li>
+
+<li>
+<a href="adt/index.php">
+ADT: Array Display Tool</a></li>
+
+<li>
+<a href="ar/index.php">
+AR: Data Archiver</a></li>
+
+<li>
+<a href="http://ics-web.sns.ornl.gov/archive/viewer/">
+ArchiveViewer: Java-based archive data viewer</a> (SNS)</li>
+
+<li>
+<a href="caMath/index.php">
+CAMath: CA client interface for Mathematica</a></li>
+
+<li>
+<a href="caWave/index.php">
+CAWave: CA client for Precision Visuals' analysis package</a></li>
+
+<li>
+<a href="caWingz/index.php">
+CAWingz: CA client for the Wingz Spreadsheet</a></li>
+
+<li>
+<a href="capfast/index.php">
+Cap<i>Fast</i> Tools</a></li>
+
+<li>
+<a href="Octave/index.php">
+CaOctave: CA interface for Octave</a></li>
+
+<li>
+<a href="http://www-acc.kek.jp/EPICS_Gr/products.html">
+CaPython314: A multi-threaded Python interface to R3.14.x</a> (KEK)</li>
+
+<li>
+<a href="cau/index.php">
+CAU: Channel Access Utility</a></li>
+
+<li>
+<a href="http://www.jlab.org/cdev/">
+CDEV: Common Device application framework and API</a> (JLAB)</li>
+
+<li>
+<a href="http://ics-web.sns.ornl.gov/kasemir/archiver/">
+Channel Archiver</a> (SNS)</li>
+
+<li>
+<a href="dct/index.php">
+DCT: Database Configuration Tool written in tcl/tk</a></li>
+
+<li>
+<a href="dp/index.php">
+DP: Parameter Display Page</a></li>
+
+<li>
+<a href="OPI/opintro-1.html">
+EDD/DM: Editor and Display Manager</a></li>
+
+<li>
+<a href="/aod/people/mohan/EZCA/EZCA.html">
+EZCA.pm: EZCA library module for Perl programs</a></li>
+
+<li>
+<a href="gdct/index.php">
+GDCT: Graphical Database Configuration Tool</a></li>
+
+<li>
+<a href="histTool/index.php">
+HistTool: Data Histogramming Tool</a></li>
+
+<li>
+<a href="jdct/index.php">
+JDCT: Database Configuration Tool written in Java</a></li>
+
+<li>
+<a href="jprobe/index.php">
+Jprobe: Java version of Probe</a>, a channel monitoring program</li>
+
+<li>
+<a href="knob/index.php">
+Knobs: Knob Manager and KnobConfig</a>, interface to SunDials</li>
+
+<li>
+<a href="motifButton/index.php">
+mButton: General Purpose Motif Button</a></li>
+
+<li>
+<a href="namecapture/index.php">
+Namecapture: Motif Drag &amp; drop support</a></li>
+
+<li>
+<a href="sga/index.php">
+SGA: Simple GIF Animator</a></li>
+
+<li>
+<a href="tcl/index.php">
+Tcl Interfaces: ET and IT</a></li>
+
+<li>
+<a href="ts/index.php">
+TS: The R3.13 timestamp library for use with R3.14</a> (deprecated)</li>
+
+<li>
+<a href="http://www-csr.bessy.de/control/SoftDist/XCas/">
+XCAS: A class library on top of the Portable CAS</a> (BESSY)</li>
+
+<li>
+<a href="/bcda/dataVis/yca.html">
+YCA: Channel Access client library for Yorick</a></li>
+
+<li>
+<a href="/bcda/dataVis/yviewer.html">
+Yviewer: Data Visualization tool</a></li>
+
+</ul>
+
+</td></tr>
+
+<tr>
+<td class='signature'>
+<a href="mailto:Andrew%20Johnson%20&lt;anj_at_aps.anl.gov&gt;">
+ANJ</a>, 29 Oct 2015</td>
+<td class='bottom'>
+<a href='http://validator.w3.org/check?uri=referer'><img src='/epics/icons/vh401.gif' alt='Valid HTML 4.01!' border='0' align='right' height='31' width='88'></a>
+&middot;
+<a href='/epics/index.php' title="EPICS Home at APS">Home</a>
+&middot;
+<a href='/epics/news.php' title="Recent news">News</a>
+&middot;
+<a href='/epics/about.php' title="What is EPICS anyway?">About</a>
+&middot;
+<a href='/epics/base/index.php' title="The core EPICS software for both IOCs and Host tools">Base</a>
+&middot;
+<a href='/epics/modules/index.php' title="Optional support code for IOCs - drivers etc.">Modules</a>
+&middot;
+<b>
+Extensions</b>
+&middot;
+<a href='/epics/distributions/index.php' title="Code collections from base, modules, extensions &amp; elsewhere">Distributions</a>
+&middot;
+<a href='/epics/download/index.php' title="Software downloads">Download</a>
+&middot;
+<br>
+&middot;
+<a href='http://epics-pvdata.sourceforge.net/index.html' title="EPICS Version 4 Project">EPICSv4</a>
+&middot;
+<a href='/epics/irmis/index.php' title="Using RDBs to model installed EPICS IOCs">IRMIS</a>
+&middot;
+<a href='/epics/mail.php' title="Information about our mailing lists">Talk</a>
+&middot;
+<a href='https://bugs.launchpad.net/epics-base' title="The Launchpad bug tracker for epics-base">Bugs</a>
+&middot;
+<a href='/epics/docs/index.php' title="Text not related to a specific release or package">Documents</a>
+&middot;
+<a href='/epics/links.php' title="Related web-sites">Links</a>
+&middot;
+<a href='/epics/license/index.php' title="EPICS Software Licensing">Licensing</a>
+&middot;
+</td></tr></table>
+</body>
+</html>
+Bù¢°dñ      VDåêVDåê;ùÅÜVFÂ   2:http://www.aps.anl.gov/epics/extensions/index.php necko:classified 1 request-method GET response-head HTTP/1.1 200 OK
+Date: Thu, 12 Nov 2015 19:09:12 GMT
+Server: Apache
+X-Frame-Options: SAMEORIGIN
+Last-Modified: Thu, 29 Oct 2015 15:06:33 GMT
+Content-Type: text/html; charset=iso-8859-1
+X-Cache: MISS from wwwcache2-dl-cache, MISS from wwwcache2-dl-icap
+Via: 1.1 wwwcache2-dl-cache (squid/3.3.10), 1.1 wwwcache2-dl-icap (squid/3.3.10)
+ charset windows-1252 uncompressed-len 0 predictor::http://www.aps.anl.gov/epics/epics.css 1,2,1447355882,0 predictor::http://www.aps.anl.gov/epics/icons/dead.gif 1,1,1447355352,0   i(ad.gif 1,1,1447355352,0   i(

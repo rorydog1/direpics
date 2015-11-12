@@ -1,0 +1,37 @@
+#!/bin/bash
+
+
+#In .bashrc or run from commandline with:
+# source /home/epics/set_environment.script
+#Note: "source" command stops the shell losing the variables
+
+#Configure local networking
+export EPICS_CA_AUTO_ADDR_LIST=NO
+export EPICS_CA_ADDR_LIST=localhost
+
+#Config support TOP
+export EPICS_SUPPORT="/home/controls/support"
+export ASYN="$EPICS_SUPPORT/asyn4-27/"
+
+#Config EPICS Base TOP
+export EPICS_BASE="/home/epics/base"
+export EPICS_HOST_ARCH=`${EPICS_BASE}/startup/EpicsHostArch`
+export PATH="${PATH}:${EPICS_BASE}/bin/${EPICS_HOST_ARCH}"
+export LD_LIBRARY_PATH="${LD_LIBRARY_PATH}:${EPICS_BASE}/lib/${EPICS_HOST_ARCH}"
+
+#Config extentions TOP
+export EPICS_EXTENSIONS="${EPICS_BASE}/../extensions"
+export PATH="${PATH}:${EPICS_EXTENSIONS}/bin/${EPICS_HOST_ARCH}"
+export LD_LIBRARY_PATH="${LD_LIBRARY_PATH}:${EPICS_EXTENSIONS}/lib/${EPICS_HOST_ARCH}"
+
+#Config EDM
+export EDMOBJECTS=$EPICS_EXTENSIONS/etc
+export EDMPVOBJECTS=$EPICS_EXTENSIONS/etc
+export EDMFILES=$EPICS_EXTENSIONS/src/edm/edmMain
+export EDMHELPFILES=$EPICS_EXTENSIONS/src/edm/helpFiles
+export EDMLIBS=$EPICS_EXTENSIONS/lib/$EPICS_HOST_ARCH
+
+#IOCs
+export PATH="${PATH}:${EPICS_SUPPORT}/../ioc/vgauge/bin/${EPICS_HOST_ARCH}"
+
+

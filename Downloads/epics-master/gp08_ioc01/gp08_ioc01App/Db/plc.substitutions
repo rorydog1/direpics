@@ -1,0 +1,33 @@
+file FINS.template
+{
+pattern { device, etn, port }
+        { "GEN-CS-GP08:PLC01", 0x10, "PLC1" }
+}
+
+file status_dm.template
+{
+pattern { device, port }
+	{ "GEN-CS-GP08:PLC01", "PLC1" }
+}
+
+file status.template
+{
+pattern { device, plc, port, channel,
+          on_str, off_str, tim_str, on_sta_str, off_sta_str,
+          il_str1,  il_str2,  il_str3,  il_str4,
+          il_str5,  il_str6,  il_str7,  il_str8,
+          il_str9,  il_str10, il_str11, il_str12,
+          il_str13, il_str14, il_str15, il_str16 }
+        { "LET-VAC-VALVP01", "GEN-CS-GP08:PLC01", "PLC1", 1,
+          "OPEN", "SHUT", "MOVING", "OPEN", "SHUT",
+          "Air Pressure", "Closed Limit", "LEL-VAC-GAUG13:CC>1e-6", "LEL-VAC-GAUG10:CC ????",
+          "", "", "", "",
+          "", "", "", "",
+          "", "", "", "" }
+        { "LEL-VAC-VALVP04", "GEN-CS-GP08:PLC01", "PLC1", 2,
+          "OPEN", "SHUT", "MOVING", "OPEN", "SHUT",
+          "Air Pressure", "Closed Limit", "HEL-VAC-GAUG01:CC>1e-6", "LEL-VAC-GAUG13:CC>1e-6",
+          "", "", "", "",
+          "", "", "", "",
+          "", "", "", "" }
+}

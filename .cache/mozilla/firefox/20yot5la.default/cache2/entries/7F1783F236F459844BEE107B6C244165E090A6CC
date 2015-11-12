@@ -1,0 +1,388 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd"><html><head>
+  <meta http-equiv='Content-type' content='text/html;charset=iso-8859-1'>
+  <meta name='description' content='EPICS Sequencer Installation error'>
+  <meta name='keywords' content='EPICS,software,process control,scientific software'>
+  <title>EPICS Sequencer Installation error</title>
+  <link rel='stylesheet' href='/epics/epics.css' type='text/css'>
+  <link rel='shortcut icon' type='image/x-icon' href='/epics/favicon.ico'>
+  <link rel='icon' type='image/png' href='/epics/icon.png'>
+  <link rel='publisher' href='https://plus.google.com/106275891267278800612/'>
+  <link rel='alternate' title='EPICS Tech-talk via RSS' href='../rss.xml' type='application/rss+xml'>
+  <meta name='ROBOTS' content='INDEX, NOFOLLOW'>  <link rel='index' href='../index.php'>
+  <link rel='top' href='index.php'>
+  <link rel='up' href='msg00032.php'>
+  <link rel='first' href='msg00032.php'>
+  <link rel='prev' href='msg00051.php'>
+  <link rel='next' href='msg00053.php'>
+  <link rel='last' href='msg00055.php'>
+  <style type='text/css'>
+    <!--
+  pre {width: 100%; white-space: -moz-pre-wrap; white-space: pre-wrap;}    -->
+  </style>
+  <script type='text/javascript' src='https://apis.google.com/js/plusone.js'>
+    </script>
+</head>
+<body bgcolor='#FFFFFF'>
+<table class='page' width='100%' cellspacing='0' border='0'>
+<tr>
+
+<td class='sidebar' width='10%'>
+<a href='/epics/index.php'>
+<img src='/epics/icons/logo101.gif' alt='EPICS Home' align='left' width='101' height='101' border='0'></a>
+</td>
+<td class='main'>
+<div style='display: inline-block; *display: inline; float: left;'><div style='margin: 15px 0 5px 0; text-align: center;'><a href='https://plus.google.com/106275891267278800612/?prsrc=3' style='text-decoration: none; color: #333;'><img src='/epics/icons/g-plus.png' width='32' height='32' alt='g+' style='border: 0;'></a></div><div style='font: bold 13px/16px arial,sans-serif; margin: 0 5px; text-align: center;'><a href='https://plus.google.com/106275891267278800612/?prsrc=3' style='text-decoration: none; color: #333;'> EPICS Page </a></div><div style='font: 13px/16px arial,sans-serif; text-align: center; margin: 0 5px;'><a href='https://plus.google.com/106275891267278800612/?prsrc=3' style='text-decoration: none; color: #333;'> on Google+ </a></div></div><div style='display: inline-block; *display: inline; float: left;'><div style='margin: 15px 0 5px 0; text-align: center;'><a href='https://plus.google.com/u/0/communities/113160068949106802880' style='text-decoration: none; color: #333;'><img src='/epics/icons/g-communities.png' width='32' height='32' alt='g+ Communities' style='border: 0;'></a></div><div style='font: bold 13px/16px arial,sans-serif; margin: 0 5px; text-align: center;'><a href='https://plus.google.com/u/0/communities/113160068949106802880' style='text-decoration: none; color: #333;'> EPICS Users </a></div><div style='font: 13px/16px arial,sans-serif; text-align: center;'><a href='https://plus.google.com/u/0/communities/113160068949106802880' style='text-decoration: none; color: #333;'> on Google+ </a></div></div><a href='http://www.anl.gov/'><img src='/epics/icons/ANL_H_White.png' align='right' border='0' alt='Argonne National Laboratory' width='250' height='115'></a>
+<h1 align='center'>
+Experimental Physics and <br>Industrial Control System</h1>
+</td></tr>
+
+<tr>
+<td class='sidebar' valign='top'>
+<ul id='navlist'>
+<li class='spacer'></li>
+<li><a href='/epics/index.php' title="EPICS Home at APS">Home</a></li>
+<li><a href='/epics/news.php' title="Recent news">News</a></li>
+<li><a href='/epics/about.php' title="What is EPICS anyway?">About</a></li>
+<li><a href='/epics/base/index.php' title="The core EPICS software for both IOCs and Host tools">Base</a></li>
+<li><a href='/epics/modules/index.php' title="Optional support code for IOCs - drivers etc.">Modules</a></li>
+<li><a href='/epics/extensions/index.php' title="Tools to monitor and control IOCs">Extensions</a></li>
+<li><a href='/epics/distributions/index.php' title="Code collections from base, modules, extensions &amp; elsewhere">Distributions</a></li>
+<li><a href='/epics/download/index.php' title="Software downloads">Download</a></li>
+<li><a href='http://epics-pvdata.sourceforge.net/index.html' title="EPICS Version 4 Project">EPICSv4</a></li>
+<li><a href='/epics/irmis/index.php' title="Using RDBs to model installed EPICS IOCs">IRMIS</a></li>
+<li><a href='/epics/mail.php' title="Information about our mailing lists">Talk</a>
+<ul>
+<li><a href='/epics/tech-talk/index.php' title="The main mailing list, our online support channel">Tech-Talk</a>
+<ul>
+<li><a href='https://mailman.aps.anl.gov/mailman/listinfo/tech-talk' title="Subscribing to the list">Mailman</a></li>
+<li><a href='/epics/tech-talk/search.php' title="Search the tech-talk archives">Search</a></li>
+<li><a href='/epics/tech-talk/2015/index.php' title="Browse tech-talk messages from 2015">2015</a></li>
+<li><a href='/epics/tech-talk/2014/index.php' title="Browse Tech-talk messages from 2014">2014</a></li>
+<li><a href='/epics/tech-talk/2013/index.php' title="Browse Tech-talk messages from 2013">2013</a></li>
+<li><a href='/epics/tech-talk/2012/index.php' title="Browse Tech-talk messages from 2012">2012</a></li>
+<li><a href='/epics/tech-talk/2011/index.php' title="Browse Tech-talk messages from 2011">2011</a></li>
+<li><a href='/epics/tech-talk/2010/index.php' title="Browse Tech-talk messages from 2010">2010</a></li>
+<li><a href='/epics/tech-talk/2009/index.php' title="Browse Tech-talk messages from 2009">2009</a></li>
+<li><a href='/epics/tech-talk/2008/index.php' title="Browse Tech-talk messages from 2008">2008</a></li>
+<li><a href='/epics/tech-talk/2007/index.php' title="Browse Tech-talk messages from 2007">2007</a></li>
+<li><a href='/epics/tech-talk/2006/index.php' title="Browse Tech-talk messages from 2006">2006</a></li>
+<li><a href='/epics/tech-talk/2005/index.php' title="Browse Tech-talk messages from 2005">2005</a></li>
+<li><a href='/epics/tech-talk/2004/index.php' title="Browse Tech-talk messages from 2004">2004</a></li>
+<li><a href='/epics/tech-talk/2003/index.php' title="Browse Tech-talk messages from 2003">2003</a></li>
+<li><a href='/epics/tech-talk/2002/index.php' title="Browse Tech-talk messages from 2002">2002</a></li>
+<li><a href='/epics/tech-talk/2001/index.php' title="Browse Tech-talk messages from 2001">2001</a></li>
+<li><a href='/epics/tech-talk/2000/index.php' title="Browse Tech-talk messages from 2000">2000</a></li>
+<li><a href='/epics/tech-talk/1999/index.php' title="Browse Tech-talk messages from 1999">1999</a></li>
+<li><a href='/epics/tech-talk/1998/index.php' title="Browse Tech-talk messages from 1998">1998</a></li>
+<li><a href='/epics/tech-talk/1997/index.php' title="Browse Tech-talk messages from 1997">1997</a></li>
+<li><a href='/epics/tech-talk/1996/index.php' title="Browse Tech-talk messages from 1996">1996</a></li>
+<li><a href='/epics/tech-talk/1995/index.php' title="Browse Tech-talk messages from 1995">1995</a></li>
+<li><a href='/epics/tech-talk/1994/index.php' title="Browse Tech-talk messages from 1994">1994</a></li>
+</ul>
+</li>
+<li><a href='/epics/core-talk/index.php' title="Discussions between Base developers">Core-talk</a>
+<ul>
+<li><a href='https://mailman.aps.anl.gov/mailman/listinfo/core-talk' title="Subscribing to the list">Mailman</a></li>
+<li><a href='/epics/core-talk/search.php' title="Search the core-talk archives">Search</a></li>
+<li><a href='/epics/core-talk/2015/index.php' title="Browse core-talk messages from 2015">2015</a></li>
+</ul>
+</li>
+<li><a href='/epics/qti-talk/index.php' title="Discussions about the QT Initiative">QTi-talk</a>
+<ul>
+<li><a href='https://mailman.aps.anl.gov/mailman/listinfo/qti-talk' title="Subscribing to the list">Mailman</a></li>
+<li><a href='/epics/qti-talk/search.php' title="Search the qti-talk archives">Search</a></li>
+<li><a href='/epics/qti-talk/2015/index.php' title="Browse QTi-talk messages from 2015">2015</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href='https://bugs.launchpad.net/epics-base' title="The Launchpad bug tracker for epics-base">Bugs</a></li>
+<li><a href='/epics/docs/index.php' title="Text not related to a specific release or package">Documents</a></li>
+<li><a href='/epics/links.php' title="Related web-sites">Links</a></li>
+<li><a href='/epics/license/index.php' title="EPICS Software Licensing">Licensing</a></li>
+<li class='spacer'></li>
+</ul>
+<p align='center'>
+<a href='/epics/tech-talk/2014/msg00052.php?format=printer'>
+Format page<br>
+for printing</a></p>
+
+<form method="get" action="http://www.google.com/custom"><table align="center"
+bgcolor="#FFFFFF" cellspacing="0" border="0"><tr><td align="center"><a
+href="http://www.google.com/"><label for="q"><img border="0" alt="Google"
+src="/epics/icons/Google25.gif"  align="middle"></label></a><br><input
+type="text" name="q" id="q" size="10" maxlength="255" value=""></td></tr>
+</table><input type="hidden" name="cof"
+value="S:http://www.aps.anl.gov/epics;GL:0;VLC:#9f0000;AH:center;BGC:white;LH:115;LC:#00009f;L:http://www.aps.anl.gov/epics/icons/header.png;ALC:#009f00;LW:750;T:black;AWFID:e3f314152c5d8667;">
+<input type="hidden" name="domains" value="aps.anl.gov"><input type="hidden"
+name="sitesearch" value="aps.anl.gov"> </form>
+<br>
+<form method="post" action="/epics/tech-talk/search.php">
+<table align="center" bgcolor="#FFFFFF" cellspacing="0" border="0">
+<tr><th align="center"><small>Search&nbsp;Tech-talk</small></th></tr>
+<tr><td><input type="text" name="query" size="10" value=""></td></tr>
+</table>
+</form>
+<td class='main'>
+<!-- MHonArc v2.6.18 -->
+<!--X-Subject: Sequencer Installation error -->
+<!--X-From-R13: Unarfu Xnatve <tnarfu.wnatveNgpf.pbz> -->
+<!--X-Date: Thu, 16 Jan 2014 15:54:33 +0530 -->
+<!--X-Message-Id: OFFAD37616.B7FB57AD&#45;ON65257C62.00392E15&#45;65257C62.00392E18@tcs.com -->
+<!--X-Content-Type: multipart/alternative -->
+<!--X-Head-End-->
+<!--X-Body-Begin-->
+<!--X-User-Header-->
+<!--X-User-Header-End-->
+<!--X-TopPNI-->
+<table border=0><tr>
+<td><a href='../1994/index.php'>1994</a>&nbsp;
+<a href='../1995/index.php'>1995</a>&nbsp;
+<a href='../1996/index.php'>1996</a>&nbsp;
+<a href='../1997/index.php'>1997</a>&nbsp;
+<a href='../1998/index.php'>1998</a>&nbsp;
+<a href='../1999/index.php'>1999</a>&nbsp;
+<a href='../2000/index.php'>2000</a>&nbsp;
+<a href='../2001/index.php'>2001</a>&nbsp;
+<a href='../2002/index.php'>2002</a>&nbsp;
+<a href='../2003/index.php'>2003</a>&nbsp;
+<a href='../2004/index.php'>2004</a>&nbsp;
+<a href='../2005/index.php'>2005</a>&nbsp;
+<a href='../2006/index.php'>2006</a>&nbsp;
+<a href='../2007/index.php'>2007</a>&nbsp;
+<a href='../2008/index.php'>2008</a>&nbsp;
+<a href='../2009/index.php'>2009</a>&nbsp;
+<a href='../2010/index.php'>2010</a>&nbsp;
+<a href='../2011/index.php'>2011</a>&nbsp;
+<a href='../2012/index.php'>2012</a>&nbsp;
+<a href='../2013/index.php'>2013</a>&nbsp;
+&lt;<a href='../2014/index.php?January'>2014</a>&gt;&nbsp;
+<a href='../2015/index.php'>2015</a>&nbsp;
+</td>
+<td><b>Index </b></td>
+<td><a href='../1994/threads.php'>1994</a>&nbsp;
+<a href='../1995/threads.php'>1995</a>&nbsp;
+<a href='../1996/threads.php'>1996</a>&nbsp;
+<a href='../1997/threads.php'>1997</a>&nbsp;
+<a href='../1998/threads.php'>1998</a>&nbsp;
+<a href='../1999/threads.php'>1999</a>&nbsp;
+<a href='../2000/threads.php'>2000</a>&nbsp;
+<a href='../2001/threads.php'>2001</a>&nbsp;
+<a href='../2002/threads.php'>2002</a>&nbsp;
+<a href='../2003/threads.php'>2003</a>&nbsp;
+<a href='../2004/threads.php'>2004</a>&nbsp;
+<a href='../2005/threads.php'>2005</a>&nbsp;
+<a href='../2006/threads.php'>2006</a>&nbsp;
+<a href='../2007/threads.php'>2007</a>&nbsp;
+<a href='../2008/threads.php'>2008</a>&nbsp;
+<a href='../2009/threads.php'>2009</a>&nbsp;
+<a href='../2010/threads.php'>2010</a>&nbsp;
+<a href='../2011/threads.php'>2011</a>&nbsp;
+<a href='../2012/threads.php'>2012</a>&nbsp;
+<a href='../2013/threads.php'>2013</a>&nbsp;
+&lt;<a href='../2014/threads.php'>2014</a>&gt;&nbsp;
+<a href='../2015/threads.php'>2015</a>&nbsp;
+</td>
+</tr>
+<tr>
+<th align='center'><a href='msg00051.php'>&lt;==</a> Date <a href='msg00053.php'>==&gt;</a></th>
+<td></td>
+<th align='center'><a href='msg00032.php'>&lt;==</a> Thread <a href='msg00053.php'>==&gt;</a></th>
+</tr></table>
+
+<!--X-TopPNI-End-->
+<!--X-MsgBody-->
+<!--X-Subject-Header-Begin-->
+<hr>
+<div style='float: right'><g:plusone></g:plusone></div>
+<!--X-Subject-Header-End-->
+<!--X-Head-of-Message-->
+<table border=0>
+<tr>
+<td align="right" valign="top">
+<em>Subject</em>:</td>
+<td align="left">
+<b>Sequencer Installation error</b></td>
+</tr>
+
+<tr>
+<td align="right" valign="top">
+<em>From</em>:</td>
+<td align="left">
+Ganesh Jangir &lt;<a href="mailto:ganesh.jangir_at_tcs.com">ganesh.jangir@tcs.com</a>&gt;</td>
+</tr>
+
+<tr>
+<td align="right" valign="top">
+<em>To</em>:</td>
+<td align="left">
+<a href="mailto:tech-talk_at_aps.anl.gov">tech-talk@aps.anl.gov</a></td>
+</tr>
+
+<tr>
+<td align="right" valign="top">
+<em>Date</em>:</td>
+<td align="left">
+Thu, 16 Jan 2014 15:54:33 +0530</td>
+</tr>
+
+</table>
+<!--X-Head-of-Message-End-->
+<!--X-Head-Body-Sep-Begin-->
+<!--X-Head-Body-Sep-End-->
+<!--X-Body-of-Message-->
+<font face="Default Sans Serif,Verdana,Arial,Helvetica,sans-serif" size="2"><BR>
+<DIV>
+<BLOCKQUOTE style="BORDER-LEFT: black 2px solid; PADDING-LEFT: 5px; PADDING-RIGHT: 0px; MARGIN-LEFT: 5px; MARGIN-RIGHT: 0px"><FONT size=2 face="Default Sans Serif,Verdana,Arial,Helvetica,sans-serif">Dear All,<BR><BR>This is regarding the installation of Sequencer on Linux Fedora 19<BR>I am able to "make" sequencer and <STRONG>run</STRONG> the Demo Test and EPICS sequencer example without any failure.<BR><BR>But when i tried with "<STRONG>make -s runtests</STRONG>" i got following error log.<BR>Is there any problem with installation or its with the runtest. How to short it out.<BR><BR>Thank you<BR><BR>Regards<BR>Ganesh<BR><BR><BR>[GMRT@01HW183138 seq]$ make -s runtests<BR>snc_test.t .. Can't locate Test/More.pm in @INC (@INC contains: /usr/local/lib64/perl5 /usr/local/share/perl5 /usr/lib64/perl5/vendor_perl /usr/share/perl5/vendor_perl /usr/lib64/perl5 /usr/share/perl5 .) at snc_test.t line 5.<BR>BEGIN failed--compilation aborted at snc_test.t line 5.<BR>snc_test.t .. Dubious, test returned 2 (wstat 512, 0x200)<BR>No subtests run <BR><BR>Test Summary Report<BR>-------------------<BR>snc_test.t (Wstat: 512 Tests: 0 Failed: 0)<BR>&nbsp; Non-zero exit status: 2<BR>&nbsp; Parse errors: No plan found in TAP output<BR>Files=1, Tests=0,&nbsp; 0 wallclock secs ( 0.02 usr +&nbsp; 0.01 sys =&nbsp; 0.03 CPU)<BR>Result: FAIL<BR>Failed 1/1 test programs. 0/0 subtests failed.<BR>array.t ................ ok&nbsp;&nbsp;&nbsp; <BR>assign.t ............... ok&nbsp;&nbsp; <BR>change.t ............... ok&nbsp;&nbsp;&nbsp; <BR>commaOperator.t ........ ok&nbsp;&nbsp; <BR>local.t ................ ok&nbsp;&nbsp; <BR>opttVar.t .............. ok&nbsp;&nbsp;&nbsp; <BR>pvSync.t ............... Starting iocInit<BR>iocRun: All initialization complete<BR>pvSync.t ............... ok&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <BR>safeModeNotAssigned.t .. ok&nbsp;&nbsp;&nbsp; <BR>safeMonitor.t .......... ok&nbsp;&nbsp;&nbsp; <BR>userfunc.t ............. Starting iocInit<BR>iocRun: All initialization complete<BR>userfunc.t ............. ok&nbsp;&nbsp;&nbsp; <BR>userfuncEf.t ........... ok&nbsp;&nbsp; <BR>bittypes.t ............. Starting iocInit<BR>iocRun: All initialization complete<BR>bittypes.t ............. ok&nbsp;&nbsp;&nbsp; <BR>evflag.t ............... Starting iocInit<BR>iocRun: All initialization complete<BR>evflag.t ............... ok&nbsp;&nbsp;&nbsp; <BR>monitorEvflag.t ........ Starting iocInit<BR>iocRun: All initialization complete<BR>monitorEvflag.t ........ ok&nbsp;&nbsp; <BR>pvGet.t ................ Starting iocInit<BR>iocRun: All initialization complete<BR>pvGet.t ................ ok&nbsp;&nbsp;&nbsp; <BR>pvGetAsync.t ........... Starting iocInit<BR>iocRun: All initialization complete<BR>pvGetAsync.t ........... ok&nbsp;&nbsp; <BR>pvPutAsync.t ........... Starting iocInit<BR>iocRun: All initialization complete<BR>pvPutAsync.t ........... ok&nbsp;&nbsp;&nbsp; <BR>reassign.t ............. Starting iocInit<BR>iocRun: All initialization complete<BR>reassign.t ............. ok&nbsp;&nbsp;&nbsp; <BR>norace.t ............... Starting iocInit<BR>iocRun: All initialization complete<BR>norace.t ............... ok&nbsp;&nbsp;&nbsp; <BR>bittypesIoc.t .......... Starting iocInit<BR>iocRun: All initialization complete<BR>bittypesIoc.t .......... 1/? <BR><BR><BR><BR>Thanks and Regards<BR><BR>Ganesh Jangir<BR>------------------------------------------------------------------------------------------------------------------------------------------------<BR>
+<DIV>
+<BLOCKQUOTE style="BORDER-LEFT: black 2px solid; PADDING-LEFT: 5px; PADDING-RIGHT: 0px; MARGIN-LEFT: 5px; MARGIN-RIGHT: 0px">To: tech-talk@aps.anl.gov<BR>From: Ganesh Jangir/MUM/TCS<BR>Date: 12/26/2013 05:45PM<BR>Subject: Sequencer Installation error<BR><BR><FONT size=2 face="Default Sans Serif,Verdana,Arial,Helvetica,sans-serif">Dear All,<BR><BR>I am tiring to sequencer of my&nbsp; Linux Machine<BR>I am following the step mention in sequencer User Guide 2.1.16(the latest one) <BR>Following variable are defined EPICS_BASE, EPICS_HOST_ARCH, LD_LIB_PATH already in epics. <BR><BR>During the the make command the compilation goes in to infinite loop..<BR><BR>make[3]: Entering directory `/home/GMRT/Desktop/epics/extensions/soft/seq/seq-snapshot-2013-12-19/src/snc/O.linux-x86_64'<BR>../../../bin/linux-x86_64/lemon o=. ../snl.lem<BR>3 parsing conflicts.<BR>s -b -o lexer.c ../snl.re<BR>make[3]: s: Command not found<BR>make[3]: [lexer.c] Error 127 (ignored)<BR>make[3]: Leaving directory `/home/GMRT/Desktop/epics/extensions/soft/seq/seq-snapshot-2013-12-19/src/snc/O.linux-x86_64'<BR>make[3]: Entering directory `/home/GMRT/Desktop/epics/extensions/soft/seq/seq-snapshot-2013-12-19/src/snc/O.linux-x86_64'<BR>s -b -o lexer.c ../snl.re<BR>make[3]: s: Command not found<BR>make[3]: [lexer.c] Error 127 (ignored)<BR>make[3]: Leaving directory `/home/GMRT/Desktop/epics/extensions/soft/seq/seq-snapshot-2013-12-19/src/snc/O.linux-x86_64'<BR>make[3]: Entering directory `/home/GMRT/Desktop/epics/extensions/soft/seq/seq-snapshot-2013-12-19/src/snc/O.linux-x86_64'<BR>s -b -o lexer.c ../snl.re<BR>.<BR>. runs endless<BR>--------------------------------------------------------------------------------------------------------------------------------------------------<BR>ALSO when i tried to run make -s runtests.<BR>&nbsp;It again goes in to <BR>[GMRT@01HW183138 seq-snapshot-2013-12-19]$ make -s runtests<BR>make[3]: s: Command not found<BR>make[3]: s: Command not found<BR>make[3]: s: Command not found<BR>make[3]: s: Command not found<BR>:<BR>: runs endless<BR>----------------------------------------------------------------------------------------------------------------------------------------------------<BR><BR>Below is complete log.<BR><BR>Please help.<BR><BR><BR>_________________________________________________________________________-<BR>--------------------------------------------------------------------------------------------------------------------------------<BR>make -C ./configure install <BR>make[1]: Entering directory `/home/GMRT/Desktop/epics/extensions/soft/seq/seq-snapshot-2013-12-19/configure'<BR>perl /home/GMRT/Desktop/epics/base-3.14.12.3/bin/linux-x86_64/makeMakefile.pl O.linux-x86_64 ../..<BR>mkdir O.Common<BR>make -C O.linux-x86_64 -f ../Makefile TOP=../.. T_A=linux-x86_64 install<BR>make[2]: Entering directory `/home/GMRT/Desktop/epics/extensions/soft/seq/seq-snapshot-2013-12-19/configure/O.linux-x86_64'<BR>perl /home/GMRT/Desktop/epics/base-3.14.12.3/bin/linux-x86_64/convertRelease.pl checkRelease<BR>make[2]: Leaving directory `/home/GMRT/Desktop/epics/extensions/soft/seq/seq-snapshot-2013-12-19/configure/O.linux-x86_64'<BR>make[1]: Leaving directory `/home/GMRT/Desktop/epics/extensions/soft/seq/seq-snapshot-2013-12-19/configure'<BR>make -C ./src install <BR>make[1]: Entering directory `/home/GMRT/Desktop/epics/extensions/soft/seq/seq-snapshot-2013-12-19/src'<BR>make -C ./pv install <BR>make[2]: Entering directory `/home/GMRT/Desktop/epics/extensions/soft/seq/seq-snapshot-2013-12-19/src/pv'<BR>perl /home/GMRT/Desktop/epics/base-3.14.12.3/bin/linux-x86_64/makeMakefile.pl O.linux-x86_64 ../../..<BR>mkdir O.Common<BR>make -C O.linux-x86_64 -f ../Makefile TOP=../../.. T_A=linux-x86_64 install<BR>make[3]: Entering directory `/home/GMRT/Desktop/epics/extensions/soft/seq/seq-snapshot-2013-12-19/src/pv/O.linux-x86_64'<BR><BR>/usr/bin/g++ -c&nbsp; -D_POSIX_C_SOURCE=199506L -D_POSIX_THREADS -D_XOPEN_SOURCE=500&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; -DPVCA&nbsp; -D_X86_64_&nbsp; -DUNIX&nbsp; -D_BSD_SOURCE -Dlinux&nbsp; -D_REENTRANT&nbsp;&nbsp; -O3&nbsp;&nbsp; -Wall&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; -m64&nbsp;&nbsp;&nbsp;&nbsp; -fPIC -MMD -I. -I../O.Common -I. -I.. -I../../../include/os/Linux -I../../../include -I/home/GMRT/Desktop/epics/base-3.14.12.3/include/os/Linux -I/home/GMRT/Desktop/epics/base-3.14.12.3/include&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ../pvNew.cc <BR><BR>/usr/bin/g++ -c&nbsp; -D_POSIX_C_SOURCE=199506L -D_POSIX_THREADS -D_XOPEN_SOURCE=500&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; -DPVCA&nbsp; -D_X86_64_&nbsp; -DUNIX&nbsp; -D_BSD_SOURCE -Dlinux&nbsp; -D_REENTRANT&nbsp;&nbsp; -O3&nbsp;&nbsp; -Wall&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; -m64&nbsp;&nbsp;&nbsp;&nbsp; -fPIC -MMD -I. -I../O.Common -I. -I.. -I../../../include/os/Linux -I../../../include -I/home/GMRT/Desktop/epics/base-3.14.12.3/include/os/Linux -I/home/GMRT/Desktop/epics/base-3.14.12.3/include&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ../pv.cc <BR><BR>/usr/bin/g++ -c&nbsp; -D_POSIX_C_SOURCE=199506L -D_POSIX_THREADS -D_XOPEN_SOURCE=500&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; -DPVCA&nbsp; -D_X86_64_&nbsp; -DUNIX&nbsp; -D_BSD_SOURCE -Dlinux&nbsp; -D_REENTRANT&nbsp;&nbsp; -O3&nbsp;&nbsp; -Wall&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; -m64&nbsp;&nbsp;&nbsp;&nbsp; -fPIC -MMD -I. -I../O.Common -I. -I.. -I../../../include/os/Linux -I../../../include -I/home/GMRT/Desktop/epics/base-3.14.12.3/include/os/Linux -I/home/GMRT/Desktop/epics/base-3.14.12.3/include&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ../pvCa.cc <BR>/usr/bin/ar -rc&nbsp;&nbsp; libpv.a&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; pvNew.o pv.o pvCa.o <BR>/usr/bin/ranlib libpv.a<BR>/usr/bin/g++ -o libpv.so -shared -fPIC -Wl,-hlibpv.so -L/home/GMRT/Desktop/epics/base-3.14.12.3/lib/linux-x86_64 -Wl,-rpath,/home/GMRT/Desktop/epics/base-3.14.12.3/lib/linux-x86_64&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; -m64&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; pvNew.o pv.o pvCa.o&nbsp;&nbsp;&nbsp; -lca -lCom&nbsp;&nbsp; -lpthread&nbsp;&nbsp; -lreadline -lm -lrt -ldl -lgcc<BR>Installing shared library ../../../lib/linux-x86_64/libpv.so<BR>Installing library ../../../lib/linux-x86_64/libpv.a<BR>make[3]: Leaving directory `/home/GMRT/Desktop/epics/extensions/soft/seq/seq-snapshot-2013-12-19/src/pv/O.linux-x86_64'<BR>make[2]: Leaving directory `/home/GMRT/Desktop/epics/extensions/soft/seq/seq-snapshot-2013-12-19/src/pv'<BR>make -C ./seq install <BR>make[2]: Entering directory `/home/GMRT/Desktop/epics/extensions/soft/seq/seq-snapshot-2013-12-19/src/seq'<BR>perl /home/GMRT/Desktop/epics/base-3.14.12.3/bin/linux-x86_64/makeMakefile.pl O.linux-x86_64 ../../..<BR>mkdir O.Common<BR>make -C O.linux-x86_64 -f ../Makefile TOP=../../.. T_A=linux-x86_64 install<BR>make[3]: Entering directory `/home/GMRT/Desktop/epics/extensions/soft/seq/seq-snapshot-2013-12-19/src/seq/O.linux-x86_64'<BR>perl ../seq_release.pl 2.1.16 &gt; ../O.Common/seq_release.h<BR>Installing generated generic include file ../../../include/seq_release.h<BR><BR>/usr/bin/gcc -c&nbsp; -D_POSIX_C_SOURCE=199506L -D_POSIX_THREADS -D_XOPEN_SOURCE=500&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; -D_X86_64_&nbsp; -DUNIX&nbsp; -D_BSD_SOURCE -Dlinux&nbsp; -D_REENTRANT&nbsp;&nbsp; -O3 -g&nbsp;&nbsp; -Wall&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; -m64&nbsp;&nbsp;&nbsp;&nbsp; -fPIC -MMD -I. -I../O.Common -I. -I.. -I../../../include/os/Linux -I../../../include -I/home/GMRT/Desktop/epics/base-3.14.12.3/include/os/Linux -I/home/GMRT/Desktop/epics/base-3.14.12.3/include&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ../seq_main.c <BR><BR>/usr/bin/gcc -c&nbsp; -D_POSIX_C_SOURCE=199506L -D_POSIX_THREADS -D_XOPEN_SOURCE=500&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; -D_X86_64_&nbsp; -DUNIX&nbsp; -D_BSD_SOURCE -Dlinux&nbsp; -D_REENTRANT&nbsp;&nbsp; -O3 -g&nbsp;&nbsp; -Wall&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; -m64&nbsp;&nbsp;&nbsp;&nbsp; -fPIC -MMD -I. -I../O.Common -I. -I.. -I../../../include/os/Linux -I../../../include -I/home/GMRT/Desktop/epics/base-3.14.12.3/include/os/Linux -I/home/GMRT/Desktop/epics/base-3.14.12.3/include&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ../seq_task.c <BR><BR>/usr/bin/gcc -c&nbsp; -D_POSIX_C_SOURCE=199506L -D_POSIX_THREADS -D_XOPEN_SOURCE=500&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; -D_X86_64_&nbsp; -DUNIX&nbsp; -D_BSD_SOURCE -Dlinux&nbsp; -D_REENTRANT&nbsp;&nbsp; -O3 -g&nbsp;&nbsp; -Wall&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; -m64&nbsp;&nbsp;&nbsp;&nbsp; -fPIC -MMD -I. -I../O.Common -I. -I.. -I../../../include/os/Linux -I../../../include -I/home/GMRT/Desktop/epics/base-3.14.12.3/include/os/Linux -I/home/GMRT/Desktop/epics/base-3.14.12.3/include&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ../seq_ca.c <BR><BR>/usr/bin/gcc -c&nbsp; -D_POSIX_C_SOURCE=199506L -D_POSIX_THREADS -D_XOPEN_SOURCE=500&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; -D_X86_64_&nbsp; -DUNIX&nbsp; -D_BSD_SOURCE -Dlinux&nbsp; -D_REENTRANT&nbsp;&nbsp; -O3 -g&nbsp;&nbsp; -Wall&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; -m64&nbsp;&nbsp;&nbsp;&nbsp; -fPIC -MMD -I. -I../O.Common -I. -I.. -I../../../include/os/Linux -I../../../include -I/home/GMRT/Desktop/epics/base-3.14.12.3/include/os/Linux -I/home/GMRT/Desktop/epics/base-3.14.12.3/include&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ../seq_if.c <BR><BR>/usr/bin/gcc -c&nbsp; -D_POSIX_C_SOURCE=199506L -D_POSIX_THREADS -D_XOPEN_SOURCE=500&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; -D_X86_64_&nbsp; -DUNIX&nbsp; -D_BSD_SOURCE -Dlinux&nbsp; -D_REENTRANT&nbsp;&nbsp; -O3 -g&nbsp;&nbsp; -Wall&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; -m64&nbsp;&nbsp;&nbsp;&nbsp; -fPIC -MMD -I. -I../O.Common -I. -I.. -I../../../include/os/Linux -I../../../include -I/home/GMRT/Desktop/epics/base-3.14.12.3/include/os/Linux -I/home/GMRT/Desktop/epics/base-3.14.12.3/include&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ../seq_mac.c <BR><BR>/usr/bin/gcc -c&nbsp; -D_POSIX_C_SOURCE=199506L -D_POSIX_THREADS -D_XOPEN_SOURCE=500&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; -D_X86_64_&nbsp; -DUNIX&nbsp; -D_BSD_SOURCE -Dlinux&nbsp; -D_REENTRANT&nbsp;&nbsp; -O3 -g&nbsp;&nbsp; -Wall&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; -m64&nbsp;&nbsp;&nbsp;&nbsp; -fPIC -MMD -I. -I../O.Common -I. -I.. -I../../../include/os/Linux -I../../../include -I/home/GMRT/Desktop/epics/base-3.14.12.3/include/os/Linux -I/home/GMRT/Desktop/epics/base-3.14.12.3/include&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ../seq_prog.c <BR><BR>/usr/bin/gcc -c&nbsp; -D_POSIX_C_SOURCE=199506L -D_POSIX_THREADS -D_XOPEN_SOURCE=500&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; -D_X86_64_&nbsp; -DUNIX&nbsp; -D_BSD_SOURCE -Dlinux&nbsp; -D_REENTRANT&nbsp;&nbsp; -O3 -g&nbsp;&nbsp; -Wall&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; -m64&nbsp;&nbsp;&nbsp;&nbsp; -fPIC -MMD -I. -I../O.Common -I. -I.. -I../../../include/os/Linux -I../../../include -I/home/GMRT/Desktop/epics/base-3.14.12.3/include/os/Linux -I/home/GMRT/Desktop/epics/base-3.14.12.3/include&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ../seq_qry.c <BR><BR>/usr/bin/gcc -c&nbsp; -D_POSIX_C_SOURCE=199506L -D_POSIX_THREADS -D_XOPEN_SOURCE=500&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; -D_X86_64_&nbsp; -DUNIX&nbsp; -D_BSD_SOURCE -Dlinux&nbsp; -D_REENTRANT&nbsp;&nbsp; -O3 -g&nbsp;&nbsp; -Wall&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; -m64&nbsp;&nbsp;&nbsp;&nbsp; -fPIC -MMD -I. -I../O.Common -I. -I.. -I../../../include/os/Linux -I../../../include -I/home/GMRT/Desktop/epics/base-3.14.12.3/include/os/Linux -I/home/GMRT/Desktop/epics/base-3.14.12.3/include&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ../seq_cmd.c <BR><BR>/usr/bin/gcc -c&nbsp; -D_POSIX_C_SOURCE=199506L -D_POSIX_THREADS -D_XOPEN_SOURCE=500&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; -D_X86_64_&nbsp; -DUNIX&nbsp; -D_BSD_SOURCE -Dlinux&nbsp; -D_REENTRANT&nbsp;&nbsp; -O3 -g&nbsp;&nbsp; -Wall&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; -m64&nbsp;&nbsp;&nbsp;&nbsp; -fPIC -MMD -I. -I../O.Common -I. -I.. -I../../../include/os/Linux -I../../../include -I/home/GMRT/Desktop/epics/base-3.14.12.3/include/os/Linux -I/home/GMRT/Desktop/epics/base-3.14.12.3/include&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ../seq_queue.c <BR>/usr/bin/ar -rc&nbsp;&nbsp; libseq.a&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; seq_main.o seq_task.o seq_ca.o seq_if.o seq_mac.o seq_prog.o seq_qry.o seq_cmd.o seq_queue.o <BR>/usr/bin/ranlib libseq.a<BR>/usr/bin/g++ -o libseq.so -shared -fPIC -Wl,-hlibseq.so -L/home/GMRT/Desktop/epics/extensions/soft/seq/seq-snapshot-2013-12-19/lib/linux-x86_64 -L/home/GMRT/Desktop/epics/base-3.14.12.3/lib/linux-x86_64 -Wl,-rpath,/home/GMRT/Desktop/epics/extensions/soft/seq/seq-snapshot-2013-12-19/lib/linux-x86_64 -Wl,-rpath,/home/GMRT/Desktop/epics/base-3.14.12.3/lib/linux-x86_64&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; -m64&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; seq_main.o seq_task.o seq_ca.o seq_if.o seq_mac.o seq_prog.o seq_qry.o seq_cmd.o seq_queue.o&nbsp;&nbsp;&nbsp; -lpv -lCom&nbsp;&nbsp; -lpthread&nbsp;&nbsp; -lreadline -lm -lrt -ldl -lgcc<BR>Installing shared library ../../../lib/linux-x86_64/libseq.so<BR>Installing library ../../../lib/linux-x86_64/libseq.a<BR>make[3]: Leaving directory `/home/GMRT/Desktop/epics/extensions/soft/seq/seq-snapshot-2013-12-19/src/seq/O.linux-x86_64'<BR>make[2]: Leaving directory `/home/GMRT/Desktop/epics/extensions/soft/seq/seq-snapshot-2013-12-19/src/seq'<BR>make -C ./lemon install <BR>make[2]: Entering directory `/home/GMRT/Desktop/epics/extensions/soft/seq/seq-snapshot-2013-12-19/src/lemon'<BR>perl /home/GMRT/Desktop/epics/base-3.14.12.3/bin/linux-x86_64/makeMakefile.pl O.linux-x86_64 ../../..<BR>mkdir O.Common<BR>make -C O.linux-x86_64 -f ../Makefile TOP=../../.. T_A=linux-x86_64 install<BR>make[3]: Entering directory `/home/GMRT/Desktop/epics/extensions/soft/seq/seq-snapshot-2013-12-19/src/lemon/O.linux-x86_64'<BR><BR>/usr/bin/gcc -c&nbsp; -D_POSIX_C_SOURCE=199506L -D_POSIX_THREADS -D_XOPEN_SOURCE=500&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; -D_X86_64_&nbsp; -DUNIX&nbsp; -D_BSD_SOURCE -Dlinux&nbsp; -D_REENTRANT&nbsp;&nbsp; -O3 -g&nbsp;&nbsp; -Wall&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; -m64&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; -MMD -I. -I../O.Common -I. -I.. -I../../../include/os/Linux -I../../../include -I/home/GMRT/Desktop/epics/base-3.14.12.3/include/os/Linux -I/home/GMRT/Desktop/epics/base-3.14.12.3/include&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ../lemon.c <BR>/usr/bin/g++ -o lemon&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; -m64&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; lemon.o&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <BR>Installing created file ../../../bin/linux-x86_64/lemon<BR>make[3]: Leaving directory `/home/GMRT/Desktop/epics/extensions/soft/seq/seq-snapshot-2013-12-19/src/lemon/O.linux-x86_64'<BR>make[2]: Leaving directory `/home/GMRT/Desktop/epics/extensions/soft/seq/seq-snapshot-2013-12-19/src/lemon'<BR>make -C ./dev install <BR>make[2]: Entering directory `/home/GMRT/Desktop/epics/extensions/soft/seq/seq-snapshot-2013-12-19/src/dev'<BR>perl /home/GMRT/Desktop/epics/base-3.14.12.3/bin/linux-x86_64/makeMakefile.pl O.linux-x86_64 ../../..<BR>mkdir O.Common<BR>make -C O.linux-x86_64 -f ../Makefile TOP=../../.. T_A=linux-x86_64 install<BR>make[3]: Entering directory `/home/GMRT/Desktop/epics/extensions/soft/seq/seq-snapshot-2013-12-19/src/dev/O.linux-x86_64'<BR><BR>/usr/bin/gcc -c&nbsp; -D_POSIX_C_SOURCE=199506L -D_POSIX_THREADS -D_XOPEN_SOURCE=500&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; -D_X86_64_&nbsp; -DUNIX&nbsp; -D_BSD_SOURCE -Dlinux&nbsp; -D_REENTRANT&nbsp;&nbsp; -O3 -g&nbsp;&nbsp; -Wall&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; -m64&nbsp;&nbsp;&nbsp;&nbsp; -fPIC -MMD -I. -I../O.Common -I. -I.. -I../../../include/os/Linux -I../../../include -I/home/GMRT/Desktop/epics/base-3.14.12.3/include/os/Linux -I/home/GMRT/Desktop/epics/base-3.14.12.3/include&nbsp;&nbsp;&nbsp;&nbsp; -I../../../src/seq&nbsp;&nbsp; ../devSequencer.c <BR>/usr/bin/ar -rc&nbsp;&nbsp; libseqDev.a&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; devSequencer.o<BR>/usr/bin/ranlib libseqDev.a<BR>/usr/bin/g++ -o libseqDev.so -shared -fPIC -Wl,-hlibseqDev.so -L/home/GMRT/Desktop/epics/extensions/soft/seq/seq-snapshot-2013-12-19/lib/linux-x86_64 -L/home/GMRT/Desktop/epics/base-3.14.12.3/lib/linux-x86_64 -Wl,-rpath,/home/GMRT/Desktop/epics/extensions/soft/seq/seq-snapshot-2013-12-19/lib/linux-x86_64 -Wl,-rpath,/home/GMRT/Desktop/epics/base-3.14.12.3/lib/linux-x86_64&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; -m64&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; devSequencer.o&nbsp;&nbsp; -lseq -lpv -lrecIoc -lsoftDevIoc -lmiscIoc -lrsrvIoc -ldbtoolsIoc -lasIoc -ldbIoc -lregistryIoc -ldbStaticIoc -lca -lCom&nbsp;&nbsp; -lpthread&nbsp;&nbsp; -lreadline -lm -lrt -ldl -lgcc<BR>Installing shared library ../../../lib/linux-x86_64/libseqDev.so<BR>Installing library ../../../lib/linux-x86_64/libseqDev.a<BR>make[3]: Leaving directory `/home/GMRT/Desktop/epics/extensions/soft/seq/seq-snapshot-2013-12-19/src/dev/O.linux-x86_64'<BR>make[2]: Leaving directory `/home/GMRT/Desktop/epics/extensions/soft/seq/seq-snapshot-2013-12-19/src/dev'<BR>make -C ./snc install <BR>make[2]: Entering directory `/home/GMRT/Desktop/epics/extensions/soft/seq/seq-snapshot-2013-12-19/src/snc'<BR>perl /home/GMRT/Desktop/epics/base-3.14.12.3/bin/linux-x86_64/makeMakefile.pl O.linux-x86_64 ../../..<BR>mkdir O.Common<BR>make -C O.linux-x86_64 -f ../Makefile TOP=../../.. T_A=linux-x86_64 install<BR>make[3]: Entering directory `/home/GMRT/Desktop/epics/extensions/soft/seq/seq-snapshot-2013-12-19/src/snc/O.linux-x86_64'<BR>../../../bin/linux-x86_64/lemon o=. ../snl.lem<BR>3 parsing conflicts.<BR>s -b -o lexer.c ../snl.re<BR>make[3]: s: Command not found<BR>make[3]: [lexer.c] Error 127 (ignored)<BR>make[3]: Leaving directory `/home/GMRT/Desktop/epics/extensions/soft/seq/seq-snapshot-2013-12-19/src/snc/O.linux-x86_64'<BR>make[3]: Entering directory `/home/GMRT/Desktop/epics/extensions/soft/seq/seq-snapshot-2013-12-19/src/snc/O.linux-x86_64'<BR>s -b -o lexer.c ../snl.re<BR>make[3]: s: Command not found<BR>make[3]: [lexer.c] Error 127 (ignored)<BR>make[3]: Leaving directory `/home/GMRT/Desktop/epics/extensions/soft/seq/seq-snapshot-2013-12-19/src/snc/O.linux-x86_64'<BR>make[3]: Entering directory `/home/GMRT/Desktop/epics/extensions/soft/seq/seq-snapshot-2013-12-19/src/snc/O.linux-x86_64'<BR>s -b -o lexer.c ../snl.re<BR>....<BR>.<BR>.<BR>..<BR>Infinite loop<BR><BR><BR>Thanks and Regards<BR><BR>Ganesh Jangir<BR>
+<DIV></DIV></FONT></BLOCKQUOTE></DIV>
+<DIV></DIV></FONT></BLOCKQUOTE></DIV>
+<DIV></DIV></font><p>=====-----=====-----=====<br>
+Notice: The information contained in this e-mail<br>
+message and/or attachments to it may contain <br>
+confidential or privileged information. If you are <br>
+not the intended recipient, any dissemination, use, <br>
+review, distribution, printing or copying of the <br>
+information contained in this e-mail message <br>
+and/or attachments to it are strictly prohibited. If <br>
+you have received this communication in error, <br>
+please notify us by reply e-mail or telephone and <br>
+immediately and permanently delete the message <br>
+and any attachments. Thank you</p>
+
+<p></p>
+<!--X-Body-of-Message-End-->
+<!--X-MsgBody-End-->
+<!--X-Follow-Ups-->
+<hr>
+<dl>
+<dt>Replies:</dt>
+<dd><b><a name="00053" href="msg00053.php">Re: Sequencer Installation error</a></b> <i>Jitendra Kodilkar</i>
+</dd>
+</dl>
+<!--X-Follow-Ups-End-->
+<!--X-References-->
+<!--X-References-End-->
+<!--X-BotPNI-->
+<hr><dl>
+<dt>Navigate by Date:</dt>
+<dd>Prev:
+<b><a href='msg00051.php'>Re:Re: Failed to install ISR</a></b> <i>&#xB958;&#xC218;</i>
+</dd>
+<dd>Next:
+<b><a href='msg00053.php'>Re: Sequencer Installation error</a></b> <i>Jitendra Kodilkar</i>
+</dd>
+<dd>Index: <b>
+<a href='../1994/index.php'>1994</a>&nbsp;
+<a href='../1995/index.php'>1995</a>&nbsp;
+<a href='../1996/index.php'>1996</a>&nbsp;
+<a href='../1997/index.php'>1997</a>&nbsp;
+<a href='../1998/index.php'>1998</a>&nbsp;
+<a href='../1999/index.php'>1999</a>&nbsp;
+<a href='../2000/index.php'>2000</a>&nbsp;
+<a href='../2001/index.php'>2001</a>&nbsp;
+<a href='../2002/index.php'>2002</a>&nbsp;
+<a href='../2003/index.php'>2003</a>&nbsp;
+<a href='../2004/index.php'>2004</a>&nbsp;
+<a href='../2005/index.php'>2005</a>&nbsp;
+<a href='../2006/index.php'>2006</a>&nbsp;
+<a href='../2007/index.php'>2007</a>&nbsp;
+<a href='../2008/index.php'>2008</a>&nbsp;
+<a href='../2009/index.php'>2009</a>&nbsp;
+<a href='../2010/index.php'>2010</a>&nbsp;
+<a href='../2011/index.php'>2011</a>&nbsp;
+<a href='../2012/index.php'>2012</a>&nbsp;
+<a href='../2013/index.php'>2013</a>&nbsp;
+&lt;<a href='../2014/index.php?January'>2014</a>&gt;&nbsp;
+<a href='../2015/index.php'>2015</a>&nbsp;
+</b></dd>
+<dt>Navigate by Thread:</dt>
+<dd>Prev:
+<b><a href='msg00032.php'>Re: Sequencer Installation error</a></b> <i>Benjamin Franksen</i>
+</dd>
+<dd>Next:
+<b><a href='msg00053.php'>Re: Sequencer Installation error</a></b> <i>Jitendra Kodilkar</i>
+</dd>
+<dd>Index: <b>
+<a href='../1994/threads.php'>1994</a>&nbsp;
+<a href='../1995/threads.php'>1995</a>&nbsp;
+<a href='../1996/threads.php'>1996</a>&nbsp;
+<a href='../1997/threads.php'>1997</a>&nbsp;
+<a href='../1998/threads.php'>1998</a>&nbsp;
+<a href='../1999/threads.php'>1999</a>&nbsp;
+<a href='../2000/threads.php'>2000</a>&nbsp;
+<a href='../2001/threads.php'>2001</a>&nbsp;
+<a href='../2002/threads.php'>2002</a>&nbsp;
+<a href='../2003/threads.php'>2003</a>&nbsp;
+<a href='../2004/threads.php'>2004</a>&nbsp;
+<a href='../2005/threads.php'>2005</a>&nbsp;
+<a href='../2006/threads.php'>2006</a>&nbsp;
+<a href='../2007/threads.php'>2007</a>&nbsp;
+<a href='../2008/threads.php'>2008</a>&nbsp;
+<a href='../2009/threads.php'>2009</a>&nbsp;
+<a href='../2010/threads.php'>2010</a>&nbsp;
+<a href='../2011/threads.php'>2011</a>&nbsp;
+<a href='../2012/threads.php'>2012</a>&nbsp;
+<a href='../2013/threads.php'>2013</a>&nbsp;
+&lt;<a href='../2014/threads.php'>2014</a>&gt;&nbsp;
+<a href='../2015/threads.php'>2015</a>&nbsp;
+</b></dd>
+</dl>
+
+<!--X-BotPNI-End-->
+<!--X-User-Footer-->
+<!--X-User-Footer-End-->
+</td></tr>
+
+<tr>
+<td class='signature'>
+<a href="mailto:Andrew%20Johnson%20&lt;anj_at_aps.anl.gov&gt;">
+ANJ</a>, 19 May 2014</td>
+<td class='bottom'>
+<a href='http://validator.w3.org/check?uri=referer'><img src='/epics/icons/vh401.gif' alt='Valid HTML 4.01!' border='0' align='right' height='31' width='88'></a>
+&middot;
+<a href='/epics/index.php' title="EPICS Home at APS">Home</a>
+&middot;
+<a href='/epics/news.php' title="Recent news">News</a>
+&middot;
+<a href='/epics/about.php' title="What is EPICS anyway?">About</a>
+&middot;
+<a href='/epics/base/index.php' title="The core EPICS software for both IOCs and Host tools">Base</a>
+&middot;
+<a href='/epics/modules/index.php' title="Optional support code for IOCs - drivers etc.">Modules</a>
+&middot;
+<a href='/epics/extensions/index.php' title="Tools to monitor and control IOCs">Extensions</a>
+&middot;
+<a href='/epics/distributions/index.php' title="Code collections from base, modules, extensions &amp; elsewhere">Distributions</a>
+&middot;
+<a href='/epics/download/index.php' title="Software downloads">Download</a>
+&middot;
+<br>
+&middot;
+<a href='http://epics-pvdata.sourceforge.net/index.html' title="EPICS Version 4 Project">EPICSv4</a>
+&middot;
+<a href='/epics/irmis/index.php' title="Using RDBs to model installed EPICS IOCs">IRMIS</a>
+&middot;
+<a href='/epics/mail.php' title="Information about our mailing lists">Talk</a>
+&middot;
+<a href='https://bugs.launchpad.net/epics-base' title="The Launchpad bug tracker for epics-base">Bugs</a>
+&middot;
+<a href='/epics/docs/index.php' title="Text not related to a specific release or package">Documents</a>
+&middot;
+<a href='/epics/links.php' title="Related web-sites">Links</a>
+&middot;
+<a href='/epics/license/index.php' title="EPICS Software Licensing">Licensing</a>
+&middot;
+</td></tr></table>
+</body>
+</html>
+ÛÒaÕê      VDÓVDÓ;Ì¬V{¯0   9:http://www.aps.anl.gov/epics/tech-talk/2014/msg00052.php necko:classified 1 request-method GET response-head HTTP/1.1 200 OK
+Date: Thu, 12 Nov 2015 17:57:42 GMT
+Server: Apache
+X-Frame-Options: SAMEORIGIN
+Last-Modified: Mon, 22 Sep 2014 15:02:26 GMT
+Content-Type: text/html; charset=iso-8859-1
+X-Cache: MISS from wwwcache2-dl-cache, MISS from wwwcache2-dl-icap
+Via: 1.1 wwwcache2-dl-cache (squid/3.3.10), 1.1 wwwcache2-dl-icap (squid/3.3.10)
+ charset windows-1252 uncompressed-len 0 predictor::resource-count 4 predictor::http://www.aps.anl.gov/epics/epics.css 1,1,1447351062,0 predictor::https://apis.google.com/js/plusone.js 1,1,1447351062,0 predictor::https://apis.google.com/_/scs/apps-static/_/js/k=oz.gapi.en_GB.3gCEM3WeblA.O/m=plusone/rt=j/sv=1/d=1/ed=1/am=AQ/rs=AGLTcCP8ZfPHMDlbYpI5-U-qr0fejtum1w/t=zcms/cb=gapi.loaded_0 1,1,1447351062,0 predictor::https://apis.google.com/_/scs/apps-static/_/js/k=oz.gapi.en_GB.3gCEM3WeblA.O/m=auth/exm=plusone/rt=j/sv=1/d=1/ed=1/am=AQ/rs=AGLTcCP8ZfPHMDlbYpI5-U-qr0fejtum1w/t=zcms/cb=gapi.loaded_1 1,1,1447351062,0   Ÿ(

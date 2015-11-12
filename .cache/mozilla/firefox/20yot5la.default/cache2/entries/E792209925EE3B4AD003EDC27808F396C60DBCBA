@@ -1,0 +1,1102 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+    <title>Debugging bash startup - comp.unix.shell</title>
+    <meta name="viewport" content="width=device-width" />
+    <meta name="description" content="   The initial state of my bash shell after login leaves much to be desired.  I know that my ~/.bash_profile is being invoked at login, and that it in... 497870" />
+            
+    <link rel="Stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.5/css/bootstrap.min.css" />
+    <link href="/_config/main.css" rel="stylesheet" />
+    <link href="/scripts/colorbox/colorbox.css" rel="stylesheet" />
+    
+    <link rel="canonical" href="http://compgroups.net/comp.unix.shell/debugging-bash-startup/497870" />
+
+</head>
+<body>
+    <div id="wrapper">
+        <!-- Navigation -->
+                <nav class="navbar navbar-default navbar-static-top navbar-fixed-top" role="navigation" style="margin-bottom: 0">
+                    <div class="navbar-header">
+                        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                            <span class="sr-only">Toggle navigation</span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                        </button>
+                        <a class="navbar-brand" href="/"><span><img src="/img/comp.png" /> compgroups</span></a>
+                    </div>
+
+                    <div class="collapse navbar-collapse">
+                        
+                        <ul class="nav navbar-nav">
+                            <li class="hidden">
+                                <a href="#page-top"></a>
+                            </li>
+
+                            <li><a href="/groups/"><img src="/img/group16.png"/> groups</a></li>
+                            <li><a href="/top-users/"><img src="/img/users16.png"/> users</a></li>
+                            <li><a href="/article~stream"><img src="/img/clock16.png"/> stream</a></li>
+                            <li><a href="/site~search"><img src="/img/icon_search.gif"/> search</a></li>
+                            <li><a href="/article~browse/1"><img src="/img/earth16.png"/> browse</a></li>
+                            <li><a href="/article~post"><img src="/img/add16.png" /> post</a></li>
+                            <li><a href="/site~about"><img src="/img/info16.png"/> about</a></li>
+                            <li id="user"></li>
+
+                        </ul>
+                    </div>
+                </nav>
+        </div>
+
+        
+ 
+
+
+<br />
+<br />
+<br />
+<br />
+
+<div class="rtl-container-fixed-center body-content">
+
+    <div class="row">
+        <div class="col-md-0 col-lg-2"></div>
+        <div class="col-md-8 col-lg-6">
+            <div class="panel panel-default panel-heading">
+                <h4>Debugging bash startup</h4>
+            </div>
+        </div>
+        <div id="socials" class="col-md-4 col-lg-2 well well-sm">
+            <span class='st_googleplus_large' displaytext='Google +'></span>
+            <span class='st_facebook_large' displaytext='Facebook'></span>
+            <span class='st_twitter_large' displaytext='Tweet'></span>
+            <span class='st_linkedin_large' displaytext='LinkedIn'></span>
+            <span class='st_reddit_large' displaytext='Reddit'></span>
+            <span class='st_email_large' displaytext='Email'></span>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-md-0 col-lg-2"></div>
+        <div class="col-md-8 col-lg-6">
+
+                <div class="panel panel-default">
+
+        <div class="panel-body">
+            <pre class="ForumPostContentText">
+
+
+The initial state of my bash shell after login leaves much to be
+desired.  I know that my ~/.bash_profile is being invoked at login,
+and that it invokes my ~/.bashrc, but I don&#39;t know what&#39;s invoking
+~/.bash_profile in the first place.  Whatever it is, it&#39;s messing
+up what I do with ~/.bash_profile and ~/.bashrc.  How can I find
+out what is calling my ~/.bash_profile?
+
+The system I&#39;m working with is not configured according to the
+canonical arrangement described in the man page for bash (e.g. no
+/etc/bash_profile or /etc/bashrc), so that&#39;s no help.  I need a
+way to trace the &quot;chain of command&quot; that actually takes place at
+login.
+
+Thanks!
+
+	-bill
+
+
+</pre>
+        </div>
+        <div class="panel-heading">
+            <div class="row">
+                <div class="col-md-4">
+                    <table style="text-align: center;  width:90px" class="Voting" voteSum="0">
+    <tr>
+        <td>
+            <img src="/img/icn/plus32.png"  height="20px"  style="cursor: pointer" title="Vote Up!" onclick="OnVoteArticle($(this).closest('table'),'&lt;c8dh15$oii$1@reader2.panix.com&gt;', true);" />
+        </td>
+        <td style="color: Green; font-weight: bold; font-size: 15px" title="0 Total Votes" >
+           0
+        </td>
+        <td>
+            <img src="/img/icn/minus32.png"  height="20px"  style="cursor: pointer" title="Vote Down!" onclick="OnVoteArticle($(this).closest('table'),'&lt;c8dh15$oii$1@reader2.panix.com&gt;', false);" />
+        </td>
+    </tr>
+</table>
+
+                </div>
+                <div class="col-md-4">
+
+
+
+<span><img src="/img/icn/user.png" /><b>bill</b></span>                </div>
+                <div class="col-md-4">
+                    <span class="date pull-right">5/18/2004 5:27:01 PM</span>
+
+                </div>
+                </div>
+        </div>
+    </div>
+
+
+
+
+        </div>
+        <div class="col-md-4 col-lg-2 well well-sm">
+       <div class="item">
+    <a href="/comp.unix.shell/"><img src="/img/icn/group.png" /><b>comp.unix.shell</b></a>
+    <a href="/comp.unix.shell/info"><img title="comp.unix.shell group information" src="/img/icn/i.png" /></a>
+    <img src="/img/icn/article.gif" />15309 articles.  <img src="/img/icn/star2.gif" />0 followers.
+            <a class="btn btn-success btn-xs" href="/article~post?g=comp.unix.shell">Post</a>
+        <a class="btn btn-info btn-xs" onclick="OpenModal('/fr~subscribegroup?group=comp.unix.shell', 400, 300)">Follow</a>
+    </div> <br />
+            <img src="/img/icn/reply.png" />
+            <b>5 Replies </b>
+            <br />
+            <img src="/img/icn/eye.png" />
+            <b>1985 Views</b>
+            <br /><br />
+            <b><a href="#similar"><img src="/img/!.png" />Similar Articles</a></b><br /><br />
+                <span id="PageSpeed">[PageSpeed]</span>
+18
+            <div id="ad4" class="visible-md visible-lg"></div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-md-0 col-lg-2"></div>
+        <div class="col-md-8 col-lg-6">
+            <b>
+                <a href="#similar">
+                    <img src="/img/!.png" />See related articles to this posting
+                </a>
+            </b><br /><br />
+        </div>
+    </div>
+
+            <div class="row">
+                <div class="col-md-0 col-lg-2"></div>
+                    <div id="ad1" class="col-md-8 col-lg-6"></div>
+            </div>
+                <div class="row">
+
+                    <div class="col-md-0 col-lg-2"></div>
+                    <div class="col-md-8 col-lg-6">
+
+                        
+
+<div class="panel panel-default">
+
+    <div class="panel-body">
+        <pre class="ForumPostContentText">In article &lt;c8dh15$oii$1@reader2.panix.com&gt;,
+ bill &lt;please_post@nomail.edu&gt; wrote:
+
+&gt; The initial state of my bash shell after login leaves much to be
+&gt; desired.  I know that my ~/.bash_profile is being invoked at login,
+&gt; and that it invokes my ~/.bashrc, but I don&#39;t know what&#39;s invoking
+&gt; ~/.bash_profile in the first place.  Whatever it is, it&#39;s messing
+&gt; up what I do with ~/.bash_profile and ~/.bashrc.  How can I find
+&gt; out what is calling my ~/.bash_profile?
+&gt; 
+&gt; The system I&#39;m working with is not configured according to the
+&gt; canonical arrangement described in the man page for bash (e.g. no
+&gt; /etc/bash_profile or /etc/bashrc), so that&#39;s no help.  I need a
+&gt; way to trace the &quot;chain of command&quot; that actually takes place at
+&gt; login.
+
+Bash runs ~/.bash_profile automatically when it&#39;s used as a login shell.  
+This should be explained in the bash man page.
+
+-- 
+Barry Margolin, barmar@alum.mit.edu
+Arlington, MA
+*** PLEASE post questions in newsgroups, not directly to me ***
+</pre>
+    </div>
+    <div class="panel-heading">
+        <div class="row">
+            <div class="col-md-4">
+                <table style="text-align: center;  width:90px" class="Voting" voteSum="0">
+    <tr>
+        <td>
+            <img src="/img/icn/plus32.png"  height="20px"  style="cursor: pointer" title="Vote Up!" onclick="OnVoteArticleReply($(this).closest('table'),'&lt;barmar-34715C.14521118052004@comcast.dca.giganews.com&gt;', true);" />
+        </td>
+        <td style="color: Green; font-weight: bold; font-size: 15px" title="0 Total Votes" >
+           0
+        </td>
+        <td>
+            <img src="/img/icn/minus32.png"  height="20px"  style="cursor: pointer" title="Vote Down!" onclick="OnVoteArticleReply($(this).closest('table'),'&lt;barmar-34715C.14521118052004@comcast.dca.giganews.com&gt;', false);" />
+        </td>
+    </tr>
+</table>
+
+            </div>
+            <div class="col-md-4">
+
+<span><img src="/img/icn/user.png" /><b>Barry</b></span>            </div>
+            <div class="col-md-4">
+                <span class="date pull-right">5/18/2004 6:52:11 PM</span>
+
+            </div>
+        </div>
+    </div>
+</div>
+
+
+                    </div>
+                </div>
+                <div class="row">
+
+                    <div class="col-md-0 col-lg-2"></div>
+                    <div class="col-md-8 col-lg-6">
+
+                        
+
+<div class="panel panel-default">
+
+    <div class="panel-body">
+        <pre class="ForumPostContentText">On Tue, 18 May 2004 17:27:01 +0000, bill wrote:
+
+&gt; 
+&gt; 
+&gt; 
+&gt; The initial state of my bash shell after login leaves much to be
+&gt; desired.  I know that my ~/.bash_profile is being invoked at login,
+&gt; and that it invokes my ~/.bashrc, but I don&#39;t know what&#39;s invoking
+&gt; ~/.bash_profile in the first place.  Whatever it is, it&#39;s messing
+&gt; up what I do with ~/.bash_profile and ~/.bashrc.  How can I find
+&gt; out what is calling my ~/.bash_profile?
+
+Once you are actually logged in, you might try running
+
+	bash -x -l
+
+which will start up another bash, as a login shell, showing the commands
+that are executed. This might give you some clues about what is going on.
+
+~/.bash_profile is executed automatically for any bash login shell,
+*after* /etc/profile. A login bash does not execute ~/.bashrc
+automatically, so it is common to have a &quot;source ~/.bashrc&quot; line in
+~/.bash_profile
+
+Your problem may lie in /etc/profile
+Icarus
+
+</pre>
+    </div>
+    <div class="panel-heading">
+        <div class="row">
+            <div class="col-md-4">
+                <table style="text-align: center;  width:90px" class="Voting" voteSum="0">
+    <tr>
+        <td>
+            <img src="/img/icn/plus32.png"  height="20px"  style="cursor: pointer" title="Vote Up!" onclick="OnVoteArticleReply($(this).closest('table'),'&lt;pan.2004.05.19.04.56.51.115947@icarus.freeuk.com&gt;', true);" />
+        </td>
+        <td style="color: Green; font-weight: bold; font-size: 15px" title="0 Total Votes" >
+           0
+        </td>
+        <td>
+            <img src="/img/icn/minus32.png"  height="20px"  style="cursor: pointer" title="Vote Down!" onclick="OnVoteArticleReply($(this).closest('table'),'&lt;pan.2004.05.19.04.56.51.115947@icarus.freeuk.com&gt;', false);" />
+        </td>
+    </tr>
+</table>
+
+            </div>
+            <div class="col-md-4">
+
+<span><img src="/img/icn/user.png" /><b>Icarus</b></span>            </div>
+            <div class="col-md-4">
+                <span class="date pull-right">5/19/2004 4:56:52 AM</span>
+
+            </div>
+        </div>
+    </div>
+</div>
+
+
+                    </div>
+                </div>
+                <div class="row">
+
+                    <div class="col-md-0 col-lg-2"></div>
+                    <div class="col-md-8 col-lg-6">
+
+                        
+
+<div class="panel panel-default">
+
+    <div class="panel-body">
+        <pre class="ForumPostContentText">Icarus Sparry &lt;usenet@icarus.freeuk.com&gt; writes:
+
+&gt; On Tue, 18 May 2004 17:27:01 +0000, bill wrote:
+&gt; 
+&gt; &gt; 
+&gt; &gt; 
+&gt; &gt; 
+&gt; &gt; The initial state of my bash shell after login leaves much to be
+&gt; &gt; desired.  I know that my ~/.bash_profile is being invoked at login,
+&gt; &gt; and that it invokes my ~/.bashrc, but I don&#39;t know what&#39;s invoking
+&gt; &gt; ~/.bash_profile in the first place.  Whatever it is, it&#39;s messing
+&gt; &gt; up what I do with ~/.bash_profile and ~/.bashrc.  How can I find
+&gt; &gt; out what is calling my ~/.bash_profile?
+&gt; 
+&gt; Once you are actually logged in, you might try running
+&gt; 
+&gt; 	bash -x -l
+
+Or the bash debugger http://bashdb.sourceforge.net.
+</pre>
+    </div>
+    <div class="panel-heading">
+        <div class="row">
+            <div class="col-md-4">
+                <table style="text-align: center;  width:90px" class="Voting" voteSum="0">
+    <tr>
+        <td>
+            <img src="/img/icn/plus32.png"  height="20px"  style="cursor: pointer" title="Vote Up!" onclick="OnVoteArticleReply($(this).closest('table'),'&lt;wihr7sqcwvp.fsf@panix3.panix.com&gt;', true);" />
+        </td>
+        <td style="color: Green; font-weight: bold; font-size: 15px" title="0 Total Votes" >
+           0
+        </td>
+        <td>
+            <img src="/img/icn/minus32.png"  height="20px"  style="cursor: pointer" title="Vote Down!" onclick="OnVoteArticleReply($(this).closest('table'),'&lt;wihr7sqcwvp.fsf@panix3.panix.com&gt;', false);" />
+        </td>
+    </tr>
+</table>
+
+            </div>
+            <div class="col-md-4">
+
+<span><img src="/img/icn/user.png" /><b>rocky</b></span>            </div>
+            <div class="col-md-4">
+                <span class="date pull-right">6/8/2004 7:49:30 AM</span>
+
+            </div>
+        </div>
+    </div>
+</div>
+
+
+                    </div>
+                </div>
+                <div class="row">
+
+                    <div class="col-md-0 col-lg-2"></div>
+                    <div class="col-md-8 col-lg-6">
+
+                        
+
+<div class="panel panel-default">
+
+    <div class="panel-body">
+        <pre class="ForumPostContentText">On 08 Jun 2004, R. Bernstein wrote:
+&gt;  Icarus Sparry &lt;usenet@icarus.freeuk.com&gt; writes:
+&gt;  
+&gt; &gt; On Tue, 18 May 2004 17:27:01 +0000, bill wrote:
+&gt; &gt; 
+&gt; &gt; &gt; 
+&gt; &gt; &gt; 
+&gt; &gt; &gt; 
+&gt; &gt; &gt; The initial state of my bash shell after login leaves much to be
+&gt; &gt; &gt; desired.  I know that my ~/.bash_profile is being invoked at
+&gt; &gt; &gt; login, and that it invokes my ~/.bashrc, but I don&#39;t know what&#39;s
+&gt; &gt; &gt; invoking ~/.bash_profile in the first place.  Whatever it is, it&#39;s
+&gt; &gt; &gt; messing up what I do with ~/.bash_profile and ~/.bashrc.  How can
+&gt; &gt; &gt; I find out what is calling my ~/.bash_profile?
+&gt; &gt; 
+&gt; &gt; Once you are actually logged in, you might try running
+&gt; &gt; 
+&gt; &gt; 	bash -x -l
+&gt;  
+&gt;  Or the bash debugger http://bashdb.sourceforge.net.
+
+I&#39;ve found it useful to put a line like
+BFILES=${BFILES}:.bashrc
+in .bashrc, and 
+BFILES=${BFILES}:.bash_profile
+in .bash_profile,
+etc.
+
+Then, when it comes up you can echo $BFILES and see the order in which
+they were loaded, which could be surprising, if you didn&#39;t pay close
+attention to the manpage, or misunderstood something.
+
+joe
+</pre>
+    </div>
+    <div class="panel-heading">
+        <div class="row">
+            <div class="col-md-4">
+                <table style="text-align: center;  width:90px" class="Voting" voteSum="0">
+    <tr>
+        <td>
+            <img src="/img/icn/plus32.png"  height="20px"  style="cursor: pointer" title="Vote Up!" onclick="OnVoteArticleReply($(this).closest('table'),'&lt;m28yedpumf.fsf@Jupiter.local&gt;', true);" />
+        </td>
+        <td style="color: Green; font-weight: bold; font-size: 15px" title="0 Total Votes" >
+           0
+        </td>
+        <td>
+            <img src="/img/icn/minus32.png"  height="20px"  style="cursor: pointer" title="Vote Down!" onclick="OnVoteArticleReply($(this).closest('table'),'&lt;m28yedpumf.fsf@Jupiter.local&gt;', false);" />
+        </td>
+    </tr>
+</table>
+
+            </div>
+            <div class="col-md-4">
+
+<span><img src="/img/icn/user.png" /><b>Joe</b></span>            </div>
+            <div class="col-md-4">
+                <span class="date pull-right">6/24/2004 2:17:28 AM</span>
+
+            </div>
+        </div>
+    </div>
+</div>
+
+
+                    </div>
+                </div>
+                <div class="row">
+
+                    <div class="col-md-0 col-lg-2"></div>
+                    <div class="col-md-8 col-lg-6">
+
+                        
+
+<div class="panel panel-default">
+
+    <div class="panel-body">
+        <pre class="ForumPostContentText">Joe Davison wrote:
+ &gt; I&#39;ve found it useful to put a line like
+ &gt; BFILES=${BFILES}:.bashrc
+ &gt; in .bashrc, and
+ &gt; BFILES=${BFILES}:.bash_profile
+ &gt; in .bash_profile,
+ &gt; etc.
+
+Or perhaps
+BFILES=${BFILES}:$0
+in each of them.
+
+ &gt; Then, when it comes up you can echo $BFILES and see the order in which
+ &gt; they were loaded, which could be surprising, if you didn&#39;t pay close
+ &gt; attention to the manpage, or misunderstood something.
+
+-- 
+Kevin Rodgers
+
+</pre>
+    </div>
+    <div class="panel-heading">
+        <div class="row">
+            <div class="col-md-4">
+                <table style="text-align: center;  width:90px" class="Voting" voteSum="0">
+    <tr>
+        <td>
+            <img src="/img/icn/plus32.png"  height="20px"  style="cursor: pointer" title="Vote Up!" onclick="OnVoteArticleReply($(this).closest('table'),'&lt;40DB2FCB.6020808@yahoo.com&gt;', true);" />
+        </td>
+        <td style="color: Green; font-weight: bold; font-size: 15px" title="0 Total Votes" >
+           0
+        </td>
+        <td>
+            <img src="/img/icn/minus32.png"  height="20px"  style="cursor: pointer" title="Vote Down!" onclick="OnVoteArticleReply($(this).closest('table'),'&lt;40DB2FCB.6020808@yahoo.com&gt;', false);" />
+        </td>
+    </tr>
+</table>
+
+            </div>
+            <div class="col-md-4">
+
+<span><img src="/img/icn/user.png" /><b>Kevin</b></span>            </div>
+            <div class="col-md-4">
+                <span class="date pull-right">6/24/2004 7:47:23 PM</span>
+
+            </div>
+        </div>
+    </div>
+</div>
+
+
+                    </div>
+                </div>
+
+
+    <div class="row">
+        <div class="col-md-0 col-lg-2"></div>
+        <div class="col-md-8 col-lg-6">
+            <div class="well">
+    <form id="replyForm">
+        <table width="100%" cellpadding="10">
+            <tr>
+                <td>
+                    <b>Reply:</b><br />
+                    <textarea id="Body" name="Body" rows="7" style="width: 100%" placeholder="Enter Your Response"></textarea>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <input type="button" onclick="PostReply()" value="Post Reply"
+                           class="btn btn-success" />
+                    <input name="insertSignature" type="button" class="btn btn-info" value="Insert Signature" onclick="InsertSignature( $('#Body'),'') " />
+                </td>
+            </tr>
+        </table>
+        <input id="MessageId" name="MessageId" type="hidden" value="&lt;c8dh15$oii$1@reader2.panix.com>" />
+        <input id="GroupName" name="GroupName" type="hidden" value="comp.unix.shell" />
+        <input id="Subject" name="Subject" type="hidden" value="Re: Debugging bash startup" />
+    </form>
+</div>
+<script>
+    function PostReply() {
+        IsLoading("<img src='/img/spin.gif' /> Submitting...");
+
+        PostArticle($('#replyForm').serialize())
+        .done(function (res) { 
+            $.isLoading('hide');
+
+            if (res.msg) IsLoading(res.msg, 2000);
+            if (res.result == "manual") {
+                $('#replyForm')[0].reset();
+                parent.OpenModal('/fr~share?subject=Debugging bash startup&url=http://compgroups.net/comp.unix.shell/debugging-bash-startup/497870', 350, 150);
+            }
+            else if (res.result == 'invalid') return;
+            else if (res.result == 'ok') {
+                parent.OpenModal('/fr~share?subject=Debugging bash startup&url=http://compgroups.net/comp.unix.shell/debugging-bash-startup/497870', 350, 150,
+                    function () { parent.location = res.url + '?refresh=1'; });
+            }
+            else OpenModal('/fr~signin', 450, 350);
+        })
+        .fail(function (x) { $.isLoading('hide'); alert(x.responseText); })
+       
+    }
+</script>
+        </div>
+    </div>
+        <div class="row">
+            <div class="col-md-0 col-lg-2"></div>
+            <div class="col-md-8 col-lg-6">
+                <div id="ad2"></div>
+            </div>
+        </div>
+    <div class="row">
+        <div class="col-md-0 col-lg-2"></div>
+        <div class="col-md-8 col-lg-6">
+            <b id="similar"><img src="/img/!.png" /> Similar artilces about - Debugging bash startup:</b><br /><br />
+            <div id="divSimilar" style="overflow: auto" class="well">
+
+             
+
+             
+
+             
+
+             
+
+             
+
+             
+
+             
+
+             
+
+             
+
+             
+
+             
+
+             
+
+             
+
+             
+
+             
+
+             <a href="/comp.lang.python/debugging-a-script/1631213"><b>Debugging a script</b></a><br>I&#39;ve got a (python) program which crashes.  WHat I&#39;d like to do is something
+loke this:
+
+        try:
+                lots of stuff, or 
+                more pertinintly, the code which is failing
+        except:
+                drop in to the debugger
+
+So that I can print various things.
+
+Also, is there a way to display the line number  - eg:
+        except something:
+                print (&quot;DEBUG: exception %s at line number %s&quot; % (sys.exc_type,
+sys.linenumber))
+
+Thanks
+Python 2.3 (#1, Sep 11 2003, 14:36:40)
+-- 
+#include &lt;wit&gt;
+ At 2/1/2004 20:23, you wrote:
+
+&gt;I&#39...<br><br><a href="/comp.lang.javascript/ajax-problems-with-javascript-debugging/282654"><b>Ajax: Problems with Javascript debugging</b></a><br>Hello
+
+I am teaching myself AJAX, and have now gotten to the point where
+syntax errors are removed. I am using Javascript and HTML for now, to
+get a dropdown menu.
+
+The failed script follows an example in Steven Holzner&#39;s Ajax Bible pp
+379-400. It is located at http://hackingajax.alimentarus.net/sixth.shtml
+
+I have tried ddd, greasemonkey, and a number of other debuggers,
+including firefox&#39;s own error console, under Linux. All of them have
+seem to have this same screwball way of numbering the lines.
+Apparently the error is being reported on line 344 on a file which has
+only 150 or so l...<br><br><a href="/comp.arch.fpga/how-do-i-use-lattice-mico32-s-debug-engine-on/448386"><b>How do I use Lattice Mico32&#39;s debug-engine on a non-Lattice FPGA?</b></a><br>I&#39;ve figured out how to compile the RTL in Xilinx ISE Webpack9.2i and Altera 
+Quurtus II 7.1.  (It just took a few simple RTL-edits.)
+
+But what about the JTAG-debug unit?  It seems to use the Lattice&#39;s 
+JTAG-block.
+Can I just replace this with a generic JTAG TAP-controller, and then use a
+Xilinx-hosted Mico32 with a Lattice download-cable? 
+
+
+ On 18 Jul., 07:55, &quot;Ssa&quot; &lt;s...@djfs.com&gt; wrote:
+&gt; I&#39;ve figured out how to compile the RTL in Xilinx ISE Webpack9.2i and Altera
+&gt; Quurtus II 7.1.  (It just took a few simple RTL-edits.)
+&gt;
+&gt; But what about the JTAG-d...<br><br><a href="/comp.periphs.printers/hp-940c-poltergeist-is-feeding-blank-sh/2415944"><b>HP 940c Poltergeist is feeding blank sheet on startup</b></a><br>The system is a 720mhz Pentium (that version of the chip without the 
+cache) running Windows ME. The printer is connected to the computer via 
+a long parallel cable. I have done hard resets of the printer, but this 
+hasn&#39;t helped. The driver is the only one that I&#39;ve found on HP&#39;s site 
+for the 940c in Windows ME.
+
+I have other printer drivers installed on this machine: drivers for the 
+HP 850c (Microsoft driver), driver for an Okidata LED printer, and 
+drivers for two old HP laser printers. I&#39;m running the correct driver 
+for the 940, which is the system default.
+
+T...<br><br><a href="/comp.clipper.visual-objects/debug/2821178"><b>debug</b></a><br>Hello,
+
+how can i debug an linked VO-App,  like debugging with the IDE.
+
+ Juergen
+
+
+ GoVest is your only hope.
+
+
+
+&quot;JÔøΩrgen Knauf&quot; &lt;J.Knauf@kp-software.de&gt; wrote in message
+news:bq72ak$lak$1@online.de...
+&gt; Hello,
+&gt;
+&gt; how can i debug an linked VO-App,  like debugging with the IDE.
+&gt;
+&gt;  Juergen
+&gt;
+&gt;
+
+
+...<br><br><a href="/comp.lang.c++/debug/1005458"><b>Debug</b></a><br>Hi,
+I need to debug my C++ program, and I am using Microsoft VC++ ver 6.
+Does anyone know how I can trace and debug it?
+Thanks-Rob
+
+
+ &gt; I need to debug my C++ program, and I am using Microsoft VC++ ver 6.
+&gt; Does anyone know how I can trace and debug it?
+
+How about using the build-in debugger (just press F11)? A quick look at
+the menu should be enough to figure that one out.
+
+BTW. MSVC specific questions like this one should be asked in one of the
+microsoft.public.vc.* groups.
+
+--
+Peter van Merkerk
+peter.van.merkerk(at)dse.nl
+
+
+
+...<br><br><a href="/comp.databases.pick/openqm-tip-of-the-week-debugging-phantom/2354817"><b>OpenQM Tip of the Week: Debugging Phantom Processes</b></a><br>Hi all,
+
+Last weeks Tip of the Week on process dump files prompted a request
+for this week&#39;s article.
+
+www.openqm.com/tow.htm
+
+
+Martin Phillips, Ladybridge Systems Ltd
+...<br><br><a href="/comp.windows.x.kde/can-t-debug-library/1397076"><b>CanÔøΩt debug Library</b></a><br>Hy!
+
+I have got a big problem. I got an application which loads a library at
+runtime. Now I want to debug this Libraray with KDBG. I can set breakpoints
+in the source code of the application. But I canÔøΩt set them in my Library. I
+builded the library wiht Debug Information. Can anaybody help me out?
+
+Ronny
+
+
+...<br><br><a href="/comp.lang.labview/debug-vs-no-debug-mode/786096"><b>Debug  vs no debug mode</b></a><br>My VI reads a waveform from oscilloscope. If I work in debug the
+results are OK, in no debug mode NO.
+SYSTEM: LabVIEW v6.1, Windows 2000, PCI-GPIB
+ If you mean by &quot;debug&quot; that the highlighting is switched on (Data flow
+shown graphically as it happens) then your problem is most likely
+timing.
+
+LabVIEW operates many operations in parallel (or almost at least)
+unless there&#39;s data dependency between functions.  If one function
+relies on another, but they aren&#39;t linked by data flow, it can happen
+that they&#39;re executed in the wrong order without highlighting.  WITH
+highlighting...<br><br><a href="/comp.lang.php/debugging-php-in-os-x/1381340"><b>Debugging PHP in OS X</b></a><br>Hey all,
+
+Im wondering if there are any other mac users out there who have
+managed to get a debugger up and running in OS X. Im not finding any
+decent tutorials that let you use a stand alone debugger (i.e. not
+integrated with zend studio or komodo). I generally use textmate for
+editing and would like to find something i can use along with that.
+
+Any suggestions?
+
+...<br><br><a href="/comp.lang.ruby/strange-ruby-r-debug-t.rb-for-pickaxe-ver-2-s/217877"><b>Strange &quot;ruby -r debug t.rb&quot; for PickAxe ver. 2&#39;s Fibonacci example</b></a><br>Following are two examples of using ruby-debug on PickAxe ver. 2
+Fibonacci example:
+1) t.rb executed with &quot;ruby -t debug t.rb&quot;, which lists ruby_debug.rb
+code rather than t.rb code; and
+2) t2,rb (with embedded &quot;require &#39;ruby-debug&#39;&quot;) run with &quot;ruby t2.rb&quot;
+and correctly lists t2.rb code.
+
+I&#39;m running:
+ruby 1.8.6
+ruby-debug 0.10.3 (I believe; I list the gem info below)
+WinXP-PRo/SP3
+
+I hope the two listing present the issue clearly.
+
+Thanks in Advance,
+Richard
+
+Command Window execution #1 for &quot;ruby -t debug t.rb&quot;
+-------------...<br><br><a href="/comp.unix.shell/pass-variable-to-awk-from-bash/506120"><b>Pass variable to awk from bash</b></a><br>I have searched the archives on this and thought that I found a
+solution but I cannot get it to work.  Here is my script:
+
+#!/bin/bash
+
+tag=13AC1
+echo $tag  #just a check
+awk -F, -v vtag=$tag &#39;
+        /vtag/ {
+                  for (i=1;9&lt;=NF;i++){
+                            if($i ~ /vtag/){
+                                 print $i
+                            }
+           }
+&#39; myfile.txt
+
+If I replace vtag with the literal string 13AC1 I get my expected
+results, but if I change it to the vtag variable I don&#39;t get any
+results.  I have also put double quotes around $tag with no ...<br><br><a href="/comp.text.xml/how-to-debug-xml/1838496"><b>how to debug XML?</b></a><br>When I go to groups.google.com and run a search against the
+comp.text.xml newsgroup, using the words &quot;debug XML&quot; as my search term,
+the results that come up are either irrelevant are surprising old. Of
+the top results that are relevant, one is from 1999 and the other is
+from 2001. So let me ask the question again, what are people doing to
+debug their XML? There are some validators online, is that what
+everyone uses? Or do some IDE&#39;s have built-in abilities to test and
+debug XML and DTDs?
+
+ lkrubner@geocities.com wrote:
+
+&gt; When I go to groups.google.com and run a search against...<br><br><a href="/comp.lang.python/how-to-debug-python-code/1654414"><b>How to debug python code?</b></a><br>hi,
+       I am new to Python programming.I am not getting exactly pdb.Can
+anyone tell me effective  way to debug python code?
+       Please give me any example.
+       Looking for responce.
+       Thank You.
+Sushant
+
+ Here is an outstandingly well written article, with examples, from
+Stephen Ferg:
+
+http://www.ferg.org/papers/debugging_in_python.html
+
+Ravi
+
+ On 30 Mar 2006 21:18:50 -0800, sushant.sirsikar@gmail.com declaimed the
+following in comp.lang.python:
+
+&gt; hi,
+&gt;        I am new to Python programming.I am not getting exactly pdb.Can
+&gt; anyone tell me effective  way to debug python...<br><br><a href="/comp.os.ms-windows.programmer.win32/debug/201255"><b>debug</b></a><br>what is one &quot;debug event&quot;?
+is possible to know the process is under one debug program?
+one debug event is send to all subtread of one process?
+thank you
+
+
+
+
+
+ Am Wed, 14 Jul 2010 18:14:36 +0200 schrieb io_x:
+
+&gt; what is one &quot;debug event&quot;?
+&gt; is possible to know the process is under one debug program?
+
+IsDebuggerPresent
+
+&gt; one debug event is send to all subtread of one process?
+&gt; thank you
+
+You can start here:
+MSDN: The Debugging Application Programming Interface
+http://msdn.microsoft.com/en-us/library/ms809754.aspx
+
+Regards,
+ Friedel
+...<br><br><a href="/comp.databases.ms-access/how-to-set-startup-properties-in-mde/1470727"><b>How to set Startup Properties in MDE?</b></a><br>I&#39;m trying to set startup properties with code after I make an MDB into an 
+MDE.
+
+I have this code in the startup form&#39;s Form_Open event:
+
+If IsItMde Then
+
+For Each var In Array(&quot;Perform Name AutoCorrect&quot;, _
+    &quot;Track Name AutoCorrect Info&quot;, &quot;StartUpShowDBWindow&quot;, _
+    &quot;StartUpShowStatusBar&quot;, &quot;AllowFullMenus&quot;, &quot;AllowBuiltInToolbars&quot;, _
+    &quot;AllowToolbarChanges&quot;, &quot;AllowSpecialKeys&quot;, &quot;UseAppIconForFrmRpt&quot;, _
+    &quot;AllowBypassKey&quot;, &quot;AllowShortcutMenus&quot;)
+    Call SetStartupPropert...<br><br><a href="/comp.lang.pascal.delphi.misc/debugging-does-not-work/2415050"><b>Debugging does not work</b></a><br>Hi!
+
+I have a problem with debuggin AtciveX files (*.ocx; *.dll), that
+breakpoints etc do not work when running an AtciveX in a host.
+I can debug the host, also when errors occur, but I can never do that
+in AtciveX.
+The has worked before, but not anymore - don&#39;t know why.
+
+Can anybody help me?
+
+PS: I am sure that I only have one file and that I do have deleted
+older copies from all other places, the registry is correct etc.
+
+Sonnich
+...<br><br><a href="/comp.soft-sys.wxwindows/how-to-compile-wxrceditvc-for-debug/2581260"><b>how to compile wxRcEditVC for debug</b></a><br>I use VC++ 6.0.
+
+-- 
+Mastupristi?
+...<br><br><a href="/comp.unix.bsd.freebsd.misc/question-on-pf-startup-before-pppo/2277508"><b>Question on pf startup before PPPoE</b></a><br>Good Afternoon Newsgroup,
+
+My FreeBSD firewall/gateway connects to my DSL provider using PPPoE, and 
+  runs pf to protect the LAN behind it and also does NAT.
+Because of the PPPoE connection, the firewall and NAT rules are based on 
+the tun0 virtual interface. IIUC this tun0 device is created 
+automatically on-the-fly by devfs, when the PPPoE connection is 
+established by ppp.
+I believe, under general circumstances the way this works is that both 
+ppp and pf are started from rc.conf when the system boots, therefore the 
+PPPoE connection is established 1st and the tun0 interface is cr...<br><br><a href="/comp.protocols.dns.bind/how-to-debug/2413876"><b>how to debug</b></a><br>--001485354cc2c8f4fa0477099043
+Content-Type: text/plain; charset=GB2312
+Content-Transfer-Encoding: quoted-printable
+
+HI,
+
+  I  have already analysis where to add new RR,and how to make it works.
+ But i don&#39;t contact  automake tool before, so reading so large configure
+and makefiles make me feel so bad. I try to understand ,but it just myself
+alone to do this , so anyone can give some guide how to debug the source
+code =A1=A2 how to modify makefile and test result!
+
+ Thanks very much=A3=A1
+
+--=20
+Best regards!
+
+--001485354cc2c8f4fa0477099043
+Content-Type: text/html; charse...<br><br><a href="/comp.dcom.sys.cisco/pix-debug/267180"><b>PIX debug</b></a><br>trouble bringing up VPN...
+
+debug on x.x.x.x pix
+
+ISAKMP (0): deleting SA: src y.y.y.y, dst x.x.x.x
+ISADB: reaper checking SA 0x34e93d4, conn_id = 0  DELETE IT!
+
+VPN Peer:ISAKMP: Peer Info for y.y.y.y/500 not found - peers:0
+crypto_isakmp_process_block:src:y.y.y.y, dest:x.x.x.x spt:500 dpt:500
+OAK_MM exchange ISAKMP (0): processing SA payload. message ID = 0
+
+ISAKMP (0): Checking ISAKMP transform 1 against priority 10 policy
+ISAKMP:      encryption AES-CBC
+ISAKMP:      hash SHA
+ISAKMP:      default group 2
+ISAKMP:      auth pre-share
+ISAKMP:      keylength of 256
+ISAKMP:      life type in seco...<br><br><a href="/comp.jobs.contract/us-tx-austin-access-developer-sql-debug-te/2550074"><b>US-TX-Austin: Access Developer, SQL, debug/test/trblsht macros/modules, ASP. VB; (45329632410)</b></a><br>US-TX-Austin: Access Developer, SQL, debug/test/trblsht macros/modules, ASP. VB; (45329632410)
+==============================================================================================
+
+Position:     Access Developer
+Reference:    SMC01767
+Location:     Austin TX
+Duration:     C-P
+
+Skills:       1+yrs exp as an Access Developer with SQL Exp.
+              Must have the ability to develop, debug, test and
+              troubleshoot queries, macros, and modules
+              Experience and understanding of database design.
+              MCDBA certification a plus.
+             ...<br><br><a href="/comp.lang.tcl/how-can-i-debug-dll-loading/1852975"><b>How can I debug DLL loading?</b></a><br>Hi all,
+
+I have compiled a group of DLLs and a SWIG-generated wrapper
+DLL for exposing some C functions as Tcl commands.
+
+However, loading the wrapper DLL under Tcl fails. All DLLs
+are in the same directory (along with all dependent DLLs).
+
+Under tkcon, I get:
+cd {C:\Users\petasis\redland\Windows}
+load ./redland.dll Redland
+couldn&#39;t load library &quot;./redland.dll&quot;: could not find specified procedure
+
+I have tried loading the dll in dependency walker, and all seem
+ok. However, profiling wish.exe in dependency walker when loading
+the dll shows the following:
+
+LoadLibraryW(&quot;C:/Use...<br><br><a href="/comp.jobs.computer/us-tx-austin-hw-applications-eng-4+yrs-exp/2007059"><b>US-TX-Austin: HW Applications Eng., 4+yrs exp., Debug, RF HW exp., PCB SW; Perm (45349914410)</b></a><br>US-TX-Austin: HW Applications Eng., 4+yrs exp., Debug, RF HW exp., PCB SW; Perm (45349914410)
+=============================================================================================
+
+Position:     HW Applications Eng.
+Reference:    SMC01905
+Location:     Austin TX
+Duration:     Perm
+
+Skills:       REQUIREMENTS:
+              Masters/Bachelor of Science Degree in Electrical Engineering
+              with 4+ years experience
+              Ability to debug hardware issues using debuggers,
+              oscilloscopes, in-circuit emulators, etc. Also, ability to
+              identify require...<br><br><a href="/comp.lang.ruby/debug-ruby-script/777993"><b>Debug ruby script</b></a><br>Is there any guide for rdebug in ruby script
+-- 
+Posted via http://www.ruby-forum.com/.
+
+ Nike Mike wrote:
+&gt; Is there any guide for rdebug in ruby script
+
+I&#39;m not sure if it&#39;s possible.
+
+I know ruby-debug can be though.
+
+http://wiki.github.com/rdp/ruby_tutorials_core/debugger
+
+might help.
+-r
+-- 
+Posted via http://www.ruby-forum.com/.
+
+...<br><br> 
+
+             
+
+             
+
+             
+
+             
+
+             
+
+             
+
+             
+
+             
+
+             
+
+             
+
+             
+
+             
+
+             
+
+             
+
+             
+
+            </div>
+            <div id="ad3"></div>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+        <footer>
+            <div class="rlt-footer-default">
+    <div class="rtl-container-fixed-center text-center">
+        <a href="javascript:OpenModal('/ifr/contact', 475, 300)">Feedback</a>  | <a href="/site~privacy">Privacy Policy</a>  |  All Times Are GMT(UTC)
+    </div>
+</div>
+        </footer>
+
+    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
+    <script src="/bundles/bootstrapjs?v=2Fz3B0iizV2NnnamQFrx-NbYJNTFeBJ2GM05SilbtQU1"></script>
+
+    <script src="/bundles/menujs?v=sYkte-rP937TJGqV8dUKxWWx-neRhlNRKGng-En9k0s1"></script>
+
+    <script type="text/javascript" src="/js/main.js"></script>
+    
+    <script src="/js/article?v=gojmx7Cj5_FGe9ffTdzXukb7hnjQV1jpS7JC7yLUNls1"></script>
+
+    <link rel="Stylesheet" href="/scripts/isloading/isloading.css" />
+<script type="text/javascript" src="/scripts/isloading/jquery.isloading.min.js"></script>
+
+    <script type="text/javascript">var switchTo5x = true;</script>
+    <script type="text/javascript" src="http://w.sharethis.com/button/buttons.js"></script>
+    <script type="text/javascript">stLight.options({ publisher: "8539d792-b932-4ef1-91d2-9d14e7aded8d", doNotHash: false, doNotCopy: false, hashAddressBar: false });</script>
+
+
+          
+
+<script type="text/javascript">
+	var clicky_site_ids = clicky_site_ids || [];
+clicky_site_ids.push(191998);
+(function() {
+  var s = document.createElement('script');
+  s.type = 'text/javascript';
+  s.async = true;
+  s.src = '//static.getclicky.com/js';
+  ( document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0] ).appendChild( s );
+})();
+</script>
+
+    
+     <script>
+              setupAds();
+            </script>
+                <script type="text/javascript">var p="http",d="static";if(document.location.protocol=="https:"){p+="s";d="engine";}var z=document.createElement("script");z.type="text/javascript";z.async=true;z.src=p+"://"+d+".adzerk.net/ados.js";var s=document.getElementsByTagName("script")[0];s.parentNode.insertBefore(z,s);</script>
+
+                <script type="text/javascript">
+          var ados = ados || {};
+          ados.run = ados.run || [];
+          ados.run.push(function() { 
+   
+          ados_add_placement(2072, 17356, "azk25862", 5);
+          ados_add_placement(2072, 17356, "azk26003", 5);
+          ados_add_placement(2072, 17356, "azk50008", 5);
+          ados_add_placement(2072, 17356, "azk15916", 5);
+ 	ados_add_placement(2072, 17356, "azk27218", 5);
+          ados_add_placement(2072, 17356, "azk34159", 5);
+          ados_add_placement(2072, 17356, "azk24097", 6);
+          ados_load();
+          });
+        </script>
+      <script>$('#PageSpeed').html('10.768 - ')</script>
+</body>
+</html>
+¡ç:¥Xã      VD¿ËVD¿Î;˘´v       D:http://compgroups.net/comp.unix.shell/debugging-bash-startup/497870 necko:classified 1 request-method GET response-head HTTP/1.1 200 OK
+Cache-Control: private
+Content-Type: text/html; charset=utf-8
+Server: Microsoft-IIS/8.5
+X-AspNetMvc-Version: 5.0
+X-AspNet-Version: 4.0.30319
+X-Powered-By: ASP.NET
+Date: Thu, 12 Nov 2015 16:21:57 GMT
+Content-Length: 41408
+X-Cache: MISS from wwwcache2-dl-cache, MISS from wwwcache2-dl-icap
+Via: 1.1 wwwcache2-dl-cache (squid/3.3.10), 1.1 wwwcache2-dl-icap (squid/3.3.10)
+ charset UTF-8 uncompressed-len 0 predictor::http://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.5/css/bootstrap.min.css 1,2,1447346408,0 predictor::http://compgroups.net/_config/main.css 1,2,1447346408,0 predictor::http://compgroups.net/scripts/colorbox/colorbox.css 1,2,1447346408,0 predictor::http://compgroups.net/img/comp.png 1,2,1447346408,0 predictor::http://compgroups.net/img/group16.png 1,2,1447346408,0 predictor::http://compgroups.net/img/users16.png 1,2,1447346408,0 predictor::http://compgroups.net/img/clock16.png 1,2,1447346408,0 predictor::http://compgroups.net/img/icon_search.gif 1,2,1447346408,0 predictor::http://compgroups.net/img/earth16.png 1,2,1447346408,0 predictor::http://compgroups.net/img/add16.png 1,2,1447346408,0 predictor::http://compgroups.net/img/info16.png 1,2,1447346408,0 predictor::http://compgroups.net/img/icn/plus32.png 1,2,1447346408,0 predictor::http://compgroups.net/img/icn/minus32.png 1,2,1447346408,0 predictor::http://compgroups.net/img/icn/user.png 1,2,1447346408,0 predictor::http://compgroups.net/img/icn/group.png 1,2,1447346408,0 predictor::http://compgroups.net/img/icn/i.png 1,2,1447346408,0 predictor::http://compgroups.net/img/icn/article.gif 1,2,1447346408,0 predictor::http://compgroups.net/img/icn/star2.gif 1,2,1447346408,0 predictor::http://compgroups.net/img/icn/reply.png 1,2,1447346408,0 predictor::http://compgroups.net/img/icn/eye.png 1,2,1447346408,0 predictor::http://compgroups.net/img/!.png 1,2,1447346408,0 predictor::http://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js 1,2,1447346408,0 predictor::http://compgroups.net/bundles/bootstrapjs?v=2Fz3B0iizV2NnnamQFrx-NbYJNTFeBJ2GM05SilbtQU1 1,2,1447346408,0 predictor::http://compgroups.net/bundles/menujs?v=sYkte-rP937TJGqV8dUKxWWx-neRhlNRKGng-En9k0s1 1,2,1447346408,0 predictor::http://compgroups.net/js/main.js 1,2,1447346408,0 predictor::http://compgroups.net/js/article?v=gojmx7Cj5_FGe9ffTdzXukb7hnjQV1jpS7JC7yLUNls1 1,2,1447346408,0 predictor::http://compgroups.net/scripts/isloading/isloading.css 1,2,1447346408,0 predictor::http://compgroups.net/scripts/isloading/jquery.isloading.min.js 1,2,1447346408,0 predictor::http://w.sharethis.com/button/buttons.js 1,2,1447346408,0 predictor::http://static.getclicky.com/js 1,2,1447346408,0 predictor::http://compgroups.net/img/loading.gif 1,2,1447346408,0 predictor::http://static.adzerk.net/ados.js 1,2,1447346408,0 predictor::http://wd-edge.sharethis.com/button/getAllAppDefault.esi?cb=stLight.allDefault&app=all&publisher=8539d792-b932-4ef1-91d2-9d14e7aded8d&domain=compgroups.net 1,2,1447346408,0 predictor::http://compgroups.net/img/icn/key.png 1,2,1447346408,0 predictor::http://l.sharethis.com/pview?event=pview&version=buttons.js&lang=en&fpc=6cb5566-150fc810aab-69c8048f-1&sessionID=1447345326763.98454&hostname=compgroups.net&location=%2Fcomp.unix.shell%2Fdebugging-bash-startup%2F497870&publisher=8539d792-b932-4ef1-91d2-9d14e7aded8d&shareHash=sthash.tGtf06aJ&incomingHash=&refDomain=www.google.co.uk&refQuery=&product=Chicklet5x&ufa=35b3b20&ufc=10e0b51&ufd=30030&url=http%3A%2F%2Fcompgroups.net%2Fcomp.unix.shell%2Fdebugging-bash-startup%2F497870&sharURL=&source=share5x&title=Debugging%20bash%20startup%20-%20comp.unix.shell&ts1447345326765.0= 1,1,1447345324,0 predictor::http://wd-edge.sharethis.com/button/checkOAuth.esi 1,2,1447346408,0 predictor::http://engine.adzerk.net/ados?t=1447345326787&request={%22Placements%22:[{%22A%22:2072,%22S%22:17356,%22D%22:%22azk25862%22,%22AT%22:5},{%22A%22:2072,%22S%22:17356,%22D%22:%22azk26003%22,%22AT%22:5},{%22A%22:2072,%22S%22:17356,%22D%22:%22azk50008%22,%22AT%22:5},{%22A%22:2072,%22S%22:17356,%22D%22:%22azk15916%22,%22AT%22:5},{%22A%22:2072,%22S%22:17356,%22D%22:%22azk27218%22,%22AT%22:5},{%22A%22:2072,%22S%22:17356,%22D%22:%22azk34159%22,%22AT%22:5},{%22A%22:2072,%22S%22:17356,%22D%22:%22azk24097%22,%22AT%22:6}],%22Keywords%22:%22undefined%22,%22Referrer%22:%22https%3A%2F%2Fwww.google.co.uk%22,%22IsAsync%22:true} 1,1,1447345324,0 predictor::http://in.getclicky.com/in.php?site_id=191998&res=1280x1024&lang=en&type=pageview&href=%2Fcomp.unix.shell%2Fdebugging-bash-startup%2F497870&title=Debugging%20bash%20startup%20-%20comp.unix.shell&ref=https%3A%2F%2Fwww.google.co.uk&jsuid=3572140822&mime=js&x=0.7185361246704168 1,1,1447345324,0 predictor::http://compgroups.net/img/Google_Play_3.png 1,2,1447346408,0 predictor::http://engine.adzerk.net/ados?t=1447345326917&request={%22Placements%22:[{%22A%22:2072,%22S%22:17356,%22D%22:%22azk24097%22,%22AT%22:6}],%22Keywords%22:%22undefined%22,%22Referrer%22:%22https%3A%2F%2Fwww.google.co.uk%22,%22IsAsync%22:true} 1,1,1447345324,0 predictor::http://static.adzerk.net/Advertisers/bd04c2f91f9449159570676dec6fadbf.jpg 1,1,1447345324,0 predictor::http://engine.adzerk.net/i.gif?e=eyJhdiI6OTA4MywiYXQiOjUsImJ0IjowLCJjbSI6MzE1Mjg2LCJjaCI6NDgxMSwiY2siOnt9LCJjciI6MTE1MzQ5OSwiZGkiOiI1ZGI4YTQwNjUyMmM0YmI5ODA1NzIwYzhmMjdjNjI2NiIsImRtIjoxLCJmYyI6MTI4Nzc0MiwiZmwiOjgzMTE1NSwiaXAiOiIxNDguNzkuMTMwLjU3IiwibnciOjIwNzIsInBjIjo1MDAwLCJlYyI6NTAwMCwicHIiOjc3NjAsInJ0IjoxLCJyZiI6Imh0dHBzOi8vd3d3Lmdvb2dsZS5jby51ayIsInN0IjoxNzM1NiwidWsiOiJ1ZTEtNTg4M2QzMmJiYmY1NDEzZDg3YzU4MjhjZTY4MzJmZGQiLCJ0cyI6MTQ0NzM0NTMyNjk4MiwiYmYiOnRydWUsInBuIjoiYXprMjU4NjIifQ&s=Nb0J-2ghFOzjOTkWtbzt779JZbI 1,1,1447345324,0 predictor::http://static.adzerk.net/Advertisers/447486b04e174595ac6e7677b8ae84db.gif 1,2,1447346408,0 predictor::http://engine.adzerk.net/i.gif?e=eyJhdiI6NjY1OCwiYXQiOjUsImJ0IjowLCJjbSI6Mjk1MDk4LCJjaCI6NDgxMSwiY2siOnt9LCJjciI6MTA5MDQxMywiZGkiOiI5ZGNmMzYzNjkxYzQ0ZmQxODY3ODE5NzViMWNjYjkxZiIsImRtIjoxLCJmYyI6MTI3Mjc1MCwiZmwiOjc3NDQ4OSwiaXAiOiIxNDguNzkuMTMwLjU3IiwibnciOjIwNzIsInBjIjo1MDAwLCJlYyI6NTAwMCwicHIiOjc3NjAsInJ0IjoxLCJyZiI6Imh0dHBzOi8vd3d3Lmdvb2dsZS5jby51ayIsInN0IjoxNzM1NiwidWsiOiJ1ZTEtNTg4M2QzMmJiYmY1NDEzZDg3YzU4MjhjZTY4MzJmZGQiLCJ0cyI6MTQ0NzM0NTMyNjk4MywiYmYiOnRydWUsInBuIjoiYXprMjYwMDMifQ&s=tUCOJ6wbLriKIRU2FXFkYMYVT-A 1,1,1447345324,0 predictor::http://static.adzerk.net/Advertisers/9e83abfb1c66479fa357a766c115e24b.png 1,2,1447346408,0 predictor::http://engine.adzerk.net/i.gif?e=eyJhdiI6OTA4MywiYXQiOjUsImJ0IjowLCJjbSI6MzE1Mjg2LCJjaCI6NDgxMSwiY2siOnt9LCJjciI6MTE1MzUxMywiZGkiOiI2NGU2YTcxYTAyZTA0NjgyYmYwODg5ZDVlM2M3N2NiMiIsImRtIjoxLCJmYyI6MTI4Nzc0OSwiZmwiOjgzMTE1NSwiaXAiOiIxNDguNzkuMTMwLjU3IiwibnciOjIwNzIsInBjIjo1MDAwLCJlYyI6NTAwMCwicHIiOjc3NjAsInJ0IjoxLCJyZiI6Imh0dHBzOi8vd3d3Lmdvb2dsZS5jby51ayIsInN0IjoxNzM1NiwidWsiOiJ1ZTEtNTg4M2QzMmJiYmY1NDEzZDg3YzU4MjhjZTY4MzJmZGQiLCJ0cyI6MTQ0NzM0NTMyNjk4NSwiYmYiOnRydWUsInBuIjoiYXprNTAwMDgifQ&s=lABi9resf3CHmJ6llGJePkV8by8 1,1,1447345324,0 predictor::http://static.adzerk.net/Advertisers/ad2ca6f7f06b4887b80cf770ad1b35c4.jpg 1,1,1447345324,0 predictor::http://engine.adzerk.net/i.gif?e=eyJhdiI6OTA4MywiYXQiOjUsImJ0IjowLCJjbSI6MzE1Mjg2LCJjaCI6NDgxMSwiY2siOnt9LCJjciI6MTIxNjAxNywiZGkiOiIwNzIzZjljNDUyMzE0Yzg5YjQ2NzEwNDU1NTRmNjg1NSIsImRtIjoxLCJmYyI6MTI5MTk0MSwiZmwiOjkwNDgyMiwiaXAiOiIxNDguNzkuMTMwLjU3IiwibnciOjIwNzIsInBjIjoyNTAwLCJlYyI6MjUwMCwicHIiOjc3NjAsInJ0IjoxLCJyZiI6Imh0dHBzOi8vd3d3Lmdvb2dsZS5jby51ayIsInN0IjoxNzM1NiwidWsiOiJ1ZTEtNTg4M2QzMmJiYmY1NDEzZDg3YzU4MjhjZTY4MzJmZGQiLCJ0cyI6MTQ0NzM0NTMyNjk4NiwiYmYiOnRydWUsInBuIjoiYXprMTU5MTYifQ&s=sF1lratA-LYtKfqap770n1g78DY 1,1,1447345324,0 predictor::http://static.adzerk.net/Advertisers/0b1cac23ee784bd9b9d2f91b4d251dba.png 1,1,1447345324,0 predictor::http://engine.adzerk.net/i.gif?e=eyJhdiI6NjU1ODUsImF0Ijo1LCJidCI6MCwiY20iOjMyMzA1MSwiY2giOjQ4MTEsImNrIjp7fSwiY3IiOjExNzgyNTMsImRpIjoiYzc4MWY2ZGFiMzk2NGM5YzhlNmUwZTg0ZjdiNzlmMzMiLCJkbSI6MSwiZmMiOjEyNzE4MzEsImZsIjo4NjYxNDQsImlwIjoiMTQ4Ljc5LjEzMC41NyIsIm53IjoyMDcyLCJwYyI6MTAwMCwiZWMiOjEwMDAsInByIjo3NzYwLCJydCI6MSwicmYiOiJodHRwczovL3d3dy5nb29nbGUuY28udWsiLCJzdCI6MTczNTYsInVrIjoidWUxLTU4ODNkMzJiYmJmNTQxM2Q4N2M1ODI4Y2U2ODMyZmRkIiwidHMiOjE0NDczNDUzMjY5ODgsImJmIjp0cnVlLCJwbiI6ImF6azI3MjE4In0&s=e-u1z-CIh5ZNEHKpeqENPo6FDpM 1,1,1447345324,0 predictor::http://engine.adzerk.net/i.gif?e=eyJhdiI6OTA4MywiYXQiOjUsImJ0IjowLCJjbSI6MzE1Mjg2LCJjaCI6NDgxMSwiY2siOnt9LCJjciI6MTE1MzUxMywiZGkiOiIwMjM0NGU2YTQ1ZGM0YWVlYWJjZTFkYWIwNTZmNTRkMiIsImRtIjoxLCJmYyI6MTI4Nzc0OSwiZmwiOjgzMTE1NSwiaXAiOiIxNDguNzkuMTMwLjU3IiwibnciOjIwNzIsInBjIjo1MDAwLCJlYyI6NTAwMCwicHIiOjc3NjAsInJ0IjoxLCJyZiI6Imh0dHBzOi8vd3d3Lmdvb2dsZS5jby51ayIsInN0IjoxNzM1NiwidWsiOiJ1ZTEtNTg4M2QzMmJiYmY1NDEzZDg3YzU4MjhjZTY4MzJmZGQiLCJ0cyI6MTQ0NzM0NTMyNjk4OSwiYmYiOnRydWUsInBuIjoiYXprMzQxNTkifQ&s=jNdZOh4FB8FTHkTCKMDoGnJaKNo 1,1,1447345324,0 predictor::https://ad.doubleclick.net/ddm/adj/N3643.159786NEUDESICMEDIAGROUP/B8256951.112238922;sz=160x600;click=http://engine.adzerk.net/r?e=eyJhdiI6NTYxOCwiYXQiOjYsImJ0IjowLCJjbSI6MjE0OTg4LCJjaCI6NDgxMSwiY2siOnt9LCJjciI6MTIxOTc1OSwiZGkiOiIwMGZlZjU4ZjdjOWY0OGQ2Yjg5ZTEwODEyNzlkYWIxMiIsImRtIjoxLCJmYyI6MTI5NzI3MCwiZmwiOjQ3ODAwMSwiaXAiOiIxNDguNzkuMTMwLjU3IiwibnciOjIwNzIsInBjIjoxMzY1LCJlYyI6MTM2NSwicHIiOjc3NjAsInJ0IjoxLCJyZiI6Imh0dHBzOi8vd3d3Lmdvb2dsZS5jby51ayIsInN0IjoxNzM1NiwidWsiOiJ1ZTEtNTg4M2QzMmJiYmY1NDEzZDg3YzU4MjhjZTY4MzJmZGQiLCJ0cyI6MTQ0NzM0NTMyNjk5MiwiYmYiOnRydWUsInBuIjoiYXprMjQwOTciLCJ1ciI6Imh0dHBzOi8vYWQuZG91YmxlY2xpY2submV0L2RkbS9qdW1wL04zNjQzLjE1OTc4Nk5FVURFU0lDTUVESUFHUk9VUC9CODI1Njk1MS4xMTIyMzg5MjI7c3o9MTYweDYwMDtvcmQ9MTQ0NzM0NTMyNjk5MSJ9&s=wxjWn5eoVHAwY8GjXqzTKI0papc&url=%u;ord=1447345326991? 1,1,1447345324,0 predictor::http://engine.adzerk.net/i.gif?e=eyJhdiI6NTYxOCwiYXQiOjYsImJ0IjowLCJjbSI6MjE0OTg4LCJjaCI6NDgxMSwiY2siOnt9LCJjciI6MTIxOTc1OSwiZGkiOiIwMGZlZjU4ZjdjOWY0OGQ2Yjg5ZTEwODEyNzlkYWIxMiIsImRtIjoxLCJmYyI6MTI5NzI3MCwiZmwiOjQ3ODAwMSwiaXAiOiIxNDguNzkuMTMwLjU3IiwibnciOjIwNzIsInBjIjoxMzY1LCJlYyI6MTM2NSwicHIiOjc3NjAsInJ0IjoxLCJyZiI6Imh0dHBzOi8vd3d3Lmdvb2dsZS5jby51ayIsInN0IjoxNzM1NiwidWsiOiJ1ZTEtNTg4M2QzMmJiYmY1NDEzZDg3YzU4MjhjZTY4MzJmZGQiLCJ0cyI6MTQ0NzM0NTMyNjk5MiwiYmYiOnRydWUsInBuIjoiYXprMjQwOTcifQ&s=tprWzphvXvT4b-zBl0vvpJBG6Pc 1,1,1447345324,0 predictor::http://static.adzerk.net/Advertisers/faabb35edcba4a3a900f027e184c3f71.png 1,1,1447345324,0 predictor::http://engine.adzerk.net/i.gif?e=eyJhdiI6NjU1ODUsImF0Ijo2LCJidCI6MCwiY20iOjMyMzA1MSwiY2giOjQ4MTEsImNrIjp7fSwiY3IiOjExNzgyNTIsImRpIjoiODNhNzNlNzA5MTg0NDAyY2IzMGEzYmM2NzMwNjVlODMiLCJkbSI6MSwiZmMiOjEyNzE4MzAsImZsIjo4NjYxNDQsImlwIjoiMTQ4Ljc5LjEzMC41NyIsIm53IjoyMDcyLCJwYyI6MTAwMCwiZWMiOjEwMDAsInByIjo3NzYwLCJydCI6MSwicmYiOiJodHRwczovL3d3dy5nb29nbGUuY28udWsiLCJzdCI6MTczNTYsInVrIjoidWUxLTU4ODNkMzJiYmJmNTQxM2Q4N2M1ODI4Y2U2ODMyZmRkIiwidHMiOjE0NDczNDUzMjcwNjEsImJmIjp0cnVlLCJwbiI6ImF6azI0MDk3In0&s=TunyZEwi15638WF35VvuAoQqe74 1,1,1447345324,0 predictor::http://w.sharethis.com/button/css/buttons.ab966a004186897711de4a5ed256c924.css 1,2,1447346408,0 predictor::http://w.sharethis.com/images/googleplus_32.png 1,2,1447346408,0 predictor::http://w.sharethis.com/images/facebook_32.png 1,2,1447346408,0 predictor::http://w.sharethis.com/images/twitter_32.png 1,2,1447346408,0 predictor::http://w.sharethis.com/images/linkedin_32.png 1,2,1447346408,0 predictor::http://w.sharethis.com/images/reddit_32.png 1,2,1447346408,0 predictor::http://w.sharethis.com/images/email_32.png 1,2,1447346408,0 predictor::http://in.getclicky.com/in.php?site_id=191998&type=ping&jsuid=3572140822&mime=js&x=0.9458963406304224 1,1,1447345324,0 predictor::http://in.getclicky.com/in.php?site_id=191998&type=ping&jsuid=3572140822&mime=js&x=0.371240360204655 1,1,1447345324,0 predictor::http://in.getclicky.com/in.php?site_id=191998&type=ping&jsuid=3572140822&mime=js&x=0.17385215391690623 1,1,1447345324,0 predictor::http://in.getclicky.com/in.php?site_id=191998&type=ping&jsuid=3572140822&mime=js&x=0.3524125332572806 1,1,1447345324,0 predictor::http://in.getclicky.com/in.php?site_id=191998&type=ping&jsuid=3572140822&mime=js&x=0.8161130942361439 1,1,1447345324,0 predictor::http://in.getclicky.com/in.php?site_id=191998&type=ping&jsuid=3572140822&mime=js&x=0.10997324985866253 1,1,1447345324,0 predictor::http://in.getclicky.com/in.php?site_id=191998&type=ping&jsuid=3572140822&mime=js&x=0.4939604472294348 1,1,1447345324,0 predictor::resource-count 18 predictor::http://engine.adzerk.net/ados?t=1447346410470&request={%22Placements%22:[{%22A%22:2072,%22S%22:17356,%22D%22:%22azk25862%22,%22AT%22:5},{%22A%22:2072,%22S%22:17356,%22D%22:%22azk26003%22,%22AT%22:5},{%22A%22:2072,%22S%22:17356,%22D%22:%22azk50008%22,%22AT%22:5},{%22A%22:2072,%22S%22:17356,%22D%22:%22azk15916%22,%22AT%22:5},{%22A%22:2072,%22S%22:17356,%22D%22:%22azk27218%22,%22AT%22:5},{%22A%22:2072,%22S%22:17356,%22D%22:%22azk34159%22,%22AT%22:5},{%22A%22:2072,%22S%22:17356,%22D%22:%22azk24097%22,%22AT%22:6}],%22Keywords%22:%22undefined%22,%22Referrer%22:%22https%3A%2F%2Fwww.google.co.uk%22,%22IsAsync%22:true} 1,1,1447346408,0 predictor::http://l.sharethis.com/pview?event=pview&version=buttons.js&lang=en&fpc=6cb5566-150fc810aab-69c8048f-2&sessionID=1447346410531.85888&hostname=compgroups.net&location=%2Fcomp.unix.shell%2Fdebugging-bash-startup%2F497870&publisher=8539d792-b932-4ef1-91d2-9d14e7aded8d&shareHash=sthash.khnuD9iC&incomingHash=&refDomain=www.google.co.uk&refQuery=&product=Chicklet5x&ufa=35b3b20&ufc=10e0b51&ufd=30030&url=http%3A%2F%2Fcompgroups.net%2Fcomp.unix.shell%2Fdebugging-bash-startup%2F497870&sharURL=&source=share5x&title=Debugging%20bash%20startup%20-%20comp.unix.shell&ts1447346410533.0= 1,1,1447346408,0 predictor::http://in.getclicky.com/in.php?site_id=191998&res=1280x1024&lang=en&type=pageview&href=%2Fcomp.unix.shell%2Fdebugging-bash-startup%2F497870&title=Debugging%20bash%20startup%20-%20comp.unix.shell&ref=https%3A%2F%2Fwww.google.co.uk&jsuid=3572140822&mime=js&x=0.1274217058428816 1,1,1447346408,0 predictor::http://static.adzerk.net/Advertisers/9412651aaa7b4f07b675c51fb68e7088.jpg 1,1,1447346408,0 predictor::http://engine.adzerk.net/i.gif?e=eyJhdiI6OTA4MywiYXQiOjUsImJ0IjowLCJjbSI6MjkyOTE2LCJjaCI6NDgxMSwiY2siOnt9LCJjciI6ODU5OTAyLCJkaSI6IjM5YTZiN2MwNzM2MjRhNjc5YzUwNDYzZWZmNTRkMzJjIiwiZG0iOjEsImZjIjoxMjg3ODI4LCJmbCI6NzY5MjE1LCJpcCI6IjE0OC43OS4xMzAuNTciLCJudyI6MjA3MiwicGMiOjUwMDAsImVjIjo1MDAwLCJwciI6Nzc2MCwicnQiOjEsInJmIjoiaHR0cHM6Ly93d3cuZ29vZ2xlLmNvLnVrIiwic3QiOjE3MzU2LCJ1ayI6InVlMS01ODgzZDMyYmJiZjU0MTNkODdjNTgyOGNlNjgzMmZkZCIsInRzIjoxNDQ3MzQ2NDEwNzQ1LCJiZiI6dHJ1ZSwicG4iOiJhemsyNTg2MiJ9&s=er52UezQu9ZLPIAqf0xXgnRMfSo 1,1,1447346408,0 predictor::http://engine.adzerk.net/i.gif?e=eyJhdiI6NjY1OCwiYXQiOjUsImJ0IjowLCJjbSI6Mjk1MDk4LCJjaCI6NDgxMSwiY2siOnt9LCJjciI6MTA5MDQxMywiZGkiOiI4Y2JmMmVkM2I5MzQ0OGJmOWU2Mjk5MWRkYzllZjcxMSIsImRtIjoxLCJmYyI6MTI3Mjc1MCwiZmwiOjc3NDQ4OSwiaXAiOiIxNDguNzkuMTMwLjU3IiwibnciOjIwNzIsInBjIjo1MDAwLCJlYyI6NTAwMCwicHIiOjc3NjAsInJ0IjoxLCJyZiI6Imh0dHBzOi8vd3d3Lmdvb2dsZS5jby51ayIsInN0IjoxNzM1NiwidWsiOiJ1ZTEtNTg4M2QzMmJiYmY1NDEzZDg3YzU4MjhjZTY4MzJmZGQiLCJ0cyI6MTQ0NzM0NjQxMDc0NywiYmYiOnRydWUsInBuIjoiYXprMjYwMDMifQ&s=7HzC9azHmxYTWN8qN3_eVIVUVmU 1,1,1447346408,0 predictor::http://static.adzerk.net/Advertisers/208363a448494923b753cc408c5b339a.jpg 1,1,1447346408,0 predictor::http://engine.adzerk.net/i.gif?e=eyJhdiI6MTMzMDIsImF0Ijo1LCJidCI6MCwiY20iOjMxMTY5MywiY2giOjQ4MTEsImNrIjp7fSwiY3IiOjc4ODE5MSwiZGkiOiI3ZDFiZDM0MGI1NjI0NTEzYjI1NzVjMDk0ZWIxN2JjYiIsImRtIjoxLCJmYyI6MTI4ODUzMCwiZmwiOjgxNzg4OCwiaXAiOiIxNDguNzkuMTMwLjU3IiwibnciOjIwNzIsInBjIjo1MDAwLCJlYyI6NTAwMCwicHIiOjc3NjAsInJ0IjoxLCJyZiI6Imh0dHBzOi8vd3d3Lmdvb2dsZS5jby51ayIsInN0IjoxNzM1NiwidWsiOiJ1ZTEtNTg4M2QzMmJiYmY1NDEzZDg3YzU4MjhjZTY4MzJmZGQiLCJ0cyI6MTQ0NzM0NjQxMDc0OSwiYmYiOnRydWUsInBuIjoiYXprNTAwMDgifQ&s=7flOSyPrLTbJitNTfDjsfhqw1tI 1,1,1447346408,0 predictor::http://engine.adzerk.net/i.gif?e=eyJhdiI6OTA4MywiYXQiOjUsImJ0IjowLCJjbSI6MzE1Mjg2LCJjaCI6NDgxMSwiY2siOnt9LCJjciI6MTE1MzUxMywiZGkiOiI1NWZjYThkOWVhYmU0NWY2OTE1MjQxZmFkZTU1NmZlNCIsImRtIjoxLCJmYyI6MTI4Nzc0OSwiZmwiOjgzMTE1NSwiaXAiOiIxNDguNzkuMTMwLjU3IiwibnciOjIwNzIsInBjIjo1MDAwLCJlYyI6NTAwMCwicHIiOjc3NjAsInJ0IjoxLCJyZiI6Imh0dHBzOi8vd3d3Lmdvb2dsZS5jby51ayIsInN0IjoxNzM1NiwidWsiOiJ1ZTEtNTg4M2QzMmJiYmY1NDEzZDg3YzU4MjhjZTY4MzJmZGQiLCJ0cyI6MTQ0NzM0NjQxMDc1MSwiYmYiOnRydWUsInBuIjoiYXprMTU5MTYifQ&s=rv2VqZmQP3rAannRSOs5AJ-8Qvo 1,1,1447346408,0 predictor::http://engine.adzerk.net/ados?t=1447346411131&request={%22Placements%22:[{%22A%22:2072,%22S%22:17356,%22D%22:%22azk24097%22,%22AT%22:6}],%22Keywords%22:%22undefined%22,%22Referrer%22:%22https%3A%2F%2Fwww.google.co.uk%22,%22IsAsync%22:true} 1,1,1447346408,0 predictor::http://static.adzerk.net/Advertisers/17981b0816cd45459bc4a002bbd673dd.jpg 1,1,1447346408,0 predictor::http://engine.adzerk.net/i.gif?e=eyJhdiI6MTMzMDIsImF0Ijo1LCJidCI6MCwiY20iOjMxMTY5MywiY2giOjQ4MTEsImNrIjp7fSwiY3IiOjk2ODA2MywiZGkiOiI3NTYyMTdjYTVkMGM0MTQyYWU3NjA4OGQxNGY2ZjE0NCIsImRtIjoxLCJmYyI6MTI4ODU0OSwiZmwiOjgxNzg4OCwiaXAiOiIxNDguNzkuMTMwLjU3IiwibnciOjIwNzIsInBjIjo1MDAwLCJlYyI6NTAwMCwicHIiOjc3NjAsInJ0IjoxLCJyZiI6Imh0dHBzOi8vd3d3Lmdvb2dsZS5jby51ayIsInN0IjoxNzM1NiwidWsiOiJ1ZTEtNTg4M2QzMmJiYmY1NDEzZDg3YzU4MjhjZTY4MzJmZGQiLCJ0cyI6MTQ0NzM0NjQxMDc1MiwiYmYiOnRydWUsInBuIjoiYXprMjcyMTgifQ&s=lK69ogtPVj1A6KJkQb53eFUwwa0 1,1,1447346408,0 predictor::http://static.adzerk.net/Advertisers/53c43a9fc23c4862884a7990f0add600.png 1,1,1447346408,0 predictor::http://engine.adzerk.net/i.gif?e=eyJhdiI6OTA4MywiYXQiOjUsImJ0IjowLCJjbSI6MzE1Mjg2LCJjaCI6NDgxMSwiY2siOnt9LCJjciI6MTA4NTI4NSwiZGkiOiI2MDg4OTI1N2M2N2E0MWFkODlkYjNjMjIzZTUxODQwNyIsImRtIjoxLCJmYyI6MTI4Nzc2NCwiZmwiOjkwNDc4OSwiaXAiOiIxNDguNzkuMTMwLjU3IiwibnciOjIwNzIsInBjIjo3NTAwLCJlYyI6NzUwMCwicHIiOjc3NjAsInJ0IjoxLCJyZiI6Imh0dHBzOi8vd3d3Lmdvb2dsZS5jby51ayIsInN0IjoxNzM1NiwidWsiOiJ1ZTEtNTg4M2QzMmJiYmY1NDEzZDg3YzU4MjhjZTY4MzJmZGQiLCJ0cyI6MTQ0NzM0NjQxMDc2MiwiYmYiOnRydWUsInBuIjoiYXprMzQxNTkifQ&s=ECxcogxCkQAH81fKXh_2SQIJNCM 1,1,1447346408,0 predictor::http://static.adzerk.net/Advertisers/fb4db858895848e4af9af758a1b38aa5.png 1,1,1447346408,0 predictor::http://engine.adzerk.net/i.gif?e=eyJhdiI6OTA4MywiYXQiOjYsImJ0IjowLCJjbSI6MzE1Mjg2LCJjaCI6NDgxMSwiY2siOnt9LCJjciI6MTA4NTI4NCwiZGkiOiI2MzgzYmNhN2ZjYmQ0NzUzYTE2ZDU0OTg2NmY4OTM0YyIsImRtIjoxLCJmYyI6MTI4Nzc2MywiZmwiOjkwNDc4OSwiaXAiOiIxNDguNzkuMTMwLjU3IiwibnciOjIwNzIsInBjIjo3NTAwLCJlYyI6NzUwMCwicHIiOjc3NjAsInJ0IjoxLCJyZiI6Imh0dHBzOi8vd3d3Lmdvb2dsZS5jby51ayIsInN0IjoxNzM1NiwidWsiOiJ1ZTEtNTg4M2QzMmJiYmY1NDEzZDg3YzU4MjhjZTY4MzJmZGQiLCJ0cyI6MTQ0NzM0NjQxMDc2NCwiYmYiOnRydWUsInBuIjoiYXprMjQwOTcifQ&s=vzSuwmBphyUpj-mBKhOaKjw-DH8 1,1,1447346408,0 predictor::http://static.adzerk.net/Advertisers/ef0460a172a74061b74e550b02d6ccf0.jpg 1,1,1447346408,0 predictor::http://engine.adzerk.net/i.gif?e=eyJhdiI6MTMzMDIsImF0Ijo2LCJidCI6MCwiY20iOjMxMTY5MywiY2giOjQ4MTEsImNrIjp7fSwiY3IiOjg2NTU0MywiZGkiOiJkYjQ0MTM5NGMyYjQ0NTZmYWMwMzBmMmQ2ZjUyNTk0NCIsImRtIjoxLCJmYyI6MTI4ODU0MCwiZmwiOjgxNzg4OCwiaXAiOiIxNDguNzkuMTMwLjU3IiwibnciOjIwNzIsInBjIjo1MDAwLCJlYyI6NTAwMCwicHIiOjc3NjAsInJ0IjoxLCJyZiI6Imh0dHBzOi8vd3d3Lmdvb2dsZS5jby51ayIsInN0IjoxNzM1NiwidWsiOiJ1ZTEtNTg4M2QzMmJiYmY1NDEzZDg3YzU4MjhjZTY4MzJmZGQiLCJ0cyI6MTQ0NzM0NjQxMTI1MCwiYmYiOnRydWUsInBuIjoiYXprMjQwOTcifQ&s=Y6MWDufcTV58Up-TqbwpAMcr1P0 1,1,1447346408,0   °¿

@@ -1,0 +1,543 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd"><html><head>
+  <meta http-equiv='Content-type' content='text/html;charset=iso-8859-1'>
+  <meta name='description' content='EPICS RE: Unable to build support modules on Windows, with base 3.15.2'>
+  <meta name='keywords' content='EPICS,software,process control,scientific software'>
+  <title>EPICS RE: Unable to build support modules on Windows, with base 3.15.2</title>
+  <link rel='stylesheet' href='/epics/epics.css' type='text/css'>
+  <link rel='shortcut icon' type='image/x-icon' href='/epics/favicon.ico'>
+  <link rel='icon' type='image/png' href='/epics/icon.png'>
+  <link rel='publisher' href='https://plus.google.com/106275891267278800612/'>
+  <link rel='alternate' title='EPICS Tech-talk via RSS' href='../rss.xml' type='application/rss+xml'>
+  <meta name='ROBOTS' content='INDEX, NOFOLLOW'>  <link rel='index' href='../index.php'>
+  <link rel='top' href='index.php'>
+  <link rel='up' href='msg01535.php'>
+  <link rel='first' href='msg01469.php'>
+  <link rel='prev' href='msg01535.php'>
+  <link rel='next' href='msg01537.php'>
+  <link rel='last' href='msg01490.php'>
+  <style type='text/css'>
+    <!--
+  pre {width: 100%; white-space: -moz-pre-wrap; white-space: pre-wrap;}    -->
+  </style>
+  <script type='text/javascript' src='https://apis.google.com/js/plusone.js'>
+    </script>
+</head>
+<body bgcolor='#FFFFFF'>
+<table class='page' width='100%' cellspacing='0' border='0'>
+<tr>
+
+<td class='sidebar' width='10%'>
+<a href='/epics/index.php'>
+<img src='/epics/icons/logo101.gif' alt='EPICS Home' align='left' width='101' height='101' border='0'></a>
+</td>
+<td class='main'>
+<div style='display: inline-block; *display: inline; float: left;'><div style='margin: 15px 0 5px 0; text-align: center;'><a href='https://plus.google.com/106275891267278800612/?prsrc=3' style='text-decoration: none; color: #333;'><img src='/epics/icons/g-plus.png' width='32' height='32' alt='g+' style='border: 0;'></a></div><div style='font: bold 13px/16px arial,sans-serif; margin: 0 5px; text-align: center;'><a href='https://plus.google.com/106275891267278800612/?prsrc=3' style='text-decoration: none; color: #333;'> EPICS Page </a></div><div style='font: 13px/16px arial,sans-serif; text-align: center; margin: 0 5px;'><a href='https://plus.google.com/106275891267278800612/?prsrc=3' style='text-decoration: none; color: #333;'> on Google+ </a></div></div><div style='display: inline-block; *display: inline; float: left;'><div style='margin: 15px 0 5px 0; text-align: center;'><a href='https://plus.google.com/u/0/communities/113160068949106802880' style='text-decoration: none; color: #333;'><img src='/epics/icons/g-communities.png' width='32' height='32' alt='g+ Communities' style='border: 0;'></a></div><div style='font: bold 13px/16px arial,sans-serif; margin: 0 5px; text-align: center;'><a href='https://plus.google.com/u/0/communities/113160068949106802880' style='text-decoration: none; color: #333;'> EPICS Users </a></div><div style='font: 13px/16px arial,sans-serif; text-align: center;'><a href='https://plus.google.com/u/0/communities/113160068949106802880' style='text-decoration: none; color: #333;'> on Google+ </a></div></div><a href='http://www.anl.gov/'><img src='/epics/icons/ANL_H_White.png' align='right' border='0' alt='Argonne National Laboratory' width='250' height='115'></a>
+<h1 align='center'>
+Experimental Physics and <br>Industrial Control System</h1>
+</td></tr>
+
+<tr>
+<td class='sidebar' valign='top'>
+<ul id='navlist'>
+<li class='spacer'></li>
+<li><a href='/epics/index.php' title="EPICS Home at APS">Home</a></li>
+<li><a href='/epics/news.php' title="Recent news">News</a></li>
+<li><a href='/epics/about.php' title="What is EPICS anyway?">About</a></li>
+<li><a href='/epics/base/index.php' title="The core EPICS software for both IOCs and Host tools">Base</a></li>
+<li><a href='/epics/modules/index.php' title="Optional support code for IOCs - drivers etc.">Modules</a></li>
+<li><a href='/epics/extensions/index.php' title="Tools to monitor and control IOCs">Extensions</a></li>
+<li><a href='/epics/distributions/index.php' title="Code collections from base, modules, extensions &amp; elsewhere">Distributions</a></li>
+<li><a href='/epics/download/index.php' title="Software downloads">Download</a></li>
+<li><a href='http://epics-pvdata.sourceforge.net/index.html' title="EPICS Version 4 Project">EPICSv4</a></li>
+<li><a href='/epics/irmis/index.php' title="Using RDBs to model installed EPICS IOCs">IRMIS</a></li>
+<li><a href='/epics/mail.php' title="Information about our mailing lists">Talk</a>
+<ul>
+<li><a href='/epics/tech-talk/index.php' title="The main mailing list, our online support channel">Tech-Talk</a>
+<ul>
+<li><a href='https://mailman.aps.anl.gov/mailman/listinfo/tech-talk' title="Subscribing to the list">Mailman</a></li>
+<li><a href='/epics/tech-talk/search.php' title="Search the tech-talk archives">Search</a></li>
+<li><a href='/epics/tech-talk/2015/index.php' title="Browse tech-talk messages from 2015">2015</a></li>
+<li><a href='/epics/tech-talk/2014/index.php' title="Browse Tech-talk messages from 2014">2014</a></li>
+<li><a href='/epics/tech-talk/2013/index.php' title="Browse Tech-talk messages from 2013">2013</a></li>
+<li><a href='/epics/tech-talk/2012/index.php' title="Browse Tech-talk messages from 2012">2012</a></li>
+<li><a href='/epics/tech-talk/2011/index.php' title="Browse Tech-talk messages from 2011">2011</a></li>
+<li><a href='/epics/tech-talk/2010/index.php' title="Browse Tech-talk messages from 2010">2010</a></li>
+<li><a href='/epics/tech-talk/2009/index.php' title="Browse Tech-talk messages from 2009">2009</a></li>
+<li><a href='/epics/tech-talk/2008/index.php' title="Browse Tech-talk messages from 2008">2008</a></li>
+<li><a href='/epics/tech-talk/2007/index.php' title="Browse Tech-talk messages from 2007">2007</a></li>
+<li><a href='/epics/tech-talk/2006/index.php' title="Browse Tech-talk messages from 2006">2006</a></li>
+<li><a href='/epics/tech-talk/2005/index.php' title="Browse Tech-talk messages from 2005">2005</a></li>
+<li><a href='/epics/tech-talk/2004/index.php' title="Browse Tech-talk messages from 2004">2004</a></li>
+<li><a href='/epics/tech-talk/2003/index.php' title="Browse Tech-talk messages from 2003">2003</a></li>
+<li><a href='/epics/tech-talk/2002/index.php' title="Browse Tech-talk messages from 2002">2002</a></li>
+<li><a href='/epics/tech-talk/2001/index.php' title="Browse Tech-talk messages from 2001">2001</a></li>
+<li><a href='/epics/tech-talk/2000/index.php' title="Browse Tech-talk messages from 2000">2000</a></li>
+<li><a href='/epics/tech-talk/1999/index.php' title="Browse Tech-talk messages from 1999">1999</a></li>
+<li><a href='/epics/tech-talk/1998/index.php' title="Browse Tech-talk messages from 1998">1998</a></li>
+<li><a href='/epics/tech-talk/1997/index.php' title="Browse Tech-talk messages from 1997">1997</a></li>
+<li><a href='/epics/tech-talk/1996/index.php' title="Browse Tech-talk messages from 1996">1996</a></li>
+<li><a href='/epics/tech-talk/1995/index.php' title="Browse Tech-talk messages from 1995">1995</a></li>
+<li><a href='/epics/tech-talk/1994/index.php' title="Browse Tech-talk messages from 1994">1994</a></li>
+</ul>
+</li>
+<li><a href='/epics/core-talk/index.php' title="Discussions between Base developers">Core-talk</a>
+<ul>
+<li><a href='https://mailman.aps.anl.gov/mailman/listinfo/core-talk' title="Subscribing to the list">Mailman</a></li>
+<li><a href='/epics/core-talk/search.php' title="Search the core-talk archives">Search</a></li>
+<li><a href='/epics/core-talk/2015/index.php' title="Browse core-talk messages from 2015">2015</a></li>
+</ul>
+</li>
+<li><a href='/epics/qti-talk/index.php' title="Discussions about the QT Initiative">QTi-talk</a>
+<ul>
+<li><a href='https://mailman.aps.anl.gov/mailman/listinfo/qti-talk' title="Subscribing to the list">Mailman</a></li>
+<li><a href='/epics/qti-talk/search.php' title="Search the qti-talk archives">Search</a></li>
+<li><a href='/epics/qti-talk/2015/index.php' title="Browse QTi-talk messages from 2015">2015</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href='https://bugs.launchpad.net/epics-base' title="The Launchpad bug tracker for epics-base">Bugs</a></li>
+<li><a href='/epics/docs/index.php' title="Text not related to a specific release or package">Documents</a></li>
+<li><a href='/epics/links.php' title="Related web-sites">Links</a></li>
+<li><a href='/epics/license/index.php' title="EPICS Software Licensing">Licensing</a></li>
+<li class='spacer'></li>
+</ul>
+<p align='center'>
+<a href='/epics/tech-talk/2015/msg01536.php?format=printer'>
+Format page<br>
+for printing</a></p>
+
+<form method="get" action="http://www.google.com/custom"><table align="center"
+bgcolor="#FFFFFF" cellspacing="0" border="0"><tr><td align="center"><a
+href="http://www.google.com/"><label for="q"><img border="0" alt="Google"
+src="/epics/icons/Google25.gif"  align="middle"></label></a><br><input
+type="text" name="q" id="q" size="10" maxlength="255" value=""></td></tr>
+</table><input type="hidden" name="cof"
+value="S:http://www.aps.anl.gov/epics;GL:0;VLC:#9f0000;AH:center;BGC:white;LH:115;LC:#00009f;L:http://www.aps.anl.gov/epics/icons/header.png;ALC:#009f00;LW:750;T:black;AWFID:e3f314152c5d8667;">
+<input type="hidden" name="domains" value="aps.anl.gov"><input type="hidden"
+name="sitesearch" value="aps.anl.gov"> </form>
+<br>
+<form method="post" action="/epics/tech-talk/search.php">
+<table align="center" bgcolor="#FFFFFF" cellspacing="0" border="0">
+<tr><th align="center"><small>Search&nbsp;Tech-talk</small></th></tr>
+<tr><td><input type="text" name="query" size="10" value=""></td></tr>
+</table>
+</form>
+<td class='main'>
+<!-- MHonArc v2.6.18 -->
+<!--X-Subject: RE: Unable to build support modules on Windows, with base 3.15.2 -->
+<!--X-From-R13: [nex Dviref <evirefNpnef.hpuvpntb.rqh> -->
+<!--X-Date: Thu, 24 Sep 2015 18:58:17 +0000 -->
+<!--X-Message-Id: 70AE7462E7AD054C89DCBA45343D499A659BF11C@CARSMAIL2.CARS.APS.ANL.GOV -->
+<!--X-Content-Type: text/plain -->
+<!--X-Reference: 7D894023775D6F43AA1825B4559A87A801D3B5D9@MSRV&#45;EXCH01.ccfepc.ccfe.ac.uk -->
+<!--X-Reference: 87si6fcuxy.fsf@pingviini.dy.fi -->
+<!--X-Reference: 70AE7462E7AD054C89DCBA45343D499A659A81BB@CARSMAIL2.CARS.APS.ANL.GOV -->
+<!--X-Reference: 7D894023775D6F43AA1825B4559A87A801D3BB5F@MSRV&#45;EXCH01.ccfepc.ccfe.ac.uk -->
+<!--X-Reference: 70AE7462E7AD054C89DCBA45343D499A659A99DE@CARSMAIL2.CARS.APS.ANL.GOV -->
+<!--X-Reference: 7D894023775D6F43AA1825B4559A87A801D3BB87@MSRV&#45;EXCH01.ccfepc.ccfe.ac.uk -->
+<!--X-Reference: 70AE7462E7AD054C89DCBA45343D499A659AADFC@CARSMAIL2.CARS.APS.ANL.GOV -->
+<!--X-Reference: 7D894023775D6F43AA1825B4559A87A801D3BBC0@MSRV&#45;EXCH01.ccfepc.ccfe.ac.uk -->
+<!--X-Reference: 70AE7462E7AD054C89DCBA45343D499A659ABFB3@CARSMAIL2.CARS.APS.ANL.GOV -->
+<!--X-Reference: 55F9B5A8.3090605@anl.gov -->
+<!--X-Reference: 70AE7462E7AD054C89DCBA45343D499A659AC0DF@CARSMAIL2.CARS.APS.ANL.GOV -->
+<!--X-Reference: 006d01d0f0b8$3fc99a90$bf5ccfb0$@anl.gov -->
+<!--X-Reference: 55F9D50D.1090602@imca&#45;cat.org -->
+<!--X-Reference: 560400C2.10309@anl.gov -->
+<!--X-Reference: 56041AB5.9000805@imca&#45;cat.org -->
+<!--X-Reference: 560441D3.7020206@anl.gov -->
+<!--X-Reference: 70AE7462E7AD054C89DCBA45343D499A659BEFBB@CARSMAIL2.CARS.APS.ANL.GOV -->
+<!--X-Reference: 560446F9.4070207@anl.gov -->
+<!--X-Head-End-->
+<!--X-Body-Begin-->
+<!--X-User-Header-->
+<!--X-User-Header-End-->
+<!--X-TopPNI-->
+<table border=0><tr>
+<td><a href='../1994/index.php'>1994</a>&nbsp;
+<a href='../1995/index.php'>1995</a>&nbsp;
+<a href='../1996/index.php'>1996</a>&nbsp;
+<a href='../1997/index.php'>1997</a>&nbsp;
+<a href='../1998/index.php'>1998</a>&nbsp;
+<a href='../1999/index.php'>1999</a>&nbsp;
+<a href='../2000/index.php'>2000</a>&nbsp;
+<a href='../2001/index.php'>2001</a>&nbsp;
+<a href='../2002/index.php'>2002</a>&nbsp;
+<a href='../2003/index.php'>2003</a>&nbsp;
+<a href='../2004/index.php'>2004</a>&nbsp;
+<a href='../2005/index.php'>2005</a>&nbsp;
+<a href='../2006/index.php'>2006</a>&nbsp;
+<a href='../2007/index.php'>2007</a>&nbsp;
+<a href='../2008/index.php'>2008</a>&nbsp;
+<a href='../2009/index.php'>2009</a>&nbsp;
+<a href='../2010/index.php'>2010</a>&nbsp;
+<a href='../2011/index.php'>2011</a>&nbsp;
+<a href='../2012/index.php'>2012</a>&nbsp;
+<a href='../2013/index.php'>2013</a>&nbsp;
+<a href='../2014/index.php'>2014</a>&nbsp;
+&lt;<a href='../2015/index.php?September'>2015</a>&gt;&nbsp;
+</td>
+<td><b>Index </b></td>
+<td><a href='../1994/threads.php'>1994</a>&nbsp;
+<a href='../1995/threads.php'>1995</a>&nbsp;
+<a href='../1996/threads.php'>1996</a>&nbsp;
+<a href='../1997/threads.php'>1997</a>&nbsp;
+<a href='../1998/threads.php'>1998</a>&nbsp;
+<a href='../1999/threads.php'>1999</a>&nbsp;
+<a href='../2000/threads.php'>2000</a>&nbsp;
+<a href='../2001/threads.php'>2001</a>&nbsp;
+<a href='../2002/threads.php'>2002</a>&nbsp;
+<a href='../2003/threads.php'>2003</a>&nbsp;
+<a href='../2004/threads.php'>2004</a>&nbsp;
+<a href='../2005/threads.php'>2005</a>&nbsp;
+<a href='../2006/threads.php'>2006</a>&nbsp;
+<a href='../2007/threads.php'>2007</a>&nbsp;
+<a href='../2008/threads.php'>2008</a>&nbsp;
+<a href='../2009/threads.php'>2009</a>&nbsp;
+<a href='../2010/threads.php'>2010</a>&nbsp;
+<a href='../2011/threads.php'>2011</a>&nbsp;
+<a href='../2012/threads.php'>2012</a>&nbsp;
+<a href='../2013/threads.php'>2013</a>&nbsp;
+<a href='../2014/threads.php'>2014</a>&nbsp;
+&lt;<a href='../2015/threads.php'>2015</a>&gt;&nbsp;
+</td>
+</tr>
+<tr>
+<th align='center'><a href='msg01535.php'>&lt;==</a> Date <a href='msg01537.php'>==&gt;</a></th>
+<td></td>
+<th align='center'><a href='msg01535.php'>&lt;==</a> Thread <a href='msg01537.php'>==&gt;</a></th>
+</tr></table>
+
+<!--X-TopPNI-End-->
+<!--X-MsgBody-->
+<!--X-Subject-Header-Begin-->
+<hr>
+<div style='float: right'><g:plusone></g:plusone></div>
+<!--X-Subject-Header-End-->
+<!--X-Head-of-Message-->
+<table border=0>
+<tr>
+<td align="right" valign="top">
+<em>Subject</em>:</td>
+<td align="left">
+<b>RE: Unable to build support modules on Windows, with base 3.15.2</b></td>
+</tr>
+
+<tr>
+<td align="right" valign="top">
+<em>From</em>:</td>
+<td align="left">
+Mark Rivers &lt;<a href="mailto:rivers_at_cars.uchicago.edu">rivers@cars.uchicago.edu</a>&gt;</td>
+</tr>
+
+<tr>
+<td align="right" valign="top">
+<em>To</em>:</td>
+<td align="left">
+&quot;'Kevin Peterson'&quot; &lt;<a href="mailto:kmpeters_at_anl.gov">kmpeters@anl.gov</a>&gt;,        &quot;J. Lewis Muir&quot;	&lt;<a href="mailto:jlmuir_at_imca-cat.org">jlmuir@imca-cat.org</a>&gt;,        &quot;Mark S. Engbretson&quot; &lt;<a href="mailto:Engbretson_at_anl.gov">Engbretson@anl.gov</a>&gt;,        &quot;<a href="mailto:tech-talk_at_aps.anl.gov">tech-talk@aps.anl.gov</a>&quot; &lt;<a href="mailto:tech-talk_at_aps.anl.gov">tech-talk@aps.anl.gov</a>&gt;</td>
+</tr>
+
+<tr>
+<td align="right" valign="top">
+<em>Date</em>:</td>
+<td align="left">
+Thu, 24 Sep 2015 18:58:17 +0000</td>
+</tr>
+
+</table>
+<!--X-Head-of-Message-End-->
+<!--X-Head-Body-Sep-Begin-->
+<!--X-Head-Body-Sep-End-->
+<!--X-Body-of-Message-->
+<pre>These problems were with which version of Visual Studio and which version of EPICS base?
+
+Mark
+
+
+-----Original Message-----
+From: Kevin Peterson [<a  rel="nofollow" href="mailto:kmpeters@anl.gov">mailto:kmpeters@anl.gov</a>] 
+Sent: Thursday, September 24, 2015 1:55 PM
+To: Mark Rivers; J. Lewis Muir; Mark S. Engbretson; tech-talk@aps.anl.gov
+Subject: Re: Unable to build support modules on Windows, with base 3.15.2
+
+I believe I get the following link error when building seq-2-2-1
+(included with synApps_5_8) and seq-2-2-2 when building for win32-x86:
+
+&#xFEFF;&#xFEFF;link -nologo  /LTCG /incremental:no /opt:ref /release
+-out:snc.exe        lexer.obj snl.obj main.obj node.obj var_types.obj
+analysis.obj gen_code
+.obj gen_ss_code.obj gen_tables.obj sym_table.obj builtin.obj
+type_check.obj     ..\\..\\..\\lib\\win32-x86\\seq.lib
+..\\..\\..\\lib\\win32-x86\\pv.lib  D:\\ep
+ics\\base-3.14.12.5\\lib\\win32-x86\\ca.lib
+D:\\epics\\base-3.14.12.5\\lib\\win32-x86\\Com.lib
+var_types.obj : error LNK2001: unresolved external symbol
+__imp__prim_type_name
+gen_tables.obj : error LNK2001: unresolved external symbol
+__imp__prim_type_tag_name
+snc.exe : fatal error LNK1120: 2 unresolved externals
+make[4]: *** [snc.exe] Error 1120
+make[4]: Leaving directory
+`D:/epics/synApps_5_8/support/seq-2-2-2/src/snc/O.win32-x86'
+make[3]: *** [install.win32-x86] Error 2
+make[3]: Leaving directory `D:/epics/synApps_5_8/support/seq-2-2-2/src/snc'
+make[2]: *** [snc.install] Error 2
+make[2]: Leaving directory `D:/epics/synApps_5_8/support/seq-2-2-2/src'
+make[1]: *** [src.install] Error 2
+make[1]: Leaving directory `D:/epics/synApps_5_8/support/seq-2-2-2'
+make: *** [D:/epics/synApps_5_8/support/seq-2-2-2.install] Error 2
+
+alive-1-0 doesn't build for Windows unless you add the following libs to
+its src/Makefile.  The alive svn repo contains a similar fix, but it
+assumes ws2_64 is available, which it wasn't on my system.
+
++alive_SYS_LIBS_WIN32 += ws2_32
++alive_SYS_LIBS_WIN32 += Advapi32
+
+The version of ADCore included in synApps_5_8 fails to link
+out-of-the-box for win32-x86:
+
+link /nologo /subsystem:windows /dll /LTCG /incremental:no /opt:ref
+/release        /implib:NeXus.lib /out:NeXus.dll          napi.obj
+napi5.obj napiu.obj nxdat
+aset.obj nxio.obj nxstack.obj nxxml.obj stptok.obj
+D:\\epics\\synApps_5_8\\support\\areaDetector-R2-0\\ADBinaries-R2-2\\lib\\win32-x86\\libhdf5.lib
+ D:\\ep
+ics\\synApps_5_8\\support\\areaDetector-R2-0\\ADBinaries-R2-2\\lib\\win32-x86\\libszip.lib
+ D:\\epics\\synApps_5_8\\support\\areaDetector-R2-0\\ADBinaries-R2-2\
+\lib\\win32-x86\\libzlib.lib
+LIBCMT.lib(timeset.obj) : error LNK2005: ___daylight already defined in
+MSVCRT.lib(MSVCR100.dll)
+LIBCMT.lib(timeset.obj) : error LNK2005: ___timezone already defined in
+MSVCRT.lib(MSVCR100.dll)
+LINK : warning LNK4098: defaultlib 'LIBCMT' conflicts with use of other
+libs; use /NODEFAULTLIB:library
+NeXus.dll : fatal error LNK1169: one or more multiply defined symbols found
+make[5]: *** [NeXus.dll] Error 1169
+make[5]: Leaving directory
+`D:/epics/synApps_5_8/support/areaDetector-R2-0/ADCore-R2-2/ADApp/nexusSrc/O.win32-x86'
+make[4]: *** [install.win32-x86] Error 2
+make[4]: Leaving directory
+`D:/epics/synApps_5_8/support/areaDetector-R2-0/ADCore-R2-2/ADApp/nexusSrc'
+make[3]: *** [nexusSrc.install] Error 2
+make[3]: Leaving directory
+`D:/epics/synApps_5_8/support/areaDetector-R2-0/ADCore-R2-2/ADApp'
+make[2]: *** [ADApp.install] Error 2
+make[2]: Leaving directory
+`D:/epics/synApps_5_8/support/areaDetector-R2-0/ADCore-R2-2'
+make[1]: ***
+[D:/epics/synApps_5_8/support/areaDetector-R2-0/ADCore-R2-2.install] Error 2
+make[1]: Leaving directory `D:/epics/synApps_5_8/support/areaDetector-R2-0'
+make: *** [D:/epics/synApps_5_8/support/areaDetector-R2-0.install] Error 2
+
+Those are the few errors that I copied into a text file before I gave up
+trying to build synApps_5_8 for its areaDetector support.
+
+Kevin
+
+On 9/24/15 1:35 PM, Mark Rivers wrote:
+&gt;&gt; Many of the problems seem to be caused by Makefiles that unconditionally build
+&gt;&gt; code that doesn't work on Windows, and therefore are a problem for all
+&gt;&gt; versions of Visual Studio.
+&gt; 
+&gt; I build all of synApps, including the sequencer on Windows, and don't have those problems.  What modules specifically did you have trouble with?
+&gt; 
+&gt; Mark
+&gt; 
+&gt; 
+&gt; -----Original Message-----
+&gt; From: tech-talk-bounces@aps.anl.gov [<a  rel="nofollow" href="mailto:tech-talk-bounces@aps.anl.gov">mailto:tech-talk-bounces@aps.anl.gov</a>] On Behalf Of Kevin Peterson
+&gt; Sent: Thursday, September 24, 2015 1:33 PM
+&gt; To: J. Lewis Muir; Mark S. Engbretson; tech-talk@aps.anl.gov
+&gt; Subject: Re: Unable to build support modules on Windows, with base 3.15.2
+&gt; 
+&gt; On 9/24/15 10:45 AM, J. Lewis Muir wrote:
+&gt;&gt;&gt; If you succeed at building base, you'll encounter more problems when
+&gt;&gt;&gt; you try to build other EPICS modules.
+&gt;&gt;
+&gt;&gt; Which problems are these?  If a certain compiler does not build
+&gt;&gt; EPICS software correctly, it would be good to note that compiler as
+&gt;&gt; unsupported on Andrew's page.
+&gt; 
+&gt; I have not had a chance to document all of the problems I encountered
+&gt; trying to build synApps_5_8 with Visual Studio Community 2015.  Many of
+&gt; the problems seem to be caused by Makefiles that unconditionally build
+&gt; code that doesn't work on Windows, and therefore are a problem for all
+&gt; versions of Visual Studio.
+&gt; 
+&gt; The sequencer is one module that is difficult to build on Windows, but
+&gt; those problems have already been discussed here.
+&gt; 
+&gt; Kevin
+&gt; 
+
+
+</pre>
+<!--X-Body-of-Message-End-->
+<!--X-MsgBody-End-->
+<!--X-Follow-Ups-->
+<hr>
+<!--X-Follow-Ups-End-->
+<!--X-References-->
+<dl>
+<dt>References:</dt>
+<dd><b><a name="01469" href="msg01469.php">Unable to build support modules on Windows, with base 3.15.2</a></b> <i>Heesterman, Peter J</i>
+</dd>
+<dd><b><a name="01473" href="msg01473.php">Re: Unable to build support modules on Windows, with base 3.15.2</a></b> <i>Jani Hakala</i>
+</dd>
+<dd><b><a name="01475" href="msg01475.php">RE: Unable to build support modules on Windows, with base 3.15.2</a></b> <i>Mark Rivers</i>
+</dd>
+<dd><b><a name="01476" href="msg01476.php">RE: Unable to build support modules on Windows, with base 3.15.2</a></b> <i>Heesterman, Peter J</i>
+</dd>
+<dd><b><a name="01477" href="msg01477.php">RE: Unable to build support modules on Windows, with base 3.15.2</a></b> <i>Mark Rivers</i>
+</dd>
+<dd><b><a name="01478" href="msg01478.php">RE: Unable to build support modules on Windows, with base 3.15.2</a></b> <i>Heesterman, Peter J</i>
+</dd>
+<dd><b><a name="01479" href="msg01479.php">RE: Unable to build support modules on Windows, with base 3.15.2</a></b> <i>Mark Rivers</i>
+</dd>
+<dd><b><a name="01480" href="msg01480.php">RE: Unable to build support modules on Windows, with base 3.15.2</a></b> <i>Heesterman, Peter J</i>
+</dd>
+<dd><b><a name="01482" href="msg01482.php">RE: Unable to build support modules on Windows, with base 3.15.2</a></b> <i>Mark Rivers</i>
+</dd>
+<dd><b><a name="01483" href="msg01483.php">Re: Unable to build support modules on Windows, with base 3.15.2</a></b> <i>Bob Soliday</i>
+</dd>
+<dd><b><a name="01484" href="msg01484.php">RE: Unable to build support modules on Windows, with base 3.15.2</a></b> <i>Mark Rivers</i>
+</dd>
+<dd><b><a name="01486" href="msg01486.php">RE: Unable to build support modules on Windows, with base 3.15.2</a></b> <i>Mark S. Engbretson</i>
+</dd>
+<dd><b><a name="01487" href="msg01487.php">Re: Unable to build support modules on Windows, with base 3.15.2</a></b> <i>J. Lewis Muir</i>
+</dd>
+<dd><b><a name="01519" href="msg01519.php">Re: Unable to build support modules on Windows, with base 3.15.2</a></b> <i>Kevin Peterson</i>
+</dd>
+<dd><b><a name="01525" href="msg01525.php">Re: Unable to build support modules on Windows, with base 3.15.2</a></b> <i>J. Lewis Muir</i>
+</dd>
+<dd><b><a name="01533" href="msg01533.php">Re: Unable to build support modules on Windows, with base 3.15.2</a></b> <i>Kevin Peterson</i>
+</dd>
+<dd><b><a name="01534" href="msg01534.php">RE: Unable to build support modules on Windows, with base 3.15.2</a></b> <i>Mark Rivers</i>
+</dd>
+<dd><b><a name="01535" href="msg01535.php">Re: Unable to build support modules on Windows, with base 3.15.2</a></b> <i>Kevin Peterson</i>
+</dd>
+</dl>
+<!--X-References-End-->
+<!--X-BotPNI-->
+<hr><dl>
+<dt>Navigate by Date:</dt>
+<dd>Prev:
+<b><a href='msg01535.php'>Re: Unable to build support modules on Windows, with base 3.15.2</a></b> <i>Kevin Peterson</i>
+</dd>
+<dd>Next:
+<b><a href='msg01537.php'>Re: Unable to build support modules on Windows, with base 3.15.2</a></b> <i>Kevin Peterson</i>
+</dd>
+<dd>Index: <b>
+<a href='../1994/index.php'>1994</a>&nbsp;
+<a href='../1995/index.php'>1995</a>&nbsp;
+<a href='../1996/index.php'>1996</a>&nbsp;
+<a href='../1997/index.php'>1997</a>&nbsp;
+<a href='../1998/index.php'>1998</a>&nbsp;
+<a href='../1999/index.php'>1999</a>&nbsp;
+<a href='../2000/index.php'>2000</a>&nbsp;
+<a href='../2001/index.php'>2001</a>&nbsp;
+<a href='../2002/index.php'>2002</a>&nbsp;
+<a href='../2003/index.php'>2003</a>&nbsp;
+<a href='../2004/index.php'>2004</a>&nbsp;
+<a href='../2005/index.php'>2005</a>&nbsp;
+<a href='../2006/index.php'>2006</a>&nbsp;
+<a href='../2007/index.php'>2007</a>&nbsp;
+<a href='../2008/index.php'>2008</a>&nbsp;
+<a href='../2009/index.php'>2009</a>&nbsp;
+<a href='../2010/index.php'>2010</a>&nbsp;
+<a href='../2011/index.php'>2011</a>&nbsp;
+<a href='../2012/index.php'>2012</a>&nbsp;
+<a href='../2013/index.php'>2013</a>&nbsp;
+<a href='../2014/index.php'>2014</a>&nbsp;
+&lt;<a href='../2015/index.php?September'>2015</a>&gt;&nbsp;
+</b></dd>
+<dt>Navigate by Thread:</dt>
+<dd>Prev:
+<b><a href='msg01535.php'>Re: Unable to build support modules on Windows, with base 3.15.2</a></b> <i>Kevin Peterson</i>
+</dd>
+<dd>Next:
+<b><a href='msg01537.php'>Re: Unable to build support modules on Windows, with base 3.15.2</a></b> <i>Kevin Peterson</i>
+</dd>
+<dd>Index: <b>
+<a href='../1994/threads.php'>1994</a>&nbsp;
+<a href='../1995/threads.php'>1995</a>&nbsp;
+<a href='../1996/threads.php'>1996</a>&nbsp;
+<a href='../1997/threads.php'>1997</a>&nbsp;
+<a href='../1998/threads.php'>1998</a>&nbsp;
+<a href='../1999/threads.php'>1999</a>&nbsp;
+<a href='../2000/threads.php'>2000</a>&nbsp;
+<a href='../2001/threads.php'>2001</a>&nbsp;
+<a href='../2002/threads.php'>2002</a>&nbsp;
+<a href='../2003/threads.php'>2003</a>&nbsp;
+<a href='../2004/threads.php'>2004</a>&nbsp;
+<a href='../2005/threads.php'>2005</a>&nbsp;
+<a href='../2006/threads.php'>2006</a>&nbsp;
+<a href='../2007/threads.php'>2007</a>&nbsp;
+<a href='../2008/threads.php'>2008</a>&nbsp;
+<a href='../2009/threads.php'>2009</a>&nbsp;
+<a href='../2010/threads.php'>2010</a>&nbsp;
+<a href='../2011/threads.php'>2011</a>&nbsp;
+<a href='../2012/threads.php'>2012</a>&nbsp;
+<a href='../2013/threads.php'>2013</a>&nbsp;
+<a href='../2014/threads.php'>2014</a>&nbsp;
+&lt;<a href='../2015/threads.php'>2015</a>&gt;&nbsp;
+</b></dd>
+</dl>
+
+<!--X-BotPNI-End-->
+<!--X-User-Footer-->
+<!--X-User-Footer-End-->
+</td></tr>
+
+<tr>
+<td class='signature'>
+<a href="mailto:Andrew%20Johnson%20&lt;anj_at_aps.anl.gov&gt;">
+ANJ</a>, 24 Sep 2015</td>
+<td class='bottom'>
+<a href='http://validator.w3.org/check?uri=referer'><img src='/epics/icons/vh401.gif' alt='Valid HTML 4.01!' border='0' align='right' height='31' width='88'></a>
+&middot;
+<a href='/epics/index.php' title="EPICS Home at APS">Home</a>
+&middot;
+<a href='/epics/news.php' title="Recent news">News</a>
+&middot;
+<a href='/epics/about.php' title="What is EPICS anyway?">About</a>
+&middot;
+<a href='/epics/base/index.php' title="The core EPICS software for both IOCs and Host tools">Base</a>
+&middot;
+<a href='/epics/modules/index.php' title="Optional support code for IOCs - drivers etc.">Modules</a>
+&middot;
+<a href='/epics/extensions/index.php' title="Tools to monitor and control IOCs">Extensions</a>
+&middot;
+<a href='/epics/distributions/index.php' title="Code collections from base, modules, extensions &amp; elsewhere">Distributions</a>
+&middot;
+<a href='/epics/download/index.php' title="Software downloads">Download</a>
+&middot;
+<br>
+&middot;
+<a href='http://epics-pvdata.sourceforge.net/index.html' title="EPICS Version 4 Project">EPICSv4</a>
+&middot;
+<a href='/epics/irmis/index.php' title="Using RDBs to model installed EPICS IOCs">IRMIS</a>
+&middot;
+<a href='/epics/mail.php' title="Information about our mailing lists">Talk</a>
+&middot;
+<a href='https://bugs.launchpad.net/epics-base' title="The Launchpad bug tracker for epics-base">Bugs</a>
+&middot;
+<a href='/epics/docs/index.php' title="Text not related to a specific release or package">Documents</a>
+&middot;
+<a href='/epics/links.php' title="Related web-sites">Links</a>
+&middot;
+<a href='/epics/license/index.php' title="EPICS Software Licensing">Licensing</a>
+&middot;
+</td></tr></table>
+</body>
+</html>
+„`o´bë      VDÓVDÓ;Ì¢VKGP   9:http://www.aps.anl.gov/epics/tech-talk/2015/msg01536.php necko:classified 1 request-method GET response-head HTTP/1.1 200 OK
+Date: Thu, 12 Nov 2015 17:57:27 GMT
+Server: Apache
+X-Frame-Options: SAMEORIGIN
+Last-Modified: Thu, 24 Sep 2015 18:59:45 GMT
+Content-Type: text/html; charset=iso-8859-1
+X-Cache: MISS from wwwcache2-dl-cache, MISS from wwwcache2-dl-icap
+Via: 1.1 wwwcache2-dl-cache (squid/3.3.10), 1.1 wwwcache2-dl-icap (squid/3.3.10)
+ charset windows-1252 uncompressed-len 0 predictor::resource-count 4 predictor::http://www.aps.anl.gov/epics/epics.css 1,1,1447351047,0 predictor::https://apis.google.com/js/plusone.js 1,1,1447351047,0 predictor::https://apis.google.com/_/scs/apps-static/_/js/k=oz.gapi.en_GB.3gCEM3WeblA.O/m=plusone/rt=j/sv=1/d=1/ed=1/am=AQ/rs=AGLTcCP8ZfPHMDlbYpI5-U-qr0fejtum1w/t=zcms/cb=gapi.loaded_0 1,1,1447351047,0 predictor::https://apis.google.com/_/scs/apps-static/_/js/k=oz.gapi.en_GB.3gCEM3WeblA.O/m=auth/exm=plusone/rt=j/sv=1/d=1/ed=1/am=AQ/rs=AGLTcCP8ZfPHMDlbYpI5-U-qr0fejtum1w/t=zcms/cb=gapi.loaded_1 1,1,1447351047,0   mJ

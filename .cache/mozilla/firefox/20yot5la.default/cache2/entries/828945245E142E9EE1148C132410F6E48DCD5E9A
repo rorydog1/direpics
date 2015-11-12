@@ -1,0 +1,391 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd"><html><head>
+  <meta http-equiv='Content-type' content='text/html;charset=iso-8859-1'>
+  <meta name='description' content='EPICS Tech-talk Mailing List'>
+  <meta name='keywords' content='EPICS,software,process control,scientific software'>
+  <title>EPICS Tech-talk Mailing List</title>
+  <link rel='stylesheet' href='/epics/epics.css' type='text/css'>
+  <link rel='shortcut icon' type='image/x-icon' href='/epics/favicon.ico'>
+  <link rel='icon' type='image/png' href='/epics/icon.png'>
+  <link rel='publisher' href='https://plus.google.com/106275891267278800612/'>
+  <link rel="alternate" title="EPICS Tech-talk via RSS" href="rss.xml" type="application/rss+xml"></head>
+<body bgcolor='#FFFFFF'>
+<table class='page' width='100%' cellspacing='0' border='0'>
+<tr>
+
+<td class='sidebar' width='10%'>
+<a href='/epics/index.php'>
+<img src='/epics/icons/logo101.gif' alt='EPICS Home' align='left' width='101' height='101' border='0'></a>
+</td>
+<td class='main'>
+<div style='display: inline-block; *display: inline; float: left;'><div style='margin: 15px 0 5px 0; text-align: center;'><a href='https://plus.google.com/106275891267278800612/?prsrc=3' style='text-decoration: none; color: #333;'><img src='/epics/icons/g-plus.png' width='32' height='32' alt='g+' style='border: 0;'></a></div><div style='font: bold 13px/16px arial,sans-serif; margin: 0 5px; text-align: center;'><a href='https://plus.google.com/106275891267278800612/?prsrc=3' style='text-decoration: none; color: #333;'> EPICS Page </a></div><div style='font: 13px/16px arial,sans-serif; text-align: center; margin: 0 5px;'><a href='https://plus.google.com/106275891267278800612/?prsrc=3' style='text-decoration: none; color: #333;'> on Google+ </a></div></div><div style='display: inline-block; *display: inline; float: left;'><div style='margin: 15px 0 5px 0; text-align: center;'><a href='https://plus.google.com/u/0/communities/113160068949106802880' style='text-decoration: none; color: #333;'><img src='/epics/icons/g-communities.png' width='32' height='32' alt='g+ Communities' style='border: 0;'></a></div><div style='font: bold 13px/16px arial,sans-serif; margin: 0 5px; text-align: center;'><a href='https://plus.google.com/u/0/communities/113160068949106802880' style='text-decoration: none; color: #333;'> EPICS Users </a></div><div style='font: 13px/16px arial,sans-serif; text-align: center;'><a href='https://plus.google.com/u/0/communities/113160068949106802880' style='text-decoration: none; color: #333;'> on Google+ </a></div></div><a href='http://www.anl.gov/'><img src='/epics/icons/ANL_H_White.png' align='right' border='0' alt='Argonne National Laboratory' width='250' height='115'></a>
+<h1 align='center'>
+Experimental Physics and <br>Industrial Control System</h1>
+</td></tr>
+
+<tr>
+<td class='sidebar' valign='top'>
+<ul id='navlist'>
+<li class='spacer'></li>
+<li><a href='/epics/index.php' title="EPICS Home at APS">Home</a></li>
+<li><a href='/epics/news.php' title="Recent news">News</a></li>
+<li><a href='/epics/about.php' title="What is EPICS anyway?">About</a></li>
+<li><a href='/epics/base/index.php' title="The core EPICS software for both IOCs and Host tools">Base</a></li>
+<li><a href='/epics/modules/index.php' title="Optional support code for IOCs - drivers etc.">Modules</a></li>
+<li><a href='/epics/extensions/index.php' title="Tools to monitor and control IOCs">Extensions</a></li>
+<li><a href='/epics/distributions/index.php' title="Code collections from base, modules, extensions &amp; elsewhere">Distributions</a></li>
+<li><a href='/epics/download/index.php' title="Software downloads">Download</a></li>
+<li><a href='http://epics-pvdata.sourceforge.net/index.html' title="EPICS Version 4 Project">EPICSv4</a></li>
+<li><a href='/epics/irmis/index.php' title="Using RDBs to model installed EPICS IOCs">IRMIS</a></li>
+<li><a href='/epics/mail.php' title="Information about our mailing lists">Talk</a>
+<ul>
+<li><b>Tech-Talk</b>
+<ul>
+<li><a href='https://mailman.aps.anl.gov/mailman/listinfo/tech-talk' title="Subscribing to the list">Mailman</a></li>
+<li><a href='/epics/tech-talk/search.php' title="Search the tech-talk archives">Search</a></li>
+<li><a href='/epics/tech-talk/2015/index.php' title="Browse tech-talk messages from 2015">2015</a></li>
+<li><a href='/epics/tech-talk/2014/index.php' title="Browse Tech-talk messages from 2014">2014</a></li>
+<li><a href='/epics/tech-talk/2013/index.php' title="Browse Tech-talk messages from 2013">2013</a></li>
+<li><a href='/epics/tech-talk/2012/index.php' title="Browse Tech-talk messages from 2012">2012</a></li>
+<li><a href='/epics/tech-talk/2011/index.php' title="Browse Tech-talk messages from 2011">2011</a></li>
+<li><a href='/epics/tech-talk/2010/index.php' title="Browse Tech-talk messages from 2010">2010</a></li>
+<li><a href='/epics/tech-talk/2009/index.php' title="Browse Tech-talk messages from 2009">2009</a></li>
+<li><a href='/epics/tech-talk/2008/index.php' title="Browse Tech-talk messages from 2008">2008</a></li>
+<li><a href='/epics/tech-talk/2007/index.php' title="Browse Tech-talk messages from 2007">2007</a></li>
+<li><a href='/epics/tech-talk/2006/index.php' title="Browse Tech-talk messages from 2006">2006</a></li>
+<li><a href='/epics/tech-talk/2005/index.php' title="Browse Tech-talk messages from 2005">2005</a></li>
+<li><a href='/epics/tech-talk/2004/index.php' title="Browse Tech-talk messages from 2004">2004</a></li>
+<li><a href='/epics/tech-talk/2003/index.php' title="Browse Tech-talk messages from 2003">2003</a></li>
+<li><a href='/epics/tech-talk/2002/index.php' title="Browse Tech-talk messages from 2002">2002</a></li>
+<li><a href='/epics/tech-talk/2001/index.php' title="Browse Tech-talk messages from 2001">2001</a></li>
+<li><a href='/epics/tech-talk/2000/index.php' title="Browse Tech-talk messages from 2000">2000</a></li>
+<li><a href='/epics/tech-talk/1999/index.php' title="Browse Tech-talk messages from 1999">1999</a></li>
+<li><a href='/epics/tech-talk/1998/index.php' title="Browse Tech-talk messages from 1998">1998</a></li>
+<li><a href='/epics/tech-talk/1997/index.php' title="Browse Tech-talk messages from 1997">1997</a></li>
+<li><a href='/epics/tech-talk/1996/index.php' title="Browse Tech-talk messages from 1996">1996</a></li>
+<li><a href='/epics/tech-talk/1995/index.php' title="Browse Tech-talk messages from 1995">1995</a></li>
+<li><a href='/epics/tech-talk/1994/index.php' title="Browse Tech-talk messages from 1994">1994</a></li>
+</ul>
+</li>
+<li><a href='/epics/core-talk/index.php' title="Discussions between Base developers">Core-talk</a>
+<ul>
+<li><a href='https://mailman.aps.anl.gov/mailman/listinfo/core-talk' title="Subscribing to the list">Mailman</a></li>
+<li><a href='/epics/core-talk/search.php' title="Search the core-talk archives">Search</a></li>
+<li><a href='/epics/core-talk/2015/index.php' title="Browse core-talk messages from 2015">2015</a></li>
+</ul>
+</li>
+<li><a href='/epics/qti-talk/index.php' title="Discussions about the QT Initiative">QTi-talk</a>
+<ul>
+<li><a href='https://mailman.aps.anl.gov/mailman/listinfo/qti-talk' title="Subscribing to the list">Mailman</a></li>
+<li><a href='/epics/qti-talk/search.php' title="Search the qti-talk archives">Search</a></li>
+<li><a href='/epics/qti-talk/2015/index.php' title="Browse QTi-talk messages from 2015">2015</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href='https://bugs.launchpad.net/epics-base' title="The Launchpad bug tracker for epics-base">Bugs</a></li>
+<li><a href='/epics/docs/index.php' title="Text not related to a specific release or package">Documents</a></li>
+<li><a href='/epics/links.php' title="Related web-sites">Links</a></li>
+<li><a href='/epics/license/index.php' title="EPICS Software Licensing">Licensing</a></li>
+<li class='spacer'></li>
+</ul>
+<p align='center'>
+<a href='/epics/tech-talk/index.php?format=printer'>
+Format page<br>
+for printing</a></p>
+
+<form method="get" action="http://www.google.com/custom"><table align="center"
+bgcolor="#FFFFFF" cellspacing="0" border="0"><tr><td align="center"><a
+href="http://www.google.com/"><label for="q"><img border="0" alt="Google"
+src="/epics/icons/Google25.gif"  align="middle"></label></a><br><input
+type="text" name="q" id="q" size="10" maxlength="255" value=""></td></tr>
+</table><input type="hidden" name="cof"
+value="S:http://www.aps.anl.gov/epics;GL:0;VLC:#9f0000;AH:center;BGC:white;LH:115;LC:#00009f;L:http://www.aps.anl.gov/epics/icons/header.png;ALC:#009f00;LW:750;T:black;AWFID:e3f314152c5d8667;">
+<input type="hidden" name="domains" value="aps.anl.gov"><input type="hidden"
+name="sitesearch" value="aps.anl.gov"> </form>
+<br>
+<form method="post" action="/epics/tech-talk/search.php">
+<table align="center" bgcolor="#FFFFFF" cellspacing="0" border="0">
+<tr><th align="center"><small>Search&nbsp;Tech-talk</small></th></tr>
+<tr><td><input type="text" name="query" size="10" value=""></td></tr>
+</table>
+</form>
+<td class='main'>
+
+<h2>
+Tech-talk Mailing List</h2>
+
+<p>
+The EPICS mailing list is called tech-talk, and is used for technical
+discussions, questions and announcements. See <a href="#subscribe">below</a> for
+subscription instructions. There is another mailing list called
+<a href="../core-talk/index.php">core-talk</a> which is for use by the
+developers working on the EPICS core software.</p>
+
+<p>
+The tech-talk list accepts posts from subscribers; messages from an email
+address that is not subscribed to the list are still able to post but these
+messages will be delayed pending moderator approval, and if judged to be Spam
+may be discarded without notice. Members of the EPICS community who wish to be
+exempted from the moderation requirement without subscribing can request this by
+emailing the <a href="mailto:tech-talk-owner@aps.anl.gov">list
+administrator</a>.</p>
+
+<p>
+When posting messages to the list, please
+<a href="http://linux.sgms-centre.com/misc/netiquette.php">observe conventional
+netiquette</a>. In particular, if you are starting a new line of discussion,
+please do <strong>not</strong> reply to an older tech-talk message and change
+the subject line &mdash; your mail program will attach a hidden reference header
+to the message, linking it to the message you are replying to and causing other
+mail programs and the tech-talk archives to think your message is part of that
+same thread.  Start by hitting <q>New Message</q> whenever you want to start a
+new conversation.</p>
+
+<p>
+Please don't attach tarfiles or zipfiles or directly include files with the
+extension <tt>.cmd</tt>, such as IOC startup scripts files <tt>st.cmd</tt>. A
+<tt>.cmd</tt> extension is used on Microsoft Windows for a kind of command
+script. Many spam filters nowadays search through tarballs and zipfiles and will
+either reject such messages or remove the file from it, but in either case they
+result in many rejection messages coming in to the list manager.</p>
+
+<hr>
+<h2>
+List Archives</h2>
+
+<p>
+Messages sent to the list are archived annually.</p>
+
+<dl>
+<dt>Indexed by Date:</dt>
+<dd><b><a href='1994/index.php'>1994</a>&nbsp;
+<a href='1995/index.php'>1995</a>&nbsp;
+<a href='1996/index.php'>1996</a>&nbsp;
+<a href='1997/index.php'>1997</a>&nbsp;
+<a href='1998/index.php'>1998</a>&nbsp;
+<a href='1999/index.php'>1999</a>&nbsp;
+<a href='2000/index.php'>2000</a>&nbsp;
+<a href='2001/index.php'>2001</a>&nbsp;
+<a href='2002/index.php'>2002</a>&nbsp;
+<a href='2003/index.php'>2003</a>&nbsp;
+<a href='2004/index.php'>2004</a>&nbsp;
+<a href='2005/index.php'>2005</a>&nbsp;
+<a href='2006/index.php'>2006</a>&nbsp;
+<a href='2007/index.php'>2007</a>&nbsp;
+<a href='2008/index.php'>2008</a>&nbsp;
+<a href='2009/index.php'>2009</a>&nbsp;
+<a href='2010/index.php'>2010</a>&nbsp;
+<a href='2011/index.php'>2011</a>&nbsp;
+<a href='2012/index.php'>2012</a>&nbsp;
+<a href='2013/index.php'>2013</a>&nbsp;
+<a href='2014/index.php'>2014</a>&nbsp;
+<a href='2015/index.php'>2015</a>&nbsp;
+</b></dd>
+<dt>Indexed by Thread:</dt>
+<dd><b><a href='1994/threads.php'>1994</a>&nbsp;
+<a href='1995/threads.php'>1995</a>&nbsp;
+<a href='1996/threads.php'>1996</a>&nbsp;
+<a href='1997/threads.php'>1997</a>&nbsp;
+<a href='1998/threads.php'>1998</a>&nbsp;
+<a href='1999/threads.php'>1999</a>&nbsp;
+<a href='2000/threads.php'>2000</a>&nbsp;
+<a href='2001/threads.php'>2001</a>&nbsp;
+<a href='2002/threads.php'>2002</a>&nbsp;
+<a href='2003/threads.php'>2003</a>&nbsp;
+<a href='2004/threads.php'>2004</a>&nbsp;
+<a href='2005/threads.php'>2005</a>&nbsp;
+<a href='2006/threads.php'>2006</a>&nbsp;
+<a href='2007/threads.php'>2007</a>&nbsp;
+<a href='2008/threads.php'>2008</a>&nbsp;
+<a href='2009/threads.php'>2009</a>&nbsp;
+<a href='2010/threads.php'>2010</a>&nbsp;
+<a href='2011/threads.php'>2011</a>&nbsp;
+<a href='2012/threads.php'>2012</a>&nbsp;
+<a href='2013/threads.php'>2013</a>&nbsp;
+<a href='2014/threads.php'>2014</a>&nbsp;
+<a href='2015/threads.php'>2015</a>&nbsp;
+</b></dd>
+</dl>
+
+<p>
+The tech-talk archives are searchable. The archive search index is updated
+overnight, so today's messages won't appear in any search results. Give a
+space- or comma-separated list of words to search for. Only whole words will be
+matched. Check the box to return a list of messages containing <b>any</b> of
+the search words, othewise only messages containing <b>all</b> the words will
+be returned.</p>
+
+<blockquote>
+<form method="post" action="search.php">
+<table border="0"><tr>
+<td>Search tech-talk for:</td>
+<td><input type="text" name="query" value=""></td>
+</tr><tr>
+<td>Match any word:</td>
+<td><input type="checkbox" name="any" value="any"></td>
+</tr><tr>
+<td align="right"><input type="reset" value="Reset"></td>
+<td><input type="submit" value="Search"></td>
+</tr></table>
+</form>
+</blockquote>
+
+<hr>
+
+<h2>
+<a name="subscribe">
+Subscribing to Tech-talk</a></h2>
+
+<p>
+There are two ways to read to tech-talk messages:</p>
+
+<ul>
+<li><a href="#rss">Via RSS</a></li>
+<li><a href="#email">By email</a></li>
+</ul>
+
+<h3>
+<a name="rss">
+RSS Subscription</a></h3>
+
+<p>
+You can be notified about the arrival of new tech-talk messages at the list
+archive without having to subscribe, using the <a href="rss.xml">RSS feed
+<img src="../icons/feeds.png" border="0"></a>.  Visiting that link in a regular
+web browser won't show anything particularly useful; if you aren't familiar with
+RSS <a href="http://en.wikipedia.org/wiki/RSS_%28file_format%29">read this</a>. 
+I use the <a href="http://reader.google.com/">Google Reader</a> for reading RSS
+feeds, but there are many readers available, including one built into the
+Firefox web browser and another in the Thunderbird email program.</p>
+
+<p>
+Note that the tech-talk RSS feed does not include the full text of the messages,
+only the subject line and author's name, but it does provide a link to the
+full message in the archive.</p>
+
+<p>
+The tech-talk list is moderated for non-members, so if you haven't subscribed
+using the Mailman interface (or been grandfathered in from the previous
+listserver) your messages may be held for approval before being circulated. If
+you prefer to use the RSS interface but want to avoid the moderation delay you
+should
+<a href="https://mailman.aps.anl.gov/mailman/listinfo/tech-talk">subscribe</a>
+but configure Mailman to not actually send you any messages.</p>
+
+<h3>
+<a name="email">
+Email Subscription</a></h3>
+
+<p>
+To have tech-talk messages forwarded to your email inbox, visit the
+<a href="https://mailman.aps.anl.gov/mailman/listinfo/tech-talk">mailman
+information page</a> for the tech-talk list and fill in the subscription form
+there.  You can also subscribe via email; send a message to
+<a href="mailto:tech-talk-request@aps.anl.gov">tech-talk-request@aps.anl.gov</a>
+that contains just the work "help" in either the subject or message body for
+further instructions.</p>
+
+<hr>
+<h2>To send a message to a list</h2>
+
+<p>
+In general you should subscribe if you intend to send messages to this list
+(note that you can subscribe but turn message delivery off if you normally read
+tech-talk through the RSS feed). If you aren't subscribed, your message will
+have to be approved by a list moderator, which will delay its delivery. However
+it should eventually get through (unless it looks like spam), so a subscription
+is not essential.</p>
+
+<p>
+Address messages to
+<a href="mailto:tech-talk@aps.anl.gov"><tt>tech-talk@aps.anl.gov</tt></a>, for
+example:</p>
+
+<blockquote>
+<table border=1 width="90%"><tr><td class="yellow">
+
+<table width="100%">
+<tr>
+<td width="10%" align=right>
+<b>Subject:<br>
+From:<br>
+To:</b></td>
+
+<td><i>Please use a relevent subject line</i><br>
+mail_address@your.site<br>
+<a href="mailto:tech-talk@aps.anl.gov">tech-talk@aps.anl.gov</a><br>
+</td>
+</tr>
+
+<tr>
+<td colspan=2>
+&nbsp;<br>
+<tt><i>Your message...</i></tt>
+</td>
+</tr>
+</table>
+
+</td></tr></table>
+</blockquote>
+
+<p>
+Some broken mail programs may try to send messages to the bounce-address
+<tt>tech-talk-bounces@aps.anl.gov</tt> which is the envelope return address used
+for all outgoing messages and is only supposed to receive information about
+messages that can't be delivered. If you do not correct this address before
+sending, your messages will be delayed as they will have to be forwared by the
+list owner.</p>
+
+</td></tr>
+
+<tr>
+<td class='signature'>
+<a href="mailto:Andrew%20Johnson%20&lt;anj_at_aps.anl.gov&gt;">
+ANJ</a>, 05 Aug 2013</td>
+<td class='bottom'>
+<a href='http://validator.w3.org/check?uri=referer'><img src='/epics/icons/vh401.gif' alt='Valid HTML 4.01!' border='0' align='right' height='31' width='88'></a>
+&middot;
+<a href='/epics/index.php' title="EPICS Home at APS">Home</a>
+&middot;
+<a href='/epics/news.php' title="Recent news">News</a>
+&middot;
+<a href='/epics/about.php' title="What is EPICS anyway?">About</a>
+&middot;
+<a href='/epics/base/index.php' title="The core EPICS software for both IOCs and Host tools">Base</a>
+&middot;
+<a href='/epics/modules/index.php' title="Optional support code for IOCs - drivers etc.">Modules</a>
+&middot;
+<a href='/epics/extensions/index.php' title="Tools to monitor and control IOCs">Extensions</a>
+&middot;
+<a href='/epics/distributions/index.php' title="Code collections from base, modules, extensions &amp; elsewhere">Distributions</a>
+&middot;
+<a href='/epics/download/index.php' title="Software downloads">Download</a>
+&middot;
+<br>
+&middot;
+<a href='http://epics-pvdata.sourceforge.net/index.html' title="EPICS Version 4 Project">EPICSv4</a>
+&middot;
+<a href='/epics/irmis/index.php' title="Using RDBs to model installed EPICS IOCs">IRMIS</a>
+&middot;
+<a href='/epics/mail.php' title="Information about our mailing lists">Talk</a>
+&middot;
+<a href='https://bugs.launchpad.net/epics-base' title="The Launchpad bug tracker for epics-base">Bugs</a>
+&middot;
+<a href='/epics/docs/index.php' title="Text not related to a specific release or package">Documents</a>
+&middot;
+<a href='/epics/links.php' title="Related web-sites">Links</a>
+&middot;
+<a href='/epics/license/index.php' title="EPICS Software Licensing">Licensing</a>
+&middot;
+</td></tr></table>
+</body>
+</html>
+uÖ…3      VDç—VDç—;ùÀTV{®4   1:http://www.aps.anl.gov/epics/tech-talk/index.php necko:classified 1 request-method GET response-head HTTP/1.1 200 OK
+Date: Thu, 12 Nov 2015 17:53:53 GMT
+Server: Apache
+X-Frame-Options: SAMEORIGIN
+Last-Modified: Mon, 22 Sep 2014 15:02:26 GMT
+Content-Type: text/html; charset=iso-8859-1
+X-Cache: MISS from wwwcache2-dl-cache, MISS from wwwcache2-dl-icap
+Via: 1.1 wwwcache2-dl-cache (squid/3.3.10), 1.1 wwwcache2-dl-icap (squid/3.3.10)
+ charset windows-1252 uncompressed-len 0 predictor::http://www.aps.anl.gov/epics/epics.css 1,2,1447356311,0 predictor::http://www.aps.anl.gov/epics/icons/feeds.png 1,2,1447356311,0   JUds.png 1,1,1447350832,0   JU

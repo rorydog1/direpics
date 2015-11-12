@@ -1,0 +1,247 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd"><html><head>
+  <meta http-equiv='Content-type' content='text/html;charset=iso-8859-1'>
+  <meta name='description' content='EPICS Base'>
+  <meta name='keywords' content='EPICS,software,process control,scientific software'>
+  <title>EPICS Base</title>
+  <link rel='stylesheet' href='/epics/epics.css' type='text/css'>
+  <link rel='shortcut icon' type='image/x-icon' href='/epics/favicon.ico'>
+  <link rel='icon' type='image/png' href='/epics/icon.png'>
+  <link rel='publisher' href='https://plus.google.com/106275891267278800612/'>
+</head>
+<body bgcolor='#FFFFFF'>
+<table class='page' width='100%' cellspacing='0' border='0'>
+<tr>
+
+<td class='sidebar' width='10%'>
+<a href='/epics/index.php'>
+<img src='/epics/icons/logo101.gif' alt='EPICS Home' align='left' width='101' height='101' border='0'></a>
+</td>
+<td class='main'>
+<div style='display: inline-block; *display: inline; float: left;'><div style='margin: 15px 0 5px 0; text-align: center;'><a href='https://plus.google.com/106275891267278800612/?prsrc=3' style='text-decoration: none; color: #333;'><img src='/epics/icons/g-plus.png' width='32' height='32' alt='g+' style='border: 0;'></a></div><div style='font: bold 13px/16px arial,sans-serif; margin: 0 5px; text-align: center;'><a href='https://plus.google.com/106275891267278800612/?prsrc=3' style='text-decoration: none; color: #333;'> EPICS Page </a></div><div style='font: 13px/16px arial,sans-serif; text-align: center; margin: 0 5px;'><a href='https://plus.google.com/106275891267278800612/?prsrc=3' style='text-decoration: none; color: #333;'> on Google+ </a></div></div><div style='display: inline-block; *display: inline; float: left;'><div style='margin: 15px 0 5px 0; text-align: center;'><a href='https://plus.google.com/u/0/communities/113160068949106802880' style='text-decoration: none; color: #333;'><img src='/epics/icons/g-communities.png' width='32' height='32' alt='g+ Communities' style='border: 0;'></a></div><div style='font: bold 13px/16px arial,sans-serif; margin: 0 5px; text-align: center;'><a href='https://plus.google.com/u/0/communities/113160068949106802880' style='text-decoration: none; color: #333;'> EPICS Users </a></div><div style='font: 13px/16px arial,sans-serif; text-align: center;'><a href='https://plus.google.com/u/0/communities/113160068949106802880' style='text-decoration: none; color: #333;'> on Google+ </a></div></div><a href='http://www.anl.gov/'><img src='/epics/icons/ANL_H_White.png' align='right' border='0' alt='Argonne National Laboratory' width='250' height='115'></a>
+<h1 align='center'>
+Experimental Physics and <br>Industrial Control System</h1>
+</td></tr>
+
+<tr>
+<td class='sidebar' valign='top'>
+<ul id='navlist'>
+<li class='spacer'></li>
+<li><a href='/epics/index.php' title="EPICS Home at APS">Home</a></li>
+<li><a href='/epics/news.php' title="Recent news">News</a></li>
+<li><a href='/epics/about.php' title="What is EPICS anyway?">About</a></li>
+<li><b>Base</b>
+<ul>
+<li><a href='https://launchpad.net/epics-base' title="The epics-base project at Launchpad">Launchpad</a>
+<ul>
+<li><a href='https://code.launchpad.net/epics-base' title="Source code, old and new">Branches</a></li>
+<li><a href='https://bugs.launchpad.net/epics-base' title="Reports and fixes">Bugs</a></li>
+<li><a href='https://blueprints.launchpad.net/epics-base' title="Development Plans">Blueprints</a></li>
+</ul>
+</li>
+<li><a href='/epics/base/R3-15/index.php' title="Current releases">R3.15</a>
+<ul>
+<li><a href='/epics/base/R3-15/2.php' title="Latest current release (3.15.2 on 2015-05-14)">R3.15.2</a></li>
+<li><a href='/epics/base/R3-15/1.php' title="First of the new series (3.15.1 on 2014-12-01)">R3.15.1</a></li>
+<li><a href='https://jenkins.aps.anl.gov/job/epics-base-3.15/' title="Build &amp; test status for 3.15 branch">Jenkins</a></li>
+</ul>
+</li>
+<li><a href='/epics/base/R3-14/index.php' title="Stable releases">R3.14</a>
+<ul>
+<li><a href='/epics/base/R3-14/12.php' title="Stable releases (3.14.12.5 on 2015-03-24)">R3.14.12</a></li>
+<li><a href='https://jenkins.aps.anl.gov/job/epics-base-3.14/' title="Build &amp; test status for 3.14 branch">Jenkins</a></li>
+<li><a href='/epics/base/R3-14/unbundled.php' title="Device/drivers from R3.13, converted to R3.14">Old drvs</a></li>
+</ul>
+</li>
+<li><a href='/epics/base/R3-13.php' title="Frozen, still used in a few places">R3.13</a></li>
+<li><a href='/epics/base/R3-12.php' title="Older versions, fossilized">R3.12</a></li>
+<li><a href='/epics/base/R3-11.php' title="Pre-historic">R3.11</a></li>
+<li><a href='/epics/base/vxWorks6.php' title="Information about using vxWorks 6.x with EPICS">vxWorks 6.x</a>
+<ul>
+<li><a href='/epics/base/tornado.php' title="Information about using vxWorks 5.x with EPICS">Tornado</a></li>
+<li><a href='/epics/base/tornado-linux.php' title="Using Tornado 2.2 with a Linux host">T2.2 Linux</a></li>
+<li><a href='/epics/base/ppc.php' title="Some differences between vxWorks on 68K and PowerPC">PowerPC</a></li>
+<li><a href='/epics/base/T20xConfig.html' title="Instructions on configuring vxWorks 5.x for use with EPICS">T20xConfig</a></li>
+</ul>
+</li>
+<li><a href='/epics/base/RTEMS.php' title="Information about running EPICS using RTEMS">RTEMS</a>
+<ul>
+<li><a href='/epics/base/RTEMS/tutorial/' title="Getting started with EPICS on RTEMS">Tutorial</a></li>
+</ul>
+</li>
+<li><a href='/epics/base/win32.php' title="Building EPICS on Microsoft Windows">MS Windows</a></li>
+<li><a href='/epics/download/base/index.php' title="EPICS Base Downloads">Download</a></li>
+<li><a href='https://www.ohloh.net/p/epics-base' title="Development statistics from Ohloh.net">Statistics</a></li>
+</ul>
+</li>
+<li><a href='/epics/modules/index.php' title="Optional support code for IOCs - drivers etc.">Modules</a></li>
+<li><a href='/epics/extensions/index.php' title="Tools to monitor and control IOCs">Extensions</a></li>
+<li><a href='/epics/distributions/index.php' title="Code collections from base, modules, extensions &amp; elsewhere">Distributions</a></li>
+<li><a href='/epics/download/index.php' title="Software downloads">Download</a></li>
+<li><a href='http://epics-pvdata.sourceforge.net/index.html' title="EPICS Version 4 Project">EPICSv4</a></li>
+<li><a href='/epics/irmis/index.php' title="Using RDBs to model installed EPICS IOCs">IRMIS</a></li>
+<li><a href='/epics/mail.php' title="Information about our mailing lists">Talk</a></li>
+<li><a href='https://bugs.launchpad.net/epics-base' title="The Launchpad bug tracker for epics-base">Bugs</a></li>
+<li><a href='/epics/docs/index.php' title="Text not related to a specific release or package">Documents</a></li>
+<li><a href='/epics/links.php' title="Related web-sites">Links</a></li>
+<li><a href='/epics/license/index.php' title="EPICS Software Licensing">Licensing</a></li>
+<li class='spacer'></li>
+</ul>
+<p align='center'>
+<a href='/epics/base/index.php?format=printer'>
+Format page<br>
+for printing</a></p>
+
+<form method="get" action="http://www.google.com/custom"><table align="center"
+bgcolor="#FFFFFF" cellspacing="0" border="0"><tr><td align="center"><a
+href="http://www.google.com/"><label for="q"><img border="0" alt="Google"
+src="/epics/icons/Google25.gif"  align="middle"></label></a><br><input
+type="text" name="q" id="q" size="10" maxlength="255" value=""></td></tr>
+</table><input type="hidden" name="cof"
+value="S:http://www.aps.anl.gov/epics;GL:0;VLC:#9f0000;AH:center;BGC:white;LH:115;LC:#00009f;L:http://www.aps.anl.gov/epics/icons/header.png;ALC:#009f00;LW:750;T:black;AWFID:e3f314152c5d8667;">
+<input type="hidden" name="domains" value="aps.anl.gov"><input type="hidden"
+name="sitesearch" value="aps.anl.gov"> </form>
+<br>
+<form method="post" action="/epics/tech-talk/search.php">
+<table align="center" bgcolor="#FFFFFF" cellspacing="0" border="0">
+<tr><th align="center"><small>Search&nbsp;Tech-talk</small></th></tr>
+<tr><td><input type="text" name="query" size="10" value=""></td></tr>
+</table>
+</form>
+<td class='main'>
+
+<h2>
+EPICS Base</h2>
+
+<p>
+This is the main core of EPICS, comprising the build system and tools, common
+and OS-interface libraries, Channel Access client and server libraries, static
+and run-time database access routines, the database processing code, and
+standard record, device and driver support.</p>
+
+<h3>
+Code Management</h3>
+
+<p>
+Since early 2010 the EPICS Base source code has been managed using the
+<a href="http://bazaar.canonical.com/en/">Bazaar version control</a> software,
+hosted at <a href="https://launchpad.net/epics-base">Launchpad.net</a>. We also
+use Launchpad for <a href="https://bugs.launchpad.net/epics-base">bug
+tracking</a> and <a href="https://blueprints.launchpad.net/epics-base">planning
+new features</a>.</p>
+
+<h3>
+Versions</h3>
+
+<p>
+There are several different versions of Base that are still in use at the
+various EPICS sites.  Separate pages provide information relating to each
+major release; the differences between minor release versions are covered
+within the relevent major release page.</p>
+
+<ul>
+<li>
+<a href="R3-15/index.php">
+Release 3.15</a> (2012-present)</li>
+
+<li>
+<a href="R3-14/index.php">
+Release 3.14</a> (2002-present)</li>
+
+<li>
+<a href="R3-13.php">
+Release 3.13</a> (1996-2003)</li>
+
+<li>
+<a href="R3-12.php">
+Release 3.12</a> (1995)</li>
+
+<li>
+<a href="R3-11.php">
+Release 3.11</a> (1991-1994)</li>
+
+</ul>
+
+<h3>
+Operating System Hints</h3>
+
+<p>
+If you are using vxWorks 6.x, look at the <a href="vxWorks6.php">vxWorks 6.x</a>
+page for help on configuring and patching vxWorks for use with EPICS. The
+<a href="tornado.php">Tornado</a> page provides help for vxWorks 5.x/Tornado 2
+users.  Look at the <a href="tornado-linux.php">Tornado 2.2 and Linux</a> page
+for building vxWorks 5.5 code on a Linux host.  The <a href="ppc.php">Power
+PC</a> page was written for sites upgrading from MC680x0 CPUs.</p>
+
+<p>
+The <a href="RTEMS.php">RTEMS</a> page provides some pointers to information
+about the host and target support available for that operating system. Several
+EPICS sites are now working seriously with this operating system.  Eric Norum's
+<a href="RTEMS/tutorial/">Getting started with EPICS on RTEMS</a> tutorial
+provides a step by step guide for newcomers.</p>
+
+<p>
+The <a href="win32.php">MS Windows</a> page gives pointers to the different
+tools and compilers both commercial and free (as in beer) that are used to build
+EPICS on Microsoft Windows systems.</p>
+
+<h3>
+Development Statistics</h3>
+
+<p>
+The Ohloh.net website monitors the
+<a href="https://www.ohloh.net/p/epics-base">EPICS Base project</a>.</p>
+
+</td></tr>
+
+<tr>
+<td class='signature'>
+<a href="mailto:Andrew%20Johnson%20&lt;anj_at_aps.anl.gov&gt;">
+ANJ</a>, 19 Nov 2014</td>
+<td class='bottom'>
+<a href='http://validator.w3.org/check?uri=referer'><img src='/epics/icons/vh401.gif' alt='Valid HTML 4.01!' border='0' align='right' height='31' width='88'></a>
+&middot;
+<a href='/epics/index.php' title="EPICS Home at APS">Home</a>
+&middot;
+<a href='/epics/news.php' title="Recent news">News</a>
+&middot;
+<a href='/epics/about.php' title="What is EPICS anyway?">About</a>
+&middot;
+<b>
+Base</b>
+&middot;
+<a href='/epics/modules/index.php' title="Optional support code for IOCs - drivers etc.">Modules</a>
+&middot;
+<a href='/epics/extensions/index.php' title="Tools to monitor and control IOCs">Extensions</a>
+&middot;
+<a href='/epics/distributions/index.php' title="Code collections from base, modules, extensions &amp; elsewhere">Distributions</a>
+&middot;
+<a href='/epics/download/index.php' title="Software downloads">Download</a>
+&middot;
+<br>
+&middot;
+<a href='http://epics-pvdata.sourceforge.net/index.html' title="EPICS Version 4 Project">EPICSv4</a>
+&middot;
+<a href='/epics/irmis/index.php' title="Using RDBs to model installed EPICS IOCs">IRMIS</a>
+&middot;
+<a href='/epics/mail.php' title="Information about our mailing lists">Talk</a>
+&middot;
+<a href='https://bugs.launchpad.net/epics-base' title="The Launchpad bug tracker for epics-base">Bugs</a>
+&middot;
+<a href='/epics/docs/index.php' title="Text not related to a specific release or package">Documents</a>
+&middot;
+<a href='/epics/links.php' title="Related web-sites">Links</a>
+&middot;
+<a href='/epics/license/index.php' title="EPICS Software Licensing">Licensing</a>
+&middot;
+</td></tr></table>
+</body>
+</html>
+RX\/þ*      VDñVDò;ËãÖVsÅ   #:http://www.aps.anl.gov/epics/base/ necko:classified 1 request-method GET response-head HTTP/1.1 200 OK
+Date: Thu, 12 Nov 2015 14:10:58 GMT
+Server: Apache
+X-Frame-Options: SAMEORIGIN
+Last-Modified: Wed, 19 Nov 2014 22:17:17 GMT
+Content-Type: text/html; charset=iso-8859-1
+X-Cache: MISS from wwwcache1-dl-cache, MISS from wwwcache1-dl-icap
+Via: 1.1 wwwcache1-dl-cache (squid/3.3.10), 1.1 wwwcache1-dl-icap (squid/3.3.10)
+ charset windows-1252 uncompressed-len 0 predictor::resource-count 7 predictor::http://www.aps.anl.gov/epics/epics.css 1,1,1447337457,0 predictor::http://www.aps.anl.gov/epics/icons/logo101.gif 1,1,1447337457,0 predictor::http://www.aps.anl.gov/epics/icons/g-plus.png 1,1,1447337457,0 predictor::http://www.aps.anl.gov/epics/icons/g-communities.png 1,1,1447337457,0 predictor::http://www.aps.anl.gov/epics/icons/ANL_H_White.png 1,1,1447337457,0 predictor::http://www.aps.anl.gov/epics/icons/Google25.gif 1,1,1447337457,0 predictor::http://www.aps.anl.gov/epics/icons/vh401.gif 1,1,1447337457,0   0&

@@ -1,0 +1,14 @@
+<?xml version="1.0"?>
+<application-state>
+  <context id="">
+    <application id="gnome-control-center.desktop" open-window-count="0" score="89" last-seen="1447335090"/>
+    <application id="firefox.desktop" open-window-count="1" score="1498" last-seen="1447362658"/>
+    <application id="nautilus.desktop" open-window-count="1" score="14" last-seen="1447355910"/>
+    <application id="file-roller.desktop" open-window-count="0" score="2" last-seen="1447355603"/>
+    <application id="gedit.desktop" open-window-count="1" score="164" last-seen="1447358920"/>
+    <application id="gpk-dbus-service.desktop" open-window-count="0" score="1" last-seen="1447352070"/>
+    <application id="gnome-terminal.desktop" open-window-count="5" score="2427" last-seen="1447362661"/>
+    <application id="gpk-update-viewer.desktop" open-window-count="0" score="273" last-seen="1447330121"/>
+    <application id="gpk-application.desktop" open-window-count="0" score="0" last-seen="1447329985"/>
+  </context>
+</application-state>

@@ -1,0 +1,662 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd"><html><head>
+  <meta http-equiv='Content-type' content='text/html;charset=iso-8859-1'>
+  <meta name='description' content='EPICS Re: edm troubles'>
+  <meta name='keywords' content='EPICS,software,process control,scientific software'>
+  <title>EPICS Re: edm troubles</title>
+  <link rel='stylesheet' href='/epics/epics.css' type='text/css'>
+  <link rel='shortcut icon' type='image/x-icon' href='/epics/favicon.ico'>
+  <link rel='icon' type='image/png' href='/epics/icon.png'>
+  <link rel='publisher' href='https://plus.google.com/106275891267278800612/'>
+  <link rel='alternate' title='EPICS Tech-talk via RSS' href='../rss.xml' type='application/rss+xml'>
+  <meta name='ROBOTS' content='INDEX, NOFOLLOW'>  <link rel='index' href='../index.php'>
+  <link rel='top' href='index.php'>
+  <link rel='up' href='msg00010.php'>
+  <link rel='first' href='msg00010.php'>
+  <link rel='prev' href='msg00009.php'>
+  <link rel='next' href='msg00011.php'>
+  <link rel='last' href='msg00010.php'>
+  <style type='text/css'>
+    <!--
+  pre {width: 100%; white-space: -moz-pre-wrap; white-space: pre-wrap;}    -->
+  </style>
+  <script type='text/javascript' src='https://apis.google.com/js/plusone.js'>
+    </script>
+</head>
+<body bgcolor='#FFFFFF'>
+<table class='page' width='100%' cellspacing='0' border='0'>
+<tr>
+
+<td class='sidebar' width='10%'>
+<a href='/epics/index.php'>
+<img src='/epics/icons/logo101.gif' alt='EPICS Home' align='left' width='101' height='101' border='0'></a>
+</td>
+<td class='main'>
+<div style='display: inline-block; *display: inline; float: left;'><div style='margin: 15px 0 5px 0; text-align: center;'><a href='https://plus.google.com/106275891267278800612/?prsrc=3' style='text-decoration: none; color: #333;'><img src='/epics/icons/g-plus.png' width='32' height='32' alt='g+' style='border: 0;'></a></div><div style='font: bold 13px/16px arial,sans-serif; margin: 0 5px; text-align: center;'><a href='https://plus.google.com/106275891267278800612/?prsrc=3' style='text-decoration: none; color: #333;'> EPICS Page </a></div><div style='font: 13px/16px arial,sans-serif; text-align: center; margin: 0 5px;'><a href='https://plus.google.com/106275891267278800612/?prsrc=3' style='text-decoration: none; color: #333;'> on Google+ </a></div></div><div style='display: inline-block; *display: inline; float: left;'><div style='margin: 15px 0 5px 0; text-align: center;'><a href='https://plus.google.com/u/0/communities/113160068949106802880' style='text-decoration: none; color: #333;'><img src='/epics/icons/g-communities.png' width='32' height='32' alt='g+ Communities' style='border: 0;'></a></div><div style='font: bold 13px/16px arial,sans-serif; margin: 0 5px; text-align: center;'><a href='https://plus.google.com/u/0/communities/113160068949106802880' style='text-decoration: none; color: #333;'> EPICS Users </a></div><div style='font: 13px/16px arial,sans-serif; text-align: center;'><a href='https://plus.google.com/u/0/communities/113160068949106802880' style='text-decoration: none; color: #333;'> on Google+ </a></div></div><a href='http://www.anl.gov/'><img src='/epics/icons/ANL_H_White.png' align='right' border='0' alt='Argonne National Laboratory' width='250' height='115'></a>
+<h1 align='center'>
+Experimental Physics and <br>Industrial Control System</h1>
+</td></tr>
+
+<tr>
+<td class='sidebar' valign='top'>
+<ul id='navlist'>
+<li class='spacer'></li>
+<li><a href='/epics/index.php' title="EPICS Home at APS">Home</a></li>
+<li><a href='/epics/news.php' title="Recent news">News</a></li>
+<li><a href='/epics/about.php' title="What is EPICS anyway?">About</a></li>
+<li><a href='/epics/base/index.php' title="The core EPICS software for both IOCs and Host tools">Base</a></li>
+<li><a href='/epics/modules/index.php' title="Optional support code for IOCs - drivers etc.">Modules</a></li>
+<li><a href='/epics/extensions/index.php' title="Tools to monitor and control IOCs">Extensions</a></li>
+<li><a href='/epics/distributions/index.php' title="Code collections from base, modules, extensions &amp; elsewhere">Distributions</a></li>
+<li><a href='/epics/download/index.php' title="Software downloads">Download</a></li>
+<li><a href='http://epics-pvdata.sourceforge.net/index.html' title="EPICS Version 4 Project">EPICSv4</a></li>
+<li><a href='/epics/irmis/index.php' title="Using RDBs to model installed EPICS IOCs">IRMIS</a></li>
+<li><a href='/epics/mail.php' title="Information about our mailing lists">Talk</a>
+<ul>
+<li><a href='/epics/tech-talk/index.php' title="The main mailing list, our online support channel">Tech-Talk</a>
+<ul>
+<li><a href='https://mailman.aps.anl.gov/mailman/listinfo/tech-talk' title="Subscribing to the list">Mailman</a></li>
+<li><a href='/epics/tech-talk/search.php' title="Search the tech-talk archives">Search</a></li>
+<li><a href='/epics/tech-talk/2015/index.php' title="Browse tech-talk messages from 2015">2015</a></li>
+<li><a href='/epics/tech-talk/2014/index.php' title="Browse Tech-talk messages from 2014">2014</a></li>
+<li><a href='/epics/tech-talk/2013/index.php' title="Browse Tech-talk messages from 2013">2013</a></li>
+<li><a href='/epics/tech-talk/2012/index.php' title="Browse Tech-talk messages from 2012">2012</a></li>
+<li><a href='/epics/tech-talk/2011/index.php' title="Browse Tech-talk messages from 2011">2011</a></li>
+<li><a href='/epics/tech-talk/2010/index.php' title="Browse Tech-talk messages from 2010">2010</a></li>
+<li><a href='/epics/tech-talk/2009/index.php' title="Browse Tech-talk messages from 2009">2009</a></li>
+<li><a href='/epics/tech-talk/2008/index.php' title="Browse Tech-talk messages from 2008">2008</a></li>
+<li><a href='/epics/tech-talk/2007/index.php' title="Browse Tech-talk messages from 2007">2007</a></li>
+<li><a href='/epics/tech-talk/2006/index.php' title="Browse Tech-talk messages from 2006">2006</a></li>
+<li><a href='/epics/tech-talk/2005/index.php' title="Browse Tech-talk messages from 2005">2005</a></li>
+<li><a href='/epics/tech-talk/2004/index.php' title="Browse Tech-talk messages from 2004">2004</a></li>
+<li><a href='/epics/tech-talk/2003/index.php' title="Browse Tech-talk messages from 2003">2003</a></li>
+<li><a href='/epics/tech-talk/2002/index.php' title="Browse Tech-talk messages from 2002">2002</a></li>
+<li><a href='/epics/tech-talk/2001/index.php' title="Browse Tech-talk messages from 2001">2001</a></li>
+<li><a href='/epics/tech-talk/2000/index.php' title="Browse Tech-talk messages from 2000">2000</a></li>
+<li><a href='/epics/tech-talk/1999/index.php' title="Browse Tech-talk messages from 1999">1999</a></li>
+<li><a href='/epics/tech-talk/1998/index.php' title="Browse Tech-talk messages from 1998">1998</a></li>
+<li><a href='/epics/tech-talk/1997/index.php' title="Browse Tech-talk messages from 1997">1997</a></li>
+<li><a href='/epics/tech-talk/1996/index.php' title="Browse Tech-talk messages from 1996">1996</a></li>
+<li><a href='/epics/tech-talk/1995/index.php' title="Browse Tech-talk messages from 1995">1995</a></li>
+<li><a href='/epics/tech-talk/1994/index.php' title="Browse Tech-talk messages from 1994">1994</a></li>
+</ul>
+</li>
+<li><a href='/epics/core-talk/index.php' title="Discussions between Base developers">Core-talk</a>
+<ul>
+<li><a href='https://mailman.aps.anl.gov/mailman/listinfo/core-talk' title="Subscribing to the list">Mailman</a></li>
+<li><a href='/epics/core-talk/search.php' title="Search the core-talk archives">Search</a></li>
+<li><a href='/epics/core-talk/2015/index.php' title="Browse core-talk messages from 2015">2015</a></li>
+</ul>
+</li>
+<li><a href='/epics/qti-talk/index.php' title="Discussions about the QT Initiative">QTi-talk</a>
+<ul>
+<li><a href='https://mailman.aps.anl.gov/mailman/listinfo/qti-talk' title="Subscribing to the list">Mailman</a></li>
+<li><a href='/epics/qti-talk/search.php' title="Search the qti-talk archives">Search</a></li>
+<li><a href='/epics/qti-talk/2015/index.php' title="Browse QTi-talk messages from 2015">2015</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href='https://bugs.launchpad.net/epics-base' title="The Launchpad bug tracker for epics-base">Bugs</a></li>
+<li><a href='/epics/docs/index.php' title="Text not related to a specific release or package">Documents</a></li>
+<li><a href='/epics/links.php' title="Related web-sites">Links</a></li>
+<li><a href='/epics/license/index.php' title="EPICS Software Licensing">Licensing</a></li>
+<li class='spacer'></li>
+</ul>
+<p align='center'>
+<a href='/epics/tech-talk/2008/msg00010.php?format=printer'>
+Format page<br>
+for printing</a></p>
+
+<form method="get" action="http://www.google.com/custom"><table align="center"
+bgcolor="#FFFFFF" cellspacing="0" border="0"><tr><td align="center"><a
+href="http://www.google.com/"><label for="q"><img border="0" alt="Google"
+src="/epics/icons/Google25.gif"  align="middle"></label></a><br><input
+type="text" name="q" id="q" size="10" maxlength="255" value=""></td></tr>
+</table><input type="hidden" name="cof"
+value="S:http://www.aps.anl.gov/epics;GL:0;VLC:#9f0000;AH:center;BGC:white;LH:115;LC:#00009f;L:http://www.aps.anl.gov/epics/icons/header.png;ALC:#009f00;LW:750;T:black;AWFID:e3f314152c5d8667;">
+<input type="hidden" name="domains" value="aps.anl.gov"><input type="hidden"
+name="sitesearch" value="aps.anl.gov"> </form>
+<br>
+<form method="post" action="/epics/tech-talk/search.php">
+<table align="center" bgcolor="#FFFFFF" cellspacing="0" border="0">
+<tr><th align="center"><small>Search&nbsp;Tech-talk</small></th></tr>
+<tr><td><input type="text" name="query" size="10" value=""></td></tr>
+</table>
+</form>
+<td class='main'>
+<!-- MHonArc v2.6.8 -->
+<!--X-Subject: Re: edm troubles -->
+<!--X-From-R13: Xbua Evapynve <fvapynvewjNbeay.tbi> -->
+<!--X-Date: Mon, 07 Jan 2008 12:30:14 &#45;0500 -->
+<!--X-Message-Id: 478261A6.5070203@ornl.gov -->
+<!--X-Content-Type: multipart/mixed -->
+<!--X-Reference: 4781FF1D.9070908@cea.fr -->
+<!--X-Head-End-->
+<!--X-Body-Begin-->
+<!--X-User-Header-->
+<!--X-User-Header-End-->
+<!--X-TopPNI-->
+<table border=0><tr>
+<td><a href='../1994/index.php'>1994</a>&nbsp;
+<a href='../1995/index.php'>1995</a>&nbsp;
+<a href='../1996/index.php'>1996</a>&nbsp;
+<a href='../1997/index.php'>1997</a>&nbsp;
+<a href='../1998/index.php'>1998</a>&nbsp;
+<a href='../1999/index.php'>1999</a>&nbsp;
+<a href='../2000/index.php'>2000</a>&nbsp;
+<a href='../2001/index.php'>2001</a>&nbsp;
+<a href='../2002/index.php'>2002</a>&nbsp;
+<a href='../2003/index.php'>2003</a>&nbsp;
+<a href='../2004/index.php'>2004</a>&nbsp;
+<a href='../2005/index.php'>2005</a>&nbsp;
+<a href='../2006/index.php'>2006</a>&nbsp;
+<a href='../2007/index.php'>2007</a>&nbsp;
+&lt;<a href='../2008/index.php?January'>2008</a>&gt;&nbsp;
+<a href='../2009/index.php'>2009</a>&nbsp;
+<a href='../2010/index.php'>2010</a>&nbsp;
+<a href='../2011/index.php'>2011</a>&nbsp;
+<a href='../2012/index.php'>2012</a>&nbsp;
+<a href='../2013/index.php'>2013</a>&nbsp;
+<a href='../2014/index.php'>2014</a>&nbsp;
+<a href='../2015/index.php'>2015</a>&nbsp;
+</td>
+<td><b>Index </b></td>
+<td><a href='../1994/threads.php'>1994</a>&nbsp;
+<a href='../1995/threads.php'>1995</a>&nbsp;
+<a href='../1996/threads.php'>1996</a>&nbsp;
+<a href='../1997/threads.php'>1997</a>&nbsp;
+<a href='../1998/threads.php'>1998</a>&nbsp;
+<a href='../1999/threads.php'>1999</a>&nbsp;
+<a href='../2000/threads.php'>2000</a>&nbsp;
+<a href='../2001/threads.php'>2001</a>&nbsp;
+<a href='../2002/threads.php'>2002</a>&nbsp;
+<a href='../2003/threads.php'>2003</a>&nbsp;
+<a href='../2004/threads.php'>2004</a>&nbsp;
+<a href='../2005/threads.php'>2005</a>&nbsp;
+<a href='../2006/threads.php'>2006</a>&nbsp;
+<a href='../2007/threads.php'>2007</a>&nbsp;
+&lt;<a href='../2008/threads.php'>2008</a>&gt;&nbsp;
+<a href='../2009/threads.php'>2009</a>&nbsp;
+<a href='../2010/threads.php'>2010</a>&nbsp;
+<a href='../2011/threads.php'>2011</a>&nbsp;
+<a href='../2012/threads.php'>2012</a>&nbsp;
+<a href='../2013/threads.php'>2013</a>&nbsp;
+<a href='../2014/threads.php'>2014</a>&nbsp;
+<a href='../2015/threads.php'>2015</a>&nbsp;
+</td>
+</tr>
+<tr>
+<th align='center'><a href='msg00009.php'>&lt;==</a> Date <a href='msg00011.php'>==&gt;</a></th>
+<td></td>
+<th align='center'><a href='msg00009.php'>&lt;==</a> Thread <a href='msg00012.php'>==&gt;</a></th>
+</tr></table>
+
+<!--X-TopPNI-End-->
+<!--X-MsgBody-->
+<!--X-Subject-Header-Begin-->
+<hr>
+<div style='float: right'><g:plusone></g:plusone></div>
+<!--X-Subject-Header-End-->
+<!--X-Head-of-Message-->
+<table border=0>
+<tr>
+<td align="right" valign="top">
+<em>Subject</em>:</td>
+<td align="left">
+<b>Re: edm troubles</b></td>
+</tr>
+
+<tr>
+<td align="right" valign="top">
+<em>From</em>:</td>
+<td align="left">
+John Sinclair &lt;<a href="mailto:sinclairjw_at_ornl.gov">sinclairjw@ornl.gov</a>&gt;</td>
+</tr>
+
+<tr>
+<td align="right" valign="top">
+<em>To</em>:</td>
+<td align="left">
+mattei pierre &lt;<a href="mailto:pierre.mattei_at_cea.fr">pierre.mattei@cea.fr</a>&gt;, Tech-talk &lt;<a href="mailto:tech-talk_at_aps.anl.gov">tech-talk@aps.anl.gov</a>&gt;</td>
+</tr>
+
+<tr>
+<td align="right" valign="top">
+<em>Date</em>:</td>
+<td align="left">
+Mon, 07 Jan 2008 12:30:14 -0500</td>
+</tr>
+
+</table>
+<!--X-Head-of-Message-End-->
+<!--X-Head-Body-Sep-Begin-->
+<!--X-Head-Body-Sep-End-->
+<!--X-Body-of-Message-->
+<tt>Pierre,</tt><br>
+<br>
+<tt>There is a problem with the Xt lib version distributed with RHEL5. 
+Someone suggested that the latest<br>
+version may be fixed but I'm not entirely sure about this. At the least, 
+make sure you do have the latest<br>
+version of X and Xt lib. Motif is not a problem.</tt><br>
+<br>
+<tt>I have enclosed a test program that may demonstrate the problem. To 
+build, place 1.c and makefile<br>
+in a directory, cd into that directory, and type &quot;make&quot;. This will build 
+the executable file named 1.<br>
+To run type &quot;./1&quot;. The program launches a window with a menu bar to open 
+additional windows.<br>
+These additional windows contain a menu bar with an &quot;exit&quot; entry to 
+close the window. In my<br>
+experience, opening several of these windows (sometimes a few, sometimes 
+20-30) and then closing<br>
+them eventually causes the same crash (at least the crash dump looks the 
+same).</tt><br>
+<br>
+<tt>This crash has an interesting history. As you may know, the XFree86 
+development was taken over<br>
+by X.org because of a license issue in a particular version of XFree86. 
+This same bug existed in a<br>
+past version of the XFree86 distribution. Fortunately, it was fixed 
+promptly. When I look at the crash dump,<br>
+I strongly suspect the X.org development is following along the same 
+path and has duplicated this bug.</tt><br>
+<br>
+<tt>I am sending a copy of this reply to tech-talk in case anyone has solved 
+this problem.</tt><br>
+<br>
+<tt>John Sinclair</tt><br>
+<br>
+<tt>mattei pierre wrote:
+</tt><blockquote style="border-left: #0000FF solid 0.1em; margin: 0em; padding-left: 1.0em"><tt>Hello John,<br>
+I am switching from MEDM to EDM for a new application and I have some 
+troubles during execution. EDM have sometimes crashes with one of 
+these messages :<br>
+-segmentation error  (most frequently)<br>
+-xtErrorHandler - Object &quot;(null)&quot; does not have windowed ancestor<br>
+-xtErrorHandler - Cannot find callback list in XtCallCallbacks<br>
+ Too many Xt errors<br>
+-xtErrorHandler - XtRemoveGrab asked to remove a widget not on the list<br>
+-xtErrorHandler - Cannot find callback list in XtCallCallbacks<br>
+ Too many Xt error</tt><br>
+<br>
+<pre style="margin: 0em;">I think I follow all instructions during the installation.
+I uses RHEL5, EPICS base-3.14.9, openmotif, X11 etc...</pre><br>
+<tt>Have you any ideas of something I have done wrong ?</tt><br>
+<br>
+<tt>Best regards,</tt><br>
+<br>
+</blockquote><br>
+<pre>/* ---------------------------------------------
+ *
+ * This application creates a main window and raises it
+ * approximately every 3 seconds. The only menu option
+ * is &quot;exit&quot;.
+ *
+ */
+
+#include &lt;stdio.h&gt;
+#include &lt;stdlib.h&gt;
+#include &lt;fcntl.h&gt;
+#include &lt;math.h&gt;
+#include &lt;sys/types.h&gt;
+#include &lt;sys/time.h&gt;
+#include &lt;time.h&gt;
+#include &lt;wait.h&gt;
+#include &lt;signal.h&gt;
+#include &lt;unistd.h&gt;
+#include &lt;errno.h&gt;
+#include &lt;limits.h&gt;
+
+#include &lt;X11/Xlib.h&gt;
+#include &lt;X11/Intrinsic.h&gt;
+#include &lt;Xm/Xm.h&gt;
+#include &lt;Xm/AtomMgr.h&gt;
+#include &lt;Xm/Protocols.h&gt;
+#include &lt;Xm/MainW.h&gt;
+#include &lt;Xm/PushB.h&gt;
+#include &lt;Xm/CascadeB.h&gt;
+#include &lt;Xm/RowColumn.h&gt;
+
+static int g_exit = 0;
+XtAppContext app;
+Display *display;
+Widget widgetToKill = NULL;
+
+void exit_cb (
+  Widget w,
+  XtPointer client,
+  XtPointer call )
+{
+
+int *flag = (int *) client;
+
+  printf( &quot;exit_cb callback function was invoked\n&quot; );
+
+  *flag = 1;
+
+}
+
+void exitOne_cb (
+  Widget w,
+  XtPointer client,
+  XtPointer call )
+{
+
+  printf( &quot;exitOne_cb callback function was invoked\n&quot; );
+
+  do {
+    widgetToKill = w;
+    w = XtParent( w );
+  } while ( w );
+
+}
+
+void newWin_cb (
+  Widget w,
+  XtPointer client,
+  XtPointer call )
+{
+
+Widget appTop1, mainWin1, menuBar1, filePullDown1, fileCascade1, exitB1;
+XmString menuStr, str;
+Atom wm_delete_window;
+
+  appTop1 = XtVaAppCreateShell( NULL, &quot;test&quot;, applicationShellWidgetClass,
+   display,
+   XmNiconic, False,
+   XmNmappedWhenManaged, True,
+   NULL );
+
+  mainWin1 = XtVaCreateManagedWidget( &quot;main&quot;, xmMainWindowWidgetClass,
+   appTop1,
+   XmNscrollBarDisplayPolicy, XmAS_NEEDED,
+   XmNscrollingPolicy, XmAUTOMATIC,
+   NULL );
+
+  menuBar1 = XmCreateMenuBar( mainWin1, &quot;menubar&quot;, NULL, 0 );
+
+  filePullDown1 = XmCreatePulldownMenu( menuBar1, &quot;file&quot;, NULL, 0 );
+
+  menuStr = XmStringCreateLocalized( &quot;file&quot; );
+  fileCascade1 = XtVaCreateManagedWidget( &quot;filemenu&quot;, xmCascadeButtonWidgetClass,
+   menuBar1,
+   XmNlabelString, menuStr,
+   XmNmnemonic, 'f',
+   XmNsubMenuId, filePullDown1,
+   NULL );
+  XmStringFree( menuStr );
+
+  str = XmStringCreateLocalized( &quot;exit&quot; );
+  exitB1 = XtVaCreateManagedWidget( &quot;pb&quot;, xmPushButtonWidgetClass,
+   filePullDown1,
+   XmNlabelString, str,
+   NULL );
+  XmStringFree( str );
+  XtAddCallback( exitB1, XmNactivateCallback, exitOne_cb,
+   (XtPointer) &amp;g_exit );
+
+  XtManageChild( menuBar1 );
+
+  XtRealizeWidget( appTop1 );
+
+  wm_delete_window = XmInternAtom( display, &quot;WM_DELETE_WINDOW&quot;, False );
+  XmAddWMProtocolCallback( appTop1, wm_delete_window,
+   exitOne_cb, (XtPointer) &amp;g_exit );
+  XtVaSetValues( appTop1, XmNdeleteResponse, XmDO_NOTHING, NULL );
+
+}
+
+int main (
+  int argc,
+  char **argv
+) {
+
+Widget appTop, mainWin, menuBar, filePullDown, fileCascade, exitB;
+XmString menuStr, str;
+XEvent Xev;
+int result, isXEvent, n, count;
+struct timespec req, rem;
+Atom wm_delete_window;
+
+  XtToolkitInitialize();
+  app = XtCreateApplicationContext();
+
+  display = XtOpenDisplay( app, NULL, NULL, &quot;test&quot;, NULL, 0, &amp;argc,
+   argv );
+
+  appTop = XtVaAppCreateShell( NULL, &quot;test&quot;, applicationShellWidgetClass,
+   display,
+   XmNiconic, False,
+   XmNmappedWhenManaged, True,
+   NULL );
+
+  mainWin = XtVaCreateManagedWidget( &quot;main&quot;, xmMainWindowWidgetClass,
+   appTop,
+   XmNscrollBarDisplayPolicy, XmAS_NEEDED,
+   XmNscrollingPolicy, XmAUTOMATIC,
+   NULL );
+
+  menuBar = XmCreateMenuBar( mainWin, &quot;menubar&quot;, NULL, 0 );
+
+  filePullDown = XmCreatePulldownMenu( menuBar, &quot;file&quot;, NULL, 0 );
+
+  menuStr = XmStringCreateLocalized( &quot;file&quot; );
+  fileCascade = XtVaCreateManagedWidget( &quot;filemenu&quot;, xmCascadeButtonWidgetClass,
+   menuBar,
+   XmNlabelString, menuStr,
+   XmNmnemonic, 'f',
+   XmNsubMenuId, filePullDown,
+   NULL );
+  XmStringFree( menuStr );
+
+  str = XmStringCreateLocalized( &quot;new&quot; );
+  exitB = XtVaCreateManagedWidget( &quot;pb&quot;, xmPushButtonWidgetClass,
+   filePullDown,
+   XmNlabelString, str,
+   NULL );
+  XmStringFree( str );
+  XtAddCallback( exitB, XmNactivateCallback, newWin_cb,
+   (XtPointer) &amp;g_exit );
+
+  XtManageChild( menuBar );
+
+  XtRealizeWidget( appTop );
+
+  wm_delete_window = XmInternAtom( display, &quot;WM_DELETE_WINDOW&quot;, False );
+  XmAddWMProtocolCallback( appTop, wm_delete_window,
+   exit_cb, (XtPointer) &amp;g_exit );
+  XtVaSetValues( appTop, XmNdeleteResponse, XmDO_NOTHING, NULL );
+
+  //-------------------------------------------
+
+  n = 0;
+
+  while ( !g_exit ) {
+
+    count = 1000;
+
+    do {
+      result = XtAppPending( app );
+      if ( result ) {
+        isXEvent = XtAppPeekEvent( app, &amp;Xev );
+        if ( isXEvent ) {
+          if ( Xev.type != Expose ) {
+            XtAppProcessEvent( app, result );
+          }
+          else {
+            XtAppProcessEvent( app, result );
+          }
+        }
+        else { // process all timer or alternate events
+          XtAppProcessEvent( app, result );
+        }
+      }
+      count--;
+    } while ( result &amp;&amp; count );
+
+    req.tv_sec = 0;
+    req.tv_nsec = 100000000;
+    nanosleep( &amp;req, &amp;rem );
+
+    // raise window approx every 3 seconds
+    n++;
+    if ( n == 30 ) {
+      n = 0;
+      printf( &quot;call XRaiseWindow\n&quot; );
+      XRaiseWindow( display, XtWindow(appTop) );
+    }
+
+    if ( widgetToKill ) {
+      XtDestroyWidget( widgetToKill );
+      widgetToKill = NULL;
+    }
+
+  }
+
+  return 0;
+
+}
+</pre><pre>CFLAGS = -Wall -O0 -g
+LDFLAGS = -g
+
+all : 1
+
+1 : 1.o
+	g++ $(LDFLAGS) -o 1 \
+	-L/usr/X11R6/lib \
+	-lXm -lXt -lX11 \
+	1.o
+
+1.o : 1.c
+	cc $(CFLAGS) -o 1.o -c 1.c
+</pre>
+<!--X-Body-of-Message-End-->
+<!--X-MsgBody-End-->
+<!--X-Follow-Ups-->
+<hr>
+<!--X-Follow-Ups-End-->
+<!--X-References-->
+<!--X-References-End-->
+<!--X-BotPNI-->
+<dl>
+<dt>Navigate by Date:</dt>
+<dd>Prev:
+<b><a href='msg00009.php'>RE:problem in running application of PSM6003</a></b> <i>zhangdemin99</i>
+</dd>
+<dd>Next:
+<b><a href='msg00011.php'>RE: Help with udev</a></b> <i>Mark Rivers</i>
+</dd>
+<dd>Index: <b>
+<a href='../1994/index.php'>1994</a>&nbsp;
+<a href='../1995/index.php'>1995</a>&nbsp;
+<a href='../1996/index.php'>1996</a>&nbsp;
+<a href='../1997/index.php'>1997</a>&nbsp;
+<a href='../1998/index.php'>1998</a>&nbsp;
+<a href='../1999/index.php'>1999</a>&nbsp;
+<a href='../2000/index.php'>2000</a>&nbsp;
+<a href='../2001/index.php'>2001</a>&nbsp;
+<a href='../2002/index.php'>2002</a>&nbsp;
+<a href='../2003/index.php'>2003</a>&nbsp;
+<a href='../2004/index.php'>2004</a>&nbsp;
+<a href='../2005/index.php'>2005</a>&nbsp;
+<a href='../2006/index.php'>2006</a>&nbsp;
+<a href='../2007/index.php'>2007</a>&nbsp;
+&lt;<a href='../2008/index.php?January'>2008</a>&gt;&nbsp;
+<a href='../2009/index.php'>2009</a>&nbsp;
+<a href='../2010/index.php'>2010</a>&nbsp;
+<a href='../2011/index.php'>2011</a>&nbsp;
+<a href='../2012/index.php'>2012</a>&nbsp;
+<a href='../2013/index.php'>2013</a>&nbsp;
+<a href='../2014/index.php'>2014</a>&nbsp;
+<a href='../2015/index.php'>2015</a>&nbsp;
+</b></dd>
+<dt>Navigate by Thread:</dt>
+<dd>Prev:
+<b><a href='msg00009.php'>RE:problem in running application of PSM6003</a></b> <i>zhangdemin99</i>
+</dd>
+<dd>Next:
+<b><a href='msg00012.php'>Alarm Handler on 64-bit</a></b> <i>Peter Medvescek</i>
+</dd>
+<dd>Index: <b>
+<a href='../1994/threads.php'>1994</a>&nbsp;
+<a href='../1995/threads.php'>1995</a>&nbsp;
+<a href='../1996/threads.php'>1996</a>&nbsp;
+<a href='../1997/threads.php'>1997</a>&nbsp;
+<a href='../1998/threads.php'>1998</a>&nbsp;
+<a href='../1999/threads.php'>1999</a>&nbsp;
+<a href='../2000/threads.php'>2000</a>&nbsp;
+<a href='../2001/threads.php'>2001</a>&nbsp;
+<a href='../2002/threads.php'>2002</a>&nbsp;
+<a href='../2003/threads.php'>2003</a>&nbsp;
+<a href='../2004/threads.php'>2004</a>&nbsp;
+<a href='../2005/threads.php'>2005</a>&nbsp;
+<a href='../2006/threads.php'>2006</a>&nbsp;
+<a href='../2007/threads.php'>2007</a>&nbsp;
+&lt;<a href='../2008/threads.php'>2008</a>&gt;&nbsp;
+<a href='../2009/threads.php'>2009</a>&nbsp;
+<a href='../2010/threads.php'>2010</a>&nbsp;
+<a href='../2011/threads.php'>2011</a>&nbsp;
+<a href='../2012/threads.php'>2012</a>&nbsp;
+<a href='../2013/threads.php'>2013</a>&nbsp;
+<a href='../2014/threads.php'>2014</a>&nbsp;
+<a href='../2015/threads.php'>2015</a>&nbsp;
+</b></dd>
+</dl>
+
+<!--X-BotPNI-End-->
+<!--X-User-Footer-->
+<!--X-User-Footer-End-->
+</td></tr>
+
+<tr>
+<td class='signature'>
+<a href="mailto:Andrew%20Johnson%20&lt;anj_at_aps.anl.gov&gt;">
+ANJ</a>, 02 Sep 2010</td>
+<td class='bottom'>
+<a href='http://validator.w3.org/check?uri=referer'><img src='/epics/icons/vh401.gif' alt='Valid HTML 4.01!' border='0' align='right' height='31' width='88'></a>
+&middot;
+<a href='/epics/index.php' title="EPICS Home at APS">Home</a>
+&middot;
+<a href='/epics/news.php' title="Recent news">News</a>
+&middot;
+<a href='/epics/about.php' title="What is EPICS anyway?">About</a>
+&middot;
+<a href='/epics/base/index.php' title="The core EPICS software for both IOCs and Host tools">Base</a>
+&middot;
+<a href='/epics/modules/index.php' title="Optional support code for IOCs - drivers etc.">Modules</a>
+&middot;
+<a href='/epics/extensions/index.php' title="Tools to monitor and control IOCs">Extensions</a>
+&middot;
+<a href='/epics/distributions/index.php' title="Code collections from base, modules, extensions &amp; elsewhere">Distributions</a>
+&middot;
+<a href='/epics/download/index.php' title="Software downloads">Download</a>
+&middot;
+<br>
+&middot;
+<a href='http://epics-pvdata.sourceforge.net/index.html' title="EPICS Version 4 Project">EPICSv4</a>
+&middot;
+<a href='/epics/irmis/index.php' title="Using RDBs to model installed EPICS IOCs">IRMIS</a>
+&middot;
+<a href='/epics/mail.php' title="Information about our mailing lists">Talk</a>
+&middot;
+<a href='https://bugs.launchpad.net/epics-base' title="The Launchpad bug tracker for epics-base">Bugs</a>
+&middot;
+<a href='/epics/docs/index.php' title="Text not related to a specific release or package">Documents</a>
+&middot;
+<a href='/epics/links.php' title="Related web-sites">Links</a>
+&middot;
+<a href='/epics/license/index.php' title="EPICS Software Licensing">Licensing</a>
+&middot;
+</td></tr></table>
+</body>
+</html>
+Dº`!H      VDç¢VDç£;ÌêV{ÅË   9:http://www.aps.anl.gov/epics/tech-talk/2008/msg00010.php necko:classified 1 request-method GET response-head HTTP/1.1 200 OK
+Date: Thu, 12 Nov 2015 19:25:22 GMT
+Server: Apache
+X-Frame-Options: SAMEORIGIN
+Last-Modified: Mon, 22 Sep 2014 15:02:26 GMT
+Content-Type: text/html; charset=iso-8859-1
+X-Cache: MISS from wwwcache2-dl-cache, MISS from wwwcache2-dl-icap
+Via: 1.1 wwwcache2-dl-cache (squid/3.3.10), 1.1 wwwcache2-dl-icap (squid/3.3.10)
+ charset windows-1252 uncompressed-len 0 predictor::resource-count 4 predictor::http://www.aps.anl.gov/epics/epics.css 1,1,1447356322,0 predictor::https://apis.google.com/js/plusone.js 1,1,1447356322,0 predictor::https://apis.google.com/_/scs/apps-static/_/js/k=oz.gapi.en_GB.3gCEM3WeblA.O/m=plusone/rt=j/sv=1/d=1/ed=1/am=AQ/rs=AGLTcCP8ZfPHMDlbYpI5-U-qr0fejtum1w/t=zcms/cb=gapi.loaded_0 1,1,1447356322,0 predictor::https://apis.google.com/_/scs/apps-static/_/js/k=oz.gapi.en_GB.3gCEM3WeblA.O/m=auth/exm=plusone/rt=j/sv=1/d=1/ed=1/am=AQ/rs=AGLTcCP8ZfPHMDlbYpI5-U-qr0fejtum1w/t=zcms/cb=gapi.loaded_1 1,1,1447356322,0   e±
