@@ -9,3 +9,4 @@ include $(CONFIG)/os/CONFIG.Common.linuxCommon
 
 ARCH_CLASS = arm
 
+VALID_BUILDS = Ioc Host

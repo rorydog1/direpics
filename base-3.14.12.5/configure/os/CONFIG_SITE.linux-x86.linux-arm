@@ -9,7 +9,6 @@
 #GNU_DIR = /home/targetOS/linux-arm/host/x86-linux/gcc_3.3.3
 
 # APS:
-GNU_DIR = /usr/local/vw/zynq-2011.09
-
+GNU_DIR = /home/rory/Desktop/tools/arm-bcm2708/gcc-linaro-arm-linux-gnueabihf-raspbian/
 # GNU crosscompiler target name
-GNU_TARGET = arm-xilinx-linux-gnueabi
+GNU_TARGET = arm-linux-gnueabihf

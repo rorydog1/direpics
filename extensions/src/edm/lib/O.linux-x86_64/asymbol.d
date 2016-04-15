@@ -8,11 +8,12 @@ asymbol.o: ../asymbol.cc ../asymbol.h ../act_grf.h ../color_pkg.h \
  ../hashtable.h ../dl_list.h ../color_button.h ../color_button.str \
  ../font_menu.h ../entry_form.h ../pvConnection.h ../tag_pkg.h \
  ../tag_pkg.str ../undo.h ../btnActionListType.h \
- /home/epics/base/include/cvtFast.h /home/epics/base/include/epicsTypes.h \
- /home/epics/base/include/shareLib.h ../asymbol.str ../app_pkg.h \
- ../confirm_dialog.h ../confirm_dialog.str ../scrolled_text.h \
- ../scrolled_text.str ../scrolled_list.h ../act_win.h ../bindings.h \
- ../group.h ../group.str ../symbol.h ../dynSymbol.h ../ulBindings.h \
- ../ulBindings.str ../environment.str ../pvBindings.h ../cursor.h \
- ../scheme.h ../scheme.str ../pv_action.h ../dimDialog.h ../process.h \
- ../edmPrint.h ../clipbd.h ../path_list.h ../app_pkg.str
+ /home/rory/Desktop/epics/base/include/cvtFast.h \
+ /home/rory/Desktop/epics/base/include/epicsTypes.h \
+ /home/rory/Desktop/epics/base/include/shareLib.h ../asymbol.str \
+ ../app_pkg.h ../confirm_dialog.h ../confirm_dialog.str \
+ ../scrolled_text.h ../scrolled_text.str ../scrolled_list.h ../act_win.h \
+ ../bindings.h ../group.h ../group.str ../symbol.h ../dynSymbol.h \
+ ../ulBindings.h ../ulBindings.str ../environment.str ../pvBindings.h \
+ ../cursor.h ../scheme.h ../scheme.str ../pv_action.h ../dimDialog.h \
+ ../process.h ../edmPrint.h ../clipbd.h ../path_list.h ../app_pkg.str

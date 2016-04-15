@@ -25,8 +25,9 @@ xygraph.o: ../xygraph.cc ../xygraph.h \
  ../../../../include/edm/scrolled_list.h \
  ../../../../include/edm/act_win.h ../../../../include/edm/bindings.h \
  ../../../../include/edm/group.h ../../../../include/edm/undo.h \
- /home/epics/base/include/cvtFast.h /home/epics/base/include/epicsTypes.h \
- /home/epics/base/include/shareLib.h ../../lib/group.str \
+ /home/rory/Desktop/epics/base/include/cvtFast.h \
+ /home/rory/Desktop/epics/base/include/epicsTypes.h \
+ /home/rory/Desktop/epics/base/include/shareLib.h ../../lib/group.str \
  ../../../../include/edm/btnActionListType.h \
  ../../../../include/edm/symbol.h ../../../../include/edm/asymbol.h \
  ../../../../include/edm/dynSymbol.h ../../../../include/edm/ulBindings.h \
@@ -37,4 +38,4 @@ xygraph.o: ../xygraph.cc ../xygraph.h \
  ../../../../include/edm/clipbd.h ../../../../include/edm/path_list.h \
  ../../lib/app_pkg.str ../../../../include/edm/act_win.h \
  ../../../../include/edm/pv_factory.h ../edmTime.h \
- /home/epics/base/include/shareLib.h ../xygraph.str
+ /home/rory/Desktop/epics/base/include/shareLib.h ../xygraph.str

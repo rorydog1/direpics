@@ -8,9 +8,10 @@ dimDialog.o: ../dimDialog.cc ../dimDialog.h ../act_win.h ../color_pkg.h \
  ../font_menu.h ../bindings.h ../act_grf.h ../pvColor.h ../pv_factory.h \
  ../hashtable.h ../dl_list.h ../entry_form.h ../pvConnection.h \
  ../tag_pkg.h ../tag_pkg.str ../group.h ../undo.h \
- /home/epics/base/include/cvtFast.h /home/epics/base/include/epicsTypes.h \
- /home/epics/base/include/shareLib.h ../group.str ../btnActionListType.h \
- ../symbol.h ../asymbol.h ../dynSymbol.h ../ulBindings.h \
- ../ulBindings.str ../environment.str ../pvBindings.h ../confirm_dialog.h \
- ../confirm_dialog.str ../cursor.h ../scheme.h ../scheme.str \
- ../pv_action.h ../dimDialog.str
+ /home/rory/Desktop/epics/base/include/cvtFast.h \
+ /home/rory/Desktop/epics/base/include/epicsTypes.h \
+ /home/rory/Desktop/epics/base/include/shareLib.h ../group.str \
+ ../btnActionListType.h ../symbol.h ../asymbol.h ../dynSymbol.h \
+ ../ulBindings.h ../ulBindings.str ../environment.str ../pvBindings.h \
+ ../confirm_dialog.h ../confirm_dialog.str ../cursor.h ../scheme.h \
+ ../scheme.str ../pv_action.h ../dimDialog.str

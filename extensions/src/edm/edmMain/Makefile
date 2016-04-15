@@ -14,6 +14,7 @@ ifdef EPICS_HOST_ARCH
    edm_LIBS += 114135a4-6f6c-11d3-95bc-00104b8742df
 
    edm_LIBS_Linux += Xm Xmu Xt Xp Xtst X11
+   USR_LDFLAGS_Linux += -Wl,--no-as-needed
    edm_SYS_LIBS_Linux += pthread dl
    
    edm_LIBS_Darwin += Xm Xmu Xt Xp Xtst X11

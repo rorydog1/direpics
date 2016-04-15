@@ -62,6 +62,7 @@ STRIPTOOL = StripTool
 TS = ts
 VIEWIMAGE = viewImage
 YCA = Yca
+EDM = edm
 
 
 
@@ -123,7 +124,7 @@ DIRS += $(RAMPLOAD)
 DIRS += $(SCOPEUTIL)
 DIRS += $(SDDSIDL)
 DIRS += $(STRIPTOOL)
-
+DIRS += $(EDM)
 DIRS := $(wildcard $(DIRS))
 
 include $(TOP)/configure/RULES_DIRS

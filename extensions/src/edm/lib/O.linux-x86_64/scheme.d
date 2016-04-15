@@ -10,10 +10,10 @@ scheme.o: ../scheme.cc ../scheme.h ../color_pkg.h \
  ../scrolled_text.h ../scrolled_text.str ../scrolled_list.h ../act_win.h \
  ../bindings.h ../act_grf.h ../pvColor.h ../pv_factory.h ../hashtable.h \
  ../dl_list.h ../pvConnection.h ../tag_pkg.h ../tag_pkg.str ../group.h \
- ../undo.h /home/epics/base/include/cvtFast.h \
- /home/epics/base/include/epicsTypes.h \
- /home/epics/base/include/shareLib.h ../group.str ../btnActionListType.h \
- ../symbol.h ../asymbol.h ../dynSymbol.h ../ulBindings.h \
- ../ulBindings.str ../pvBindings.h ../cursor.h ../pv_action.h \
- ../dimDialog.h ../process.h ../edmPrint.h ../clipbd.h ../path_list.h \
- ../app_pkg.str
+ ../undo.h /home/rory/Desktop/epics/base/include/cvtFast.h \
+ /home/rory/Desktop/epics/base/include/epicsTypes.h \
+ /home/rory/Desktop/epics/base/include/shareLib.h ../group.str \
+ ../btnActionListType.h ../symbol.h ../asymbol.h ../dynSymbol.h \
+ ../ulBindings.h ../ulBindings.str ../pvBindings.h ../cursor.h \
+ ../pv_action.h ../dimDialog.h ../process.h ../edmPrint.h ../clipbd.h \
+ ../path_list.h ../app_pkg.str

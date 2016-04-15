@@ -25,9 +25,10 @@ main.o: ../main.cc ../../../../include/edm/pv_factory.h \
  ../../../../include/edm/pv_factory.h \
  ../../../../include/edm/pvConnection.h ../../../../include/edm/tag_pkg.h \
  ../../lib/tag_pkg.str ../../../../include/edm/group.h \
- ../../../../include/edm/undo.h /home/epics/base/include/cvtFast.h \
- /home/epics/base/include/epicsTypes.h \
- /home/epics/base/include/shareLib.h ../../lib/group.str \
+ ../../../../include/edm/undo.h \
+ /home/rory/Desktop/epics/base/include/cvtFast.h \
+ /home/rory/Desktop/epics/base/include/epicsTypes.h \
+ /home/rory/Desktop/epics/base/include/shareLib.h ../../lib/group.str \
  ../../../../include/edm/btnActionListType.h \
  ../../../../include/edm/symbol.h ../../../../include/edm/asymbol.h \
  ../../../../include/edm/dynSymbol.h ../../../../include/edm/ulBindings.h \

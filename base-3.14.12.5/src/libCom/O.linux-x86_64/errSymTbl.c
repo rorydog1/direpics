@@ -2,8 +2,8 @@
  * status code symbol table
  *
  * CREATED BY makeStatTbl.pl
- *       FROM /home/epics/base-3.14.12.5/src/libCom/O.linux-x86_64
- *         ON Thu Nov 12 17:02:18 2015
+ *       FROM /home/rory/Desktop/epics/base-3.14.12.5/src/libCom/O.linux-x86_64
+ *         ON Fri Feb 19 17:12:41 2016
  */
 
 #include "errMdef.h"

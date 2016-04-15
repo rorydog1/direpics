@@ -15,9 +15,10 @@ menu_button.o: ../menu_button.cc ../menu_button.h \
  ../../../../include/edm/entry_form.h \
  ../../../../include/edm/pvConnection.h ../../../../include/edm/tag_pkg.h \
  ../../lib/tag_pkg.str ../../../../include/edm/entry_form.h \
- ../../../../include/edm/pv_factory.h /home/epics/base/include/cvtFast.h \
- /home/epics/base/include/epicsTypes.h \
- /home/epics/base/include/shareLib.h ../menu_button.str \
+ ../../../../include/edm/pv_factory.h \
+ /home/rory/Desktop/epics/base/include/cvtFast.h \
+ /home/rory/Desktop/epics/base/include/epicsTypes.h \
+ /home/rory/Desktop/epics/base/include/shareLib.h ../menu_button.str \
  ../../../../include/edm/app_pkg.h \
  ../../../../include/edm/confirm_dialog.h ../../lib/confirm_dialog.str \
  ../../../../include/edm/scrolled_text.h ../../lib/scrolled_text.str \

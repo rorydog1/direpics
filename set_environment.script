@@ -10,11 +10,11 @@ export EPICS_CA_AUTO_ADDR_LIST=NO
 export EPICS_CA_ADDR_LIST=localhost
 
 #Config support TOP
-export EPICS_SUPPORT="/home/controls/support"
+export EPICS_SUPPORT="/home/rory/Desktop/controls/support"
 export ASYN="$EPICS_SUPPORT/asyn4-27/"
 
 #Config EPICS Base TOP
-export EPICS_BASE="/home/epics/base"
+export EPICS_BASE="/home/rory/Desktop/epics/base"
 export EPICS_HOST_ARCH=`${EPICS_BASE}/startup/EpicsHostArch`
 export PATH="${PATH}:${EPICS_BASE}/bin/${EPICS_HOST_ARCH}"
 export LD_LIBRARY_PATH="${LD_LIBRARY_PATH}:${EPICS_BASE}/lib/${EPICS_HOST_ARCH}"

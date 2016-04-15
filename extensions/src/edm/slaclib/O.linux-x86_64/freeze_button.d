@@ -21,9 +21,10 @@ freeze_button.o: ../freeze_button.cc ../freeze_button.h \
  ../../../../include/edm/scrolled_list.h \
  ../../../../include/edm/act_win.h ../../../../include/edm/bindings.h \
  ../../../../include/edm/act_grf.h ../../../../include/edm/group.h \
- ../../../../include/edm/undo.h /home/epics/base/include/cvtFast.h \
- /home/epics/base/include/epicsTypes.h \
- /home/epics/base/include/shareLib.h ../../lib/group.str \
+ ../../../../include/edm/undo.h \
+ /home/rory/Desktop/epics/base/include/cvtFast.h \
+ /home/rory/Desktop/epics/base/include/epicsTypes.h \
+ /home/rory/Desktop/epics/base/include/shareLib.h ../../lib/group.str \
  ../../../../include/edm/btnActionListType.h \
  ../../../../include/edm/symbol.h ../../../../include/edm/asymbol.h \
  ../../../../include/edm/dynSymbol.h ../../../../include/edm/ulBindings.h \

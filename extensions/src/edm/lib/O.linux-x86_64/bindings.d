@@ -7,8 +7,9 @@ bindings.o: ../bindings.cc ../bindings.h ../act_grf.h ../color_pkg.h \
  ../expString.h ../remFileOpen.h ../pvColor.h ../pv_factory.h \
  ../hashtable.h ../dl_list.h ../color_button.h ../color_button.str \
  ../font_menu.h ../entry_form.h ../pvConnection.h ../tag_pkg.h \
- ../tag_pkg.str ../group.h ../undo.h /home/epics/base/include/cvtFast.h \
- /home/epics/base/include/epicsTypes.h \
- /home/epics/base/include/shareLib.h ../group.str ../btnActionListType.h \
- ../symbol.h ../asymbol.h ../dynSymbol.h ../bindings.str \
- ../environment.str
+ ../tag_pkg.str ../group.h ../undo.h \
+ /home/rory/Desktop/epics/base/include/cvtFast.h \
+ /home/rory/Desktop/epics/base/include/epicsTypes.h \
+ /home/rory/Desktop/epics/base/include/shareLib.h ../group.str \
+ ../btnActionListType.h ../symbol.h ../asymbol.h ../dynSymbol.h \
+ ../bindings.str ../environment.str
